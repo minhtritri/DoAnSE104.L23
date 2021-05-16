@@ -5,18 +5,18 @@ drop table if exists THUOC;
 /*==============================================================*/
 create table THUOC
 (
-   MATHUOC              char(5) not null,
-   TENTHUOC             text,
-   PHANNHOM             text,
-   PHANLOAI             text,
-   THANHPHAN            text,
-   TENNCC               text,
+   MATHUOC              char(10) not null,
+   TENTHUOC             varchar(50),
+   PHANNHOM             text,..
+   PHANLOAI             text,..
+   THANHPHAN            text,..
+   MANCC               char(5),
    NGAYTIEPNHAN         date,
-   SOLO                 char(5),
-   NHASX                text,
+   #SOLO                 char(10),
+   #NHASX                text,
    NGAYSX               date,
    HANSUDUNG            date,
-   SL_DVT               text,
+   SL_DVT               text,...
    GIABAN               float(8,2),
    primary key (MATHUOC)
 );

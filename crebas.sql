@@ -33,12 +33,13 @@ create table NHACUNGCAP (
    TENNCC               varchar(50)          null,
    DIACHI               varchar(50)          null,
    DIENTHOAI            int                  null,
+   SOTKNH		varchar(50)          null,
    constraint PK_NHACUNGCAP primary key nonclustered (MANCC)
 )
 go
 
 /*==============================================================*/
-/* Table: PHIEUBANHANG                                          */
+/* Table: PHIEUBANHANG (HoaDon)                                         */
 /*==============================================================*/
 create table PHIEUBANHANG (
    MABH                 char(10)             not null,

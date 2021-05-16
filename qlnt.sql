@@ -24,10 +24,8 @@ go
 create table KHACHHANG (
    MAKH                 char(4)              not null,
    HOTEN                varchar(40)          null,
-   NGAYSINH             datetime             null,
    GIOITINH             varchar(3)           null,
-   DIACHI               varchar(50)          null,
-   SDT                  varchar(20)          null,
+   DiaChi
    constraint PK_KHACHHANG primary key nonclustered (MAKH)
 )
 go
@@ -43,7 +41,7 @@ create table NHANVIEN (
    DIACHI               varchar(50)          null,
    SDT                  varchar(20)          null,
    NGAYVL               datetime             null,
-   LUONG                money                null,
+   CA			int 		     null,
    constraint PK_NHANVIEN primary key nonclustered (MANV)
 )
 go
