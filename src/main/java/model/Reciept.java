@@ -9,6 +9,6 @@ package model;
  *
  * @author anhha
  */
-public class Vouchers_drugstore {
+public class Reciept {
     
 }
