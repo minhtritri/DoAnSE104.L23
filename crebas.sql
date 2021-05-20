@@ -68,3 +68,14 @@ create table PHIEUMUAHANG (
 )
 go
 
+
+/*==============================================================*/
+/* Table: CHITIETHOADON                                          */
+/*==============================================================*/
+create table CTHD(
+   MABH 		char(10)		not null,
+   MATHUOC		CHAR(10)		not null,
+   SL			INT			null,
+)
+
+
