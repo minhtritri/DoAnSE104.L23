@@ -93,7 +93,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="tglLogin" max="32767" attributes="0"/>
+                      <Component id="tgbtnLogin" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -104,14 +104,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbSystem" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tglLogin" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnLogin" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JToggleButton" name="tglLogin">
+            <Component class="javax.swing.JToggleButton" name="tgbtnLogin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng nh&#x1ead;p"/>
               </Properties>
@@ -134,10 +134,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tglPharmacist" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="tglSupplier" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="tglGuest" max="32767" attributes="0"/>
-                                  <Component id="tglDrug" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tgbtnPharmacist" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="tgbtnSupplier" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="tgbtnGuest" max="32767" attributes="0"/>
+                                  <Component id="tgbtnDrug" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -151,13 +151,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbCategory" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="tglDrug" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tglPharmacist" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnPharmacist" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tglSupplier" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnSupplier" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tglGuest" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnGuest" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -169,22 +169,22 @@
                 <Property name="text" type="java.lang.String" value="Danh m&#x1ee5;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglDrug">
+            <Component class="javax.swing.JToggleButton" name="tgbtnDrug">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Thu&#x1ed1;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglPharmacist">
+            <Component class="javax.swing.JToggleButton" name="tgbtnPharmacist">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglSupplier">
+            <Component class="javax.swing.JToggleButton" name="tgbtnSupplier">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nh&#xe0; cung c&#x1ea5;p"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglGuest">
+            <Component class="javax.swing.JToggleButton" name="tgbtnGuest">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
@@ -200,8 +200,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tglBuyReceipt" pref="121" max="32767" attributes="0"/>
-                          <Component id="tglSellReceipt" max="32767" attributes="0"/>
+                          <Component id="tgbtnBuyOrder" pref="121" max="32767" attributes="0"/>
+                          <Component id="tgbtnSellOrder" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -213,9 +213,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbSellBuy" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="tglBuyReceipt" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnBuyOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
-                      <Component id="tglSellReceipt" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnSellOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -227,12 +227,12 @@
                 <Property name="text" type="java.lang.String" value="Mua/B&#xe1;n thu&#x1ed1;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglBuyReceipt">
+            <Component class="javax.swing.JToggleButton" name="tgbtnBuyOrder">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Phi&#x1ebf;u mua h&#xe0;ng"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglSellReceipt">
+            <Component class="javax.swing.JToggleButton" name="tgbtnSellOrder">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Phi&#x1ebf;u b&#xe1;n h&#xe0;ng"/>
               </Properties>
@@ -250,7 +250,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="26" max="32767" attributes="0"/>
-                      <Component id="tglReport" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="tgbtnReport" min="-2" pref="117" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -261,7 +261,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lbReport" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tglReport" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnReport" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="46" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -273,7 +273,7 @@
                 <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng k&#xea; b&#xe1;o c&#xe1;o"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tglReport">
+            <Component class="javax.swing.JToggleButton" name="tgbtnReport">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng k&#xea; doanh thu"/>
               </Properties>

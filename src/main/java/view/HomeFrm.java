@@ -20,21 +20,21 @@ public class HomeFrm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        tglLogin = new javax.swing.JToggleButton();
+        tgbtnLogin = new javax.swing.JToggleButton();
         lbSystem = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         lbCategory = new javax.swing.JLabel();
-        tglDrug = new javax.swing.JToggleButton();
-        tglPharmacist = new javax.swing.JToggleButton();
-        tglSupplier = new javax.swing.JToggleButton();
-        tglGuest = new javax.swing.JToggleButton();
+        tgbtnDrug = new javax.swing.JToggleButton();
+        tgbtnPharmacist = new javax.swing.JToggleButton();
+        tgbtnSupplier = new javax.swing.JToggleButton();
+        tgbtnGuest = new javax.swing.JToggleButton();
         jPanel7 = new javax.swing.JPanel();
         lbSellBuy = new javax.swing.JLabel();
-        tglBuyReceipt = new javax.swing.JToggleButton();
-        tglSellReceipt = new javax.swing.JToggleButton();
+        tgbtnBuyOrder = new javax.swing.JToggleButton();
+        tgbtnSellOrder = new javax.swing.JToggleButton();
         jPanel8 = new javax.swing.JPanel();
         lbReport = new javax.swing.JLabel();
-        tglReport = new javax.swing.JToggleButton();
+        tgbtnReport = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -50,7 +50,7 @@ public class HomeFrm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("QLNT demo");
 
-        tglLogin.setText("Đăng nhập");
+        tgbtnLogin.setText("Đăng nhập");
 
         lbSystem.setText("Hệ thống");
 
@@ -63,7 +63,7 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(tglLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tgbtnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -72,19 +72,19 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglLogin)
+                .addComponent(tgbtnLogin)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbCategory.setText("Danh mục");
 
-        tglDrug.setText("Thuốc");
+        tgbtnDrug.setText("Thuốc");
 
-        tglPharmacist.setText("Nhân viên");
+        tgbtnPharmacist.setText("Nhân viên");
 
-        tglSupplier.setText("Nhà cung cấp");
+        tgbtnSupplier.setText("Nhà cung cấp");
 
-        tglGuest.setText("Khách hàng");
+        tgbtnGuest.setText("Khách hàng");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -96,10 +96,10 @@ public class HomeFrm extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tglPharmacist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tglSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tglGuest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tglDrug, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(tgbtnPharmacist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tgbtnSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tgbtnGuest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tgbtnDrug, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -108,21 +108,21 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbCategory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tglDrug)
+                .addComponent(tgbtnDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglPharmacist)
+                .addComponent(tgbtnPharmacist)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglSupplier)
+                .addComponent(tgbtnSupplier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglGuest)
+                .addComponent(tgbtnGuest)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lbSellBuy.setText("Mua/Bán thuốc");
 
-        tglBuyReceipt.setText("Phiếu mua hàng");
+        tgbtnBuyOrder.setText("Phiếu mua hàng");
 
-        tglSellReceipt.setText("Phiếu bán hàng");
+        tgbtnSellOrder.setText("Phiếu bán hàng");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -132,8 +132,8 @@ public class HomeFrm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tglBuyReceipt, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                    .addComponent(tglSellReceipt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tgbtnBuyOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                    .addComponent(tgbtnSellOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -142,15 +142,15 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbSellBuy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tglBuyReceipt)
+                .addComponent(tgbtnBuyOrder)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(tglSellReceipt)
+                .addComponent(tgbtnSellOrder)
                 .addContainerGap())
         );
 
         lbReport.setText("Thống kê báo cáo");
 
-        tglReport.setText("Thống kê doanh thu");
+        tgbtnReport.setText("Thống kê doanh thu");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -161,7 +161,7 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(tglReport, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tgbtnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -170,7 +170,7 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbReport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tglReport)
+                .addComponent(tgbtnReport)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -407,13 +407,13 @@ public class HomeFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbReport;
     private javax.swing.JLabel lbSellBuy;
     private javax.swing.JLabel lbSystem;
-    private javax.swing.JToggleButton tglBuyReceipt;
-    private javax.swing.JToggleButton tglDrug;
-    private javax.swing.JToggleButton tglGuest;
-    private javax.swing.JToggleButton tglLogin;
-    private javax.swing.JToggleButton tglPharmacist;
-    private javax.swing.JToggleButton tglReport;
-    private javax.swing.JToggleButton tglSellReceipt;
-    private javax.swing.JToggleButton tglSupplier;
+    private javax.swing.JToggleButton tgbtnBuyOrder;
+    private javax.swing.JToggleButton tgbtnDrug;
+    private javax.swing.JToggleButton tgbtnGuest;
+    private javax.swing.JToggleButton tgbtnLogin;
+    private javax.swing.JToggleButton tgbtnPharmacist;
+    private javax.swing.JToggleButton tgbtnReport;
+    private javax.swing.JToggleButton tgbtnSellOrder;
+    private javax.swing.JToggleButton tgbtnSupplier;
     // End of variables declaration//GEN-END:variables
 }

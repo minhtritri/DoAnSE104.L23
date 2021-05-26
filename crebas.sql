@@ -45,9 +45,9 @@ create table PHIEUBANHANG (
    MABH                 char(10)             not null,
    MAKH                 char(4)              null,
    MANV                 char(4)              null,
-   MATHUOC              char(10)             null,
+   //MATHUOC              char(10)             null,
    SL                   int                  null,
-   DONGIA		money                null,
+   TRIGIA		money                null,
    NGAYBAN              datetime             null,
    constraint PK_PHIEUBANHANG primary key nonclustered (MABH)
 )
@@ -58,11 +58,11 @@ go
 /*==============================================================*/
 create table PHIEUMUAHANG (
    MAMH                 char(10)             not null,
-   MATHUOC              char(10)             null,
+   //MATHUOC              char(10)             null,
    MANV                 char(4)              null,
    MANCC                char(10)             null,
    SL                   int                  null,
-   DONGIA               money                null,
+   TRIGIA               money                null,
    NGAYMUA              datetime             null,
    constraint PK_PHIEUMUAHANG primary key nonclustered (MAMH)
 )
