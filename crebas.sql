@@ -73,12 +73,9 @@ go
 /* Table: CHITIETHOADON                                          */
 /*==============================================================*/
 create table CTHD(
-   MAVACH		char(10)		not null,
+   SOHD			char(10)		not null,
    MATHUOC		CHAR(10)		not null,
    SL			INT			null,
-   TONGCONG		money			null,
-   TIENNHAN		money			null,
-   TIENTHUA		money			null,
 )
 
 
