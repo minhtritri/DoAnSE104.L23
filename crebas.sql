@@ -43,9 +43,9 @@ go
 /*==============================================================*/
 create table PHIEUBANHANG (
    MABH                 char(10)             not null,
-   MAKH                 char(4)              null,
    MANV                 char(4)              null,
-   //MATHUOC              char(10)             null,
+   MAKH                 char(4)              null,
+   //MATHUOC            char(10)             null,
    SL                   int                  null,
    TRIGIA		money                null,
    NGAYBAN              datetime             null,
@@ -58,9 +58,9 @@ go
 /*==============================================================*/
 create table PHIEUMUAHANG (
    MAMH                 char(10)             not null,
-   //MATHUOC              char(10)             null,
    MANV                 char(4)              null,
    MANCC                char(10)             null,
+  //MATHUOC              char(10)             null,
    SL                   int                  null,
    TRIGIA               money                null,
    NGAYMUA              datetime             null,
