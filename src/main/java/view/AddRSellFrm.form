@@ -81,7 +81,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,13 +137,13 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lbBuyReceipt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="                                Ho&#xe1; &#x111;&#x1a1;n mua thu&#x1ed1;c (t&#x1eeb; nh&#xe0; cung c&#x1ea5;p)"/>
+        <Property name="text" type="java.lang.String" value="                                Ho&#xe1; &#x111;&#x1a1;n b&#xe1;n thu&#x1ed1;c (cho kh&#xe1;ch h&#xe0;ng)"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; mua h&#xe0;ng"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; b&#xe1;n h&#xe0;ng"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
@@ -189,7 +189,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe0; cung c&#x1ea5;p"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox2">
@@ -209,12 +209,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nh&#xe0; cung c&#x1ea5;p"/>
+        <Property name="text" type="java.lang.String" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="getSupplierName from MANCC"/>
+        <Property name="text" type="java.lang.String" value="getGuestName from MANCC"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>

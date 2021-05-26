@@ -63,10 +63,10 @@ public class AddRSellFrm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbBuyReceipt.setText("                                Hoá đơn mua thuốc (từ nhà cung cấp)");
+        lbBuyReceipt.setText("                                Hoá đơn bán thuốc (cho khách hàng)");
         lbBuyReceipt.setToolTipText("");
 
-        jLabel1.setText("Mã mua hàng");
+        jLabel1.setText("Mã bán hàng");
 
         jTextField1.setText("Sinh mã randomly");
 
@@ -88,13 +88,13 @@ public class AddRSellFrm extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Mã nhà cung cấp");
+        jLabel4.setText("Mã khách hàng");
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel5.setText("Nhà cung cấp");
+        jLabel5.setText("Tên khách hàng");
 
-        jTextField3.setText("getSupplierName from MANCC");
+        jTextField3.setText("getGuestName from MANCC");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -159,7 +159,7 @@ public class AddRSellFrm extends javax.swing.JFrame {
                             .addComponent(jTextField3)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
