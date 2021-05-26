@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class DrugstoreReciept {
+public class DrugstoreReceipt {
     private String sMAMH;
     private String sMATHUOC;
     private String sMANV;
@@ -11,7 +11,7 @@ public class DrugstoreReciept {
     private float fTONGGT;
     private Date dNGAYMUA;
     
-    public DrugstoreReciept(String sMAMH, String sMATHUOC, String sMANV,String sMANCC, int iSL, float fTONGGT, Date dNGAYMUA) {
+    public DrugstoreReceipt(String sMAMH, String sMATHUOC, String sMANV,String sMANCC, int iSL, float fTONGGT, Date dNGAYMUA) {
         this.sMAMH = sMAMH;
         this.sMATHUOC = sMATHUOC;
         this.sMANV = sMANV;
@@ -21,7 +21,7 @@ public class DrugstoreReciept {
         this.dNGAYMUA = dNGAYMUA;
     }
     
-    public DrugstoreReciept() {
+    public DrugstoreReceipt() {
     }
     
     public String getsMAMH() {

@@ -47,7 +47,7 @@ create table PHIEUBANHANG (
    MANV                 char(4)              null,
    MATHUOC              char(10)             null,
    SL                   int                  null,
-   TONGGT               money                null,
+   DONGIA		money                null,
    NGAYBAN              datetime             null,
    constraint PK_PHIEUBANHANG primary key nonclustered (MABH)
 )
@@ -62,7 +62,7 @@ create table PHIEUMUAHANG (
    MANV                 char(4)              null,
    MANCC                char(10)             null,
    SL                   int                  null,
-   TONGGT               money                null,
+   DONGIA               money                null,
    NGAYMUA              datetime             null,
    constraint PK_PHIEUMUAHANG primary key nonclustered (MAMH)
 )
@@ -73,9 +73,12 @@ go
 /* Table: CHITIETHOADON                                          */
 /*==============================================================*/
 create table CTHD(
-   MABH 		char(10)		not null,
+   MAVACH		char(10)		not null,
    MATHUOC		CHAR(10)		not null,
    SL			INT			null,
+   TONGCONG		money			null,
+   TIENNHAN		money			null,
+   TIENTHUA		money			null,
 )
 
 
