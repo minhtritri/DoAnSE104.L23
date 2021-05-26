@@ -2,6 +2,7 @@ package model;
 
 import java.util.Date;
 
+
 public class Drugs {
     private String sMathuoc;
     private String sTenthuoc;
@@ -29,6 +30,7 @@ public class Drugs {
         this.dHansudung = dHansudung;
         this.iSL_DVT = iSL_DVT;
         this.fGiaban = fGiaban;
+  
     }
 
     public Drugs() {
