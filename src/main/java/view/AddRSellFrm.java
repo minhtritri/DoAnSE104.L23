@@ -30,23 +30,23 @@ public class AddRSellFrm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         lbBuyReceipt = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lbSellID = new javax.swing.JLabel();
+        tfSellID = new javax.swing.JTextField();
+        lbPharmacistID = new javax.swing.JLabel();
+        cboxPharmacistID = new javax.swing.JComboBox<>();
+        lbPharmacistName = new javax.swing.JLabel();
+        tfPharmacistName = new javax.swing.JTextField();
+        lbGuestID = new javax.swing.JLabel();
+        cboxGuestID = new javax.swing.JComboBox<>();
+        lbGuestName = new javax.swing.JLabel();
+        tfGuestName = new javax.swing.JTextField();
+        lbDateSell = new javax.swing.JLabel();
+        lbDrugList = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tfDateSell = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,46 +66,46 @@ public class AddRSellFrm extends javax.swing.JFrame {
         lbBuyReceipt.setText("                                Hoá đơn bán thuốc (cho khách hàng)");
         lbBuyReceipt.setToolTipText("");
 
-        jLabel1.setText("Mã bán hàng");
+        lbSellID.setText("Mã bán hàng");
 
-        jTextField1.setText("Sinh mã randomly");
+        tfSellID.setText("Sinh mã randomly");
 
-        jLabel2.setText("Mã nhân viên");
+        lbPharmacistID.setText("Mã nhân viên");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cboxPharmacistID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxPharmacistID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cboxPharmacistIDActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Tên nhân viên");
+        lbPharmacistName.setText("Tên nhân viên");
 
-        jTextField2.setText("getPharmacistName from MANV");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tfPharmacistName.setText("getPharmacistName from MANV");
+        tfPharmacistName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                tfPharmacistNameActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Mã khách hàng");
+        lbGuestID.setText("Mã khách hàng");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxGuestID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel5.setText("Tên khách hàng");
+        lbGuestName.setText("Tên khách hàng");
 
-        jTextField3.setText("getGuestName from MANCC");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tfGuestName.setText("getGuestName from MANCC");
+        tfGuestName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                tfGuestNameActionPerformed(evt);
             }
         });
 
-        jLabel6.setText("Ngày mua");
+        lbDateSell.setText("Ngày mua");
 
-        jLabel7.setText("Danh sách sản phẩm");
+        lbDrugList.setText("Danh sách sản phẩm");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tbDrugList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -118,13 +118,13 @@ public class AddRSellFrm extends javax.swing.JFrame {
                 "MATHUOC", "SL"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tbDrugList);
 
         jLabel8.setText("Tổng");
 
         jTextField4.setText("hàm tính tổng trị giá");
 
-        jTextField5.setText("Sẽ để DatePicker");
+        tfDateSell.setText("Sẽ để DatePicker");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,24 +141,24 @@ public class AddRSellFrm extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
                         .addComponent(jTextField4))
-                    .addComponent(jLabel7)
+                    .addComponent(lbDrugList)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(lbSellID)
+                            .addComponent(lbPharmacistID)
+                            .addComponent(lbPharmacistName)
+                            .addComponent(lbGuestID)
+                            .addComponent(lbGuestName)
+                            .addComponent(lbDateSell))
                         .addGap(58, 58, 58)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5))))
+                            .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                            .addComponent(tfGuestName)
+                            .addComponent(tfDateSell)
+                            .addComponent(tfSellID)
+                            .addComponent(cboxPharmacistID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cboxGuestID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -168,30 +168,30 @@ public class AddRSellFrm extends javax.swing.JFrame {
                 .addComponent(lbBuyReceipt)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbSellID)
+                    .addComponent(tfSellID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbPharmacistID)
+                    .addComponent(cboxPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbPharmacistName)
+                    .addComponent(tfPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbGuestID)
+                    .addComponent(cboxGuestID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbGuestName)
+                    .addComponent(tfGuestName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbDateSell)
+                    .addComponent(tfDateSell, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(lbDrugList)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -204,17 +204,17 @@ public class AddRSellFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cboxPharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxPharmacistIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cboxPharmacistIDActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void tfPharmacistNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPharmacistNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_tfPharmacistNameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void tfGuestNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGuestNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_tfGuestNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,25 +259,25 @@ public class AddRSellFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JComboBox<String> cboxGuestID;
+    private javax.swing.JComboBox<String> cboxPharmacistID;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lbBuyReceipt;
+    private javax.swing.JLabel lbDateSell;
+    private javax.swing.JLabel lbDrugList;
+    private javax.swing.JLabel lbGuestID;
+    private javax.swing.JLabel lbGuestName;
+    private javax.swing.JLabel lbPharmacistID;
+    private javax.swing.JLabel lbPharmacistName;
+    private javax.swing.JLabel lbSellID;
+    private javax.swing.JTable tbDrugList;
+    private javax.swing.JTextField tfDateSell;
+    private javax.swing.JTextField tfGuestName;
+    private javax.swing.JTextField tfPharmacistName;
+    private javax.swing.JTextField tfSellID;
     // End of variables declaration//GEN-END:variables
 }
