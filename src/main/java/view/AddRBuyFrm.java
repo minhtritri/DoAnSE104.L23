@@ -57,6 +57,9 @@ public class AddRBuyFrm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jButton_add = new javax.swing.JButton();
+        jButton_reset = new javax.swing.JButton();
+        jButton_cancel = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -134,6 +137,12 @@ public class AddRBuyFrm extends javax.swing.JFrame {
 
         jTextField4.setText("hàm tính tổng trị giá");
 
+        jButton_add.setText("Thêm");
+
+        jButton_reset.setText("Reset");
+
+        jButton_cancel.setText("Huỷ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,6 +154,12 @@ public class AddRBuyFrm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton_add)
+                        .addGap(61, 61, 61)
+                        .addComponent(jButton_reset)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton_cancel))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
@@ -206,7 +221,12 @@ public class AddRBuyFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_add)
+                    .addComponent(jButton_reset)
+                    .addComponent(jButton_cancel))
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -266,6 +286,9 @@ public class AddRBuyFrm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboxPharmacistID;
     private javax.swing.JComboBox<String> cboxSupplierID;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
+    private javax.swing.JButton jButton_add;
+    private javax.swing.JButton jButton_cancel;
+    private javax.swing.JButton jButton_reset;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;

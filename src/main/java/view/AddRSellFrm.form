@@ -46,42 +46,59 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbBuyReceipt" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="jTextField4" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lbBuyReceipt" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="lbDrugList" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" alignment="0" pref="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbSellID" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbPharmacistID" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbPharmacistName" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbGuestID" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbGuestName" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbDateSell" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
-                          <Component id="tfGuestName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfSellID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboxPharmacistID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboxGuestID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbDrugList" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbSellID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbPharmacistID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbPharmacistName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbGuestID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbGuestName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbDateSell" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
+                                  <Component id="tfGuestName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfSellID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cboxPharmacistID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cboxGuestID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton_add" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                      <Component id="jTextField4" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                      <Component id="jButton_reset" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jButton_cancel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
+                      <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -129,7 +146,13 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton_reset" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton_add" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -277,6 +300,24 @@
       </Properties>
     </Component>
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton_add">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton_reset">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_resetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton_cancel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Huy&#x309;"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
