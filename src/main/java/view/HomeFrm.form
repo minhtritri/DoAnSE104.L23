@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -47,20 +47,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lbSellBuy" min="-2" pref="169" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="tgbtnSellOrder" alignment="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="tgbtnGuest" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tgbtnSupplier" alignment="0" pref="169" max="32767" attributes="0"/>
-                              <Component id="tgbtnPharmacist" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tgbtnDrug" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tgbtnLogin" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lbCategory" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lbSystem" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="tgbtnGuest" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tgbtnSupplier" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tgbtnPharmacist" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tgbtnDrug" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tgbtnLogin" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbCategory" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbSystem" alignment="0" max="32767" attributes="0"/>
                           <Component id="tgbtnBuyOrder" alignment="0" max="32767" attributes="0"/>
                           <Component id="tgbtnReport" alignment="0" pref="173" max="32767" attributes="0"/>
                           <Component id="lbReport" alignment="0" max="32767" attributes="0"/>
@@ -181,12 +179,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="422" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="588" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="433" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
