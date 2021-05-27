@@ -29,6 +29,16 @@ public class AddRBuyFrm extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        dateComponentFormatter1 = new org.jdatepicker.impl.DateComponentFormatter();
+        jDateComponentFactory1 = new org.jdatepicker.JDateComponentFactory();
+        jDatePickerUtil1 = new org.jdatepicker.util.JDatePickerUtil();
+        sqlDateModel1 = new org.jdatepicker.impl.SqlDateModel();
+        utilCalendarModel1 = new org.jdatepicker.impl.UtilCalendarModel();
+        main1 = new controler.main();
+        jDatePickerUtil2 = new org.jdatepicker.util.JDatePickerUtil();
+        utilDateModel1 = new org.jdatepicker.impl.UtilDateModel();
+        utilCalendarModel2 = new org.jdatepicker.impl.UtilCalendarModel();
+        sqlDateModel2 = new org.jdatepicker.impl.SqlDateModel();
         lbBuyReceipt = new javax.swing.JLabel();
         lbBuyID = new javax.swing.JLabel();
         tfBuyID = new javax.swing.JTextField();
@@ -46,7 +56,7 @@ public class AddRBuyFrm extends javax.swing.JFrame {
         tbDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        tfDateBuy = new javax.swing.JTextField();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,8 +134,6 @@ public class AddRBuyFrm extends javax.swing.JFrame {
 
         jTextField4.setText("hàm tính tổng trị giá");
 
-        tfDateBuy.setText("Sẽ để DatePicker");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,7 +149,6 @@ public class AddRBuyFrm extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
                         .addComponent(jTextField4))
-                    .addComponent(lbDrugList)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,15 +157,16 @@ public class AddRBuyFrm extends javax.swing.JFrame {
                             .addComponent(lbPharmacistName)
                             .addComponent(lbSupplierID)
                             .addComponent(lbSupplierName)
-                            .addComponent(lbDateBuy))
-                        .addGap(58, 58, 58)
+                            .addComponent(lbDateBuy)
+                            .addComponent(lbDrugList))
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                             .addComponent(tfSupplierName)
-                            .addComponent(tfDateBuy)
                             .addComponent(tfBuyID)
                             .addComponent(cboxPharmacistID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cboxSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(cboxSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -187,18 +195,18 @@ public class AddRBuyFrm extends javax.swing.JFrame {
                     .addComponent(lbSupplierName)
                     .addComponent(tfSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbDateBuy)
-                    .addComponent(tfDateBuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(lbDrugList)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,6 +265,11 @@ public class AddRBuyFrm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboxPharmacistID;
     private javax.swing.JComboBox<String> cboxSupplierID;
+    private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
+    private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
+    private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil2;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -270,10 +283,15 @@ public class AddRBuyFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbPharmacistName;
     private javax.swing.JLabel lbSupplierID;
     private javax.swing.JLabel lbSupplierName;
+    private controler.main main1;
+    private org.jdatepicker.impl.SqlDateModel sqlDateModel1;
+    private org.jdatepicker.impl.SqlDateModel sqlDateModel2;
     private javax.swing.JTable tbDrugList;
     private javax.swing.JTextField tfBuyID;
-    private javax.swing.JTextField tfDateBuy;
     private javax.swing.JTextField tfPharmacistName;
     private javax.swing.JTextField tfSupplierName;
+    private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel1;
+    private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel2;
+    private org.jdatepicker.impl.UtilDateModel utilDateModel1;
     // End of variables declaration//GEN-END:variables
 }
