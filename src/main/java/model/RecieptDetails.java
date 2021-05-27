@@ -1,16 +1,16 @@
 package model;
 
-public class InvoiceDetails {
+public class RecieptDetails {
     private String sMABH;
     private String sMATHUOC;
     private int iSL;
     
-    public InvoiceDetails (String sMABH, String sMATHUOC, int iSL) {
+    public RecieptDetails (String sMABH, String sMATHUOC, int iSL) {
         this.sMABH = sMABH;
         this.sMATHUOC = sMATHUOC;
         this.iSL = iSL;
     }
-    public InvoiceDetails () {  
+    public RecieptDetails () {  
     }
 
     public String getsMABH() {

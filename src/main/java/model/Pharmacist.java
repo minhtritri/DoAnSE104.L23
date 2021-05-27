@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Staff {
+public class Pharmacist {
     private String MaNV;
     private String HoTen;
     private Date NgaySinh;
@@ -12,7 +12,7 @@ public class Staff {
     private Date NGAYVL;
     private int CALV;
 
-    public Staff(String MaNV, String HoTen, Date NgaySinh, String GioiTinh, String DiaChi, String SDT, Date NGAYVL, int CALV) {
+    public Pharmacist(String MaNV, String HoTen, Date NgaySinh, String GioiTinh, String DiaChi, String SDT, Date NGAYVL, int CALV) {
         this.MaNV = MaNV;
         this.HoTen = HoTen;
         this.NgaySinh = NgaySinh;

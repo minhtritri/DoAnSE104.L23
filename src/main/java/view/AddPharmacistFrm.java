@@ -9,12 +9,12 @@ package view;
  *
  * @author anhha
  */
-public class AddStaffFrm extends javax.swing.JFrame {
+public class AddPharmacistFrm extends javax.swing.JFrame {
 
     /**
      * Creates new form AddStaffFrm
      */
-    public AddStaffFrm() {
+    public AddPharmacistFrm() {
         initComponents();
     }
 
@@ -29,7 +29,7 @@ public class AddStaffFrm extends javax.swing.JFrame {
 
         jTextField5 = new javax.swing.JTextField();
         jLabel_titile = new javax.swing.JLabel();
-        jLabel_staffid = new javax.swing.JLabel();
+        jLabel_pharmacistid = new javax.swing.JLabel();
         jLabel_staffname = new javax.swing.JLabel();
         jLabel_dateofbirth = new javax.swing.JLabel();
         jLabel_sex = new javax.swing.JLabel();
@@ -54,7 +54,7 @@ public class AddStaffFrm extends javax.swing.JFrame {
         jLabel_titile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_titile.setText("Nhân Viên");
 
-        jLabel_staffid.setText("Mã nhân viên: ");
+        jLabel_pharmacistid.setText("Mã nhân viên: ");
 
         jLabel_staffname.setText("Họ tên:");
 
@@ -103,7 +103,7 @@ public class AddStaffFrm extends javax.swing.JFrame {
                     .addComponent(jLabel_phonenumber)
                     .addComponent(jLabel_address)
                     .addComponent(jLabel_sex)
-                    .addComponent(jLabel_staffid)
+                    .addComponent(jLabel_pharmacistid)
                     .addComponent(jLabel_staffname)
                     .addComponent(jLabel_dateofbirth)
                     .addComponent(jButton_add))
@@ -131,7 +131,7 @@ public class AddStaffFrm extends javax.swing.JFrame {
                 .addComponent(jLabel_titile)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_staffid)
+                    .addComponent(jLabel_pharmacistid)
                     .addComponent(jTextField_staffid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -197,20 +197,21 @@ public class AddStaffFrm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddStaffFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddStaffFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddStaffFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddStaffFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddStaffFrm().setVisible(true);
+                new AddPharmacistFrm().setVisible(true);
             }
         });
     }
@@ -221,10 +222,10 @@ public class AddStaffFrm extends javax.swing.JFrame {
     private javax.swing.JButton jButton_reset;
     private javax.swing.JLabel jLabel_address;
     private javax.swing.JLabel jLabel_dateofbirth;
+    private javax.swing.JLabel jLabel_pharmacistid;
     private javax.swing.JLabel jLabel_phonenumber;
     private javax.swing.JLabel jLabel_sex;
     private javax.swing.JLabel jLabel_shift;
-    private javax.swing.JLabel jLabel_staffid;
     private javax.swing.JLabel jLabel_staffname;
     private javax.swing.JLabel jLabel_titile;
     private javax.swing.JTextField jTextField5;

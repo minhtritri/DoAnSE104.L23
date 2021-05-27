@@ -37,7 +37,7 @@
                   <Component id="jLabel_phonenumber" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_address" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_sex" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_staffid" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel_pharmacistid" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_staffname" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_dateofbirth" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton_add" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
               <Component id="jLabel_titile" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel_staffid" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel_pharmacistid" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextField_staffid" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
         <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel_staffid">
+    <Component class="javax.swing.JLabel" name="jLabel_pharmacistid">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ma&#x303; nh&#xe2;n vi&#xea;n: "/>
       </Properties>
