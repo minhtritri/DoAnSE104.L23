@@ -111,8 +111,8 @@
                               </Group>
                               <Component id="lbReport" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="tgbtnRBuy" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
-                          <Component id="tgbtnRSell" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="tgbtnImportVoucher" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="tgbtnReceipt" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
                           <Component id="tgbtnLogin" alignment="0" min="-2" pref="173" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -139,9 +139,9 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lbSellBuy" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="tgbtnRSell" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnReceipt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tgbtnRBuy" min="-2" max="-2" attributes="0"/>
+                      <Component id="tgbtnImportVoucher" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lbReport" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -207,20 +207,23 @@
                 <Property name="text" type="java.lang.String" value="Mua/B&#xe1;n thu&#x1ed1;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tgbtnRSell">
+            <Component class="javax.swing.JToggleButton" name="tgbtnReceipt">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ho&#xe1; &#x111;&#x1a1;n b&#xe1;n h&#xe0;ng"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tgbtnRSellActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tgbtnReceiptActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="tgbtnRBuy">
+            <Component class="javax.swing.JToggleButton" name="tgbtnImportVoucher">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Phi&#x1ebf;u nh&#x1ead;p h&#xe0;ng"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tgbtnRBuyActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tgbtnImportVoucherActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbReport">

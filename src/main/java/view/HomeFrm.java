@@ -1,40 +1,88 @@
 package view;
 
 import java.awt.CardLayout;
+import javax.swing.JToggleButton;
 
 public class HomeFrm extends javax.swing.JFrame {
 
-    static HomeFrm instance;
+    public JToggleButton getTgbtnDrug() {
+        return tgbtnDrug;
+    }
 
-    CategoryPanel pnDrug = new CategoryPanel("Thuốc");
-    CategoryPanel pnPharmacist = new CategoryPanel("Nhân viên dược sĩ");
-    CategoryPanel pnSupplier = new CategoryPanel("Nhà cung cấp");
-    CategoryPanel pnCustomer = new CategoryPanel("Khách hàng thành viên");
-    CategoryPanel pnRSell = new CategoryPanel("Hoá đơn bán hàng");
-    CategoryPanel pnRBuy = new CategoryPanel("Phiếu nhập hàng");
-    CategoryPanel pnReport = new CategoryPanel("Báo cáo thống kê");
+    public JToggleButton getTgbtnPharmacist() {
+        return tgbtnPharmacist;
+    }
+
+    public JToggleButton getTgbtnCustomer() {
+        return tgbtnCustomer;
+    }
+
+    public JToggleButton getTgbtnSupplier() {
+        return tgbtnSupplier;
+    }
+
+    public JToggleButton getTgbtnReceipt() {
+        return tgbtnReceipt;
+    }
+
+    public JToggleButton getTgbtnImportVoucher() {
+        return tgbtnImportVoucher;
+    }
+
+    public JToggleButton getTgbtnReport() {
+        return tgbtnReport;
+    }
+
+    private static final HomeFrm instance = new HomeFrm();
+
+//    CategoryPanel pnDrug = new CategoryPanel("Thuốc");
+//    CategoryPanel pnPharmacist = new CategoryPanel("Nhân viên dược sĩ");
+//    CategoryPanel pnSupplier = new CategoryPanel("Nhà cung cấp");
+//    CategoryPanel pnCustomer = new CategoryPanel("Khách hàng thành viên");
+//    CategoryPanel pnRSell = new CategoryPanel("Hoá đơn bán hàng");
+//    CategoryPanel pnRBuy = new CategoryPanel("Phiếu nhập hàng");
+//    CategoryPanel pnReport = new CategoryPanel("Báo cáo thống kê");
+    CategoryPanel mainPanel = new CategoryPanel();
 
     public HomeFrm() {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
         initComponents();
         //grpMenuBar.add(tgbtnLogin);
         grpMenuBar.add(tgbtnDrug);
         grpMenuBar.add(tgbtnPharmacist);
         grpMenuBar.add(tgbtnSupplier);
         grpMenuBar.add(tgbtnCustomer);
-        grpMenuBar.add(tgbtnRBuy);
-        grpMenuBar.add(tgbtnRSell);
+        grpMenuBar.add(tgbtnImportVoucher);
+        grpMenuBar.add(tgbtnReceipt);
         grpMenuBar.add(tgbtnReport);
 
         pnContainer.setLayout(new CardLayout());
-        pnContainer.add(pnDrug);
-        pnContainer.add(pnPharmacist);
-        pnContainer.add(pnSupplier);
-        pnContainer.add(pnCustomer);
-        pnContainer.add(pnRBuy);
-        pnContainer.add(pnRSell);
-        pnContainer.add(pnReport);
-
+        pnContainer.add(mainPanel);
+        mainPanel.setVisible(true);
         pnContainer.setVisible(false);
+
+        this.setVisible(true);
     }
 
     public static HomeFrm getInstance() {
@@ -57,8 +105,8 @@ public class HomeFrm extends javax.swing.JFrame {
         tgbtnSupplier = new javax.swing.JToggleButton();
         tgbtnCustomer = new javax.swing.JToggleButton();
         lbSellBuy = new javax.swing.JLabel();
-        tgbtnRSell = new javax.swing.JToggleButton();
-        tgbtnRBuy = new javax.swing.JToggleButton();
+        tgbtnReceipt = new javax.swing.JToggleButton();
+        tgbtnImportVoucher = new javax.swing.JToggleButton();
         lbReport = new javax.swing.JLabel();
         tgbtnReport = new javax.swing.JToggleButton();
 
@@ -122,17 +170,17 @@ public class HomeFrm extends javax.swing.JFrame {
 
         lbSellBuy.setText("Mua/Bán thuốc");
 
-        tgbtnRSell.setText("Hoá đơn bán hàng");
-        tgbtnRSell.addActionListener(new java.awt.event.ActionListener() {
+        tgbtnReceipt.setText("Hoá đơn bán hàng");
+        tgbtnReceipt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnRSellActionPerformed(evt);
+                tgbtnReceiptActionPerformed(evt);
             }
         });
 
-        tgbtnRBuy.setText("Phiếu nhập hàng");
-        tgbtnRBuy.addActionListener(new java.awt.event.ActionListener() {
+        tgbtnImportVoucher.setText("Phiếu nhập hàng");
+        tgbtnImportVoucher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnRBuyActionPerformed(evt);
+                tgbtnImportVoucherActionPerformed(evt);
             }
         });
 
@@ -163,8 +211,8 @@ public class HomeFrm extends javax.swing.JFrame {
                             .addComponent(lbSystem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tgbtnReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lbReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(tgbtnRBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tgbtnRSell, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tgbtnImportVoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tgbtnReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tgbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
@@ -188,9 +236,9 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lbSellBuy)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnRSell)
+                .addComponent(tgbtnReceipt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tgbtnRBuy)
+                .addComponent(tgbtnImportVoucher)
                 .addGap(18, 18, 18)
                 .addComponent(lbReport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -249,80 +297,43 @@ public class HomeFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_tgbtnLoginActionPerformed
 
     private void tgbtnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReportActionPerformed
-        pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(true);
+        //pnContainer.setVisible(true);
     }//GEN-LAST:event_tgbtnReportActionPerformed
 
-    private void tgbtnRSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnRSellActionPerformed
+    private void tgbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReceiptActionPerformed
+        mainPanel.setTitle("Danh sách Phiếu nhập thuốc");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(true);
-        pnReport.setVisible(false);
-    }//GEN-LAST:event_tgbtnRSellActionPerformed
+        mainPanel.setVisible(true);
+    }//GEN-LAST:event_tgbtnReceiptActionPerformed
 
-    private void tgbtnRBuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnRBuyActionPerformed
+    private void tgbtnImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnImportVoucherActionPerformed
+        mainPanel.setTitle("Danh sách Hóa đơn bán thuốc");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(true);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(false);
-    }//GEN-LAST:event_tgbtnRBuyActionPerformed
+        mainPanel.setVisible(true);
+    }//GEN-LAST:event_tgbtnImportVoucherActionPerformed
 
     private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
+        mainPanel.setTitle("Danh sách Khách hàng thành viên");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(true);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(false);
+        mainPanel.setVisible(true);
     }//GEN-LAST:event_tgbtnCustomerActionPerformed
 
     private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
+        mainPanel.setTitle("Danh sách Nhà cung cấp");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(true);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(false);
+        mainPanel.setVisible(true);
     }//GEN-LAST:event_tgbtnSupplierActionPerformed
 
     private void tgbtnPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnPharmacistActionPerformed
+        mainPanel.setTitle("Danh sách Nhân viên Dược sĩ");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(true);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(false);
+        mainPanel.setVisible(true);
     }//GEN-LAST:event_tgbtnPharmacistActionPerformed
 
     private void tgbtnDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnDrugActionPerformed
+        mainPanel.setTitle("Danh sách Thuốc");
         pnContainer.setVisible(true);
-        pnDrug.setVisible(true);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnRBuy.setVisible(false);
-        pnRSell.setVisible(false);
-        pnReport.setVisible(false);
+        mainPanel.setVisible(true);
     }//GEN-LAST:event_tgbtnDrugActionPerformed
 
     /**
@@ -330,38 +341,9 @@ public class HomeFrm extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            /* Set the Nimbus look and feel */
-            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-             */
-            try {
-                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
-                }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(HomeFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            }
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>       
+        // garbage colletor : 
+        HomeFrm.getInstance();
 
-            instance = new HomeFrm();
-
-            instance.setVisible(true);
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -375,10 +357,10 @@ public class HomeFrm extends javax.swing.JFrame {
     private javax.swing.JPanel pnContainer;
     private javax.swing.JToggleButton tgbtnCustomer;
     private javax.swing.JToggleButton tgbtnDrug;
+    private javax.swing.JToggleButton tgbtnImportVoucher;
     private javax.swing.JButton tgbtnLogin;
     private javax.swing.JToggleButton tgbtnPharmacist;
-    private javax.swing.JToggleButton tgbtnRBuy;
-    private javax.swing.JToggleButton tgbtnRSell;
+    public javax.swing.JToggleButton tgbtnReceipt;
     private javax.swing.JToggleButton tgbtnReport;
     private javax.swing.JToggleButton tgbtnSupplier;
     // End of variables declaration//GEN-END:variables

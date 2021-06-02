@@ -42,7 +42,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         jButton_reset = new javax.swing.JButton();
         jButton_cancel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_title.setText("Nhà Cung Cấp");

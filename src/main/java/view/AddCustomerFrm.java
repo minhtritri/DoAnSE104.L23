@@ -9,12 +9,12 @@ package view;
  *
  * @author anhha
  */
-public class AddGuestFrm extends javax.swing.JFrame {
+public class AddCustomerFrm extends javax.swing.JFrame {
 
     /**
      * Creates new form AddGuestFrm
      */
-    public AddGuestFrm() {
+    public AddCustomerFrm() {
         initComponents();
     }
 
@@ -32,15 +32,15 @@ public class AddGuestFrm extends javax.swing.JFrame {
         jLabel_guestname = new javax.swing.JLabel();
         jLabel_guestsex = new javax.swing.JLabel();
         jLabel_guestaddress = new javax.swing.JLabel();
-        jTextField_guestid = new javax.swing.JTextField();
-        jTextField_guestname = new javax.swing.JTextField();
-        jTextField_guestsex = new javax.swing.JTextField();
-        jTextField_guestaddress = new javax.swing.JTextField();
-        jButton_add = new javax.swing.JButton();
-        jButton_reset = new javax.swing.JButton();
-        jButton_cancel = new javax.swing.JButton();
+        txtCustomerID = new javax.swing.JTextField();
+        txtCustomerName = new javax.swing.JTextField();
+        txtCustomerAddress = new javax.swing.JTextField();
+        btnAddCustomer = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        cmbCustomerSex = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_title.setText("Khách Hàng");
@@ -53,23 +53,19 @@ public class AddGuestFrm extends javax.swing.JFrame {
 
         jLabel_guestaddress.setText("Địa chỉ:");
 
-        jTextField_guestname.addActionListener(new java.awt.event.ActionListener() {
+        txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_guestnameActionPerformed(evt);
+                txtCustomerNameActionPerformed(evt);
             }
         });
 
-        jTextField_guestsex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_guestsexActionPerformed(evt);
-            }
-        });
+        btnAddCustomer.setText("Thêm");
 
-        jButton_add.setText("Thêm");
+        btnReset.setText("Làm mới");
 
-        jButton_reset.setText("Reset");
+        btnCancel.setText("Huỷ");
 
-        jButton_cancel.setText("Huỷ");
+        cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,21 +82,21 @@ public class AddGuestFrm extends javax.swing.JFrame {
                             .addComponent(jLabel_guestaddress))
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField_guestid)
-                            .addComponent(jTextField_guestname)
-                            .addComponent(jTextField_guestsex)
-                            .addComponent(jTextField_guestaddress)
+                            .addComponent(txtCustomerID)
+                            .addComponent(txtCustomerName)
+                            .addComponent(txtCustomerAddress)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(jLabel_title)
-                                .addGap(0, 113, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(cmbCustomerSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(jButton_add)
+                        .addComponent(btnAddCustomer)
                         .addGap(62, 62, 62)
-                        .addComponent(jButton_reset)
+                        .addComponent(btnReset)
                         .addGap(49, 49, 49)
-                        .addComponent(jButton_cancel)))
+                        .addComponent(btnCancel)))
                 .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
@@ -111,52 +107,48 @@ public class AddGuestFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_goestid)
-                    .addComponent(jTextField_guestid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_guestname)
-                    .addComponent(jTextField_guestname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_guestsex)
-                    .addComponent(jTextField_guestsex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbCustomerSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_guestaddress)
-                    .addComponent(jTextField_guestaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_add)
-                    .addComponent(jButton_reset)
-                    .addComponent(jButton_cancel))
+                    .addComponent(btnAddCustomer)
+                    .addComponent(btnReset)
+                    .addComponent(btnCancel))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_guestsexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_guestsexActionPerformed
+    private void txtCustomerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_guestsexActionPerformed
-
-    private void jTextField_guestnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_guestnameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_guestnameActionPerformed
+    }//GEN-LAST:event_txtCustomerNameActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_add;
-    private javax.swing.JButton jButton_cancel;
-    private javax.swing.JButton jButton_reset;
+    private javax.swing.JButton btnAddCustomer;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnReset;
+    private javax.swing.JComboBox<String> cmbCustomerSex;
     private javax.swing.JLabel jLabel_goestid;
     private javax.swing.JLabel jLabel_guestaddress;
     private javax.swing.JLabel jLabel_guestname;
     private javax.swing.JLabel jLabel_guestsex;
     private javax.swing.JLabel jLabel_title;
-    private javax.swing.JTextField jTextField_guestaddress;
-    private javax.swing.JTextField jTextField_guestid;
-    private javax.swing.JTextField jTextField_guestname;
-    private javax.swing.JTextField jTextField_guestsex;
+    private javax.swing.JTextField txtCustomerAddress;
+    private javax.swing.JTextField txtCustomerID;
+    private javax.swing.JTextField txtCustomerName;
     // End of variables declaration//GEN-END:variables
 }

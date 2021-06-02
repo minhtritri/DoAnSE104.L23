@@ -9,12 +9,12 @@ package view;
  *
  * @author anhha
  */
-public class AddStaffFrm extends javax.swing.JFrame {
+public class AddPharmacistFrm extends javax.swing.JFrame {
 
     /**
      * Creates new form AddStaffFrm
      */
-    public AddStaffFrm() {
+    public AddPharmacistFrm() {
         initComponents();
     }
 
@@ -49,7 +49,7 @@ public class AddStaffFrm extends javax.swing.JFrame {
 
         jTextField5.setText("jTextField5");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel_titile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_titile.setText("Nhân Viên");
