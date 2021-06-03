@@ -11,12 +11,7 @@ package view;
  */
 public class CustomerPanel extends javax.swing.JPanel {
 
-//    public CategoryPanel(String title) {
-//        initComponents();
-//        
-//        lbTitle.setText(title);
-//        
-//    }
+
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
@@ -47,16 +42,16 @@ public class CustomerPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbIntances = new javax.swing.JTable();
+        tbListCustomer = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddInstance = new javax.swing.JButton();
-        btnDeleteInstance = new javax.swing.JButton();
-        btnEditInstance = new javax.swing.JButton();
-        btnSearchInstance = new javax.swing.JButton();
-        txtSearchBar = new javax.swing.JTextField();
+        btnAddCustomer = new javax.swing.JButton();
+        btnDeleteCustomer = new javax.swing.JButton();
+        btnEditCustomer = new javax.swing.JButton();
+        btnSearchCustomer = new javax.swing.JButton();
+        txtSearchBarCustomer = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tbIntances.setModel(new javax.swing.table.DefaultTableModel(
+        tbListCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,16 +62,13 @@ public class CustomerPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tbIntances);
+        jScrollPane1.setViewportView(tbListCustomer);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,27 +77,27 @@ public class CustomerPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddInstance.setText("Thêm");
-        btnAddInstance.addActionListener(new java.awt.event.ActionListener() {
+        btnAddCustomer.setText("Thêm");
+        btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddInstanceActionPerformed(evt);
+                btnAddCustomerActionPerformed(evt);
             }
         });
 
-        btnDeleteInstance.setText("Xoá");
+        btnDeleteCustomer.setText("Xoá");
 
-        btnEditInstance.setText("Sửa");
+        btnEditCustomer.setText("Sửa");
 
-        btnSearchInstance.setText("Tìm kiếm");
-        btnSearchInstance.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchCustomer.setText("Tìm kiếm");
+        btnSearchCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchInstanceActionPerformed(evt);
+                btnSearchCustomerActionPerformed(evt);
             }
         });
 
-        txtSearchBar.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBarCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarActionPerformed(evt);
+                txtSearchBarCustomerActionPerformed(evt);
             }
         });
 
@@ -115,26 +107,26 @@ public class CustomerPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddInstance)
+                .addComponent(btnAddCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteInstance)
+                .addComponent(btnDeleteCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditInstance)
+                .addComponent(btnEditCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSearchBar)
+                .addComponent(txtSearchBarCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchInstance)
+                .addComponent(btnSearchCustomer)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddInstance)
-                    .addComponent(btnDeleteInstance)
-                    .addComponent(btnEditInstance)
-                    .addComponent(btnSearchInstance)
-                    .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddCustomer)
+                    .addComponent(btnDeleteCustomer)
+                    .addComponent(btnEditCustomer)
+                    .addComponent(btnSearchCustomer)
+                    .addComponent(txtSearchBarCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13))
         );
 
@@ -189,33 +181,32 @@ public class CustomerPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddInstanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddInstanceActionPerformed
-        // new ThemThuoc().setVisible(true);
+    private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
         if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
             new AddCustomerFrm().setVisible(true);
         } 
-    }//GEN-LAST:event_btnAddInstanceActionPerformed
+    }//GEN-LAST:event_btnAddCustomerActionPerformed
 
-    private void btnSearchInstanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchInstanceActionPerformed
+    private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchInstanceActionPerformed
+    }//GEN-LAST:event_btnSearchCustomerActionPerformed
 
-    private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
+    private void txtSearchBarCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarActionPerformed
+    }//GEN-LAST:event_txtSearchBarCustomerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddInstance;
-    private javax.swing.JButton btnDeleteInstance;
-    private javax.swing.JButton btnEditInstance;
-    private javax.swing.JButton btnSearchInstance;
+    private javax.swing.JButton btnAddCustomer;
+    private javax.swing.JButton btnDeleteCustomer;
+    private javax.swing.JButton btnEditCustomer;
+    private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tbIntances;
-    private javax.swing.JTextField txtSearchBar;
+    private javax.swing.JTable tbListCustomer;
+    private javax.swing.JTextField txtSearchBarCustomer;
     // End of variables declaration//GEN-END:variables
 }

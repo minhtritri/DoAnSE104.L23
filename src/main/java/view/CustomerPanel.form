@@ -80,11 +80,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" pref="571" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" alignment="0" pref="583" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -104,7 +100,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tbIntances">
+                <Component class="javax.swing.JTable" name="tbListCustomer">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
@@ -127,15 +123,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAddInstance" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAddCustomer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnDeleteInstance" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDeleteCustomer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnEditInstance" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditCustomer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtSearchBar" max="32767" attributes="0"/>
+                      <Component id="txtSearchBarCustomer" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSearchInstance" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearchCustomer" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -144,11 +140,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAddInstance" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDeleteInstance" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEditInstance" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearchInstance" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtSearchBar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearchCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchBarCustomer" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
@@ -156,35 +152,35 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAddInstance">
+            <Component class="javax.swing.JButton" name="btnAddCustomer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddInstanceActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddCustomerActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnDeleteInstance">
+            <Component class="javax.swing.JButton" name="btnDeleteCustomer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditInstance">
+            <Component class="javax.swing.JButton" name="btnEditCustomer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSearchInstance">
+            <Component class="javax.swing.JButton" name="btnSearchCustomer">
               <Properties>
                 <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchInstanceActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchCustomerActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtSearchBar">
+            <Component class="javax.swing.JTextField" name="txtSearchBarCustomer">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarCustomerActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

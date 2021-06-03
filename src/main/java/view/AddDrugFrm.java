@@ -45,9 +45,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtDrugIngr = new javax.swing.JTextField();
         txtAmout = new javax.swing.JTextField();
         textPrice = new javax.swing.JTextField();
-        jButton_add = new javax.swing.JButton();
-        jButton_reset = new javax.swing.JButton();
-        jButton_cancel = new javax.swing.JButton();
+        btnAddDrug = new javax.swing.JButton();
+        btnResetDrug = new javax.swing.JButton();
+        btnCancelDrug = new javax.swing.JButton();
         txtDateImport = new javax.swing.JTextField();
         txtExpiredDate = new javax.swing.JTextField();
         txtSupplierID = new javax.swing.JTextField();
@@ -89,16 +89,16 @@ public class AddDrugFrm extends javax.swing.JFrame {
             }
         });
 
-        jButton_add.setText("Thêm");
-        jButton_add.addActionListener(new java.awt.event.ActionListener() {
+        btnAddDrug.setText("Thêm");
+        btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_addActionPerformed(evt);
+                btnAddDrugActionPerformed(evt);
             }
         });
 
-        jButton_reset.setText("Reset");
+        btnResetDrug.setText("Reset");
 
-        jButton_cancel.setText("Huỷ");
+        btnCancelDrug.setText("Huỷ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,11 +108,11 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
-                        .addComponent(jButton_add)
+                        .addComponent(btnAddDrug)
                         .addGap(50, 50, 50)
-                        .addComponent(jButton_reset)
+                        .addComponent(btnResetDrug)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_cancel))
+                        .addComponent(btnCancelDrug))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,9 +220,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
                     .addComponent(textPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_add)
-                    .addComponent(jButton_reset)
-                    .addComponent(jButton_cancel))
+                    .addComponent(btnAddDrug)
+                    .addComponent(btnResetDrug)
+                    .addComponent(btnCancelDrug))
                 .addGap(44, 44, 44))
         );
 
@@ -233,9 +233,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDrugIDActionPerformed
 
-    private void jButton_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_addActionPerformed
+    private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_addActionPerformed
+    }//GEN-LAST:event_btnAddDrugActionPerformed
 
     private void txtDrugGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDrugGroupActionPerformed
         // TODO add your handling code here:
@@ -244,9 +244,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_add;
-    private javax.swing.JButton jButton_cancel;
-    private javax.swing.JButton jButton_reset;
+    private javax.swing.JButton btnAddDrug;
+    private javax.swing.JButton btnCancelDrug;
+    private javax.swing.JButton btnResetDrug;
     private javax.swing.JLabel jLabel_amount;
     private javax.swing.JLabel jLabel_dayreception;
     private javax.swing.JLabel jLabel_drugsid;

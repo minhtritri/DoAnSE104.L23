@@ -50,9 +50,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         tbDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtSum = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
-        btnReset = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        btnAddImport = new javax.swing.JButton();
+        btnResetImport = new javax.swing.JButton();
+        btnCancelImport = new javax.swing.JButton();
         txtDateReceipt = new javax.swing.JTextField();
         txtPharmacistID = new javax.swing.JTextField();
         txtSupplierID = new javax.swing.JTextField();
@@ -124,11 +124,11 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
         txtSum.setText("hàm tính tổng trị giá");
 
-        btnAdd.setText("Thêm");
+        btnAddImport.setText("Thêm");
 
-        btnReset.setText("Reset");
+        btnResetImport.setText("Reset");
 
-        btnCancel.setText("Huỷ");
+        btnCancelImport.setText("Huỷ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,11 +142,11 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAdd)
+                        .addComponent(btnAddImport)
                         .addGap(61, 61, 61)
-                        .addComponent(btnReset)
+                        .addComponent(btnResetImport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancel))
+                        .addComponent(btnCancelImport))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
@@ -210,9 +210,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                     .addComponent(txtSum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnReset)
-                    .addComponent(btnCancel))
+                    .addComponent(btnAddImport)
+                    .addComponent(btnResetImport)
+                    .addComponent(btnCancelImport))
                 .addGap(16, 16, 16))
         );
 
@@ -230,9 +230,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnAddImport;
+    private javax.swing.JButton btnCancelImport;
+    private javax.swing.JButton btnResetImport;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;

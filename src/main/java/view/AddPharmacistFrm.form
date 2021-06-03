@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -27,9 +27,9 @@
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="JButton_add" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAddPharmacist" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton_reset" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnResetPharmacist" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -48,20 +48,21 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jComboBox_ca" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Component id="jButton_cancel" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jcombobox_sex" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextField_yeartowork" max="32767" attributes="0"/>
-                                          <Component id="jTextField_name" max="32767" attributes="0"/>
-                                          <Component id="jTextField_yearofbirth" max="32767" attributes="0"/>
-                                          <Component id="jTextField_address" max="32767" attributes="0"/>
-                                          <Component id="jTextField5_phonenumber" alignment="0" pref="219" max="32767" attributes="0"/>
-                                      </Group>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btnCancelPharmacist" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtYearWork" max="32767" attributes="0"/>
+                                      <Component id="txtPharmacistID" max="32767" attributes="0"/>
+                                      <Component id="txtPharmacistDOB" max="32767" attributes="0"/>
+                                      <Component id="txtPharmacistAddress" max="32767" attributes="0"/>
+                                      <Component id="txtPharmacistPhone" alignment="0" pref="219" max="32767" attributes="0"/>
+                                      <Component id="cmbPharmacistSex" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="cmbShift" min="-2" pref="219" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -78,43 +79,43 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_name" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistID" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_yeartowork" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtYearWork" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_yearofbirth" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistDOB" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_address" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistAddress" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jcombobox_sex" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbPharmacistSex" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField5_phonenumber" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistPhone" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox_ca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbShift" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JButton_add" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton_reset" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton_cancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAddPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnResetPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCancelPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="69" max="32767" attributes="0"/>
           </Group>
@@ -165,25 +166,46 @@
         <Property name="text" type="java.lang.String" value="Ca:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_name">
+    <Component class="javax.swing.JTextField" name="txtPharmacistID">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_nameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPharmacistIDActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_yeartowork">
+    <Component class="javax.swing.JTextField" name="txtYearWork">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_yearofbirth">
+    <Component class="javax.swing.JTextField" name="txtPharmacistDOB">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_address">
+    <Component class="javax.swing.JTextField" name="txtPharmacistAddress">
     </Component>
-    <Component class="javax.swing.JComboBox" name="jcombobox_sex">
+    <Component class="javax.swing.JComboBox" name="cmbPharmacistSex">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+          <StringArray count="3">
+            <StringItem index="0" value="Nam"/>
+            <StringItem index="1" value="N&#x1eef;"/>
+            <StringItem index="2" value="Kh&#xe1;c"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbPharmacistSexActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPharmacistPhone">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPharmacistPhoneActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbShift">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Ca 1"/>
+            <StringItem index="1" value="Ca 2"/>
+            <StringItem index="2" value="Ca 3"/>
           </StringArray>
         </Property>
       </Properties>
@@ -191,37 +213,17 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5_phonenumber">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5_phonenumberActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox_ca">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="JButton_add">
+    <Component class="javax.swing.JButton" name="btnAddPharmacist">
       <Properties>
         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton_reset">
+    <Component class="javax.swing.JButton" name="btnResetPharmacist">
       <Properties>
         <Property name="text" type="java.lang.String" value="reset"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton_cancel">
+    <Component class="javax.swing.JButton" name="btnCancelPharmacist">
       <Properties>
         <Property name="text" type="java.lang.String" value="Huy&#x309;"/>
       </Properties>

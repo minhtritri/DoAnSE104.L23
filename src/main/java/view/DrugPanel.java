@@ -9,14 +9,14 @@ package view;
  *
  * @author THAONGAN
  */
-public class SupplierPanel extends javax.swing.JPanel {
+public class DrugPanel extends javax.swing.JPanel {
 
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public SupplierPanel() {
+    public DrugPanel() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -42,16 +42,16 @@ public class SupplierPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbListSupplier = new javax.swing.JTable();
+        tbListDrug = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddSupplier = new javax.swing.JButton();
-        btnDeleteSupplier = new javax.swing.JButton();
-        btnEditSupplier = new javax.swing.JButton();
-        btnSearchSupplier = new javax.swing.JButton();
-        txtSearchBarSupplier = new javax.swing.JTextField();
+        btnAddDrug = new javax.swing.JButton();
+        btnDeleteDrug = new javax.swing.JButton();
+        btnEditDrug = new javax.swing.JButton();
+        btnSearchDrug = new javax.swing.JButton();
+        txtSearchBarDrug = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tbListSupplier.setModel(new javax.swing.table.DefaultTableModel(
+        tbListDrug.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -62,7 +62,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tbListSupplier);
+        jScrollPane1.setViewportView(tbListDrug);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -80,27 +80,27 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddSupplier.setText("Thêm");
-        btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnAddDrug.setText("Thêm");
+        btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddSupplierActionPerformed(evt);
+                btnAddDrugActionPerformed(evt);
             }
         });
 
-        btnDeleteSupplier.setText("Xoá");
+        btnDeleteDrug.setText("Xoá");
 
-        btnEditSupplier.setText("Sửa");
+        btnEditDrug.setText("Sửa");
 
-        btnSearchSupplier.setText("Tìm kiếm");
-        btnSearchSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchDrug.setText("Tìm kiếm");
+        btnSearchDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSupplierActionPerformed(evt);
+                btnSearchDrugActionPerformed(evt);
             }
         });
 
-        txtSearchBarSupplier.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBarDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarSupplierActionPerformed(evt);
+                txtSearchBarDrugActionPerformed(evt);
             }
         });
 
@@ -110,30 +110,30 @@ public class SupplierPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddSupplier)
+                .addComponent(btnAddDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteSupplier)
+                .addComponent(btnDeleteDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditSupplier)
+                .addComponent(btnEditDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSearchBarSupplier)
+                .addComponent(txtSearchBarDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchSupplier)
+                .addComponent(btnSearchDrug)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddSupplier)
-                    .addComponent(btnDeleteSupplier)
-                    .addComponent(btnEditSupplier)
-                    .addComponent(btnSearchSupplier)
-                    .addComponent(txtSearchBarSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAddDrug)
+                    .addComponent(btnDeleteDrug)
+                    .addComponent(btnEditDrug)
+                    .addComponent(btnSearchDrug)
+                    .addComponent(txtSearchBarDrug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13))
         );
 
-        lbTitle.setText("Nhà cung cấp");
+        lbTitle.setText("Thuốc");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,32 +184,32 @@ public class SupplierPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
-         if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
-            new AddSupplierFrm().setVisible(true);
-        }     
-    }//GEN-LAST:event_btnAddSupplierActionPerformed
+    private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
+        if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
+            new AddDrugFrm().setVisible(true);
+        }
+    }//GEN-LAST:event_btnAddDrugActionPerformed
 
-    private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSupplierActionPerformed
+    private void btnSearchDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDrugActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSupplierActionPerformed
+    }//GEN-LAST:event_btnSearchDrugActionPerformed
 
-    private void txtSearchBarSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarSupplierActionPerformed
+    private void txtSearchBarDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarDrugActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarSupplierActionPerformed
+    }//GEN-LAST:event_txtSearchBarDrugActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddSupplier;
-    private javax.swing.JButton btnDeleteSupplier;
-    private javax.swing.JButton btnEditSupplier;
-    private javax.swing.JButton btnSearchSupplier;
+    private javax.swing.JButton btnAddDrug;
+    private javax.swing.JButton btnDeleteDrug;
+    private javax.swing.JButton btnEditDrug;
+    private javax.swing.JButton btnSearchDrug;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tbListSupplier;
-    private javax.swing.JTextField txtSearchBarSupplier;
+    private javax.swing.JTable tbListDrug;
+    private javax.swing.JTextField txtSearchBarDrug;
     // End of variables declaration//GEN-END:variables
 }

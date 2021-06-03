@@ -35,18 +35,18 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField_name = new javax.swing.JTextField();
-        jTextField_yeartowork = new javax.swing.JTextField();
-        jTextField_yearofbirth = new javax.swing.JTextField();
-        jTextField_address = new javax.swing.JTextField();
-        jcombobox_sex = new javax.swing.JComboBox<>();
-        jTextField5_phonenumber = new javax.swing.JTextField();
-        jComboBox_ca = new javax.swing.JComboBox<>();
-        JButton_add = new javax.swing.JButton();
-        jButton_reset = new javax.swing.JButton();
-        jButton_cancel = new javax.swing.JButton();
+        txtPharmacistID = new javax.swing.JTextField();
+        txtYearWork = new javax.swing.JTextField();
+        txtPharmacistDOB = new javax.swing.JTextField();
+        txtPharmacistAddress = new javax.swing.JTextField();
+        cmbPharmacistSex = new javax.swing.JComboBox<>();
+        txtPharmacistPhone = new javax.swing.JTextField();
+        cmbShift = new javax.swing.JComboBox<>();
+        btnAddPharmacist = new javax.swing.JButton();
+        btnResetPharmacist = new javax.swing.JButton();
+        btnCancelPharmacist = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Dược Sĩ");
@@ -65,27 +65,32 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
 
         jLabel8.setText("Ca:");
 
-        jTextField_name.addActionListener(new java.awt.event.ActionListener() {
+        txtPharmacistID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_nameActionPerformed(evt);
+                txtPharmacistIDActionPerformed(evt);
             }
         });
 
-        jcombobox_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTextField5_phonenumber.addActionListener(new java.awt.event.ActionListener() {
+        cmbPharmacistSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
+        cmbPharmacistSex.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5_phonenumberActionPerformed(evt);
+                cmbPharmacistSexActionPerformed(evt);
             }
         });
 
-        jComboBox_ca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        txtPharmacistPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPharmacistPhoneActionPerformed(evt);
+            }
+        });
 
-        JButton_add.setText("Thêm");
+        cmbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ca 1", "Ca 2", "Ca 3" }));
 
-        jButton_reset.setText("reset");
+        btnAddPharmacist.setText("Thêm");
 
-        jButton_cancel.setText("Huỷ");
+        btnResetPharmacist.setText("reset");
+
+        btnCancelPharmacist.setText("Huỷ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,9 +100,9 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(JButton_add)
+                        .addComponent(btnAddPharmacist)
                         .addGap(72, 72, 72)
-                        .addComponent(jButton_reset))
+                        .addComponent(btnResetPharmacist))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -113,17 +118,18 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox_ca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton_cancel)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jcombobox_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField_yeartowork)
-                                            .addComponent(jTextField_name)
-                                            .addComponent(jTextField_yearofbirth)
-                                            .addComponent(jTextField_address)
-                                            .addComponent(jTextField5_phonenumber, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE))))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnCancelPharmacist)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtYearWork)
+                                        .addComponent(txtPharmacistID)
+                                        .addComponent(txtPharmacistDOB)
+                                        .addComponent(txtPharmacistAddress)
+                                        .addComponent(txtPharmacistPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                                        .addComponent(cmbPharmacistSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(cmbShift, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,49 +140,53 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField_yeartowork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtYearWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField_yearofbirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField_address, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jcombobox_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbPharmacistSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField5_phonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox_ca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JButton_add)
-                    .addComponent(jButton_reset)
-                    .addComponent(jButton_cancel))
+                    .addComponent(btnAddPharmacist)
+                    .addComponent(btnResetPharmacist)
+                    .addComponent(btnCancelPharmacist))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_nameActionPerformed
+    private void txtPharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_nameActionPerformed
+    }//GEN-LAST:event_txtPharmacistIDActionPerformed
 
-    private void jTextField5_phonenumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5_phonenumberActionPerformed
+    private void txtPharmacistPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5_phonenumberActionPerformed
+    }//GEN-LAST:event_txtPharmacistPhoneActionPerformed
+
+    private void cmbPharmacistSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPharmacistSexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPharmacistSexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,10 +194,11 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JButton_add;
-    private javax.swing.JButton jButton_cancel;
-    private javax.swing.JButton jButton_reset;
-    private javax.swing.JComboBox<String> jComboBox_ca;
+    private javax.swing.JButton btnAddPharmacist;
+    private javax.swing.JButton btnCancelPharmacist;
+    private javax.swing.JButton btnResetPharmacist;
+    private javax.swing.JComboBox<String> cmbPharmacistSex;
+    private javax.swing.JComboBox<String> cmbShift;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -196,11 +207,10 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField5_phonenumber;
-    private javax.swing.JTextField jTextField_address;
-    private javax.swing.JTextField jTextField_name;
-    private javax.swing.JTextField jTextField_yearofbirth;
-    private javax.swing.JTextField jTextField_yeartowork;
-    private javax.swing.JComboBox<String> jcombobox_sex;
+    private javax.swing.JTextField txtPharmacistAddress;
+    private javax.swing.JTextField txtPharmacistDOB;
+    private javax.swing.JTextField txtPharmacistID;
+    private javax.swing.JTextField txtPharmacistPhone;
+    private javax.swing.JTextField txtYearWork;
     // End of variables declaration//GEN-END:variables
 }

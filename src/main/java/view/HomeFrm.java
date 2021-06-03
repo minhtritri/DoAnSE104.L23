@@ -35,17 +35,11 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private static final HomeFrm instance = new HomeFrm();
 
-//    CategoryPanel pnDrug = new CategoryPanel("Thuốc");
-//    CategoryPanel pnPharmacist = new CategoryPanel("Nhân viên dược sĩ");
-//    CategoryPanel pnSupplier = new CategoryPanel("Nhà cung cấp");
-//    CategoryPanel pnCustomer = new CategoryPanel("Khách hàng thành viên");
-//    CategoryPanel pnRSell = new CategoryPanel("Hoá đơn bán hàng");
-//    CategoryPanel pnRBuy = new CategoryPanel("Phiếu nhập hàng");
-//    CategoryPanel pnReport = new CategoryPanel("Báo cáo thống kê");
-    CustomerPanel panel_Customer = new CustomerPanel();
-    PharmacisPanel panel_Pharmacis = new PharmacisPanel();
-    DrugsPanel panel_Drugs = new DrugsPanel();
-    SupplierPanel panel_Supplier = new SupplierPanel();
+
+    CustomerPanel pnCustomer = new CustomerPanel();
+    PharmacistPanel pnPharmacist = new PharmacistPanel();
+    DrugPanel pnDrug = new DrugPanel();
+    SupplierPanel pnSupplier = new SupplierPanel();
     
     
     
@@ -86,10 +80,10 @@ public class HomeFrm extends javax.swing.JFrame {
         pnContainer.setLayout(new CardLayout());
       
         //pnContainer.add(mainPanel);
-        panel_Customer.setVisible(true);
-        panel_Pharmacis.setVisible(true);
-        panel_Drugs.setVisible(true);
-        panel_Supplier.setVisible(true);
+        pnCustomer.setVisible(true);
+        pnPharmacist.setVisible(true);
+        pnDrug.setVisible(true);
+        pnSupplier.setVisible(true);
         
         pnContainer.setVisible(false);
 
@@ -333,23 +327,23 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
        
-        pnContainer.add(panel_Customer);
-        panel_Customer.setVisible(true);
+        pnContainer.add(pnCustomer);
+        pnCustomer.setVisible(true);
         pnContainer.setVisible(true);
-        panel_Drugs.setVisible(false);
-        panel_Pharmacis.setVisible(false);
-        panel_Supplier.setVisible(false);
+        pnDrug.setVisible(false);
+        pnPharmacist.setVisible(false);
+        pnSupplier.setVisible(false);
         
     }//GEN-LAST:event_tgbtnCustomerActionPerformed
 
     private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
        
-        pnContainer.add(panel_Supplier);
-        panel_Supplier.setVisible(true);
+        pnContainer.add(pnSupplier);
+        pnSupplier.setVisible(true);
         pnContainer.setVisible(true);
-        panel_Customer.setVisible(false);
-        panel_Drugs.setVisible(false);
-        panel_Pharmacis.setVisible(false);
+        pnCustomer.setVisible(false);
+        pnDrug.setVisible(false);
+        pnPharmacist.setVisible(false);
         
         
         
@@ -357,12 +351,12 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private void tgbtnPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnPharmacistActionPerformed
         
-        pnContainer.add(panel_Pharmacis);
+        pnContainer.add(pnPharmacist);
         pnContainer.setVisible(true);
-        panel_Pharmacis.setVisible(true);
-        panel_Drugs.setVisible(false);
-        panel_Supplier.setVisible(false);
-        panel_Customer.setVisible(false);
+        pnPharmacist.setVisible(true);
+        pnDrug.setVisible(false);
+        pnSupplier.setVisible(false);
+        pnCustomer.setVisible(false);
         
         
         
@@ -372,11 +366,11 @@ public class HomeFrm extends javax.swing.JFrame {
        
         pnContainer.setVisible(true);
         
-        pnContainer.add(panel_Drugs);
-        panel_Drugs.setVisible(true);
-        panel_Pharmacis.setVisible(false);
-        panel_Supplier.setVisible(false);
-        panel_Customer.setVisible(false);
+        pnContainer.add(pnDrug);
+        pnDrug.setVisible(true);
+        pnPharmacist.setVisible(false);
+        pnSupplier.setVisible(false);
+        pnCustomer.setVisible(false);
         
         
     }//GEN-LAST:event_tgbtnDrugActionPerformed

@@ -43,10 +43,10 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
-        txtSum = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
-        btnReset = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        txtSumReceipt = new javax.swing.JTextField();
+        btnAddReceipt = new javax.swing.JButton();
+        btnResetReceipt = new javax.swing.JButton();
+        btnCancelReceipt = new javax.swing.JButton();
         txtDateReceipt = new javax.swing.JTextField();
         txtPharmacistID = new javax.swing.JTextField();
         txtCustomerID = new javax.swing.JTextField();
@@ -115,18 +115,18 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         jLabel8.setText("Tổng");
 
-        txtSum.setText("hàm tính tổng trị giá");
+        txtSumReceipt.setText("hàm tính tổng trị giá");
 
-        btnAdd.setText("Thêm");
+        btnAddReceipt.setText("Thêm");
 
-        btnReset.setText("Reset");
-        btnReset.addActionListener(new java.awt.event.ActionListener() {
+        btnResetReceipt.setText("Reset");
+        btnResetReceipt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetActionPerformed(evt);
+                btnResetReceiptActionPerformed(evt);
             }
         });
 
-        btnCancel.setText("Huỷ");
+        btnCancelReceipt.setText("Huỷ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,16 +161,16 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(btnAdd))
+                                    .addComponent(btnAddReceipt))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(72, 72, 72)
-                                        .addComponent(txtSum))
+                                        .addComponent(txtSumReceipt))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(63, 63, 63)
-                                        .addComponent(btnReset)
+                                        .addComponent(btnResetReceipt)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnCancel)))))
+                                        .addComponent(btnCancelReceipt)))))
                         .addGap(0, 31, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -210,13 +210,13 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(txtSum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSumReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnReset)
+                    .addComponent(btnResetReceipt)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCancel)
-                        .addComponent(btnAdd)))
+                        .addComponent(btnCancelReceipt)
+                        .addComponent(btnAddReceipt)))
                 .addGap(25, 25, 25))
         );
 
@@ -231,16 +231,16 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfGuestNameActionPerformed
 
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+    private void btnResetReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetReceiptActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnResetActionPerformed
+    }//GEN-LAST:event_btnResetReceiptActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnAddReceipt;
+    private javax.swing.JButton btnCancelReceipt;
+    private javax.swing.JButton btnResetReceipt;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -260,6 +260,6 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtCustomerID;
     private javax.swing.JTextField txtDateReceipt;
     private javax.swing.JTextField txtPharmacistID;
-    private javax.swing.JTextField txtSum;
+    private javax.swing.JTextField txtSumReceipt;
     // End of variables declaration//GEN-END:variables
 }

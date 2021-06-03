@@ -38,9 +38,9 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         txtSupplierAddress = new javax.swing.JTextField();
         txtSupplierPhone = new javax.swing.JTextField();
         txtSupplierBank = new javax.swing.JTextField();
-        btnAdd = new javax.swing.JButton();
-        btnReset = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        btnAddSupplier = new javax.swing.JButton();
+        btnResetSupplier = new javax.swing.JButton();
+        btnCancelSupplier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -63,19 +63,19 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             }
         });
 
-        btnAdd.setText("Thêm");
+        btnAddSupplier.setText("Thêm");
 
-        btnReset.setText("Reset");
-        btnReset.addActionListener(new java.awt.event.ActionListener() {
+        btnResetSupplier.setText("Reset");
+        btnResetSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetActionPerformed(evt);
+                btnResetSupplierActionPerformed(evt);
             }
         });
 
-        btnCancel.setText("Huỷ");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelSupplier.setText("Huỷ");
+        btnCancelSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
+                btnCancelSupplierActionPerformed(evt);
             }
         });
 
@@ -104,11 +104,11 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(btnAdd)
+                .addComponent(btnAddSupplier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(btnReset)
+                .addComponent(btnResetSupplier)
                 .addGap(50, 50, 50)
-                .addComponent(btnCancel)
+                .addComponent(btnCancelSupplier)
                 .addGap(67, 67, 67))
         );
         layout.setVerticalGroup(
@@ -138,9 +138,9 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                     .addComponent(txtSupplierBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnReset)
-                    .addComponent(btnCancel))
+                    .addComponent(btnAddSupplier)
+                    .addComponent(btnResetSupplier)
+                    .addComponent(btnCancelSupplier))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -151,19 +151,19 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSupplierAddressActionPerformed
 
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+    private void btnCancelSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelSupplierActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelActionPerformed
+    }//GEN-LAST:event_btnCancelSupplierActionPerformed
 
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+    private void btnResetSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetSupplierActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnResetActionPerformed
+    }//GEN-LAST:event_btnResetSupplierActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnAddSupplier;
+    private javax.swing.JButton btnCancelSupplier;
+    private javax.swing.JButton btnResetSupplier;
     private javax.swing.JLabel jLabel_bankaccnumber;
     private javax.swing.JLabel jLabel_supplername;
     private javax.swing.JLabel jLabel_supplieraddress;

@@ -104,7 +104,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tbListSupplier">
+                <Component class="javax.swing.JTable" name="tbListDrug">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
@@ -127,15 +127,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAddSupplier" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAddDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnDeleteSupplier" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDeleteDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnEditSupplier" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtSearchBarSupplier" max="32767" attributes="0"/>
+                      <Component id="txtSearchBarDrug" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSearchSupplier" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSearchDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -144,11 +144,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAddSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDeleteSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEditSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearchSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtSearchBarSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAddDrug" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteDrug" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditDrug" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearchDrug" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchBarDrug" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
@@ -156,42 +156,42 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAddSupplier">
+            <Component class="javax.swing.JButton" name="btnAddDrug">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddDrugActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnDeleteSupplier">
+            <Component class="javax.swing.JButton" name="btnDeleteDrug">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditSupplier">
+            <Component class="javax.swing.JButton" name="btnEditDrug">
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSearchSupplier">
+            <Component class="javax.swing.JButton" name="btnSearchDrug">
               <Properties>
                 <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchDrugActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtSearchBarSupplier">
+            <Component class="javax.swing.JTextField" name="txtSearchBarDrug">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarDrugActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="lbTitle">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nh&#xe0; cung c&#x1ea5;p"/>
+            <Property name="text" type="java.lang.String" value="Thu&#x1ed1;c"/>
           </Properties>
         </Component>
       </SubComponents>

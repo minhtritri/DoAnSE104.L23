@@ -36,8 +36,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         txtCustomerName = new javax.swing.JTextField();
         txtCustomerAddress = new javax.swing.JTextField();
         btnAddCustomer = new javax.swing.JButton();
-        btnReset = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        btnResetCustomer = new javax.swing.JButton();
+        btnCancelCustomer = new javax.swing.JButton();
         cmbCustomerSex = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -61,11 +61,11 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
         btnAddCustomer.setText("Thêm");
 
-        btnReset.setText("Làm mới");
+        btnResetCustomer.setText("Làm mới");
 
-        btnCancel.setText("Huỷ");
+        btnCancelCustomer.setText("Huỷ");
 
-        cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác", " " }));
+        cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,9 +94,9 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(btnAddCustomer)
                         .addGap(62, 62, 62)
-                        .addComponent(btnReset)
+                        .addComponent(btnResetCustomer)
                         .addGap(49, 49, 49)
-                        .addComponent(btnCancel)))
+                        .addComponent(btnCancelCustomer)))
                 .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
@@ -123,8 +123,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddCustomer)
-                    .addComponent(btnReset)
-                    .addComponent(btnCancel))
+                    .addComponent(btnResetCustomer)
+                    .addComponent(btnCancelCustomer))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -139,8 +139,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnCancelCustomer;
+    private javax.swing.JButton btnResetCustomer;
     private javax.swing.JComboBox<String> cmbCustomerSex;
     private javax.swing.JLabel jLabel_goestid;
     private javax.swing.JLabel jLabel_guestaddress;
