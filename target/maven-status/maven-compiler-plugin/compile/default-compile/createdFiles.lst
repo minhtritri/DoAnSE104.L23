@@ -2,11 +2,11 @@ model\Drugs.class
 view\AddDrugFrm$1.class
 view\ReportPanel.class
 model\DrugstoreReceipt.class
-view\AddReceiptFrm$4.class
 view\LoginFrm.class
 view\LoginFrm$3.class
 model\Guest.class
 view\AddSupplierFrm$3.class
+view\AddPharmacistFrm$4.class
 view\HomeFrm$7.class
 view\HomeFrm$4.class
 view\AddReceiptFrm$1.class
@@ -39,7 +39,6 @@ view\HomeFrm$9.class
 view\AddPharmacistFrm.class
 view\LoginFrm$2.class
 model\InvoiceDetails.class
-view\AddImportVoucherFrm$3.class
 view\CategoryPanel$3.class
 view\HomeFrm$6.class
 view\AddReceiptFrm$3.class

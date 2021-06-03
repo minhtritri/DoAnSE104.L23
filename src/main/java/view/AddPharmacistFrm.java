@@ -92,7 +92,12 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
 
         btnCancel.setText("Huỷ");
 
-        cmbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ca 1", "Ca 2", "Ca 3" }));
+        cmbShift.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbShiftActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,6 +186,10 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     private void txtPharmacistPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistPhoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPharmacistPhoneActionPerformed
+
+    private void cmbShiftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbShiftActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbShiftActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
