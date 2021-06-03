@@ -74,10 +74,10 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
                           <Component id="tfGuestName" alignment="0" max="32767" attributes="0"/>
-                          <Component id="tfDateSell" max="32767" attributes="0"/>
                           <Component id="tfSellID" alignment="0" max="32767" attributes="0"/>
                           <Component id="cboxPharmacistID" alignment="0" max="32767" attributes="0"/>
                           <Component id="cboxGuestID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -116,9 +116,9 @@
                   <Component id="tfGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbDateSell" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfDateSell" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lbDateSell" min="-2" max="-2" attributes="0"/>
+                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lbDrugList" min="-2" max="-2" attributes="0"/>
@@ -276,10 +276,7 @@
         <Property name="text" type="java.lang.String" value="h&#xe0;m t&#xed;nh t&#x1ed5;ng tr&#x1ecb; gi&#xe1;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfDateSell">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="S&#x1ebd; &#x111;&#x1ec3; DatePicker"/>
-      </Properties>
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
     </Component>
   </SubComponents>
 </Form>
