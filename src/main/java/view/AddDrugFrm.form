@@ -44,7 +44,7 @@
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtAmout" max="32767" attributes="0"/>
-                                  <Component id="jTextField_price" max="32767" attributes="0"/>
+                                  <Component id="textPrice" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -86,25 +86,23 @@
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="txtDrugIngr" min="-2" pref="205" max="-2" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                              <Component id="cmbSupplierID" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtDateImport" max="32767" attributes="0"/>
+                                                  <Component id="cmbSupplierID" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <Component id="jLabel_dayreception" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel_expirydate" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="txtExpiredDate" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel_dayreception" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel_expirydate" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jDateChooser1" max="32767" attributes="0"/>
-                                  <Component id="dateExpired" max="32767" attributes="0"/>
-                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -165,12 +163,12 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel_dayreception" min="-2" max="-2" attributes="0"/>
-                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDateImport" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel_expirydate" min="-2" max="-2" attributes="0"/>
-                  <Component id="dateExpired" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtExpiredDate" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -180,7 +178,7 @@
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel_price" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField_price" min="-2" max="-2" attributes="0"/>
+                  <Component id="textPrice" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -270,7 +268,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtAmout">
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField_price">
+    <Component class="javax.swing.JTextField" name="textPrice">
     </Component>
     <Component class="javax.swing.JButton" name="jButton_add">
       <Properties>
@@ -305,9 +303,9 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+    <Component class="javax.swing.JTextField" name="txtDateImport">
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="dateExpired">
+    <Component class="javax.swing.JTextField" name="txtExpiredDate">
     </Component>
   </SubComponents>
 </Form>

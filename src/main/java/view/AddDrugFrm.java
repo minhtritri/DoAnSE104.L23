@@ -44,13 +44,13 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtDrugType = new javax.swing.JTextField();
         txtDrugIngr = new javax.swing.JTextField();
         txtAmout = new javax.swing.JTextField();
-        jTextField_price = new javax.swing.JTextField();
+        textPrice = new javax.swing.JTextField();
         jButton_add = new javax.swing.JButton();
         jButton_reset = new javax.swing.JButton();
         jButton_cancel = new javax.swing.JButton();
         cmbSupplierID = new javax.swing.JComboBox<>();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        dateExpired = new com.toedter.calendar.JDateChooser();
+        txtDateImport = new javax.swing.JTextField();
+        txtExpiredDate = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -125,7 +125,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                                 .addGap(87, 87, 87)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtAmout)
-                                    .addComponent(jTextField_price)))
+                                    .addComponent(textPrice)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -157,16 +157,15 @@ public class AddDrugFrm extends javax.swing.JFrame {
                                                 .addComponent(txtDrugIngr, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(37, 37, 37)
-                                                .addComponent(cmbSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                                .addGap(0, 2, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtDateImport)
+                                                    .addComponent(cmbSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                                     .addComponent(jLabel_dayreception)
-                                    .addComponent(jLabel_expirydate))
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(dateExpired, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel_expirydate)
+                                        .addGap(58, 58, 58)
+                                        .addComponent(txtExpiredDate)))
+                                .addGap(0, 2, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(jLabel_title)
@@ -211,11 +210,11 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_dayreception)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDateImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_expirydate)
-                    .addComponent(dateExpired, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtExpiredDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAmout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +222,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_price)
-                    .addComponent(jTextField_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton_add)
@@ -251,11 +250,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbSupplierID;
-    private com.toedter.calendar.JDateChooser dateExpired;
     private javax.swing.JButton jButton_add;
     private javax.swing.JButton jButton_cancel;
     private javax.swing.JButton jButton_reset;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel_amount;
     private javax.swing.JLabel jLabel_dayreception;
     private javax.swing.JLabel jLabel_drugsid;
@@ -267,12 +264,14 @@ public class AddDrugFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_supplierid;
     private javax.swing.JLabel jLabel_title;
     private javax.swing.JLabel jLabel_type;
-    private javax.swing.JTextField jTextField_price;
+    private javax.swing.JTextField textPrice;
     private javax.swing.JTextField txtAmout;
+    private javax.swing.JTextField txtDateImport;
     private javax.swing.JTextField txtDrugGroup;
     private javax.swing.JTextField txtDrugID;
     private javax.swing.JTextField txtDrugIngr;
     private javax.swing.JTextField txtDrugName;
     private javax.swing.JTextField txtDrugType;
+    private javax.swing.JTextField txtExpiredDate;
     // End of variables declaration//GEN-END:variables
 }

@@ -51,11 +51,11 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tbDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jButton_add = new javax.swing.JButton();
-        jButton_reset = new javax.swing.JButton();
-        jButton_cancel = new javax.swing.JButton();
+        txtSum = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        txtDateReceipt = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,13 +131,13 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
         jLabel8.setText("Tổng");
 
-        jTextField4.setText("hàm tính tổng trị giá");
+        txtSum.setText("hàm tính tổng trị giá");
 
-        jButton_add.setText("Thêm");
+        btnAdd.setText("Thêm");
 
-        jButton_reset.setText("Reset");
+        btnReset.setText("Reset");
 
-        jButton_cancel.setText("Huỷ");
+        btnCancel.setText("Huỷ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,15 +151,15 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton_add)
+                        .addComponent(btnAdd)
                         .addGap(61, 61, 61)
-                        .addComponent(jButton_reset)
+                        .addComponent(btnReset)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_cancel))
+                        .addComponent(btnCancel))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
-                        .addComponent(jTextField4))
+                        .addComponent(txtSum))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +177,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                             .addComponent(tfBuyID)
                             .addComponent(cboxPharmacistID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cboxSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtDateReceipt))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -206,22 +206,22 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                     .addComponent(lbSupplierName)
                     .addComponent(tfSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDateBuy)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtDateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
                 .addComponent(lbDrugList)
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                    .addComponent(txtSum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_add)
-                    .addComponent(jButton_reset)
-                    .addComponent(jButton_cancel))
+                    .addComponent(btnAdd)
+                    .addComponent(btnReset)
+                    .addComponent(btnCancel))
                 .addGap(16, 16, 16))
         );
 
@@ -243,13 +243,12 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnReset;
     private javax.swing.JComboBox<String> cboxPharmacistID;
     private javax.swing.JComboBox<String> cboxSupplierID;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
-    private javax.swing.JButton jButton_add;
-    private javax.swing.JButton jButton_cancel;
-    private javax.swing.JButton jButton_reset;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil2;
@@ -257,7 +256,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lbBuyID;
     private javax.swing.JLabel lbBuyReceipt;
     private javax.swing.JLabel lbDateBuy;
@@ -273,6 +271,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JTextField tfBuyID;
     private javax.swing.JTextField tfPharmacistName;
     private javax.swing.JTextField tfSupplierName;
+    private javax.swing.JTextField txtDateReceipt;
+    private javax.swing.JTextField txtSum;
     private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel1;
     private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel2;
     private org.jdatepicker.impl.UtilDateModel utilDateModel1;
