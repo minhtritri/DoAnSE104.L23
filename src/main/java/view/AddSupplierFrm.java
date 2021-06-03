@@ -33,14 +33,14 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         jLabel_supplieraddress = new javax.swing.JLabel();
         jLabel_supplierphonenumber = new javax.swing.JLabel();
         jLabel_bankaccnumber = new javax.swing.JLabel();
-        jTextField_supplierid = new javax.swing.JTextField();
-        jTextField_suppliername = new javax.swing.JTextField();
-        jTextField_supplieraddress = new javax.swing.JTextField();
-        jTextField_supplierphonenumber = new javax.swing.JTextField();
-        jTextField_supplierbankaccnumber = new javax.swing.JTextField();
-        jButton_add = new javax.swing.JButton();
-        jButton_reset = new javax.swing.JButton();
-        jButton_cancel = new javax.swing.JButton();
+        txtSupplierID = new javax.swing.JTextField();
+        txtSupplierName = new javax.swing.JTextField();
+        txtSupplierAddress = new javax.swing.JTextField();
+        txtSupplierPhone = new javax.swing.JTextField();
+        txtSupplierBank = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -57,20 +57,25 @@ public class AddSupplierFrm extends javax.swing.JFrame {
 
         jLabel_bankaccnumber.setText("Số TK:");
 
-        jTextField_supplieraddress.addActionListener(new java.awt.event.ActionListener() {
+        txtSupplierAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField_supplieraddressActionPerformed(evt);
+                txtSupplierAddressActionPerformed(evt);
             }
         });
 
-        jButton_add.setText("Thêm");
+        btnAdd.setText("Thêm");
 
-        jButton_reset.setText("Reset");
-
-        jButton_cancel.setText("Huỷ");
-        jButton_cancel.addActionListener(new java.awt.event.ActionListener() {
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_cancelActionPerformed(evt);
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        btnCancel.setText("Huỷ");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
             }
         });
 
@@ -91,19 +96,19 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel_title)
                         .addGap(0, 128, Short.MAX_VALUE))
-                    .addComponent(jTextField_supplierphonenumber)
-                    .addComponent(jTextField_supplierbankaccnumber)
-                    .addComponent(jTextField_supplierid)
-                    .addComponent(jTextField_suppliername)
-                    .addComponent(jTextField_supplieraddress))
+                    .addComponent(txtSupplierPhone)
+                    .addComponent(txtSupplierBank)
+                    .addComponent(txtSupplierID)
+                    .addComponent(txtSupplierName)
+                    .addComponent(txtSupplierAddress))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jButton_add)
+                .addComponent(btnAdd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton_reset)
+                .addComponent(btnReset)
                 .addGap(50, 50, 50)
-                .addComponent(jButton_cancel)
+                .addComponent(btnCancel)
                 .addGap(67, 67, 67))
         );
         layout.setVerticalGroup(
@@ -114,57 +119,61 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierid)
-                    .addComponent(jTextField_supplierid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplername)
-                    .addComponent(jTextField_suppliername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplieraddress)
-                    .addComponent(jTextField_supplieraddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierphonenumber)
-                    .addComponent(jTextField_supplierphonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_bankaccnumber)
-                    .addComponent(jTextField_supplierbankaccnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_add)
-                    .addComponent(jButton_reset)
-                    .addComponent(jButton_cancel))
+                    .addComponent(btnAdd)
+                    .addComponent(btnReset)
+                    .addComponent(btnCancel))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField_supplieraddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_supplieraddressActionPerformed
+    private void txtSupplierAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSupplierAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_supplieraddressActionPerformed
+    }//GEN-LAST:event_txtSupplierAddressActionPerformed
 
-    private void jButton_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_cancelActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_cancelActionPerformed
+    }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnResetActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_add;
-    private javax.swing.JButton jButton_cancel;
-    private javax.swing.JButton jButton_reset;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnReset;
     private javax.swing.JLabel jLabel_bankaccnumber;
     private javax.swing.JLabel jLabel_supplername;
     private javax.swing.JLabel jLabel_supplieraddress;
     private javax.swing.JLabel jLabel_supplierid;
     private javax.swing.JLabel jLabel_supplierphonenumber;
     private javax.swing.JLabel jLabel_title;
-    private javax.swing.JTextField jTextField_supplieraddress;
-    private javax.swing.JTextField jTextField_supplierbankaccnumber;
-    private javax.swing.JTextField jTextField_supplierid;
-    private javax.swing.JTextField jTextField_suppliername;
-    private javax.swing.JTextField jTextField_supplierphonenumber;
+    private javax.swing.JTextField txtSupplierAddress;
+    private javax.swing.JTextField txtSupplierBank;
+    private javax.swing.JTextField txtSupplierID;
+    private javax.swing.JTextField txtSupplierName;
+    private javax.swing.JTextField txtSupplierPhone;
     // End of variables declaration//GEN-END:variables
 }
