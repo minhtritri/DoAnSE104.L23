@@ -42,8 +42,13 @@ public class HomeFrm extends javax.swing.JFrame {
 //    CategoryPanel pnRSell = new CategoryPanel("Hoá đơn bán hàng");
 //    CategoryPanel pnRBuy = new CategoryPanel("Phiếu nhập hàng");
 //    CategoryPanel pnReport = new CategoryPanel("Báo cáo thống kê");
-    CategoryPanel mainPanel = new CategoryPanel();
-
+    CustomerPanel panel_Customer = new CustomerPanel();
+    PharmacisPanel panel_Pharmacis = new PharmacisPanel();
+    DrugsPanel panel_Drugs = new DrugsPanel();
+    SupplierPanel panel_Supplier = new SupplierPanel();
+    
+    
+    
     public HomeFrm() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -78,8 +83,14 @@ public class HomeFrm extends javax.swing.JFrame {
         grpMenuBar.add(tgbtnReport);
 
         pnContainer.setLayout(new CardLayout());
-        pnContainer.add(mainPanel);
-        mainPanel.setVisible(true);
+        pnContainer.setLayout(new CardLayout());
+      
+        //pnContainer.add(mainPanel);
+        panel_Customer.setVisible(true);
+        panel_Pharmacis.setVisible(true);
+        panel_Drugs.setVisible(true);
+        panel_Supplier.setVisible(true);
+        
         pnContainer.setVisible(false);
 
         this.setVisible(true);
@@ -126,7 +137,7 @@ public class HomeFrm extends javax.swing.JFrame {
         );
         pnContainerLayout.setVerticalGroup(
             pnContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         lbSystem.setText("Hệ thống");
@@ -301,39 +312,73 @@ public class HomeFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_tgbtnReportActionPerformed
 
     private void tgbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReceiptActionPerformed
-        mainPanel.setTitle("Danh sách Phiếu nhập thuốc");
-        pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+//        mainPanel.setTitle("Danh sách Phiếu nhập thuốc");
+//
+//        pnContainer.setVisible(true);
+//        panel_Drugs.setVisible(true);
+//        panel_Pharmacis.setVisible(false);
+        
+        
+        
     }//GEN-LAST:event_tgbtnReceiptActionPerformed
 
     private void tgbtnImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnImportVoucherActionPerformed
-        mainPanel.setTitle("Danh sách Hóa đơn bán thuốc");
-        pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+//        mainPanel.setTitle("Danh sách Hóa đơn bán thuốc");
+//        pnContainer.setVisible(true);
+//        mainPanel.setVisible(true);
+        
+        
+        
     }//GEN-LAST:event_tgbtnImportVoucherActionPerformed
 
     private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
-        mainPanel.setTitle("Danh sách Khách hàng thành viên");
+       
+        pnContainer.add(panel_Customer);
+        panel_Customer.setVisible(true);
         pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+        panel_Drugs.setVisible(false);
+        panel_Pharmacis.setVisible(false);
+        panel_Supplier.setVisible(false);
+        
     }//GEN-LAST:event_tgbtnCustomerActionPerformed
 
     private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
-        mainPanel.setTitle("Danh sách Nhà cung cấp");
+       
+        pnContainer.add(panel_Supplier);
+        panel_Supplier.setVisible(true);
         pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+        panel_Customer.setVisible(false);
+        panel_Drugs.setVisible(false);
+        panel_Pharmacis.setVisible(false);
+        
+        
+        
     }//GEN-LAST:event_tgbtnSupplierActionPerformed
 
     private void tgbtnPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnPharmacistActionPerformed
-        mainPanel.setTitle("Danh sách Nhân viên Dược sĩ");
+        
+        pnContainer.add(panel_Pharmacis);
         pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+        panel_Pharmacis.setVisible(true);
+        panel_Drugs.setVisible(false);
+        panel_Supplier.setVisible(false);
+        panel_Customer.setVisible(false);
+        
+        
+        
     }//GEN-LAST:event_tgbtnPharmacistActionPerformed
 
     private void tgbtnDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnDrugActionPerformed
-        mainPanel.setTitle("Danh sách Thuốc");
+       
         pnContainer.setVisible(true);
-        mainPanel.setVisible(true);
+        
+        pnContainer.add(panel_Drugs);
+        panel_Drugs.setVisible(true);
+        panel_Pharmacis.setVisible(false);
+        panel_Supplier.setVisible(false);
+        panel_Customer.setVisible(false);
+        
+        
     }//GEN-LAST:event_tgbtnDrugActionPerformed
 
     /**

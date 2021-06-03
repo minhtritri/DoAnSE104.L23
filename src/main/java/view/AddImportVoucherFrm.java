@@ -39,11 +39,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         lbBuyID = new javax.swing.JLabel();
         tfBuyID = new javax.swing.JTextField();
         lbPharmacistID = new javax.swing.JLabel();
-        cboxPharmacistID = new javax.swing.JComboBox<>();
         lbPharmacistName = new javax.swing.JLabel();
         tfPharmacistName = new javax.swing.JTextField();
         lbSupplierID = new javax.swing.JLabel();
-        cboxSupplierID = new javax.swing.JComboBox<>();
         lbSupplierName = new javax.swing.JLabel();
         tfSupplierName = new javax.swing.JTextField();
         lbDateBuy = new javax.swing.JLabel();
@@ -56,6 +54,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         txtDateReceipt = new javax.swing.JTextField();
+        txtPharmacistID = new javax.swing.JTextField();
+        txtSupplierID = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -81,13 +81,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
         lbPharmacistID.setText("Mã nhân viên");
 
-        cboxPharmacistID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cboxPharmacistID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboxPharmacistIDActionPerformed(evt);
-            }
-        });
-
         lbPharmacistName.setText("Tên nhân viên");
 
         tfPharmacistName.setText("getPharmacistName from MANV");
@@ -98,8 +91,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         });
 
         lbSupplierID.setText("Mã nhà cung cấp");
-
-        cboxSupplierID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lbSupplierName.setText("Nhà cung cấp");
 
@@ -175,9 +166,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                             .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                             .addComponent(tfSupplierName)
                             .addComponent(tfBuyID)
-                            .addComponent(cboxPharmacistID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cboxSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtDateReceipt))))
+                            .addComponent(txtDateReceipt)
+                            .addComponent(txtPharmacistID)
+                            .addComponent(txtSupplierID))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -192,7 +183,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPharmacistID)
-                    .addComponent(cboxPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPharmacistName)
@@ -200,7 +191,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbSupplierID)
-                    .addComponent(cboxSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbSupplierName)
@@ -228,10 +219,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cboxPharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxPharmacistIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboxPharmacistIDActionPerformed
-
     private void tfPharmacistNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPharmacistNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPharmacistNameActionPerformed
@@ -246,8 +233,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnReset;
-    private javax.swing.JComboBox<String> cboxPharmacistID;
-    private javax.swing.JComboBox<String> cboxSupplierID;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
@@ -272,7 +257,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JTextField tfPharmacistName;
     private javax.swing.JTextField tfSupplierName;
     private javax.swing.JTextField txtDateReceipt;
+    private javax.swing.JTextField txtPharmacistID;
     private javax.swing.JTextField txtSum;
+    private javax.swing.JTextField txtSupplierID;
     private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel1;
     private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel2;
     private org.jdatepicker.impl.UtilDateModel utilDateModel1;

@@ -102,9 +102,9 @@
                           <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
                           <Component id="tfSupplierName" alignment="0" max="32767" attributes="0"/>
                           <Component id="tfBuyID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboxPharmacistID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cboxSupplierID" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtDateReceipt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtPharmacistID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtSupplierID" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -125,7 +125,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -135,7 +135,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cboxSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -189,24 +189,6 @@
         <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cboxPharmacistID">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxPharmacistIDActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JLabel" name="lbPharmacistName">
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
@@ -224,21 +206,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe0; cung c&#x1ea5;p"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="cboxSupplierID">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lbSupplierName">
       <Properties>
@@ -325,6 +292,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDateReceipt">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPharmacistID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtSupplierID">
     </Component>
   </SubComponents>
 </Form>

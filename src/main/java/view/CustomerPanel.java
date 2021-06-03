@@ -9,7 +9,7 @@ package view;
  *
  * @author THAONGAN
  */
-public class CategoryPanel extends javax.swing.JPanel {
+public class CustomerPanel extends javax.swing.JPanel {
 
 //    public CategoryPanel(String title) {
 //        initComponents();
@@ -21,7 +21,7 @@ public class CategoryPanel extends javax.swing.JPanel {
         this.lbTitle.setText(str);
     }
 
-    public CategoryPanel() {
+    public CustomerPanel() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -138,7 +138,7 @@ public class CategoryPanel extends javax.swing.JPanel {
                 .addGap(13, 13, 13))
         );
 
-        lbTitle.setText("getTenDanhMuc (Thuốc, Nhân Viên, ....)");
+        lbTitle.setText("Khách Hàng");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -191,19 +191,9 @@ public class CategoryPanel extends javax.swing.JPanel {
 
     private void btnAddInstanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddInstanceActionPerformed
         // new ThemThuoc().setVisible(true);
-        if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
-            new AddDrugFrm().setVisible(true);
-        } else if (HomeFrm.getInstance().getTgbtnPharmacist().isSelected()) {
-            new AddPharmacistFrm().setVisible(true);
-        } else if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
+        if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
             new AddCustomerFrm().setVisible(true);
-        } else if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
-            new AddSupplierFrm().setVisible(true);
-        } else if (HomeFrm.getInstance().getTgbtnReceipt().isSelected()) {
-            new AddReceiptFrm().setVisible(true);
-        } else if (HomeFrm.getInstance().getTgbtnImportVoucher().isSelected()) {
-            new AddImportVoucherFrm().setVisible(true);
-        }
+        } 
     }//GEN-LAST:event_btnAddInstanceActionPerformed
 
     private void btnSearchInstanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchInstanceActionPerformed

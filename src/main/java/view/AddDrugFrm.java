@@ -48,9 +48,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
         jButton_add = new javax.swing.JButton();
         jButton_reset = new javax.swing.JButton();
         jButton_cancel = new javax.swing.JButton();
-        cmbSupplierID = new javax.swing.JComboBox<>();
         txtDateImport = new javax.swing.JTextField();
         txtExpiredDate = new javax.swing.JTextField();
+        txtSupplierID = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -99,8 +99,6 @@ public class AddDrugFrm extends javax.swing.JFrame {
         jButton_reset.setText("Reset");
 
         jButton_cancel.setText("Huỷ");
-
-        cmbSupplierID.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,7 +157,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                                                 .addGap(37, 37, 37)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtDateImport)
-                                                    .addComponent(cmbSupplierID, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                                    .addComponent(txtSupplierID)))))
                                     .addComponent(jLabel_dayreception)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel_expirydate)
@@ -200,14 +198,11 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_ingredient)
                     .addComponent(txtDrugIngr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel_supplierid))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(cmbSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_supplierid)
+                    .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_dayreception)
                     .addComponent(txtDateImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -249,7 +244,6 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cmbSupplierID;
     private javax.swing.JButton jButton_add;
     private javax.swing.JButton jButton_cancel;
     private javax.swing.JButton jButton_reset;
@@ -273,5 +267,6 @@ public class AddDrugFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtDrugName;
     private javax.swing.JTextField txtDrugType;
     private javax.swing.JTextField txtExpiredDate;
+    private javax.swing.JTextField txtSupplierID;
     // End of variables declaration//GEN-END:variables
 }
