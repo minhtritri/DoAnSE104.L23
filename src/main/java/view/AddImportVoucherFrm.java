@@ -30,7 +30,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         jDatePickerUtil1 = new org.jdatepicker.util.JDatePickerUtil();
         sqlDateModel1 = new org.jdatepicker.impl.SqlDateModel();
         utilCalendarModel1 = new org.jdatepicker.impl.UtilCalendarModel();
-        main1 = new controler.main();
+        main1 = new controller.main();
         jDatePickerUtil2 = new org.jdatepicker.util.JDatePickerUtil();
         utilDateModel1 = new org.jdatepicker.impl.UtilDateModel();
         utilCalendarModel2 = new org.jdatepicker.impl.UtilCalendarModel();
@@ -51,7 +51,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtSum = new javax.swing.JTextField();
         btnAddImport = new javax.swing.JButton();
-        btnResetImport = new javax.swing.JButton();
+        btnClearImport = new javax.swing.JButton();
         btnCancelImport = new javax.swing.JButton();
         txtDateReceipt = new javax.swing.JTextField();
         txtPharmacistID = new javax.swing.JTextField();
@@ -71,13 +71,16 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thêm/Sửa Phiếu nhập thuốc");
+        setResizable(false);
 
-        lbBuyReceipt.setText("                                Hoá đơn mua thuốc (từ nhà cung cấp)");
+        lbBuyReceipt.setDisplayedMnemonic('T');
+        lbBuyReceipt.setText("                                                Phiếu nhập thuốc");
         lbBuyReceipt.setToolTipText("");
 
-        lbBuyID.setText("Mã mua hàng");
+        lbBuyID.setText("Mã phiếu nhập");
 
-        tfBuyID.setText("Sinh mã randomly");
+        tfBuyID.setText("Sinh mã ");
 
         lbPharmacistID.setText("Mã nhân viên");
 
@@ -101,21 +104,21 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
             }
         });
 
-        lbDateBuy.setText("Ngày mua");
+        lbDateBuy.setText("Ngày lập phiếu");
 
         lbDrugList.setText("Danh sách sản phẩm");
 
         tbDrugList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "MATHUOC", "SL"
+                "MATHUOC", "SL", "Đơn giá"
             }
         ));
         jScrollPane2.setViewportView(tbDrugList);
@@ -126,7 +129,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
         btnAddImport.setText("Thêm");
 
-        btnResetImport.setText("Reset");
+        btnClearImport.setText("Làm mới");
 
         btnCancelImport.setText("Huỷ");
 
@@ -144,9 +147,10 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAddImport)
                         .addGap(61, 61, 61)
-                        .addComponent(btnResetImport)
+                        .addComponent(btnClearImport)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelImport))
+                        .addComponent(btnCancelImport)
+                        .addGap(17, 17, 17))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
@@ -211,7 +215,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddImport)
-                    .addComponent(btnResetImport)
+                    .addComponent(btnClearImport)
                     .addComponent(btnCancelImport))
                 .addGap(16, 16, 16))
         );
@@ -232,7 +236,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddImport;
     private javax.swing.JButton btnCancelImport;
-    private javax.swing.JButton btnResetImport;
+    private javax.swing.JButton btnClearImport;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
@@ -249,7 +253,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbPharmacistName;
     private javax.swing.JLabel lbSupplierID;
     private javax.swing.JLabel lbSupplierName;
-    private controler.main main1;
+    private controller.main main1;
     private org.jdatepicker.impl.SqlDateModel sqlDateModel1;
     private org.jdatepicker.impl.SqlDateModel sqlDateModel2;
     private javax.swing.JTable tbDrugList;

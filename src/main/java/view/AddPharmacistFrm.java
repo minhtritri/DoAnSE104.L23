@@ -7,12 +7,12 @@ package view;
 
 /**
  *
- * @author anhha
+ * @author THAONGAN
  */
 public class AddPharmacistFrm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AddPharmacistFrm
+     * Creates new form AddPharmacist
      */
     public AddPharmacistFrm() {
         initComponents();
@@ -28,67 +28,61 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txtPharmacistID = new javax.swing.JTextField();
-        txtYearWork = new javax.swing.JTextField();
-        txtPharmacistDOB = new javax.swing.JTextField();
-        txtPharmacistAddress = new javax.swing.JTextField();
+        txtPharmacistName = new javax.swing.JTextField();
         cmbPharmacistSex = new javax.swing.JComboBox<>();
+        txtPharmacistDOB = new javax.swing.JTextField();
         txtPharmacistPhone = new javax.swing.JTextField();
-        cmbShift = new javax.swing.JComboBox<>();
+        txtPharmacistAddress = new javax.swing.JTextField();
+        txtYearWork = new javax.swing.JTextField();
+        txtPharmacistShift = new javax.swing.JComboBox<>();
         btnAddPharmacist = new javax.swing.JButton();
-        btnResetPharmacist = new javax.swing.JButton();
+        btnClearPharmacist = new javax.swing.JButton();
         btnCancelPharmacist = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thêm/Sửa Nhân viên dược sĩ");
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Dược Sĩ");
 
-        jLabel2.setText("Tên:");
+        jLabel9.setText("Mã nhân viên");
 
-        jLabel3.setText("Năm vào làm:");
+        jLabel6.setText("Giới tính:");
 
         jLabel4.setText("Năm sinh:");
 
         jLabel5.setText("Địa chỉ:");
 
-        jLabel6.setText("Giới tinh:");
-
         jLabel7.setText("SDT");
+
+        jLabel3.setText("Năm vào làm:");
 
         jLabel8.setText("Ca:");
 
-        txtPharmacistID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPharmacistIDActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Họ tên Nhân viên");
 
         cmbPharmacistSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
-        cmbPharmacistSex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPharmacistSexActionPerformed(evt);
-            }
-        });
 
-        txtPharmacistPhone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPharmacistPhoneActionPerformed(evt);
-            }
-        });
-
-        cmbShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ca 1", "Ca 2", "Ca 3" }));
+        txtPharmacistShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
         btnAddPharmacist.setText("Thêm");
 
-        btnResetPharmacist.setText("reset");
+        btnClearPharmacist.setText("Làm mới");
+        btnClearPharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearPharmacistActionPerformed(evt);
+            }
+        });
 
         btnCancelPharmacist.setText("Huỷ");
 
@@ -97,108 +91,132 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAddPharmacist)
-                        .addGap(72, 72, 72)
-                        .addComponent(btnResetPharmacist))
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel2)
                             .addComponent(jLabel6)
+                            .addComponent(jLabel4)
                             .addComponent(jLabel7)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
                             .addComponent(jLabel8)
-                            .addComponent(jLabel2))
+                            .addComponent(btnAddPharmacist))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnCancelPharmacist)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtYearWork)
-                                        .addComponent(txtPharmacistID)
-                                        .addComponent(txtPharmacistDOB)
-                                        .addComponent(txtPharmacistAddress)
-                                        .addComponent(txtPharmacistPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                        .addComponent(cmbPharmacistSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(cmbShift, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                                .addComponent(btnClearPharmacist)
+                                .addGap(58, 58, 58)
+                                .addComponent(btnCancelPharmacist))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtPharmacistID)
+                                .addComponent(txtPharmacistName)
+                                .addComponent(cmbPharmacistSex, 0, 206, Short.MAX_VALUE)
+                                .addComponent(txtPharmacistDOB)
+                                .addComponent(txtPharmacistPhone)
+                                .addComponent(txtPharmacistAddress)
+                                .addComponent(txtYearWork)
+                                .addComponent(txtPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
                     .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtYearWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtPharmacistDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtPharmacistAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(cmbPharmacistSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtPharmacistDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtPharmacistPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txtPharmacistAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(txtYearWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(cmbShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
+                    .addComponent(txtPharmacistShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddPharmacist)
-                    .addComponent(btnResetPharmacist)
-                    .addComponent(btnCancelPharmacist))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addComponent(btnCancelPharmacist)
+                    .addComponent(btnClearPharmacist))
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtPharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistIDActionPerformed
+    private void btnClearPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearPharmacistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPharmacistIDActionPerformed
-
-    private void txtPharmacistPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPharmacistPhoneActionPerformed
-
-    private void cmbPharmacistSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPharmacistSexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPharmacistSexActionPerformed
+    }//GEN-LAST:event_btnClearPharmacistActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AddPharmacistFrm().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPharmacist;
     private javax.swing.JButton btnCancelPharmacist;
-    private javax.swing.JButton btnResetPharmacist;
+    private javax.swing.JButton btnClearPharmacist;
     private javax.swing.JComboBox<String> cmbPharmacistSex;
-    private javax.swing.JComboBox<String> cmbShift;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -207,10 +225,13 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField txtPharmacistAddress;
     private javax.swing.JTextField txtPharmacistDOB;
     private javax.swing.JTextField txtPharmacistID;
+    private javax.swing.JTextField txtPharmacistName;
     private javax.swing.JTextField txtPharmacistPhone;
+    private javax.swing.JComboBox<String> txtPharmacistShift;
     private javax.swing.JTextField txtYearWork;
     // End of variables declaration//GEN-END:variables
 }

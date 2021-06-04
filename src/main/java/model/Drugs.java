@@ -12,7 +12,7 @@ public class Drugs {
     private String sMancc;
     private Date dNgaytiepnhan;
     private Date dHansudung;
-    private int iSL_DVT;
+    private int iDVT;
 
     public Drugs() {
     }
@@ -26,7 +26,7 @@ public class Drugs {
         this.sMancc = sMancc;
         this.dNgaytiepnhan = dNgaytiepnhan;
         this.dHansudung = dHansudung;
-        this.iSL_DVT = iSL_DVT;
+        this.iDVT = iSL_DVT;
     }
 
     public String getsMathuoc() {
@@ -94,11 +94,11 @@ public class Drugs {
     }
 
     public int getiSL_DVT() {
-        return iSL_DVT;
+        return iDVT;
     }
 
     public void setiSL_DVT(int iSL_DVT) {
-        this.iSL_DVT = iSL_DVT;
+        this.iDVT = iSL_DVT;
     }
 
                

@@ -1,19 +1,22 @@
 package model;
 
 public class Customer {
+
     private String sMaKH;
     private String sHoten;
     private String sGioiTinh;
+    private String sSdtKH;
     private String sDiaChi;
 
-    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sDiaChi) {
+    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sDiaChi, String sSdtKH) {
         this.sMaKH = sMaKH;
         this.sHoten = sHoten;
         this.sGioiTinh = sGioiTinh;
         this.sDiaChi = sDiaChi;
+        this.sSdtKH = sSdtKH;
     }
-    
-    public Customer(){ 
+
+    public Customer() {
     }
 
     public String getsMaKH() {
@@ -47,6 +50,13 @@ public class Customer {
     public void setsDiaChi(String sDiaChi) {
         this.sDiaChi = sDiaChi;
     }
-    
-    
+
+    public String getsSdtKH() {
+        return sSdtKH;
+    }
+
+    public void setsSdtKH(String sSdtKH) {
+        this.sSdtKH = sSdtKH;
+    }
+
 }

@@ -3,6 +3,7 @@ model\ThamSo.class
 view\AddDrugFrm$1.class
 view\ReportPanel.class
 view\SupplierPanel$2.class
+controller\main.class
 view\PharmacistPanel$3.class
 model\Pharmacist.class
 view\LoginFrm.class
@@ -19,7 +20,6 @@ view\PharmacistPanel$2.class
 view\AddImportVoucherFrm.class
 view\AddImportVoucherFrm$1.class
 view\HomeFrm$1.class
-controler\main.class
 model\ImportVoucherDetails.class
 view\LoginFrm$1.class
 model\ReceiptDetails.class
@@ -30,14 +30,12 @@ view\AddReceiptFrm$2.class
 view\AddReceiptFrm.class
 view\HomeFrm.class
 view\AddDrugFrm$2.class
-view\AddPharmacistFrm$3.class
 view\HomeFrm$8.class
 view\AddCustomerFrm$1.class
 view\HomeFrm$5.class
 model\Supplier.class
 view\AddPharmacistFrm$2.class
 view\AddSupplierFrm$1.class
-view\AddDrugFrm$3.class
 view\AddImportVoucherFrm$2.class
 view\PharmacistPanel.class
 view\CustomerPanel$2.class
@@ -49,6 +47,7 @@ view\HomeFrm$9.class
 view\AddPharmacistFrm.class
 view\LoginFrm$2.class
 view\SupplierPanel$3.class
+view\AddCustomerFrm$2.class
 view\HomeFrm$6.class
 view\SupplierPanel$1.class
 view\AddReceiptFrm$3.class

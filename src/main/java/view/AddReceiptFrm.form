@@ -26,6 +26,8 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Th&#xea;m/S&#x1eed;a Ho&#xe1; &#x111;&#x1a1;n b&#xe1;n h&#xe0;ng"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -70,7 +72,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
                                   <Component id="tfGuestName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfSellID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfReceiptID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtDateReceipt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtPharmacistID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtCustomerID" alignment="0" max="32767" attributes="0"/>
@@ -88,7 +90,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                      <Component id="btnResetReceipt" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnClearReceipt" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btnCancelReceipt" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -110,7 +112,7 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbSellID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfSellID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfReceiptID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -146,15 +148,15 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtSumReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnResetReceipt" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnClearReceipt" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="btnCancelReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAddReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -171,9 +173,9 @@
         <Property name="text" type="java.lang.String" value="M&#xe3; b&#xe1;n h&#xe0;ng"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfSellID">
+    <Component class="javax.swing.JTextField" name="tfReceiptID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sinh m&#xe3; randomly"/>
+        <Property name="text" type="java.lang.String" value="Sinh m&#xe3; "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPharmacistID">
@@ -229,9 +231,10 @@
         <Component class="javax.swing.JTable" name="tbDrugList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="6">
+              <Table columnCount="3" rowCount="6">
                 <Column editable="true" title="MATHUOC" type="java.lang.Object"/>
                 <Column editable="true" title="SL" type="java.lang.Object"/>
+                <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -270,12 +273,12 @@
         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnResetReceipt">
+    <Component class="javax.swing.JButton" name="btnClearReceipt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Reset"/>
+        <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetReceiptActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearReceiptActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelReceipt">

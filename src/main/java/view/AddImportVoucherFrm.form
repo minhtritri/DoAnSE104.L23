@@ -33,7 +33,7 @@
     </Component>
     <Component class="org.jdatepicker.impl.UtilCalendarModel" name="utilCalendarModel1">
     </Component>
-    <Component class="controler.main" name="main1">
+    <Component class="controller.main" name="main1">
     </Component>
     <Component class="org.jdatepicker.util.JDatePickerUtil" name="jDatePickerUtil2">
     </Component>
@@ -46,6 +46,8 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="Th&#xea;m/S&#x1eed;a Phi&#x1ebf;u nh&#x1ead;p thu&#x1ed1;c"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -77,9 +79,10 @@
                   <Group type="102" attributes="0">
                       <Component id="btnAddImport" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="btnResetImport" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnClearImport" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnCancelImport" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -159,7 +162,7 @@
               <EmptySpace pref="27" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAddImport" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnResetImport" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnClearImport" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelImport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -170,18 +173,19 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lbBuyReceipt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="                                Ho&#xe1; &#x111;&#x1a1;n mua thu&#x1ed1;c (t&#x1eeb; nh&#xe0; cung c&#x1ea5;p)"/>
+        <Property name="displayedMnemonic" type="int" value="84"/>
+        <Property name="text" type="java.lang.String" value="                                                Phi&#x1ebf;u nh&#x1ead;p thu&#x1ed1;c"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbBuyID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; mua h&#xe0;ng"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; phi&#x1ebf;u nh&#x1ead;p"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfBuyID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Sinh m&#xe3; randomly"/>
+        <Property name="text" type="java.lang.String" value="Sinh m&#xe3; "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPharmacistID">
@@ -222,7 +226,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbDateBuy">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ng&#xe0;y mua"/>
+        <Property name="text" type="java.lang.String" value="Ng&#xe0;y l&#x1ead;p phi&#x1ebf;u"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbDrugList">
@@ -240,9 +244,10 @@
         <Component class="javax.swing.JTable" name="tbDrugList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="6">
+              <Table columnCount="3" rowCount="6">
                 <Column editable="true" title="MATHUOC" type="java.lang.Object"/>
                 <Column editable="true" title="SL" type="java.lang.Object"/>
+                <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -281,9 +286,9 @@
         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnResetImport">
+    <Component class="javax.swing.JButton" name="btnClearImport">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Reset"/>
+        <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelImport">

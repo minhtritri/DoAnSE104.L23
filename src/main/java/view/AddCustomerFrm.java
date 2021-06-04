@@ -36,11 +36,15 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         txtCustomerName = new javax.swing.JTextField();
         txtCustomerAddress = new javax.swing.JTextField();
         btnAddCustomer = new javax.swing.JButton();
-        btnResetCustomer = new javax.swing.JButton();
+        btnClearCustomer = new javax.swing.JButton();
         btnCancelCustomer = new javax.swing.JButton();
         cmbCustomerSex = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        txtCustomerPhone = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thêm/Sửa Khách hàng");
+        setResizable(false);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_title.setText("Khách Hàng");
@@ -60,12 +64,19 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         });
 
         btnAddCustomer.setText("Thêm");
+        btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCustomerActionPerformed(evt);
+            }
+        });
 
-        btnResetCustomer.setText("Làm mới");
+        btnClearCustomer.setText("Làm mới");
 
         btnCancelCustomer.setText("Huỷ");
 
         cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
+
+        jLabel1.setText("Số điện thoại:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,25 +90,28 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                             .addComponent(jLabel_guestname)
                             .addComponent(jLabel_goestid)
                             .addComponent(jLabel_guestsex)
-                            .addComponent(jLabel_guestaddress))
+                            .addComponent(jLabel_guestaddress)
+                            .addComponent(jLabel1))
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCustomerID)
                             .addComponent(txtCustomerName)
-                            .addComponent(txtCustomerAddress)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel_title)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(cmbCustomerSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cmbCustomerSex, 0, 295, Short.MAX_VALUE)
+                            .addComponent(txtCustomerPhone)
+                            .addComponent(txtCustomerAddress)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAddCustomer)
-                        .addGap(62, 62, 62)
-                        .addComponent(btnResetCustomer)
-                        .addGap(49, 49, 49)
-                        .addComponent(btnCancelCustomer)))
-                .addGap(70, 70, 70))
+                        .addGap(56, 56, 56)
+                        .addComponent(btnClearCustomer)
+                        .addGap(57, 57, 57)
+                        .addComponent(btnCancelCustomer)
+                        .addGap(57, 57, 57)))
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(203, 203, 203)
+                .addComponent(jLabel_title)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,22 +124,26 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                     .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_guestname)
-                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_guestname))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_guestsex)
-                    .addComponent(cmbCustomerSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(cmbCustomerSex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel_guestsex))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCustomerPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_guestaddress)
                     .addComponent(txtCustomerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddCustomer)
-                    .addComponent(btnResetCustomer)
+                    .addComponent(btnClearCustomer)
                     .addComponent(btnCancelCustomer))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,13 +153,18 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCustomerNameActionPerformed
 
+    private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddCustomerActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;
     private javax.swing.JButton btnCancelCustomer;
-    private javax.swing.JButton btnResetCustomer;
+    private javax.swing.JButton btnClearCustomer;
     private javax.swing.JComboBox<String> cmbCustomerSex;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_goestid;
     private javax.swing.JLabel jLabel_guestaddress;
     private javax.swing.JLabel jLabel_guestname;
@@ -150,5 +173,6 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtCustomerAddress;
     private javax.swing.JTextField txtCustomerID;
     private javax.swing.JTextField txtCustomerName;
+    private javax.swing.JTextField txtCustomerPhone;
     // End of variables declaration//GEN-END:variables
 }

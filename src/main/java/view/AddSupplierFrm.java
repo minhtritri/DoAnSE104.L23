@@ -7,12 +7,12 @@ package view;
 
 /**
  *
- * @author anhha
+ * @author THAONGAN
  */
 public class AddSupplierFrm extends javax.swing.JFrame {
 
     /**
-     * Creates new form AddSupplierFrm
+     * Creates new form AddSupplier
      */
     public AddSupplierFrm() {
         initComponents();
@@ -32,17 +32,23 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         jLabel_supplername = new javax.swing.JLabel();
         jLabel_supplieraddress = new javax.swing.JLabel();
         jLabel_supplierphonenumber = new javax.swing.JLabel();
-        jLabel_bankaccnumber = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnAddSupplier = new javax.swing.JButton();
+        btnClearSupplier = new javax.swing.JButton();
+        btnCancelSupplier = new javax.swing.JButton();
         txtSupplierID = new javax.swing.JTextField();
         txtSupplierName = new javax.swing.JTextField();
-        txtSupplierAddress = new javax.swing.JTextField();
         txtSupplierPhone = new javax.swing.JTextField();
-        txtSupplierBank = new javax.swing.JTextField();
-        btnAddSupplier = new javax.swing.JButton();
-        btnResetSupplier = new javax.swing.JButton();
-        btnCancelSupplier = new javax.swing.JButton();
+        txtSupplierAddress = new javax.swing.JTextField();
+        txtSupplierEmail = new javax.swing.JTextField();
+        txtContractSignDate = new javax.swing.JTextField();
+        txtContractExpiredDate = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Thêm/Sửa Nhà cung cấp");
+        setResizable(false);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_title.setText("Nhà Cung Cấp");
@@ -55,20 +61,18 @@ public class AddSupplierFrm extends javax.swing.JFrame {
 
         jLabel_supplierphonenumber.setText("Điện thoại:");
 
-        jLabel_bankaccnumber.setText("Số TK:");
+        jLabel1.setText("Email");
 
-        txtSupplierAddress.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSupplierAddressActionPerformed(evt);
-            }
-        });
+        jLabel2.setText("Ngày ký hợp đồng");
+
+        jLabel3.setText("Thời hạn hợp đồng");
 
         btnAddSupplier.setText("Thêm");
 
-        btnResetSupplier.setText("Reset");
-        btnResetSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnClearSupplier.setText("Làm mới");
+        btnClearSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetSupplierActionPerformed(evt);
+                btnClearSupplierActionPerformed(evt);
             }
         });
 
@@ -84,94 +88,145 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_supplername)
-                    .addComponent(jLabel_supplierid)
-                    .addComponent(jLabel_supplieraddress)
-                    .addComponent(jLabel_supplierphonenumber)
-                    .addComponent(jLabel_bankaccnumber))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel_title)
-                        .addGap(0, 128, Short.MAX_VALUE))
-                    .addComponent(txtSupplierPhone)
-                    .addComponent(txtSupplierBank)
-                    .addComponent(txtSupplierID)
-                    .addComponent(txtSupplierName)
-                    .addComponent(txtSupplierAddress))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(btnAddSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(btnResetSupplier)
-                .addGap(50, 50, 50)
-                .addComponent(btnCancelSupplier)
-                .addGap(67, 67, 67))
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel_title))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(btnAddSupplier)
+                                .addGap(44, 44, 44)
+                                .addComponent(btnClearSupplier)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                                .addComponent(btnCancelSupplier)
+                                .addGap(8, 8, 8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel_supplierid)
+                                    .addComponent(jLabel_supplername)
+                                    .addComponent(jLabel_supplierphonenumber)
+                                    .addComponent(jLabel_supplieraddress)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtSupplierID)
+                                    .addComponent(txtSupplierName)
+                                    .addComponent(txtSupplierPhone)
+                                    .addComponent(txtSupplierAddress)
+                                    .addComponent(txtSupplierEmail)
+                                    .addComponent(txtContractSignDate)
+                                    .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))))
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel_title)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierid)
                     .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplername)
                     .addComponent(txtSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_supplieraddress)
-                    .addComponent(txtSupplierAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierphonenumber)
                     .addComponent(txtSupplierPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_bankaccnumber)
-                    .addComponent(txtSupplierBank, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel_supplieraddress)
+                    .addComponent(txtSupplierAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtSupplierEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtContractSignDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddSupplier)
-                    .addComponent(btnResetSupplier)
+                    .addComponent(btnClearSupplier)
                     .addComponent(btnCancelSupplier))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSupplierAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSupplierAddressActionPerformed
+    private void btnClearSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearSupplierActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSupplierAddressActionPerformed
+    }//GEN-LAST:event_btnClearSupplierActionPerformed
 
     private void btnCancelSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelSupplierActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelSupplierActionPerformed
 
-    private void btnResetSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetSupplierActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnResetSupplierActionPerformed
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AddSupplierFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AddSupplierFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AddSupplierFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AddSupplierFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AddSupplierFrm().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddSupplier;
     private javax.swing.JButton btnCancelSupplier;
-    private javax.swing.JButton btnResetSupplier;
-    private javax.swing.JLabel jLabel_bankaccnumber;
+    private javax.swing.JButton btnClearSupplier;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel_supplername;
     private javax.swing.JLabel jLabel_supplieraddress;
     private javax.swing.JLabel jLabel_supplierid;
     private javax.swing.JLabel jLabel_supplierphonenumber;
     private javax.swing.JLabel jLabel_title;
+    private javax.swing.JTextField txtContractExpiredDate;
+    private javax.swing.JTextField txtContractSignDate;
     private javax.swing.JTextField txtSupplierAddress;
-    private javax.swing.JTextField txtSupplierBank;
+    private javax.swing.JTextField txtSupplierEmail;
     private javax.swing.JTextField txtSupplierID;
     private javax.swing.JTextField txtSupplierName;
     private javax.swing.JTextField txtSupplierPhone;
