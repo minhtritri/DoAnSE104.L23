@@ -3,88 +3,93 @@ package model;
 import java.util.Date;
 
 public class Pharmacist {
-    private String MaNV;
-    private String HoTen;
-    private Date NgaySinh;
-    private String GioiTinh;
-    private String DiaChi;
+    private String sMaNV;
+    private String sHoTen;
+    private int iNamSinh;
+    private String sGioiTinh;
+    private String sDiaChi;
     private String SDT;
-    private Date NGAYVL;
-    private int CALV;
+    private Date dNGAYVL;
+    private int iCALV;
 
-    public Pharmacist(String MaNV, String HoTen, Date NgaySinh, String GioiTinh, String DiaChi, String SDT, Date NGAYVL, int CALV) {
-        this.MaNV = MaNV;
-        this.HoTen = HoTen;
-        this.NgaySinh = NgaySinh;
-        this.GioiTinh = GioiTinh;
-        this.DiaChi = DiaChi;
+    public Pharmacist() {
+    }
+
+    public Pharmacist(String sMaNV, String sHoTen, int iNamSinh, String sGioiTinh, String sDiaChi, String SDT, Date dNGAYVL, int iCALV) {
+        this.sMaNV = sMaNV;
+        this.sHoTen = sHoTen;
+        this.iNamSinh = iNamSinh;
+        this.sGioiTinh = sGioiTinh;
+        this.sDiaChi = sDiaChi;
         this.SDT = SDT;
-        this.NGAYVL = NGAYVL;
-        this.CALV = CALV;
+        this.dNGAYVL = dNGAYVL;
+        this.iCALV = iCALV;
     }
 
-    public String getMaNV() {
-        return MaNV;
+    public String getsMaNV() {
+        return sMaNV;
     }
 
-    public String getHoTen() {
-        return HoTen;
+    public void setsMaNV(String sMaNV) {
+        this.sMaNV = sMaNV;
     }
 
-    public Date getNgaySinh() {
-        return NgaySinh;
+    public String getsHoTen() {
+        return sHoTen;
     }
 
-    public String getGioiTinh() {
-        return GioiTinh;
+    public void setsHoTen(String sHoTen) {
+        this.sHoTen = sHoTen;
     }
 
-    public String getDiaChi() {
-        return DiaChi;
+    public int getiNamSinh() {
+        return iNamSinh;
+    }
+
+    public void setiNamSinh(int iNamSinh) {
+        this.iNamSinh = iNamSinh;
+    }
+
+    public String getsGioiTinh() {
+        return sGioiTinh;
+    }
+
+    public void setsGioiTinh(String sGioiTinh) {
+        this.sGioiTinh = sGioiTinh;
+    }
+
+    public String getsDiaChi() {
+        return sDiaChi;
+    }
+
+    public void setsDiaChi(String sDiaChi) {
+        this.sDiaChi = sDiaChi;
     }
 
     public String getSDT() {
         return SDT;
     }
 
-    public Date getNGAYVL() {
-        return NGAYVL;
-    }
-
-    public int getCALV() {
-        return CALV;
-    }
-
-    public void setMaNV(String MaNV) {
-        this.MaNV = MaNV;
-    }
-
-    public void setHoTen(String HoTen) {
-        this.HoTen = HoTen;
-    }
-
-    public void setNgaySinh(Date NgaySinh) {
-        this.NgaySinh = NgaySinh;
-    }
-
-    public void setGioiTinh(String GioiTinh) {
-        this.GioiTinh = GioiTinh;
-    }
-
-    public void setDiaChi(String DiaChi) {
-        this.DiaChi = DiaChi;
-    }
-
     public void setSDT(String SDT) {
         this.SDT = SDT;
     }
 
-    public void setNGAYVL(Date NGAYVL) {
-        this.NGAYVL = NGAYVL;
+    public Date getdNGAYVL() {
+        return dNGAYVL;
     }
 
-    public void setCALV(int CALV) {
-        this.CALV = CALV;
+    public void setdNGAYVL(Date dNGAYVL) {
+        this.dNGAYVL = dNGAYVL;
     }
+
+    public int getiCALV() {
+        return iCALV;
+    }
+
+    public void setiCALV(int iCALV) {
+        this.iCALV = iCALV;
+    }
+
+    
     
 }

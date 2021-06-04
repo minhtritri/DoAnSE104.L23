@@ -3,65 +3,65 @@ package model;
 import java.util.Date;
 
 public class DrugstoreReceipt {
-    private String sMAMH;
-    private String sMATHUOC;
-    private String sMANV;
-    private String sMANCC;
-    private int iSL;
+    private String sMaPN;
+    private Date dNgayNhapPhieu;
+    private String sMaNV;
+    private String sMaNCC;
+    private String sMaThuoc;
     private float fTONGGT;
     private Date dNGAYMUA;
-    
-    public DrugstoreReceipt(String sMAMH, String sMATHUOC, String sMANV,String sMANCC, int iSL, float fTONGGT, Date dNGAYMUA) {
-        this.sMAMH = sMAMH;
-        this.sMATHUOC = sMATHUOC;
-        this.sMANV = sMANV;
-        this.sMANCC = sMANCC;
-        this.iSL = iSL;
+
+    public DrugstoreReceipt() {
+    }
+
+    public DrugstoreReceipt(String sMaPN, Date dNgayNhapPhieu, String sMaNV, String sMaNCC, String sMaThuoc, float fTONGGT, Date dNGAYMUA) {
+        this.sMaPN = sMaPN;
+        this.dNgayNhapPhieu = dNgayNhapPhieu;
+        this.sMaNV = sMaNV;
+        this.sMaNCC = sMaNCC;
+        this.sMaThuoc = sMaThuoc;
         this.fTONGGT = fTONGGT;
         this.dNGAYMUA = dNGAYMUA;
     }
-    
-    public DrugstoreReceipt() {
-    }
-    
-    public String getsMAMH() {
-        return sMAMH;
+
+    public String getsMaPN() {
+        return sMaPN;
     }
 
-    public void setsMAMH(String sMAMH) {
-        this.sMAMH = sMAMH;
+    public void setsMaPN(String sMaPN) {
+        this.sMaPN = sMaPN;
     }
 
-    public String getsMATHUOC() {
-        return sMATHUOC;
+    public Date getdNgayNhapPhieu() {
+        return dNgayNhapPhieu;
     }
 
-    public void setsMATHUOC(String sMATHUOC) {
-        this.sMATHUOC = sMATHUOC;
+    public void setdNgayNhapPhieu(Date dNgayNhapPhieu) {
+        this.dNgayNhapPhieu = dNgayNhapPhieu;
     }
 
-    public String getsMANV() {
-        return sMANV;
+    public String getsMaNV() {
+        return sMaNV;
     }
 
-    public void setsMANV(String sMANV) {
-        this.sMANV = sMANV;
+    public void setsMaNV(String sMaNV) {
+        this.sMaNV = sMaNV;
     }
 
-    public String getsMANCC() {
-        return sMANCC;
+    public String getsMaNCC() {
+        return sMaNCC;
     }
 
-    public void setsMANCC(String sMANCC) {
-        this.sMANCC = sMANCC;
+    public void setsMaNCC(String sMaNCC) {
+        this.sMaNCC = sMaNCC;
     }
 
-    public int getiSL() {
-        return iSL;
+    public String getsMaThuoc() {
+        return sMaThuoc;
     }
 
-    public void setiSL(int iSL) {
-        this.iSL = iSL;
+    public void setsMaThuoc(String sMaThuoc) {
+        this.sMaThuoc = sMaThuoc;
     }
 
     public float getfTONGGT() {
@@ -79,4 +79,6 @@ public class DrugstoreReceipt {
     public void setdNGAYMUA(Date dNGAYMUA) {
         this.dNGAYMUA = dNGAYMUA;
     }
+    
+   
 }

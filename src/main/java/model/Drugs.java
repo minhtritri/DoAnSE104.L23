@@ -7,35 +7,28 @@ public class Drugs {
     private String sMathuoc;
     private String sTenthuoc;
     private String sPhannhom;
-    private int iPhanloai;
+    private String sPhanloai;
     private String sThanhphan;
     private String sMancc;
     private Date dNgaytiepnhan;
-    private Date dNgaysanxuat;
     private Date dHansudung;
     private int iSL_DVT;
-    private float fGiaban;
-
-    public Drugs(String sMathuoc, String sTenthuoc, String sPhannhom,
-            int iPhanloai,String sThanhphan, String sMancc, Date dNgaytiepnhan,
-            Date dNgaysanxuat, Date dHansudung, int iSL_DVT, float fGiaban) {
-        this.sMathuoc = sMathuoc;
-        this.sTenthuoc = sTenthuoc;
-        this.sPhannhom = sPhannhom;
-        this.iPhanloai = iPhanloai;
-        this.sThanhphan = sThanhphan;
-        this.sMancc = sMancc;
-        this.dNgaytiepnhan = dNgaytiepnhan;
-        this.dNgaysanxuat = dNgaysanxuat;
-        this.dHansudung = dHansudung;
-        this.iSL_DVT = iSL_DVT;
-        this.fGiaban = fGiaban;
-  
-    }
 
     public Drugs() {
     }
-    
+
+    public Drugs(String sMathuoc, String sTenthuoc, String sPhannhom, String sPhanloai, String sThanhphan, String sMancc, Date dNgaytiepnhan, Date dHansudung, int iSL_DVT) {
+        this.sMathuoc = sMathuoc;
+        this.sTenthuoc = sTenthuoc;
+        this.sPhannhom = sPhannhom;
+        this.sPhanloai = sPhanloai;
+        this.sThanhphan = sThanhphan;
+        this.sMancc = sMancc;
+        this.dNgaytiepnhan = dNgaytiepnhan;
+        this.dHansudung = dHansudung;
+        this.iSL_DVT = iSL_DVT;
+    }
+
     public String getsMathuoc() {
         return sMathuoc;
     }
@@ -60,12 +53,12 @@ public class Drugs {
         this.sPhannhom = sPhannhom;
     }
 
-    public int getiPhanloai() {
-        return iPhanloai;
+    public String getsMaPhanloai() {
+        return sPhanloai;
     }
 
-    public void setiPhanloai(int iPhanloai) {
-        this.iPhanloai = iPhanloai;
+    public void setsMaPhanloai(String sPhanloai) {
+        this.sPhanloai = sPhanloai;
     }
 
     public String getsThanhphan() {
@@ -92,14 +85,6 @@ public class Drugs {
         this.dNgaytiepnhan = dNgaytiepnhan;
     }
 
-    public Date getdNgaysanxuat() {
-        return dNgaysanxuat;
-    }
-
-    public void setdNgaysanxuat(Date dNgaysanxuat) {
-        this.dNgaysanxuat = dNgaysanxuat;
-    }
-
     public Date getdHansudung() {
         return dHansudung;
     }
@@ -116,14 +101,6 @@ public class Drugs {
         this.iSL_DVT = iSL_DVT;
     }
 
-    public float getfGiaban() {
-        return fGiaban;
-    }
-
-    public void setfGiaban(float fGiaban) {
-        this.fGiaban = fGiaban;
-    }
-
-            
+               
             
 }
