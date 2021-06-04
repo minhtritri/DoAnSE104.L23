@@ -1,25 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
 /**
  *
  * @author anhha
  */
-public class DrugstoreReceiptDetails {
+public class ImportVoucherDetails {
     private String sMaCTPN;
     private int iSL;
     private String sMaPN;
     private String sMaThuoc;
     private float fDonGia;
 
-    public DrugstoreReceiptDetails() {
+    public ImportVoucherDetails() {
     }
 
-    public DrugstoreReceiptDetails(String sMaCTPN, int iSL, String sMaPN, String sMaThuoc, float fDonGia) {
+    public ImportVoucherDetails(String sMaCTPN, int iSL, String sMaPN, String sMaThuoc, float fDonGia) {
         this.sMaCTPN = sMaCTPN;
         this.iSL = iSL;
         this.sMaPN = sMaPN;

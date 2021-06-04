@@ -2,16 +2,16 @@ package model;
 
 import java.util.Date;
 
-public class Reciept {
+public class Receipt {
     private String sMaHD;
     private Date dNgayMuaThuoc;
     private String sMaNV;
     private String sMaKH;
 
-    public Reciept() {
+    public Receipt() {
     }
 
-    public Reciept(String sMaHD, Date dNgayMuaThuoc, String sMaNV, String sMaKH) {
+    public Receipt(String sMaHD, Date dNgayMuaThuoc, String sMaNV, String sMaKH) {
         this.sMaHD = sMaHD;
         this.dNgayMuaThuoc = dNgayMuaThuoc;
         this.sMaNV = sMaNV;

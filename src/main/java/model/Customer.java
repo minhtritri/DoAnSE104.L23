@@ -1,19 +1,19 @@
 package model;
 
-public class Guest {
+public class Customer {
     private String sMaKH;
     private String sHoten;
     private String sGioiTinh;
     private String sDiaChi;
 
-    public Guest(String sMaKH, String sHoten, String sGioiTinh, String sDiaChi) {
+    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sDiaChi) {
         this.sMaKH = sMaKH;
         this.sHoten = sHoten;
         this.sGioiTinh = sGioiTinh;
         this.sDiaChi = sDiaChi;
     }
     
-    public Guest(){ 
+    public Customer(){ 
     }
 
     public String getsMaKH() {

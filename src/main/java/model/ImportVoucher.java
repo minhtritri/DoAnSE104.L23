@@ -2,26 +2,22 @@ package model;
 
 import java.util.Date;
 
-public class DrugstoreReceipt {
+public class ImportVoucher {
     private String sMaPN;
     private Date dNgayNhapPhieu;
     private String sMaNV;
     private String sMaNCC;
-    private String sMaThuoc;
     private float fTONGGT;
-    private Date dNGAYMUA;
 
-    public DrugstoreReceipt() {
+    public ImportVoucher() {
     }
 
-    public DrugstoreReceipt(String sMaPN, Date dNgayNhapPhieu, String sMaNV, String sMaNCC, String sMaThuoc, float fTONGGT, Date dNGAYMUA) {
+    public ImportVoucher(String sMaPN, Date dNgayNhapPhieu, String sMaNV, String sMaNCC, float fTONGGT) {
         this.sMaPN = sMaPN;
         this.dNgayNhapPhieu = dNgayNhapPhieu;
         this.sMaNV = sMaNV;
         this.sMaNCC = sMaNCC;
-        this.sMaThuoc = sMaThuoc;
         this.fTONGGT = fTONGGT;
-        this.dNGAYMUA = dNGAYMUA;
     }
 
     public String getsMaPN() {
@@ -56,13 +52,6 @@ public class DrugstoreReceipt {
         this.sMaNCC = sMaNCC;
     }
 
-    public String getsMaThuoc() {
-        return sMaThuoc;
-    }
-
-    public void setsMaThuoc(String sMaThuoc) {
-        this.sMaThuoc = sMaThuoc;
-    }
 
     public float getfTONGGT() {
         return fTONGGT;
@@ -72,13 +61,4 @@ public class DrugstoreReceipt {
         this.fTONGGT = fTONGGT;
     }
 
-    public Date getdNGAYMUA() {
-        return dNGAYMUA;
-    }
-
-    public void setdNGAYMUA(Date dNGAYMUA) {
-        this.dNGAYMUA = dNGAYMUA;
-    }
-    
-   
 }

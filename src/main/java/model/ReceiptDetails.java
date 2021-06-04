@@ -1,16 +1,16 @@
 package model;
 
-public class RecieptDetails {
+public class ReceiptDetails {
     private String sMaCTHD;
     private String sMAHD;
     private String sMATHUOC;
     private int iSL;
     private float fDonGia;
 
-    public RecieptDetails() {
+    public ReceiptDetails() {
     }
 
-    public RecieptDetails(String sMaCTHD, String sMAHD, String sMATHUOC, int iSL, float fDonGia) {
+    public ReceiptDetails(String sMaCTHD, String sMAHD, String sMATHUOC, int iSL, float fDonGia) {
         this.sMaCTHD = sMaCTHD;
         this.sMAHD = sMAHD;
         this.sMATHUOC = sMATHUOC;
