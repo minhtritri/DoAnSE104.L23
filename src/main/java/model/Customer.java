@@ -5,14 +5,14 @@ public class Customer {
     private String sMaKH;
     private String sHoten;
     private String sGioiTinh;
+    private String sNamSinh;
     private String sSdtKH;
-    private String sDiaChi;
 
-    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sDiaChi, String sSdtKH) {
+    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sNamSinh, String sSdtKH) {
         this.sMaKH = sMaKH;
         this.sHoten = sHoten;
         this.sGioiTinh = sGioiTinh;
-        this.sDiaChi = sDiaChi;
+        this.sNamSinh = sNamSinh;
         this.sSdtKH = sSdtKH;
     }
 
@@ -32,7 +32,7 @@ public class Customer {
     }
 
     public String getsDiaChi() {
-        return sDiaChi;
+        return sNamSinh;
     }
 
     public void setsMaKH(String sMaKH) {
@@ -48,7 +48,7 @@ public class Customer {
     }
 
     public void setsDiaChi(String sDiaChi) {
-        this.sDiaChi = sDiaChi;
+        this.sNamSinh = sDiaChi;
     }
 
     public String getsSdtKH() {

@@ -12,6 +12,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
      */
     public AddImportVoucherFrm() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

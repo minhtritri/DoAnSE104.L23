@@ -42,7 +42,7 @@ public class SupplierPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbListSupplier = new javax.swing.JTable();
+        tblListSupplier = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         btnAddSupplier = new javax.swing.JButton();
         btnDeleteSupplier = new javax.swing.JButton();
@@ -51,18 +51,15 @@ public class SupplierPanel extends javax.swing.JPanel {
         txtSearchBarSupplier = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tbListSupplier.setModel(new javax.swing.table.DefaultTableModel(
+        tblListSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "MaNCC", "Tên NCC", "SĐT", "Địa chỉ", "Email", "Ngày ký HĐ", "Thời hạn HĐ"
             }
         ));
-        jScrollPane1.setViewportView(tbListSupplier);
+        jScrollPane1.setViewportView(tblListSupplier);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -209,7 +206,7 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tbListSupplier;
+    private javax.swing.JTable tblListSupplier;
     private javax.swing.JTextField txtSearchBarSupplier;
     // End of variables declaration//GEN-END:variables
 }

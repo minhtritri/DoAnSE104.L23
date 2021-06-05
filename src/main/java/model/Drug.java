@@ -2,22 +2,24 @@ package model;
 
 import java.util.Date;
 
+public class Drug {
 
-public class Drugs {
     private String sMathuoc;
     private String sTenthuoc;
     private String sPhannhom;
     private String sPhanloai;
     private String sThanhphan;
-    private String sMancc;
-    private Date dNgaytiepnhan;
     private Date dHansudung;
     private int iDVT;
+    private String sMancc;
+    private Date dNgaytiepnhan;
 
-    public Drugs() {
+    public Drug() {
     }
 
-    public Drugs(String sMathuoc, String sTenthuoc, String sPhannhom, String sPhanloai, String sThanhphan, String sMancc, Date dNgaytiepnhan, Date dHansudung, int iSL_DVT) {
+    public Drug(String sMathuoc, String sTenthuoc, String sPhannhom, 
+            String sPhanloai, String sThanhphan, Date dHansudung, 
+            int iDVT, String sMancc, Date dNgaytiepnhan) {
         this.sMathuoc = sMathuoc;
         this.sTenthuoc = sTenthuoc;
         this.sPhannhom = sPhannhom;
@@ -26,7 +28,7 @@ public class Drugs {
         this.sMancc = sMancc;
         this.dNgaytiepnhan = dNgaytiepnhan;
         this.dHansudung = dHansudung;
-        this.iDVT = iSL_DVT;
+        this.iDVT = iDVT;
     }
 
     public String getsMathuoc() {
@@ -101,6 +103,4 @@ public class Drugs {
         this.iDVT = iSL_DVT;
     }
 
-               
-            
 }

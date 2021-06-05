@@ -3,19 +3,21 @@ package model;
 import java.util.Date;
 
 public class Pharmacist {
+
     private String sMaNV;
     private String sHoTen;
-    private int iNamSinh;
     private String sGioiTinh;
-    private String sDiaChi;
+    private int iNamSinh;
     private String SDT;
+    private String sDiaChi;
     private Date dNGAYVL;
     private int iCALV;
 
     public Pharmacist() {
     }
 
-    public Pharmacist(String sMaNV, String sHoTen, int iNamSinh, String sGioiTinh, String sDiaChi, String SDT, Date dNGAYVL, int iCALV) {
+    public Pharmacist(String sMaNV, String sHoTen, String sGioiTinh, int iNamSinh,
+            String SDT, String sDiaChi, Date dNGAYVL, int iCALV) {
         this.sMaNV = sMaNV;
         this.sHoTen = sHoTen;
         this.iNamSinh = iNamSinh;
@@ -90,6 +92,4 @@ public class Pharmacist {
         this.iCALV = iCALV;
     }
 
-    
-    
 }

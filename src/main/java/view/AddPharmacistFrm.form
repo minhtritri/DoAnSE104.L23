@@ -59,7 +59,7 @@
                               <Component id="txtPharmacistPhone" max="32767" attributes="0"/>
                               <Component id="txtPharmacistAddress" max="32767" attributes="0"/>
                               <Component id="txtYearWork" max="32767" attributes="0"/>
-                              <Component id="txtPharmacistShift" max="32767" attributes="0"/>
+                              <Component id="cmbPharmacistShift" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -111,13 +111,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPharmacistShift" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbPharmacistShift" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnAddPharmacist" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCancelPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnClearPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnCancelPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnClearPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
@@ -199,7 +201,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtYearWork">
     </Component>
-    <Component class="javax.swing.JComboBox" name="txtPharmacistShift">
+    <Component class="javax.swing.JComboBox" name="cmbPharmacistShift">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
@@ -217,6 +219,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddPharmacistActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnClearPharmacist">
       <Properties>
@@ -230,6 +235,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Huy&#x309;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelPharmacistActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

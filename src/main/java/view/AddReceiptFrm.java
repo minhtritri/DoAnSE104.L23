@@ -16,6 +16,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
      */
     public AddReceiptFrm() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

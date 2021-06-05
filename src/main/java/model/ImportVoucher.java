@@ -12,7 +12,8 @@ public class ImportVoucher {
     public ImportVoucher() {
     }
 
-    public ImportVoucher(String sMaPN, Date dNgayNhapPhieu, String sMaNV, String sMaNCC, float fTONGGT) {
+    public ImportVoucher(String sMaPN, Date dNgayNhapPhieu, String sMaNV, 
+            String sMaNCC, float fTONGGT) {
         this.sMaPN = sMaPN;
         this.dNgayNhapPhieu = dNgayNhapPhieu;
         this.sMaNV = sMaNV;

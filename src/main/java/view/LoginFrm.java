@@ -16,8 +16,10 @@ public class LoginFrm extends javax.swing.JFrame {
      */
     public LoginFrm() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -139,10 +141,10 @@ public class LoginFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-                    HomeFrm.getInstance().setEnabled(true);
+        HomeFrm.getInstance().setEnabled(true);
 
         HomeFrm.getInstance().requestFocus();
-          
+
     }//GEN-LAST:event_formWindowClosed
 
 
@@ -156,5 +158,3 @@ public class LoginFrm extends javax.swing.JFrame {
     private javax.swing.JPasswordField password;
     // End of variables declaration//GEN-END:variables
 }
-
-

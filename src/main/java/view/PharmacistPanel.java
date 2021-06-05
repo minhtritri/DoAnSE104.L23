@@ -1,5 +1,10 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.Pharmacist;
+
 /**
  *
  * @author THAONGAN
@@ -9,6 +14,9 @@ public class PharmacistPanel extends javax.swing.JPanel {
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
+
+    private List<Pharmacist> pharmacists;
+    private DefaultTableModel tblModel;
 
     public PharmacistPanel() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -27,6 +35,20 @@ public class PharmacistPanel extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
+
+        pharmacists = new ArrayList<>();
+        tblModel = (DefaultTableModel) tblListPharmacist.getModel();
+
+    }
+
+    public void addPharmacist(Pharmacist pharma) {
+        pharmacists.add(pharma);
+        tblModel.setRowCount(0);
+        for (Pharmacist pharmacist : pharmacists) {
+            tblModel.addRow(new Object[]{pharmacist.getsMaNV(), pharmacist.getsHoTen(),
+                pharmacist.getsGioiTinh(), pharmacist.getiNamSinh(), pharmacist.getSDT(),
+                pharmacist.getsDiaChi(), pharmacist.getdNGAYVL(), pharmacist.getiCALV()});
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -36,7 +58,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbListPharmacist = new javax.swing.JTable();
+        tblListPharmacist = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         btnAddPharmacist = new javax.swing.JButton();
         btnDeletePharmacist = new javax.swing.JButton();
@@ -45,18 +67,15 @@ public class PharmacistPanel extends javax.swing.JPanel {
         txtSearchBarPharmacist = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tbListPharmacist.setModel(new javax.swing.table.DefaultTableModel(
+        tblListPharmacist.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "MaNV", "Họ tên", "Giới tính", "Năm sinh", "SĐT", "Địa chỉ", "Năm vào làm", "Ca"
             }
         ));
-        jScrollPane1.setViewportView(tbListPharmacist);
+        jScrollPane1.setViewportView(tblListPharmacist);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -203,7 +222,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tbListPharmacist;
+    private javax.swing.JTable tblListPharmacist;
     private javax.swing.JTextField txtSearchBarPharmacist;
     // End of variables declaration//GEN-END:variables
 }

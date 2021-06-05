@@ -1,9 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.Pharmacist;
 
 /**
  *
@@ -14,8 +17,13 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     /**
      * Creates new form AddPharmacist
      */
+    
+    private PharmacistPanel pnPharmacist;
+    
     public AddPharmacistFrm() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -43,7 +51,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         txtPharmacistPhone = new javax.swing.JTextField();
         txtPharmacistAddress = new javax.swing.JTextField();
         txtYearWork = new javax.swing.JTextField();
-        txtPharmacistShift = new javax.swing.JComboBox<>();
+        cmbPharmacistShift = new javax.swing.JComboBox<>();
         btnAddPharmacist = new javax.swing.JButton();
         btnClearPharmacist = new javax.swing.JButton();
         btnCancelPharmacist = new javax.swing.JButton();
@@ -73,9 +81,14 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
 
         cmbPharmacistSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
-        txtPharmacistShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        cmbPharmacistShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
         btnAddPharmacist.setText("Thêm");
+        btnAddPharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddPharmacistActionPerformed(evt);
+            }
+        });
 
         btnClearPharmacist.setText("Làm mới");
         btnClearPharmacist.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +98,11 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         });
 
         btnCancelPharmacist.setText("Huỷ");
+        btnCancelPharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelPharmacistActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,7 +139,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                                 .addComponent(txtPharmacistPhone)
                                 .addComponent(txtPharmacistAddress)
                                 .addComponent(txtYearWork)
-                                .addComponent(txtPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(cmbPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
@@ -160,12 +178,13 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(txtPharmacistShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbPharmacistShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAddPharmacist)
-                    .addComponent(btnCancelPharmacist)
-                    .addComponent(btnClearPharmacist))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCancelPharmacist)
+                        .addComponent(btnClearPharmacist)))
                 .addGap(24, 24, 24))
         );
 
@@ -174,49 +193,74 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
 
     private void btnClearPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearPharmacistActionPerformed
         // TODO add your handling code here:
+        txtPharmacistID.setText("");
+        txtPharmacistName.setText("");
+        cmbPharmacistSex.setSelectedIndex(0);
+        txtPharmacistDOB.setText("");
+        txtPharmacistPhone.setText("");
+        txtPharmacistAddress.setText("");
+        txtYearWork.setText("");
+        cmbPharmacistShift.setSelectedIndex(0);
     }//GEN-LAST:event_btnClearPharmacistActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddPharmacistFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void btnAddPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPharmacistActionPerformed
+        String sMaNV;
+        String sHoTen;
+        String sGioiTinh;
+        int iNamSinh;
+        String SDT;
+        String sDiaChi;
+        Date dNGAYVL = null;
+        int iCALV;
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddPharmacistFrm().setVisible(true);
-            }
-        });
-    }
+        sMaNV = txtPharmacistID.getText();
+        sHoTen = txtPharmacistName.getText();
+        sGioiTinh = (String) cmbPharmacistSex.getSelectedItem();
+        iNamSinh = Integer.parseInt(txtPharmacistDOB.getText());
+        SDT = txtPharmacistPhone.getText();
+        sDiaChi = txtPharmacistAddress.getText();
+        
+        try {
+            dNGAYVL = sdf.parse(txtYearWork.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(AddPharmacistFrm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        iCALV = (int) cmbPharmacistSex.getSelectedItem();
+        
+        Pharmacist pharmacist = new Pharmacist(sMaNV, sHoTen, sGioiTinh, iNamSinh,
+                SDT, sDiaChi, dNGAYVL, iCALV);
+        pnPharmacist.addPharmacist(pharmacist);
+        
+        JOptionPane.showMessageDialog(rootPane, "Thành công.");
+        
+
+        // Clear thông tin sau mỗi lần thêm thành công
+        txtPharmacistID.setText("");
+        txtPharmacistName.setText("");
+        cmbPharmacistSex.setSelectedIndex(0);
+        txtPharmacistDOB.setText("");
+        txtPharmacistPhone.setText("");
+        txtPharmacistAddress.setText("");
+        txtYearWork.setText("");
+        cmbPharmacistShift.setSelectedIndex(0);
+    }//GEN-LAST:event_btnAddPharmacistActionPerformed
+
+    private void btnCancelPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelPharmacistActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnCancelPharmacistActionPerformed
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPharmacist;
     private javax.swing.JButton btnCancelPharmacist;
     private javax.swing.JButton btnClearPharmacist;
     private javax.swing.JComboBox<String> cmbPharmacistSex;
+    private javax.swing.JComboBox<String> cmbPharmacistShift;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -231,7 +275,6 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtPharmacistID;
     private javax.swing.JTextField txtPharmacistName;
     private javax.swing.JTextField txtPharmacistPhone;
-    private javax.swing.JComboBox<String> txtPharmacistShift;
     private javax.swing.JTextField txtYearWork;
     // End of variables declaration//GEN-END:variables
 }

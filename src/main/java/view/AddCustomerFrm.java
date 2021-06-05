@@ -16,6 +16,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
      */
     public AddCustomerFrm() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -34,13 +36,13 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         jLabel_guestaddress = new javax.swing.JLabel();
         txtCustomerID = new javax.swing.JTextField();
         txtCustomerName = new javax.swing.JTextField();
-        txtCustomerAddress = new javax.swing.JTextField();
+        txtCustomerPhone = new javax.swing.JTextField();
         btnAddCustomer = new javax.swing.JButton();
         btnClearCustomer = new javax.swing.JButton();
         btnCancelCustomer = new javax.swing.JButton();
         cmbCustomerSex = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        txtCustomerPhone = new javax.swing.JTextField();
+        txtCustomerDOB = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Thêm/Sửa Khách hàng");
@@ -55,7 +57,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
         jLabel_guestsex.setText("Giới tính:");
 
-        jLabel_guestaddress.setText("Địa chỉ:");
+        jLabel_guestaddress.setText("Số điện thoại:");
 
         txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +78,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
         cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
-        jLabel1.setText("Số điện thoại:");
+        jLabel1.setText("Năm sinh");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,8 +99,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                             .addComponent(txtCustomerID)
                             .addComponent(txtCustomerName)
                             .addComponent(cmbCustomerSex, 0, 295, Short.MAX_VALUE)
-                            .addComponent(txtCustomerPhone)
-                            .addComponent(txtCustomerAddress)))
+                            .addComponent(txtCustomerDOB)
+                            .addComponent(txtCustomerPhone)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAddCustomer)
@@ -132,12 +134,12 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                     .addComponent(jLabel_guestsex))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCustomerPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCustomerDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_guestaddress)
-                    .addComponent(txtCustomerAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddCustomer)
@@ -158,7 +160,6 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddCustomer;
     private javax.swing.JButton btnCancelCustomer;
@@ -170,7 +171,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_guestname;
     private javax.swing.JLabel jLabel_guestsex;
     private javax.swing.JLabel jLabel_title;
-    private javax.swing.JTextField txtCustomerAddress;
+    private javax.swing.JTextField txtCustomerDOB;
     private javax.swing.JTextField txtCustomerID;
     private javax.swing.JTextField txtCustomerName;
     private javax.swing.JTextField txtCustomerPhone;

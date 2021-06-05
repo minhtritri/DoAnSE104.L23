@@ -67,6 +67,8 @@ public class HomeFrm extends javax.swing.JFrame {
         }
         //</editor-fold>
         initComponents();
+        this.setLocationRelativeTo(null);
+        
         //grpMenuBar.add(tgbtnLogin);
         grpMenuBar.add(tgbtnDrug);
         grpMenuBar.add(tgbtnPharmacist);

@@ -42,7 +42,7 @@ public class DrugPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbListDrug = new javax.swing.JTable();
+        tblListDrug = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         btnAddDrug = new javax.swing.JButton();
         btnDeleteDrug = new javax.swing.JButton();
@@ -51,18 +51,15 @@ public class DrugPanel extends javax.swing.JPanel {
         txtSearchBarDrug = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tbListDrug.setModel(new javax.swing.table.DefaultTableModel(
+        tblListDrug.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "MaThuoc", "Tên thuốc", "Nhóm", "Loại", "Thành phần", "HSD", "ĐVT", "MaNCC", "Ngày tiếp nhận"
             }
         ));
-        jScrollPane1.setViewportView(tbListDrug);
+        jScrollPane1.setViewportView(tblListDrug);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -209,7 +206,7 @@ public class DrugPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tbListDrug;
+    private javax.swing.JTable tblListDrug;
     private javax.swing.JTextField txtSearchBarDrug;
     // End of variables declaration//GEN-END:variables
 }

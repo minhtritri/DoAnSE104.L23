@@ -1,18 +1,19 @@
-
 package model;
 
 import java.util.Date;
 
 public class Supplier {
+
     private String sMaNCC;
     private String sTenNCC;
-    private String sDiaChi;
     private int SDT;
+    private String sDiaChi;
+    private String sEmail;
     private Date dNgayDangKyHD;
     private int tThoiHanHD;
-    private String sEmail;
 
-    public Supplier(String sMaNCC, String sTenNCC, String sDiaChi, int SDT, Date dNgayDangKyHD, int tThoiHanHD, String sEmail) {
+    public Supplier(String sMaNCC, String sTenNCC, int SDT, String sDiaChi, 
+            String sEmail,  Date dNgayDangKyHD, int tThoiHanHD) {
         this.sMaNCC = sMaNCC;
         this.sTenNCC = sTenNCC;
         this.sDiaChi = sDiaChi;
@@ -80,7 +81,5 @@ public class Supplier {
     public void setsEmail(String sEmail) {
         this.sEmail = sEmail;
     }
-    
-   
-}
 
+}

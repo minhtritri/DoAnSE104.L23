@@ -1,21 +1,23 @@
-
 package model;
 
 /**
  *
  * @author anhha
  */
-public class ImportVoucherDetails {
+public class ImportVoucherDetail {
+
     private String sMaCTPN;
-    private int iSL;
     private String sMaPN;
     private String sMaThuoc;
+    private int iSL;
+
     private float fDonGia;
 
-    public ImportVoucherDetails() {
+    public ImportVoucherDetail() {
     }
 
-    public ImportVoucherDetails(String sMaCTPN, int iSL, String sMaPN, String sMaThuoc, float fDonGia) {
+    public ImportVoucherDetail(String sMaCTPN, String sMaPN,
+            String sMaThuoc, int iSL, float fDonGia) {
         this.sMaCTPN = sMaCTPN;
         this.iSL = iSL;
         this.sMaPN = sMaPN;
@@ -62,5 +64,5 @@ public class ImportVoucherDetails {
     public void setfDonGia(float fDonGia) {
         this.fDonGia = fDonGia;
     }
-    
+
 }
