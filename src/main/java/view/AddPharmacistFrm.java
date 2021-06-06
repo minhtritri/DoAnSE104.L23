@@ -1,8 +1,13 @@
 package view;
 
+import controller.PharmacistController;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -17,13 +22,37 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     /**
      * Creates new form AddPharmacist
      */
-    
-    private PharmacistPanel pnPharmacist;
-    
+    private boolean isEditing = false;
+    private int index;
+
     public AddPharmacistFrm() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+        isEditing = false;
+
+    }
+
+    public AddPharmacistFrm(int index) {
+        this();
+        isEditing = true;
+        this.addEditInfo(PharmacistController.getInstance().getList().get(index));
+        this.index = index;
+    }
+
+    public void addEditInfo(Pharmacist p) {
+        // set tung text field tuong ung voi tung getter
+        txtPharmacistID.setText(p.getsMaNV());
+        txtPharmacistName.setText(p.getsHoTen());
+        txtPharmacistDOB.setText(Integer.valueOf(p.getiNamSinh()).toString());
+        cmbPharmacistSex.setSelectedIndex(
+                (p.getsGioiTinh().equals("Nam")) ? 0
+                : (p.getsGioiTinh().equals("Nữ")) ? 1
+                : 2
+        );
+        txtPharmacistPhone.setText(p.getSDT());
+        txtPharmacistAddress.setText(p.getsDiaChi());
+        txtYearWork.setText(p.getdNGAYVL().format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
+        cmbPharmacistShift.setSelectedIndex(p.getiCALV() - 1);
     }
 
     /**
@@ -61,7 +90,8 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("Dược Sĩ");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Nhân viên Dược Sĩ");
 
         jLabel9.setText("Mã nhân viên");
 
@@ -83,7 +113,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
 
         cmbPharmacistShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
-        btnAddPharmacist.setText("Thêm");
+        btnAddPharmacist.setText("Lưu");
         btnAddPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddPharmacistActionPerformed(evt);
@@ -109,38 +139,34 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8)
+                    .addComponent(btnAddPharmacist))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel8)
-                            .addComponent(btnAddPharmacist))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnClearPharmacist)
-                                .addGap(58, 58, 58)
-                                .addComponent(btnCancelPharmacist))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtPharmacistID)
-                                .addComponent(txtPharmacistName)
-                                .addComponent(cmbPharmacistSex, 0, 206, Short.MAX_VALUE)
-                                .addComponent(txtPharmacistDOB)
-                                .addComponent(txtPharmacistPhone)
-                                .addComponent(txtPharmacistAddress)
-                                .addComponent(txtYearWork)
-                                .addComponent(cmbPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addComponent(btnClearPharmacist)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnCancelPharmacist))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtPharmacistID)
+                        .addComponent(txtPharmacistName)
+                        .addComponent(cmbPharmacistSex, 0, 206, Short.MAX_VALUE)
+                        .addComponent(txtPharmacistDOB)
+                        .addComponent(txtPharmacistPhone)
+                        .addComponent(txtPharmacistAddress)
+                        .addComponent(txtYearWork)
+                        .addComponent(cmbPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(41, 41, 41))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,55 +230,54 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearPharmacistActionPerformed
 
     private void btnAddPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPharmacistActionPerformed
-        String sMaNV;
-        String sHoTen;
-        String sGioiTinh;
-        int iNamSinh;
-        String SDT;
-        String sDiaChi;
-        Date dNGAYVL = null;
-        int iCALV;
-        
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        sMaNV = txtPharmacistID.getText();
-        sHoTen = txtPharmacistName.getText();
-        sGioiTinh = (String) cmbPharmacistSex.getSelectedItem();
-        iNamSinh = Integer.parseInt(txtPharmacistDOB.getText());
-        SDT = txtPharmacistPhone.getText();
-        sDiaChi = txtPharmacistAddress.getText();
-        
         try {
-            dNGAYVL = sdf.parse(txtYearWork.getText());
-        } catch (ParseException ex) {
-            Logger.getLogger(AddPharmacistFrm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        iCALV = (int) cmbPharmacistSex.getSelectedItem();
-        
-        Pharmacist pharmacist = new Pharmacist(sMaNV, sHoTen, sGioiTinh, iNamSinh,
-                SDT, sDiaChi, dNGAYVL, iCALV);
-        pnPharmacist.addPharmacist(pharmacist);
-        
-        JOptionPane.showMessageDialog(rootPane, "Thành công.");
-        
+            String sMaNV = txtPharmacistID.getText();
+            String sHoTen = txtPharmacistName.getText();
+            String sGioiTinh = (String) cmbPharmacistSex.getSelectedItem();
+            int iNamSinh = Integer.parseInt(txtPharmacistDOB.getText());
+            String SDT = txtPharmacistPhone.getText();
+            String sDiaChi = txtPharmacistAddress.getText();
+            LocalDate dNGAYVL = LocalDate.parse(txtYearWork.getText(), DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
+            int iCALV = Integer.valueOf(cmbPharmacistShift.getSelectedItem().toString());
+            Pharmacist pharmacist = new Pharmacist(sMaNV, sHoTen, sGioiTinh, iNamSinh,
+                    SDT, sDiaChi, dNGAYVL, iCALV);
 
-        // Clear thông tin sau mỗi lần thêm thành công
-        txtPharmacistID.setText("");
-        txtPharmacistName.setText("");
-        cmbPharmacistSex.setSelectedIndex(0);
-        txtPharmacistDOB.setText("");
-        txtPharmacistPhone.setText("");
-        txtPharmacistAddress.setText("");
-        txtYearWork.setText("");
-        cmbPharmacistShift.setSelectedIndex(0);
+            if (isEditing) {
+                System.out.println(this.index);
+                PharmacistController.getInstance().getList().set(this.index, pharmacist);
+                this.setVisible(false);
+                
+            } else {
+                // thêm vào arraylist trong Controller 1 thằng pharmacist mới
+                PharmacistController.getInstance().getList().add(pharmacist);
+            }
+
+            // lấy ra table tblListPharmacist từ Panel truyền vào dữ liệu từ Controller
+            PharmacistPanel.getInstance().getTable().setModel(
+                    PharmacistController.getInstance().toTable()
+            );
+            // Clear thông tin sau mỗi lần thêm thành công
+//            txtPharmacistID.setText("");
+//            txtPharmacistName.setText("");
+//            cmbPharmacistSex.setSelectedIndex(0);
+//            txtPharmacistDOB.setText("");
+//            txtPharmacistPhone.setText("");
+//            txtPharmacistAddress.setText("");
+//            txtYearWork.setText("");
+//            cmbPharmacistShift.setSelectedIndex(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_btnAddPharmacistActionPerformed
 
     private void btnCancelPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelPharmacistActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnCancelPharmacistActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

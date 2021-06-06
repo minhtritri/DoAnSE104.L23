@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Pharmacist {
@@ -10,14 +11,14 @@ public class Pharmacist {
     private int iNamSinh;
     private String SDT;
     private String sDiaChi;
-    private Date dNGAYVL;
+    private LocalDate dNGAYVL;
     private int iCALV;
 
     public Pharmacist() {
     }
 
     public Pharmacist(String sMaNV, String sHoTen, String sGioiTinh, int iNamSinh,
-            String SDT, String sDiaChi, Date dNGAYVL, int iCALV) {
+            String SDT, String sDiaChi, LocalDate dNGAYVL, int iCALV) {
         this.sMaNV = sMaNV;
         this.sHoTen = sHoTen;
         this.iNamSinh = iNamSinh;
@@ -76,11 +77,11 @@ public class Pharmacist {
         this.SDT = SDT;
     }
 
-    public Date getdNGAYVL() {
+    public LocalDate getdNGAYVL() {
         return dNGAYVL;
     }
 
-    public void setdNGAYVL(Date dNGAYVL) {
+    public void setdNGAYVL(LocalDate dNGAYVL) {
         this.dNGAYVL = dNGAYVL;
     }
 

@@ -37,7 +37,7 @@ public class HomeFrm extends javax.swing.JFrame {
 
 
     CustomerPanel pnCustomer = new CustomerPanel();
-    PharmacistPanel pnPharmacist = new PharmacistPanel();
+    PharmacistPanel pnPharmacist = PharmacistPanel.getInstance();
     DrugPanel pnDrug = new DrugPanel();
     SupplierPanel pnSupplier = new SupplierPanel();
     
@@ -154,7 +154,7 @@ public class HomeFrm extends javax.swing.JFrame {
             }
         });
 
-        tgbtnPharmacist.setText("Nhân viên");
+        tgbtnPharmacist.setText("Nhân viên dược sĩ");
         tgbtnPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tgbtnPharmacistActionPerformed(evt);

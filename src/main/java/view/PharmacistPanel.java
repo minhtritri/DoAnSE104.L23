@@ -1,7 +1,10 @@
 package view;
 
+import controller.PharmacistController;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Pharmacist;
 
@@ -11,14 +14,17 @@ import model.Pharmacist;
  */
 public class PharmacistPanel extends javax.swing.JPanel {
 
+    private static PharmacistPanel instance = new PharmacistPanel();
+
+    public static PharmacistPanel getInstance() {
+        return instance;
+    }
+
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    private List<Pharmacist> pharmacists;
-    private DefaultTableModel tblModel;
-
-    public PharmacistPanel() {
+    private PharmacistPanel() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -36,19 +42,10 @@ public class PharmacistPanel extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
 
-        pharmacists = new ArrayList<>();
-        tblModel = (DefaultTableModel) tblListPharmacist.getModel();
-
     }
 
-    public void addPharmacist(Pharmacist pharma) {
-        pharmacists.add(pharma);
-        tblModel.setRowCount(0);
-        for (Pharmacist pharmacist : pharmacists) {
-            tblModel.addRow(new Object[]{pharmacist.getsMaNV(), pharmacist.getsHoTen(),
-                pharmacist.getsGioiTinh(), pharmacist.getiNamSinh(), pharmacist.getSDT(),
-                pharmacist.getsDiaChi(), pharmacist.getdNGAYVL(), pharmacist.getiCALV()});
-        }
+    public JTable getTable() {
+        return tblListPharmacist;
     }
 
     @SuppressWarnings("unchecked")
@@ -101,8 +98,18 @@ public class PharmacistPanel extends javax.swing.JPanel {
         });
 
         btnDeletePharmacist.setText("Xoá");
+        btnDeletePharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletePharmacistActionPerformed(evt);
+            }
+        });
 
         btnEditPharmacist.setText("Sửa");
+        btnEditPharmacist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditPharmacistActionPerformed(evt);
+            }
+        });
 
         btnSearchPharmacist.setText("Tìm kiếm");
         btnSearchPharmacist.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +217,31 @@ public class PharmacistPanel extends javax.swing.JPanel {
     private void txtSearchBarPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarPharmacistActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchBarPharmacistActionPerformed
+
+    private void btnDeletePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePharmacistActionPerformed
+        int selectedIndex = tblListPharmacist.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            return;
+        } else {
+            PharmacistController.getInstance().getList().remove(selectedIndex);
+            tblListPharmacist.setModel(PharmacistController.getInstance().toTable());
+        }
+
+    }//GEN-LAST:event_btnDeletePharmacistActionPerformed
+
+    private void btnEditPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPharmacistActionPerformed
+        int selectedIndex = tblListPharmacist.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            return;
+        } else {
+            AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
+
+            addPharmaFrm.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_btnEditPharmacistActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

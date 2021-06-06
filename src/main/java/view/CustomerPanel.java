@@ -268,7 +268,8 @@ public class CustomerPanel extends javax.swing.JPanel {
     private void showData() {
         tblcustomer.setRowCount(0);
         for(Customer customer: customer){
-            tblcustomer.addRow(new Object[]{customer.getsMaKH(), customer.getsHoten(),customer.getsGioiTinh(), customer.getsNamSinh(),customer.getsSdtKH()});
+            tblcustomer.addRow(new Object[]{customer.getsMaKH(), customer.getsHoten(),
+                customer.getsGioiTinh(), customer.getsNamSinh(),customer.getsSdtKH()});
 
         }
     }

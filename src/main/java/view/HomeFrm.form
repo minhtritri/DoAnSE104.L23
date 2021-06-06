@@ -180,7 +180,7 @@
             </Component>
             <Component class="javax.swing.JToggleButton" name="tgbtnPharmacist">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n"/>
+                <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n d&#x1b0;&#x1ee3;c s&#x129;"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tgbtnPharmacistActionPerformed"/>
