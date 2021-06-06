@@ -23,32 +23,32 @@ public class Customer {
         return sMaKH;
     }
 
-    public String getsHoten() {
-        return sHoten;
-    }
-
-    public String getsGioiTinh() {
-        return sGioiTinh;
-    }
-
-    public String getsDiaChi() {
-        return sNamSinh;
-    }
-
     public void setsMaKH(String sMaKH) {
         this.sMaKH = sMaKH;
+    }
+
+    public String getsHoten() {
+        return sHoten;
     }
 
     public void setsHoten(String sHoten) {
         this.sHoten = sHoten;
     }
 
+    public String getsGioiTinh() {
+        return sGioiTinh;
+    }
+
     public void setsGioiTinh(String sGioiTinh) {
         this.sGioiTinh = sGioiTinh;
     }
 
-    public void setsDiaChi(String sDiaChi) {
-        this.sNamSinh = sDiaChi;
+    public String getsNamSinh() {
+        return sNamSinh;
+    }
+
+    public void setsNamSinh(String sNamSinh) {
+        this.sNamSinh = sNamSinh;
     }
 
     public String getsSdtKH() {
@@ -58,5 +58,7 @@ public class Customer {
     public void setsSdtKH(String sSdtKH) {
         this.sSdtKH = sSdtKH;
     }
+
+    
 
 }

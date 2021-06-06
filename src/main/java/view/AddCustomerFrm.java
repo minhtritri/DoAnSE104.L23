@@ -5,6 +5,11 @@
  */
 package view;
 
+import java.util.Date;
+import javax.swing.JPanel;
+import model.Customer;
+
+
 /**
  *
  * @author anhha
@@ -14,10 +19,12 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     /**
      * Creates new form AddGuestFrm
      */
-    public AddCustomerFrm() {
+    private CustomerPanel customerPanel;
+    
+    public AddCustomerFrm(JPanel parent) {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        customerPanel = (CustomerPanel) parent;
     }
 
     /**
@@ -73,8 +80,18 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         });
 
         btnClearCustomer.setText("Làm mới");
+        btnClearCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearCustomerActionPerformed(evt);
+            }
+        });
 
         btnCancelCustomer.setText("Huỷ");
+        btnCancelCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelCustomerActionPerformed(evt);
+            }
+        });
 
         cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
@@ -156,8 +173,34 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerNameActionPerformed
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
-        // TODO add your handling code here:
+         String sMaKH = "";
+     String sHoten = "";
+     String sGioiTinh = "";
+     String sNamSinh = "";
+     String sSdtKH = "";
+     
+     sMaKH = txtCustomerID.getText();
+     sHoten = txtCustomerName.getText();
+     sGioiTinh = cmbCustomerSex.getItemAt(cmbCustomerSex.getSelectedIndex());
+     sSdtKH = txtCustomerPhone.getText();
+     sNamSinh = txtCustomerDOB.getText();
+     Customer customer = new Customer(sMaKH,sHoten,sGioiTinh,sNamSinh,sSdtKH);
+     customerPanel.AddCustomer(customer);
     }//GEN-LAST:event_btnAddCustomerActionPerformed
+
+    private void btnCancelCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelCustomerActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnCancelCustomerActionPerformed
+
+    private void btnClearCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearCustomerActionPerformed
+        // TODO add your handling code here:
+         txtCustomerID.setText("");
+         txtCustomerName.setText("");
+         cmbCustomerSex.setSelectedIndex(0);
+         txtCustomerPhone.setText("");
+         txtCustomerDOB.setText("");
+    }//GEN-LAST:event_btnClearCustomerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

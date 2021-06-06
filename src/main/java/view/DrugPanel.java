@@ -5,15 +5,23 @@
  */
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Drug;
+
 /**
  *
  * @author THAONGAN
  */
 public class DrugPanel extends javax.swing.JPanel {
-
-
+    private List<Drug> drug ;
+    private DefaultTableModel tblDrug;
+    private int selectedIndex ;
     public void setTitle(String str) {
         this.lbTitle.setText(str);
+        
     }
 
     public DrugPanel() {
@@ -33,8 +41,18 @@ public class DrugPanel extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
+        drug = new ArrayList<Drug>();
+        tblDrug = (DefaultTableModel) tblListDrug.getModel();
+      
+        
+        
+        
     }
-
+    public void AddDrug(Drug d){
+        drug.add(d); // Them thuoc vao danh sach
+        showData();
+        
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -85,8 +103,18 @@ public class DrugPanel extends javax.swing.JPanel {
         });
 
         btnDeleteDrug.setText("Xoá");
+        btnDeleteDrug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteDrugActionPerformed(evt);
+            }
+        });
 
         btnEditDrug.setText("Sửa");
+        btnEditDrug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditDrugActionPerformed(evt);
+            }
+        });
 
         btnSearchDrug.setText("Tìm kiếm");
         btnSearchDrug.addActionListener(new java.awt.event.ActionListener() {
@@ -183,8 +211,11 @@ public class DrugPanel extends javax.swing.JPanel {
 
     private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
         if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
-            new AddDrugFrm().setVisible(true);
+            AddDrugFrm AddDrugFrm = new AddDrugFrm(this);
+            AddDrugFrm.setVisible(true);
         }
+     
+        
     }//GEN-LAST:event_btnAddDrugActionPerformed
 
     private void btnSearchDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDrugActionPerformed
@@ -194,6 +225,37 @@ public class DrugPanel extends javax.swing.JPanel {
     private void txtSearchBarDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarDrugActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchBarDrugActionPerformed
+
+    private void btnEditDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDrugActionPerformed
+        // TODO add your handling code here:
+        selectedIndex = tblListDrug.getSelectedRow();
+        if(drug.size() == 0){
+            JOptionPane.showMessageDialog(jPanel2, "Hay Nhap Them Thong Tin"); 
+        }else if(selectedIndex == -1 ){
+            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Dong De Sua "); 
+        }else{
+            EditDrugFrm editDrugFrm = new EditDrugFrm(this);
+            editDrugFrm.setEditData(drug.get(selectedIndex));
+            editDrugFrm.setVisible(true);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btnEditDrugActionPerformed
+
+    private void btnDeleteDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDrugActionPerformed
+        // TODO add your handling code here:
+        int removeIndex = tblListDrug.getSelectedRow();
+        if(drug.size() == 0){
+            JOptionPane.showMessageDialog(jPanel2, "Hay Them Thong Tin Truoc Khi Xoa");
+        }else if(removeIndex == -1){
+            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Mot Dong Roi An Nut Xoa");
+        }else {
+            drug.remove(removeIndex);
+            showData();
+        }
+    }//GEN-LAST:event_btnDeleteDrugActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,4 +271,17 @@ public class DrugPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblListDrug;
     private javax.swing.JTextField txtSearchBarDrug;
     // End of variables declaration//GEN-END:variables
+
+    public void EditDrug(Drug d) {
+        drug.remove(selectedIndex);
+        this.AddDrug(d);
+    }
+
+    private void showData() {
+        tblDrug.setRowCount(0);
+        for (Drug drug: drug){
+            tblDrug.addRow(new Object[]{drug.getsMathuoc(),drug.getsTenthuoc(), drug.getsPhannhom(), drug.getsPhanloai(), drug.getsThanhphan(),
+            drug.getsHansudung(),drug.getsDVT(), drug.getsMancc(), drug.getsNgaytiepnhan()});
+        }
+    }
 }

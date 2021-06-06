@@ -5,19 +5,25 @@
  */
 package view;
 
+import java.util.Date;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import model.Drug;
+
 /**
  *
  * @author THAONGAN
  */
 public class AddDrugFrm extends javax.swing.JFrame {
-
+    private DrugPanel drugPanel;
+    
     /**
      * Creates new form AddDrug
      */
-    public AddDrugFrm() {
+    public AddDrugFrm(JPanel parent) {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        drugPanel = (DrugPanel) parent;
     }
 
     /**
@@ -39,7 +45,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
         jLabel_amount = new javax.swing.JLabel();
         jLabel_supplierid = new javax.swing.JLabel();
         jLabel_dayreception = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtDrugId = new javax.swing.JTextField();
         txtDrugName = new javax.swing.JTextField();
         txtDrugGroup = new javax.swing.JTextField();
         txtDrugIngr = new javax.swing.JTextField();
@@ -47,13 +53,13 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtUnit = new javax.swing.JTextField();
         txtSupplierID = new javax.swing.JTextField();
         txtDateImport = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbbDrugType = new javax.swing.JComboBox<>();
         btnAddDrug = new javax.swing.JButton();
-        btnClearDrug = new javax.swing.JButton();
+        btnResetDrug = new javax.swing.JButton();
         btnCancelDrug = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Thêm/Sửa Thuốc");
+        setTitle("Thêm Thuốc");
         setResizable(false);
 
         txtDrugID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -77,7 +83,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
         jLabel_dayreception.setText("Ngày tiếp nhận");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thuốc kê đơn", "Thuốc không kê đơn", "Thực phẩm chức năng" }));
+        cbbDrugType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thuốc kê đơn", "Thuốc không kê đơn", "Thực phẩm chức năng" }));
 
         btnAddDrug.setText("Thêm");
         btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
@@ -86,9 +92,19 @@ public class AddDrugFrm extends javax.swing.JFrame {
             }
         });
 
-        btnClearDrug.setText("Làm mới");
+        btnResetDrug.setText("Làm mới");
+        btnResetDrug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetDrugActionPerformed(evt);
+            }
+        });
 
         btnCancelDrug.setText("Huỷ");
+        btnCancelDrug.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelDrugActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +124,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                     .addComponent(jLabel_dayreception))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
+                    .addComponent(txtDrugId)
                     .addComponent(txtDrugName)
                     .addComponent(txtDrugGroup)
                     .addComponent(txtDrugIngr)
@@ -116,7 +132,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                     .addComponent(txtUnit)
                     .addComponent(txtSupplierID)
                     .addComponent(txtDateImport)
-                    .addComponent(jComboBox1, 0, 202, Short.MAX_VALUE))
+                    .addComponent(cbbDrugType, 0, 202, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +143,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(btnAddDrug)
                         .addGap(56, 56, 56)
-                        .addComponent(btnClearDrug)
+                        .addComponent(btnResetDrug)
                         .addGap(57, 57, 57)
                         .addComponent(btnCancelDrug)))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -140,7 +156,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_drugsid)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDrugId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_drugsname, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,7 +168,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_type)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbbDrugType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_ingredient)
@@ -176,7 +192,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddDrug)
-                    .addComponent(btnClearDrug)
+                    .addComponent(btnResetDrug)
                     .addComponent(btnCancelDrug))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -185,15 +201,53 @@ public class AddDrugFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
-        // TODO add your handling code here:
+         String sMathuoc = "", sTenthuoc = "", sPhannhom = "", sPhanloai = "", sThanhphan = "", sMancc = "";
+        String sHansudung = "", sNgaytiepnhan = "";
+        String sDVT = "";
+        
+        sMathuoc = txtDrugId.getText();
+        sTenthuoc = txtDrugName.getText();
+        sPhannhom = txtDrugGroup.getText();
+        sPhanloai = cbbDrugType.getItemAt(cbbDrugType.getSelectedIndex());
+        sThanhphan = txtDrugIngr.getText();
+        sMancc = txtSupplierID.getText();
+        sHansudung = txtExpiredDate.getText();
+        sNgaytiepnhan = txtDateImport.getText();
+        sDVT = txtUnit.getText();
+        
+        
+        
+        Drug drug = new Drug(sMathuoc, sTenthuoc,sPhannhom,  sPhanloai, sThanhphan, sHansudung, sDVT, sMancc, sNgaytiepnhan);
+        drugPanel.AddDrug(drug);
+        
+                // TODO add your handling code here:
     }//GEN-LAST:event_btnAddDrugActionPerformed
+
+    private void btnCancelDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelDrugActionPerformed
+            this.dispose();
+                // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelDrugActionPerformed
+
+    private void btnResetDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetDrugActionPerformed
+        // TODO add your handling code here:
+        txtDrugId.setText("");
+        txtDrugName.setText("");
+        txtDrugGroup.setText("");
+        cbbDrugType.setSelectedIndex(0);
+        txtDrugIngr.setText("");
+        txtExpiredDate.setText("");
+        txtUnit.setText("");
+        txtSupplierID.setText("");
+        txtDateImport.setText("");
+        
+    }//GEN-LAST:event_btnResetDrugActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDrug;
     private javax.swing.JButton btnCancelDrug;
-    private javax.swing.JButton btnClearDrug;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnResetDrug;
+    private javax.swing.JComboBox<String> cbbDrugType;
     private javax.swing.JLabel jLabel_amount;
     private javax.swing.JLabel jLabel_dayreception;
     private javax.swing.JLabel jLabel_drugsid;
@@ -203,10 +257,10 @@ public class AddDrugFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_ingredient;
     private javax.swing.JLabel jLabel_supplierid;
     private javax.swing.JLabel jLabel_type;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtDateImport;
     private javax.swing.JTextField txtDrugGroup;
     private javax.swing.JLabel txtDrugID;
+    private javax.swing.JTextField txtDrugId;
     private javax.swing.JTextField txtDrugIngr;
     private javax.swing.JTextField txtDrugName;
     private javax.swing.JTextField txtExpiredDate;

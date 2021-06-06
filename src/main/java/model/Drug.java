@@ -9,26 +9,24 @@ public class Drug {
     private String sPhannhom;
     private String sPhanloai;
     private String sThanhphan;
-    private Date dHansudung;
-    private int iDVT;
+    private String sHansudung;
+    private String sDVT;
     private String sMancc;
-    private Date dNgaytiepnhan;
+    private String sNgaytiepnhan;
 
     public Drug() {
     }
 
-    public Drug(String sMathuoc, String sTenthuoc, String sPhannhom, 
-            String sPhanloai, String sThanhphan, Date dHansudung, 
-            int iDVT, String sMancc, Date dNgaytiepnhan) {
+    public Drug(String sMathuoc, String sTenthuoc, String sPhannhom, String sPhanloai, String sThanhphan, String sHansudung, String sDVT, String sMancc, String sNgaytiepnhan) {
         this.sMathuoc = sMathuoc;
         this.sTenthuoc = sTenthuoc;
         this.sPhannhom = sPhannhom;
         this.sPhanloai = sPhanloai;
         this.sThanhphan = sThanhphan;
+        this.sHansudung = sHansudung;
+        this.sDVT = sDVT;
         this.sMancc = sMancc;
-        this.dNgaytiepnhan = dNgaytiepnhan;
-        this.dHansudung = dHansudung;
-        this.iDVT = iDVT;
+        this.sNgaytiepnhan = sNgaytiepnhan;
     }
 
     public String getsMathuoc() {
@@ -55,11 +53,11 @@ public class Drug {
         this.sPhannhom = sPhannhom;
     }
 
-    public String getsMaPhanloai() {
+    public String getsPhanloai() {
         return sPhanloai;
     }
 
-    public void setsMaPhanloai(String sPhanloai) {
+    public void setsPhanloai(String sPhanloai) {
         this.sPhanloai = sPhanloai;
     }
 
@@ -71,6 +69,22 @@ public class Drug {
         this.sThanhphan = sThanhphan;
     }
 
+    public String getsHansudung() {
+        return sHansudung;
+    }
+
+    public void setsHansudung(String sHansudung) {
+        this.sHansudung = sHansudung;
+    }
+
+    public String getsDVT() {
+        return sDVT;
+    }
+
+    public void setsDVT(String sDVT) {
+        this.sDVT = sDVT;
+    }
+
     public String getsMancc() {
         return sMancc;
     }
@@ -79,28 +93,14 @@ public class Drug {
         this.sMancc = sMancc;
     }
 
-    public Date getdNgaytiepnhan() {
-        return dNgaytiepnhan;
+    public String getsNgaytiepnhan() {
+        return sNgaytiepnhan;
     }
 
-    public void setdNgaytiepnhan(Date dNgaytiepnhan) {
-        this.dNgaytiepnhan = dNgaytiepnhan;
+    public void setsNgaytiepnhan(String sNgaytiepnhan) {
+        this.sNgaytiepnhan = sNgaytiepnhan;
     }
 
-    public Date getdHansudung() {
-        return dHansudung;
-    }
-
-    public void setdHansudung(Date dHansudung) {
-        this.dHansudung = dHansudung;
-    }
-
-    public int getiSL_DVT() {
-        return iDVT;
-    }
-
-    public void setiSL_DVT(int iSL_DVT) {
-        this.iDVT = iSL_DVT;
-    }
+    
 
 }
