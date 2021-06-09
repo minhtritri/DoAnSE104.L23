@@ -6,6 +6,7 @@ D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\HomeFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddReceiptFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Pharmacist.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ThamSo.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\ReceiptPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Drug.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\CustomerPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\EditCustomerFrm.java
@@ -17,6 +18,7 @@ D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\SupplierPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\ReportPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddPharmacistFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\DrugPanel.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\ImportVoucherPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ImportVoucher.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ImportVoucherDetail.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\PharmacistController.java

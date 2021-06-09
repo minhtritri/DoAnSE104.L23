@@ -57,7 +57,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lbDrugList" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbDrugList" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnInsertDrugRow" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnDeleteDrugRow" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="jScrollPane2" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -139,8 +145,14 @@
                   <Component id="lbDateSell" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtDateReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Component id="lbDrugList" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbDrugList" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                      <Component id="btnDeleteDrugRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInsertDrugRow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="156" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -148,7 +160,7 @@
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtSumReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnClearReceipt" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -170,7 +182,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbSellID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; b&#xe1;n h&#xe0;ng"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1; &#x111;&#x1a1;n"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfReceiptID">
@@ -291,6 +303,16 @@
     <Component class="javax.swing.JTextField" name="txtPharmacistID">
     </Component>
     <Component class="javax.swing.JTextField" name="txtCustomerID">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnInsertDrugRow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Th&#xea;m SP"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnDeleteDrugRow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Xo&#xe1; SP"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

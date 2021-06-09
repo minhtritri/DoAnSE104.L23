@@ -35,14 +35,13 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private static final HomeFrm instance = new HomeFrm();
 
-
     CustomerPanel pnCustomer = new CustomerPanel();
     PharmacistPanel pnPharmacist = PharmacistPanel.getInstance();
     DrugPanel pnDrug = new DrugPanel();
     SupplierPanel pnSupplier = new SupplierPanel();
-    
-    
-    
+    ReceiptPanel pnReceipt = new ReceiptPanel();
+    ImportVoucherPanel pnImportVoucher = new ImportVoucherPanel();
+
     public HomeFrm() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -68,7 +67,7 @@ public class HomeFrm extends javax.swing.JFrame {
         //</editor-fold>
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
         //grpMenuBar.add(tgbtnLogin);
         grpMenuBar.add(tgbtnDrug);
         grpMenuBar.add(tgbtnPharmacist);
@@ -80,13 +79,13 @@ public class HomeFrm extends javax.swing.JFrame {
 
         pnContainer.setLayout(new CardLayout());
         pnContainer.setLayout(new CardLayout());
-      
+
         //pnContainer.add(mainPanel);
         pnCustomer.setVisible(true);
         pnPharmacist.setVisible(true);
         pnDrug.setVisible(true);
         pnSupplier.setVisible(true);
-        
+
         pnContainer.setVisible(false);
 
         this.setVisible(true);
@@ -308,73 +307,82 @@ public class HomeFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_tgbtnReportActionPerformed
 
     private void tgbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReceiptActionPerformed
-//        mainPanel.setTitle("Danh sách Phiếu nhập thuốc");
-//
-//        pnContainer.setVisible(true);
-//        panel_Drugs.setVisible(true);
-//        panel_Pharmacis.setVisible(false);
-        
-        
-        
+        pnContainer.add(pnReceipt);
+        pnReceipt.setVisible(true);
+        pnContainer.setVisible(true);
+
+        pnDrug.setVisible(false);
+        pnPharmacist.setVisible(false);
+        pnSupplier.setVisible(false);
+        pnCustomer.setVisible(false);
+        pnImportVoucher.setVisible(false);
+
     }//GEN-LAST:event_tgbtnReceiptActionPerformed
 
     private void tgbtnImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnImportVoucherActionPerformed
-//        mainPanel.setTitle("Danh sách Hóa đơn bán thuốc");
-//        pnContainer.setVisible(true);
-//        mainPanel.setVisible(true);
-        
-        
-        
+        pnContainer.add(pnImportVoucher);
+        pnImportVoucher.setVisible(true);
+        pnContainer.setVisible(true);
+
+        pnDrug.setVisible(false);
+        pnPharmacist.setVisible(false);
+        pnSupplier.setVisible(false);
+        pnCustomer.setVisible(false);
+        pnReceipt.setVisible(false);
     }//GEN-LAST:event_tgbtnImportVoucherActionPerformed
 
     private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
-       
         pnContainer.add(pnCustomer);
         pnCustomer.setVisible(true);
         pnContainer.setVisible(true);
+
         pnDrug.setVisible(false);
         pnPharmacist.setVisible(false);
         pnSupplier.setVisible(false);
-        
+        pnReceipt.setVisible(false);
+        pnImportVoucher.setVisible(false);
     }//GEN-LAST:event_tgbtnCustomerActionPerformed
 
     private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
-       
+
         pnContainer.add(pnSupplier);
         pnSupplier.setVisible(true);
         pnContainer.setVisible(true);
-        pnCustomer.setVisible(false);
+
         pnDrug.setVisible(false);
         pnPharmacist.setVisible(false);
-        
-        
-        
+        pnCustomer.setVisible(false);
+        pnReceipt.setVisible(false);
+        pnImportVoucher.setVisible(false);
+
+
     }//GEN-LAST:event_tgbtnSupplierActionPerformed
 
     private void tgbtnPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnPharmacistActionPerformed
-        
+
         pnContainer.add(pnPharmacist);
         pnContainer.setVisible(true);
         pnPharmacist.setVisible(true);
+
         pnDrug.setVisible(false);
         pnSupplier.setVisible(false);
         pnCustomer.setVisible(false);
-        
-        
-        
+        pnReceipt.setVisible(false);
+        pnImportVoucher.setVisible(false);
     }//GEN-LAST:event_tgbtnPharmacistActionPerformed
 
     private void tgbtnDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnDrugActionPerformed
-       
+
         pnContainer.setVisible(true);
-        
         pnContainer.add(pnDrug);
         pnDrug.setVisible(true);
+
         pnPharmacist.setVisible(false);
         pnSupplier.setVisible(false);
         pnCustomer.setVisible(false);
-        
-        
+
+        pnImportVoucher.setVisible(false);
+
     }//GEN-LAST:event_tgbtnDrugActionPerformed
 
     /**

@@ -57,6 +57,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         txtDateReceipt = new javax.swing.JTextField();
         txtPharmacistID = new javax.swing.JTextField();
         txtSupplierID = new javax.swing.JTextField();
+        btnDeleteDrugRow = new javax.swing.JButton();
+        btnInsertDrugRow = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -134,6 +136,10 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
         btnCancelImport.setText("Huỷ");
 
+        btnDeleteDrugRow.setText("Xoá SP");
+
+        btnInsertDrugRow.setText("Thêm SP");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -156,7 +162,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                         .addComponent(jLabel8)
                         .addGap(117, 117, 117)
                         .addComponent(txtSum))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbBuyID)
@@ -166,15 +171,27 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                             .addComponent(lbSupplierName)
                             .addComponent(lbDateBuy)
                             .addComponent(lbDrugList))
-                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .addComponent(tfSupplierName)
-                            .addComponent(tfBuyID)
-                            .addComponent(txtDateReceipt)
-                            .addComponent(txtPharmacistID)
-                            .addComponent(txtSupplierID))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnInsertDrugRow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDeleteDrugRow))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(txtDateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(tfSupplierName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(txtSupplierID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(tfPharmacistName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtPharmacistID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfBuyID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +222,12 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDateBuy)
                     .addComponent(txtDateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbDrugList)
+                    .addComponent(btnDeleteDrugRow)
+                    .addComponent(btnInsertDrugRow))
                 .addGap(21, 21, 21)
-                .addComponent(lbDrugList)
-                .addGap(24, 24, 24)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -238,6 +258,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnAddImport;
     private javax.swing.JButton btnCancelImport;
     private javax.swing.JButton btnClearImport;
+    private javax.swing.JButton btnDeleteDrugRow;
+    private javax.swing.JButton btnInsertDrugRow;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;

@@ -51,6 +51,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         txtDateReceipt = new javax.swing.JTextField();
         txtPharmacistID = new javax.swing.JTextField();
         txtCustomerID = new javax.swing.JTextField();
+        btnInsertDrugRow = new javax.swing.JButton();
+        btnDeleteDrugRow = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -72,7 +74,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         lbBuyReceipt.setText("                                Hoá đơn bán thuốc (cho khách hàng)");
         lbBuyReceipt.setToolTipText("");
 
-        lbSellID.setText("Mã bán hàng");
+        lbSellID.setText("Mã hoá đơn");
 
         tfReceiptID.setText("Sinh mã ");
 
@@ -131,6 +133,10 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         btnCancelReceipt.setText("Huỷ");
 
+        btnInsertDrugRow.setText("Thêm SP");
+
+        btnDeleteDrugRow.setText("Xoá SP");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,7 +149,12 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbDrugList)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbDrugList)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnInsertDrugRow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDeleteDrugRow))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,15 +217,19 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDateSell)
                     .addComponent(txtDateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(lbDrugList)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbDrugList)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnDeleteDrugRow)
+                        .addComponent(btnInsertDrugRow)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtSumReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnClearReceipt)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -244,6 +259,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnAddReceipt;
     private javax.swing.JButton btnCancelReceipt;
     private javax.swing.JButton btnClearReceipt;
+    private javax.swing.JButton btnDeleteDrugRow;
+    private javax.swing.JButton btnInsertDrugRow;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
