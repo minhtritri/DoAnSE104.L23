@@ -178,7 +178,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAddPharmacist" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInsertPharmacist" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnDeletePharmacist" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -195,7 +195,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAddPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnInsertPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnDeletePharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEditPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSearchPharmacist" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -207,12 +207,12 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAddPharmacist">
+            <Component class="javax.swing.JButton" name="btnInsertPharmacist">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddPharmacistActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertPharmacistActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnDeletePharmacist">

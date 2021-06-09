@@ -42,17 +42,17 @@ public class ReceiptPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListSupplier = new javax.swing.JTable();
+        tblListReceipt = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddSupplier = new javax.swing.JButton();
-        btnDeleteSupplier = new javax.swing.JButton();
-        btnEditSupplier = new javax.swing.JButton();
-        btnSearchSupplier = new javax.swing.JButton();
-        txtSearchBarSupplier = new javax.swing.JTextField();
+        btnInsertReceipt = new javax.swing.JButton();
+        btnDeleteReceipt = new javax.swing.JButton();
+        btnEditReceipt = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
+        txtSearchBar = new javax.swing.JTextField();
         btnViewDetail = new javax.swing.JButton();
         lbTitle = new javax.swing.JLabel();
 
-        tblListSupplier.setModel(new javax.swing.table.DefaultTableModel(
+        tblListReceipt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -60,7 +60,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 "MaHD", "MaNV", "Tên NV", "MaKH", "Tên KH", "Ngày mua"
             }
         ));
-        jScrollPane1.setViewportView(tblListSupplier);
+        jScrollPane1.setViewportView(tblListReceipt);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -79,27 +79,27 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddSupplier.setText("Thêm");
-        btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertReceipt.setText("Thêm");
+        btnInsertReceipt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddSupplierActionPerformed(evt);
+                btnInsertReceiptActionPerformed(evt);
             }
         });
 
-        btnDeleteSupplier.setText("Xoá");
+        btnDeleteReceipt.setText("Xoá");
 
-        btnEditSupplier.setText("Sửa");
+        btnEditReceipt.setText("Sửa");
 
-        btnSearchSupplier.setText("Tìm kiếm");
-        btnSearchSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("Tìm kiếm");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSupplierActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
-        txtSearchBarSupplier.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarSupplierActionPerformed(evt);
+                txtSearchBarActionPerformed(evt);
             }
         });
 
@@ -113,15 +113,15 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnAddSupplier)
+                        .addComponent(btnInsertReceipt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeleteSupplier)
+                        .addComponent(btnDeleteReceipt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditSupplier)
+                        .addComponent(btnEditReceipt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearchBarSupplier, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                        .addComponent(txtSearchBar, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearchSupplier))
+                        .addComponent(btnSearch))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -131,11 +131,11 @@ public class ReceiptPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddSupplier)
-                    .addComponent(btnDeleteSupplier)
-                    .addComponent(btnEditSupplier)
-                    .addComponent(btnSearchSupplier)
-                    .addComponent(txtSearchBarSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnInsertReceipt)
+                    .addComponent(btnDeleteReceipt)
+                    .addComponent(btnEditReceipt)
+                    .addComponent(btnSearch)
+                    .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnViewDetail)
                 .addContainerGap())
@@ -192,33 +192,33 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
+    private void btnInsertReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertReceiptActionPerformed
          if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
         }     
-    }//GEN-LAST:event_btnAddSupplierActionPerformed
+    }//GEN-LAST:event_btnInsertReceiptActionPerformed
 
-    private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSupplierActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSupplierActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void txtSearchBarSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarSupplierActionPerformed
+    private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarSupplierActionPerformed
+    }//GEN-LAST:event_txtSearchBarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddSupplier;
-    private javax.swing.JButton btnDeleteSupplier;
-    private javax.swing.JButton btnEditSupplier;
-    private javax.swing.JButton btnSearchSupplier;
+    private javax.swing.JButton btnDeleteReceipt;
+    private javax.swing.JButton btnEditReceipt;
+    private javax.swing.JButton btnInsertReceipt;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnViewDetail;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tblListSupplier;
-    private javax.swing.JTextField txtSearchBarSupplier;
+    private javax.swing.JTable tblListReceipt;
+    private javax.swing.JTextField txtSearchBar;
     // End of variables declaration//GEN-END:variables
 }

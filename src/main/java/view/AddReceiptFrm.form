@@ -77,8 +77,8 @@
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
-                                  <Component id="tfGuestName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tfReceiptID" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtGuestName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtReceiptID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtDateReceipt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtPharmacistID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtCustomerID" alignment="0" max="32767" attributes="0"/>
@@ -118,7 +118,7 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbSellID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfReceiptID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtReceiptID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -138,7 +138,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -146,12 +146,12 @@
                   <Component id="txtDateReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbDrugList" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="btnDeleteDrugRow" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnInsertDrugRow" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="lbDrugList" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="156" max="-2" attributes="0"/>
@@ -185,7 +185,7 @@
         <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1; &#x111;&#x1a1;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfReceiptID">
+    <Component class="javax.swing.JTextField" name="txtReceiptID">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sinh m&#xe3; "/>
       </Properties>
@@ -218,9 +218,9 @@
         <Property name="text" type="java.lang.String" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfGuestName">
+    <Component class="javax.swing.JTextField" name="txtGuestName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfGuestNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGuestNameActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbDateSell">
@@ -240,7 +240,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="tbDrugList">
+        <Component class="javax.swing.JTable" name="tblDrugList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="6">

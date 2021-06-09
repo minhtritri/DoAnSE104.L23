@@ -32,17 +32,17 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         lbBuyReceipt = new javax.swing.JLabel();
         lbSellID = new javax.swing.JLabel();
-        tfReceiptID = new javax.swing.JTextField();
+        txtReceiptID = new javax.swing.JTextField();
         lbPharmacistID = new javax.swing.JLabel();
         lbPharmacistName = new javax.swing.JLabel();
         tfPharmacistName = new javax.swing.JTextField();
         lbGuestID = new javax.swing.JLabel();
         lbGuestName = new javax.swing.JLabel();
-        tfGuestName = new javax.swing.JTextField();
+        txtGuestName = new javax.swing.JTextField();
         lbDateSell = new javax.swing.JLabel();
         lbDrugList = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbDrugList = new javax.swing.JTable();
+        tblDrugList = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
         txtSumReceipt = new javax.swing.JTextField();
         btnAddReceipt = new javax.swing.JButton();
@@ -76,7 +76,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         lbSellID.setText("Mã hoá đơn");
 
-        tfReceiptID.setText("Sinh mã ");
+        txtReceiptID.setText("Sinh mã ");
 
         lbPharmacistID.setText("Mã nhân viên");
 
@@ -93,9 +93,9 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         lbGuestName.setText("Tên khách hàng");
 
-        tfGuestName.addActionListener(new java.awt.event.ActionListener() {
+        txtGuestName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfGuestNameActionPerformed(evt);
+                txtGuestNameActionPerformed(evt);
             }
         });
 
@@ -103,7 +103,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         lbDrugList.setText("Danh sách sản phẩm");
 
-        tbDrugList.setModel(new javax.swing.table.DefaultTableModel(
+        tblDrugList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -116,7 +116,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 "MATHUOC", "SL", "Đơn giá"
             }
         ));
-        jScrollPane2.setViewportView(tbDrugList);
+        jScrollPane2.setViewportView(tblDrugList);
 
         jLabel8.setText("Tổng");
 
@@ -167,8 +167,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                    .addComponent(tfGuestName)
-                                    .addComponent(tfReceiptID)
+                                    .addComponent(txtGuestName)
+                                    .addComponent(txtReceiptID)
                                     .addComponent(txtDateReceipt)
                                     .addComponent(txtPharmacistID)
                                     .addComponent(txtCustomerID)))
@@ -196,7 +196,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbSellID)
-                    .addComponent(tfReceiptID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtReceiptID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPharmacistID)
@@ -212,17 +212,17 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbGuestName)
-                    .addComponent(tfGuestName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtGuestName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDateSell)
                     .addComponent(txtDateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbDrugList)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnDeleteDrugRow)
-                        .addComponent(btnInsertDrugRow)))
+                        .addComponent(btnInsertDrugRow))
+                    .addComponent(lbDrugList))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -245,9 +245,9 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPharmacistNameActionPerformed
 
-    private void tfGuestNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfGuestNameActionPerformed
+    private void txtGuestNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGuestNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfGuestNameActionPerformed
+    }//GEN-LAST:event_txtGuestNameActionPerformed
 
     private void btnClearReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearReceiptActionPerformed
         // TODO add your handling code here:
@@ -273,13 +273,13 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbPharmacistID;
     private javax.swing.JLabel lbPharmacistName;
     private javax.swing.JLabel lbSellID;
-    private javax.swing.JTable tbDrugList;
-    private javax.swing.JTextField tfGuestName;
+    private javax.swing.JTable tblDrugList;
     private javax.swing.JTextField tfPharmacistName;
-    private javax.swing.JTextField tfReceiptID;
     private javax.swing.JTextField txtCustomerID;
     private javax.swing.JTextField txtDateReceipt;
+    private javax.swing.JTextField txtGuestName;
     private javax.swing.JTextField txtPharmacistID;
+    private javax.swing.JTextField txtReceiptID;
     private javax.swing.JTextField txtSumReceipt;
     // End of variables declaration//GEN-END:variables
 }

@@ -55,7 +55,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtDateImport = new javax.swing.JTextField();
         cbbDrugType = new javax.swing.JComboBox<>();
         btnAddDrug = new javax.swing.JButton();
-        btnResetDrug = new javax.swing.JButton();
+        btnClearDrug = new javax.swing.JButton();
         btnCancelDrug = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -92,10 +92,10 @@ public class AddDrugFrm extends javax.swing.JFrame {
             }
         });
 
-        btnResetDrug.setText("Làm mới");
-        btnResetDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnClearDrug.setText("Làm mới");
+        btnClearDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetDrugActionPerformed(evt);
+                btnClearDrugActionPerformed(evt);
             }
         });
 
@@ -143,7 +143,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(btnAddDrug)
                         .addGap(56, 56, 56)
-                        .addComponent(btnResetDrug)
+                        .addComponent(btnClearDrug)
                         .addGap(57, 57, 57)
                         .addComponent(btnCancelDrug)))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -192,7 +192,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddDrug)
-                    .addComponent(btnResetDrug)
+                    .addComponent(btnClearDrug)
                     .addComponent(btnCancelDrug))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
@@ -228,7 +228,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelDrugActionPerformed
 
-    private void btnResetDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetDrugActionPerformed
+    private void btnClearDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearDrugActionPerformed
         // TODO add your handling code here:
         txtDrugId.setText("");
         txtDrugName.setText("");
@@ -240,13 +240,13 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtSupplierID.setText("");
         txtDateImport.setText("");
         
-    }//GEN-LAST:event_btnResetDrugActionPerformed
+    }//GEN-LAST:event_btnClearDrugActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDrug;
     private javax.swing.JButton btnCancelDrug;
-    private javax.swing.JButton btnResetDrug;
+    private javax.swing.JButton btnClearDrug;
     private javax.swing.JComboBox<String> cbbDrugType;
     private javax.swing.JLabel jLabel_amount;
     private javax.swing.JLabel jLabel_dayreception;

@@ -44,7 +44,7 @@ public class SupplierPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListSupplier = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddSupplier = new javax.swing.JButton();
+        btnInsertSupplier = new javax.swing.JButton();
         btnDeleteSupplier = new javax.swing.JButton();
         btnEditSupplier = new javax.swing.JButton();
         btnSearchSupplier = new javax.swing.JButton();
@@ -77,14 +77,19 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddSupplier.setText("Thêm");
-        btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertSupplier.setText("Thêm");
+        btnInsertSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddSupplierActionPerformed(evt);
+                btnInsertSupplierActionPerformed(evt);
             }
         });
 
         btnDeleteSupplier.setText("Xoá");
+        btnDeleteSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteSupplierActionPerformed(evt);
+            }
+        });
 
         btnEditSupplier.setText("Sửa");
 
@@ -107,7 +112,7 @@ public class SupplierPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddSupplier)
+                .addComponent(btnInsertSupplier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteSupplier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -122,7 +127,7 @@ public class SupplierPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddSupplier)
+                    .addComponent(btnInsertSupplier)
                     .addComponent(btnDeleteSupplier)
                     .addComponent(btnEditSupplier)
                     .addComponent(btnSearchSupplier)
@@ -181,11 +186,11 @@ public class SupplierPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
+    private void btnInsertSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertSupplierActionPerformed
          if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
         }     
-    }//GEN-LAST:event_btnAddSupplierActionPerformed
+    }//GEN-LAST:event_btnInsertSupplierActionPerformed
 
     private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSupplierActionPerformed
         // TODO add your handling code here:
@@ -195,11 +200,15 @@ public class SupplierPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchBarSupplierActionPerformed
 
+    private void btnDeleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSupplierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteSupplierActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddSupplier;
     private javax.swing.JButton btnDeleteSupplier;
     private javax.swing.JButton btnEditSupplier;
+    private javax.swing.JButton btnInsertSupplier;
     private javax.swing.JButton btnSearchSupplier;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

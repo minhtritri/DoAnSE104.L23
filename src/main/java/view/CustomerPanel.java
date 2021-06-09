@@ -58,7 +58,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListCustomer = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddCustomer = new javax.swing.JButton();
+        btnInsertCustomer = new javax.swing.JButton();
         btnDeleteCustomer = new javax.swing.JButton();
         btnEditCustomer = new javax.swing.JButton();
         btnSearchCustomer = new javax.swing.JButton();
@@ -88,10 +88,10 @@ public class CustomerPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddCustomer.setText("Thêm");
-        btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertCustomer.setText("Thêm");
+        btnInsertCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddCustomerActionPerformed(evt);
+                btnInsertCustomerActionPerformed(evt);
             }
         });
 
@@ -128,7 +128,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddCustomer)
+                .addComponent(btnInsertCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -143,7 +143,7 @@ public class CustomerPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddCustomer)
+                    .addComponent(btnInsertCustomer)
                     .addComponent(btnDeleteCustomer)
                     .addComponent(btnEditCustomer)
                     .addComponent(btnSearchCustomer)
@@ -202,12 +202,12 @@ public class CustomerPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
+    private void btnInsertCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCustomerActionPerformed
         if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
             AddCustomerFrm addCustomerFrm = new AddCustomerFrm(this);
             addCustomerFrm.setVisible(true);
         } 
-    }//GEN-LAST:event_btnAddCustomerActionPerformed
+    }//GEN-LAST:event_btnInsertCustomerActionPerformed
 
     private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
         // TODO add your handling code here:
@@ -247,9 +247,9 @@ public class CustomerPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddCustomer;
     private javax.swing.JButton btnDeleteCustomer;
     private javax.swing.JButton btnEditCustomer;
+    private javax.swing.JButton btnInsertCustomer;
     private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

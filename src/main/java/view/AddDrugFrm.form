@@ -62,7 +62,7 @@
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="btnAddDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Component id="btnResetDrug" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnClearDrug" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="btnCancelDrug" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -124,7 +124,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAddDrug" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnResetDrug" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnClearDrug" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelDrug" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="25" max="32767" attributes="0"/>
@@ -224,12 +224,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddDrugActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnResetDrug">
+    <Component class="javax.swing.JButton" name="btnClearDrug">
       <Properties>
         <Property name="text" type="java.lang.String" value="La&#x300;m m&#x1a1;&#x301;i"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetDrugActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearDrugActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelDrug">

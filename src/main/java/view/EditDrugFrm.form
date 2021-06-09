@@ -48,7 +48,7 @@
                   <Component id="txtUnit" max="32767" attributes="0"/>
                   <Component id="txtSupplierID" max="32767" attributes="0"/>
                   <Component id="txtDateImport" max="32767" attributes="0"/>
-                  <Component id="cbbDrugType" pref="202" max="32767" attributes="0"/>
+                  <Component id="cmbDrugType" pref="202" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
@@ -92,7 +92,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel_type" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbbDrugType" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmbDrugType" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -202,7 +202,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtDateImport">
     </Component>
-    <Component class="javax.swing.JComboBox" name="cbbDrugType">
+    <Component class="javax.swing.JComboBox" name="cmbDrugType">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">

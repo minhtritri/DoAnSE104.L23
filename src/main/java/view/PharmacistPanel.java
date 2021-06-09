@@ -57,7 +57,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListPharmacist = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddPharmacist = new javax.swing.JButton();
+        btnInsertPharmacist = new javax.swing.JButton();
         btnDeletePharmacist = new javax.swing.JButton();
         btnEditPharmacist = new javax.swing.JButton();
         btnSearchPharmacist = new javax.swing.JButton();
@@ -90,10 +90,10 @@ public class PharmacistPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddPharmacist.setText("Thêm");
-        btnAddPharmacist.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertPharmacist.setText("Thêm");
+        btnInsertPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddPharmacistActionPerformed(evt);
+                btnInsertPharmacistActionPerformed(evt);
             }
         });
 
@@ -130,7 +130,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddPharmacist)
+                .addComponent(btnInsertPharmacist)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeletePharmacist)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -145,7 +145,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddPharmacist)
+                    .addComponent(btnInsertPharmacist)
                     .addComponent(btnDeletePharmacist)
                     .addComponent(btnEditPharmacist)
                     .addComponent(btnSearchPharmacist)
@@ -204,11 +204,11 @@ public class PharmacistPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPharmacistActionPerformed
+    private void btnInsertPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPharmacistActionPerformed
         if (HomeFrm.getInstance().getTgbtnPharmacist().isSelected()) {
             new AddPharmacistFrm().setVisible(true);
         }
-    }//GEN-LAST:event_btnAddPharmacistActionPerformed
+    }//GEN-LAST:event_btnInsertPharmacistActionPerformed
 
     private void btnSearchPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPharmacistActionPerformed
 
@@ -245,9 +245,9 @@ public class PharmacistPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddPharmacist;
     private javax.swing.JButton btnDeletePharmacist;
     private javax.swing.JButton btnEditPharmacist;
+    private javax.swing.JButton btnInsertPharmacist;
     private javax.swing.JButton btnSearchPharmacist;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -62,7 +62,7 @@ public class DrugPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListDrug = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnAddDrug = new javax.swing.JButton();
+        btnInsertDrug = new javax.swing.JButton();
         btnDeleteDrug = new javax.swing.JButton();
         btnEditDrug = new javax.swing.JButton();
         btnSearchDrug = new javax.swing.JButton();
@@ -95,10 +95,10 @@ public class DrugPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnAddDrug.setText("Thêm");
-        btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertDrug.setText("Thêm");
+        btnInsertDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDrugActionPerformed(evt);
+                btnInsertDrugActionPerformed(evt);
             }
         });
 
@@ -135,7 +135,7 @@ public class DrugPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnAddDrug)
+                .addComponent(btnInsertDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnDeleteDrug)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -150,7 +150,7 @@ public class DrugPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddDrug)
+                    .addComponent(btnInsertDrug)
                     .addComponent(btnDeleteDrug)
                     .addComponent(btnEditDrug)
                     .addComponent(btnSearchDrug)
@@ -209,14 +209,14 @@ public class DrugPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
+    private void btnInsertDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertDrugActionPerformed
         if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
             AddDrugFrm AddDrugFrm = new AddDrugFrm(this);
             AddDrugFrm.setVisible(true);
         }
      
         
-    }//GEN-LAST:event_btnAddDrugActionPerformed
+    }//GEN-LAST:event_btnInsertDrugActionPerformed
 
     private void btnSearchDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDrugActionPerformed
         // TODO add your handling code here:
@@ -259,9 +259,9 @@ public class DrugPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddDrug;
     private javax.swing.JButton btnDeleteDrug;
     private javax.swing.JButton btnEditDrug;
+    private javax.swing.JButton btnInsertDrug;
     private javax.swing.JButton btnSearchDrug;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

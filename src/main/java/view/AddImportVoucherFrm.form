@@ -114,15 +114,15 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="txtDateReceipt" min="-2" pref="244" max="-2" attributes="0"/>
-                                                  <Component id="tfSupplierName" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
+                                                  <Component id="txtSupplierName" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
                                               </Group>
                                               <Component id="txtSupplierID" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="tfPharmacistName" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
+                                          <Component id="txtPharmacistName" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="txtPharmacistID" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="tfBuyID" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
+                                  <Component id="txtImportID" alignment="1" min="-2" pref="244" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -141,7 +141,7 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbBuyID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfBuyID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtImportID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -151,7 +151,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -161,7 +161,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbSupplierName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfSupplierName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSupplierName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -205,7 +205,7 @@
         <Property name="text" type="java.lang.String" value="M&#xe3; phi&#x1ebf;u nh&#x1ead;p"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfBuyID">
+    <Component class="javax.swing.JTextField" name="txtImportID">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sinh m&#xe3; "/>
       </Properties>
@@ -220,12 +220,12 @@
         <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfPharmacistName">
+    <Component class="javax.swing.JTextField" name="txtPharmacistName">
       <Properties>
         <Property name="text" type="java.lang.String" value="getPharmacistName from MANV"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPharmacistNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPharmacistNameActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbSupplierID">
@@ -238,12 +238,12 @@
         <Property name="text" type="java.lang.String" value="Nh&#xe0; cung c&#x1ea5;p"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfSupplierName">
+    <Component class="javax.swing.JTextField" name="txtSupplierName">
       <Properties>
         <Property name="text" type="java.lang.String" value="getSupplierName from MANCC"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfSupplierNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSupplierNameActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbDateBuy">
@@ -263,7 +263,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="tbDrugList">
+        <Component class="javax.swing.JTable" name="tblDrugList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="3" rowCount="6">

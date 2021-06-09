@@ -105,7 +105,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="tblListSupplier">
+                <Component class="javax.swing.JTable" name="tblListImportVoucher">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="6" rowCount="0">
@@ -169,15 +169,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnAddSupplier" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnInsertImportVoucher" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnDeleteSupplier" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDeleteImportVoucher" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnEditSupplier" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEditImportVoucher" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtSearchBarSupplier" max="32767" attributes="0"/>
+                              <Component id="txtSearchBar" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnSearchSupplier" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btnViewDetail" min="-2" max="-2" attributes="0"/>
@@ -192,11 +192,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAddSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDeleteSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEditSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnSearchSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtSearchBarSupplier" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnInsertImportVoucher" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteImportVoucher" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditImportVoucher" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSearchBar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnViewDetail" min="-2" max="-2" attributes="0"/>
@@ -206,38 +206,38 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnAddSupplier">
+            <Component class="javax.swing.JButton" name="btnInsertImportVoucher">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertImportVoucherActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnDeleteSupplier">
+            <Component class="javax.swing.JButton" name="btnDeleteImportVoucher">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditSupplier">
+            <Component class="javax.swing.JButton" name="btnEditImportVoucher">
               <Properties>
                 <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditImportVoucherActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSearchSupplier">
+            <Component class="javax.swing.JButton" name="btnSearch">
               <Properties>
                 <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtSearchBarSupplier">
+            <Component class="javax.swing.JTextField" name="txtSearchBar">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarSupplierActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSearchBarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnViewDetail">
