@@ -6,13 +6,13 @@ public class Supplier {
 
     private String sMaNCC;
     private String sTenNCC;
-    private int SDT;
+    private String SDT;
     private String sDiaChi;
     private String sEmail;
     private Date dNgayDangKyHD;
     private int tThoiHanHD;
 
-    public Supplier(String sMaNCC, String sTenNCC, int SDT, String sDiaChi, 
+    public Supplier(String sMaNCC, String sTenNCC, String SDT, String sDiaChi, 
             String sEmail,  Date dNgayDangKyHD, int tThoiHanHD) {
         this.sMaNCC = sMaNCC;
         this.sTenNCC = sTenNCC;
@@ -50,11 +50,11 @@ public class Supplier {
         this.sDiaChi = sDiaChi;
     }
 
-    public int getSDT() {
+    public String getSDT() {
         return SDT;
     }
 
-    public void setSDT(int SDT) {
+    public void setSDT(String SDT) {
         this.SDT = SDT;
     }
 
