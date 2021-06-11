@@ -99,7 +99,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
 
         jLabel3.setText("Thời hạn hợp đồng");
 
-        btnAddSupplier.setText("Thêm");
+        btnAddSupplier.setText("Lưu");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSupplierActionPerformed(evt);
