@@ -1,9 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import controller.SupplierController;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import model.Supplier;
 
 /**
  *
@@ -11,7 +14,12 @@ package view;
  */
 public class SupplierPanel extends javax.swing.JPanel {
 
-
+    private static SupplierPanel instance = new SupplierPanel();
+    
+    public static SupplierPanel getInstance() {
+        return instance;
+    }
+    
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
@@ -34,9 +42,13 @@ public class SupplierPanel extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
     }
-
+    
+     public JTable getTable() {
+        return tblListSupplier;
+    }
+     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
@@ -92,6 +104,11 @@ public class SupplierPanel extends javax.swing.JPanel {
         });
 
         btnEditSupplier.setText("Sửa");
+        btnEditSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditSupplierActionPerformed(evt);
+            }
+        });
 
         btnSearchSupplier.setText("Tìm kiếm");
         btnSearchSupplier.addActionListener(new java.awt.event.ActionListener() {
@@ -184,28 +201,48 @@ public class SupplierPanel extends javax.swing.JPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void btnInsertSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertSupplierActionPerformed
+    private void btnInsertSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
          if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
         }     
-    }//GEN-LAST:event_btnInsertSupplierActionPerformed
+    }                                                 
 
-    private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSupplierActionPerformed
+    private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchSupplierActionPerformed
+    }                                                 
 
-    private void txtSearchBarSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarSupplierActionPerformed
+    private void txtSearchBarSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                     
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarSupplierActionPerformed
+    }                                                    
 
-    private void btnDeleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSupplierActionPerformed
+    private void btnDeleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnDeleteSupplierActionPerformed
+        int selectedIndex = tblListSupplier.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            return;
+        } else {
+            SupplierController.getInstance().getList().remove(selectedIndex);
+            tblListSupplier.setModel(SupplierController.getInstance().toTable());
+        }
+    }                                                 
 
+    private void btnEditSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        int selectedIndex = tblListSupplier.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            return;
+        } else {
+            AddSupplierFrm addSupplierFrm = new AddSupplierFrm(selectedIndex);
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+            addSupplierFrm.setVisible(true);
+        }
+        
+    }   
+
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btnDeleteSupplier;
     private javax.swing.JButton btnEditSupplier;
     private javax.swing.JButton btnInsertSupplier;
@@ -217,5 +254,5 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lbTitle;
     private javax.swing.JTable tblListSupplier;
     private javax.swing.JTextField txtSearchBarSupplier;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
