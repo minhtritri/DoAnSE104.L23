@@ -1,6 +1,6 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Supplier {
 
@@ -9,11 +9,11 @@ public class Supplier {
     private String SDT;
     private String sDiaChi;
     private String sEmail;
-    private Date dNgayDangKyHD;
+    private LocalDate dNgayDangKyHD;
     private int tThoiHanHD;
 
     public Supplier(String sMaNCC, String sTenNCC, String SDT, String sDiaChi, 
-            String sEmail,  Date dNgayDangKyHD, int tThoiHanHD) {
+            String sEmail,  LocalDate dNgayDangKyHD, int tThoiHanHD) {
         this.sMaNCC = sMaNCC;
         this.sTenNCC = sTenNCC;
         this.sDiaChi = sDiaChi;
@@ -62,7 +62,7 @@ public class Supplier {
         return dNgayDangKyHD;
     }
 
-    public void setdNgayDangKyHD(Date dNgayDangKyHD) {
+    public void setdNgayDangKyHD(LocalDate dNgayDangKyHD) {
         this.dNgayDangKyHD = dNgayDangKyHD;
     }
 
