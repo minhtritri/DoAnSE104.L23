@@ -33,8 +33,6 @@
     </Component>
     <Component class="org.jdatepicker.impl.UtilCalendarModel" name="utilCalendarModel1">
     </Component>
-    <Component class="controller.main" name="main1">
-    </Component>
     <Component class="org.jdatepicker.util.JDatePickerUtil" name="jDatePickerUtil2">
     </Component>
     <Component class="org.jdatepicker.impl.UtilDateModel" name="utilDateModel1">

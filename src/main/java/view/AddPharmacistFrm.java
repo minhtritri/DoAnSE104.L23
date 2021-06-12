@@ -247,14 +247,14 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 System.out.println(this.index);
                 PharmacistController.getInstance().getList().set(this.index, pharmacist);
                 this.setVisible(false);
-                
+
             } else {
                 // thêm vào arraylist trong Controller 1 thằng pharmacist mới
                 PharmacistController.getInstance().getList().add(pharmacist);
             }
 
             // lấy ra table tblListPharmacist từ Panel truyền vào dữ liệu từ Controller
-            PharmacistPanel.getInstance().getTable().setModel(
+            PanelPharmacist.getInstance().getTable().setModel(
                     PharmacistController.getInstance().toTable()
             );
             // Clear thông tin sau mỗi lần thêm thành công

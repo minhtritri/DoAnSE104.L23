@@ -19,12 +19,12 @@ public class EditCustomerFrm extends javax.swing.JFrame {
     /**
      * Creates new form AddGuestFrm
      */
-    private CustomerPanel customerPanel;
+    private PanelCustomer customerPanel;
     
     public EditCustomerFrm(JPanel parent) {
         initComponents();
         this.setLocationRelativeTo(null);
-        customerPanel = (CustomerPanel) parent;
+        customerPanel = (PanelCustomer) parent;
     }
 
     /**

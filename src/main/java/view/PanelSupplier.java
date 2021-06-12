@@ -1,22 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+
+import controller.SupplierController;
+import main.HomeFrm;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import model.Pharmacist;
 
 /**
  *
  * @author THAONGAN
  */
-public class ReceiptPanel extends javax.swing.JPanel {
+public class PanelSupplier extends javax.swing.JPanel {
 
+    private static PanelSupplier instance = new PanelSupplier();
+
+    public static PanelSupplier getInstance() {
+        return instance;
+    }
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public ReceiptPanel() {
+    private PanelSupplier() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -33,6 +42,11 @@ public class ReceiptPanel extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
+
+    }
+
+    public JTable getTable() {
+        return tblListSupplier;
     }
 
     @SuppressWarnings("unchecked")
@@ -42,25 +56,24 @@ public class ReceiptPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListReceipt = new javax.swing.JTable();
+        tblListSupplier = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnInsertReceipt = new javax.swing.JButton();
-        btnDeleteReceipt = new javax.swing.JButton();
-        btnEditReceipt = new javax.swing.JButton();
+        btnInsert = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         txtSearchBar = new javax.swing.JTextField();
-        btnViewDetail = new javax.swing.JButton();
         lbTitle = new javax.swing.JLabel();
 
-        tblListReceipt.setModel(new javax.swing.table.DefaultTableModel(
+        tblListSupplier.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaHD", "MaNV", "Tên NV", "MaKH", "Tên KH", "Ngày mua"
+                "Mã NCC", "Tên NCC", "SĐT", "Địa chỉ", "Email", "Ngày ký HĐ", "Thời hạn HĐ", "Ca"
             }
         ));
-        jScrollPane1.setViewportView(tblListReceipt);
+        jScrollPane1.setViewportView(tblListSupplier);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -73,22 +86,31 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btnInsertReceipt.setText("Thêm");
-        btnInsertReceipt.addActionListener(new java.awt.event.ActionListener() {
+        btnInsert.setText("Thêm");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertReceiptActionPerformed(evt);
+                btnInsertActionPerformed(evt);
             }
         });
 
-        btnDeleteReceipt.setText("Xoá");
+        btnDelete.setText("Xoá");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
-        btnEditReceipt.setText("Sửa");
+        btnEdit.setText("Sửa");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -103,45 +125,36 @@ public class ReceiptPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewDetail.setText("Xem chi tiết hoá đơn");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnInsertReceipt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeleteReceipt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEditReceipt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtSearchBar, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(btnInsert)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDelete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEdit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtSearchBar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearch)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsertReceipt)
-                    .addComponent(btnDeleteReceipt)
-                    .addComponent(btnEditReceipt)
+                    .addComponent(btnInsert)
+                    .addComponent(btnDelete)
+                    .addComponent(btnEdit)
                     .addComponent(btnSearch)
                     .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnViewDetail)
-                .addContainerGap())
+                .addGap(13, 13, 13))
         );
 
-        lbTitle.setText("Hoá đơn bán hàng");
+        lbTitle.setText("Nhà cung cấp");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -183,7 +196,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 493, Short.MAX_VALUE)
+            .addGap(0, 478, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -192,33 +205,56 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertReceiptActionPerformed
-         if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
-        }     
-    }//GEN-LAST:event_btnInsertReceiptActionPerformed
+        }
+    }//GEN-LAST:event_btnInsertActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int selectedIndex = tblListSupplier.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            return;
+        } else {
+            SupplierController.getInstance().getList().remove(selectedIndex);
+            tblListSupplier.setModel(SupplierController.getInstance().toTable());
+        }
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        int selectedIndex = tblListSupplier.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            return;
+        } else {
+            AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
+            addPharmaFrm.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_btnEditActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeleteReceipt;
-    private javax.swing.JButton btnEditReceipt;
-    private javax.swing.JButton btnInsertReceipt;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnInsert;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnViewDetail;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tblListReceipt;
+    private javax.swing.JTable tblListSupplier;
     private javax.swing.JTextField txtSearchBar;
     // End of variables declaration//GEN-END:variables
 }

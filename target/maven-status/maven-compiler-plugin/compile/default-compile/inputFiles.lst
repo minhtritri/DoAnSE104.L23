@@ -1,8 +1,9 @@
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\EditDrugFrm.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\ReceiptController.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddCustomerFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddImportVoucherFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\LoginFrm.java
-D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\HomeFrm.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\ImportVoucherController.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddReceiptFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Pharmacist.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ThamSo.java
@@ -13,8 +14,8 @@ D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\EditCustomerFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Customer.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddDrugFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddSupplierFrm.java
-D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\main\run.java
-D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\SupplierPanel.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\PanelSupplier.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\SupplierController.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\ReportPanel.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\AddPharmacistFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\DrugPanel.java
@@ -23,7 +24,7 @@ D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ImportVoucher.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ImportVoucherDetail.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\PharmacistController.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\view\PharmacistPanel.java
+D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\main\HomeFrm.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Receipt.java
-D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\controller\main.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\ReceiptDetail.java
 D:\__UIT\HK4\SE104_NMCNPM\DoAnSE104.L23\src\main\java\model\Supplier.java

@@ -9,12 +9,12 @@ package view;
  *
  * @author THAONGAN
  */
-public class ReportPanel extends javax.swing.JPanel {
+public class PanelReport extends javax.swing.JPanel {
 
     /**
      * Creates new form ReportPanel
      */
-    public ReportPanel() {
+    public PanelReport() {
         initComponents();
     }
 

@@ -19,12 +19,12 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     /**
      * Creates new form AddGuestFrm
      */
-    private CustomerPanel customerPanel;
+    private PanelCustomer customerPanel;
     
     public AddCustomerFrm(JPanel parent) {
         initComponents();
         this.setLocationRelativeTo(null);
-        customerPanel = (CustomerPanel) parent;
+        customerPanel = (PanelCustomer) parent;
     }
 
     /**

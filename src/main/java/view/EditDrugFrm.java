@@ -15,7 +15,7 @@ import model.Drug;
  * @author THAONGAN
  */
 public class EditDrugFrm extends javax.swing.JFrame {
-    private DrugPanel drugPanel;
+    private PanelDrug drugPanel;
     
     /**
      * Creates new form AddDrug
@@ -23,7 +23,7 @@ public class EditDrugFrm extends javax.swing.JFrame {
     public EditDrugFrm(JPanel parent) {
         initComponents();
         this.setLocationRelativeTo(null);
-        drugPanel = (DrugPanel) parent;
+        drugPanel = (PanelDrug) parent;
     }
 
     /**

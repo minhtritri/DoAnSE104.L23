@@ -1,30 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
-import controller.PharmacistController;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import model.Pharmacist;
+import main.HomeFrm;
 
 /**
  *
  * @author THAONGAN
  */
-public class PharmacistPanel extends javax.swing.JPanel {
+public class PanelReceipt extends javax.swing.JPanel {
 
-    private static PharmacistPanel instance = new PharmacistPanel();
-
-    public static PharmacistPanel getInstance() {
-        return instance;
-    }
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    private PharmacistPanel() {
+    public PanelReceipt() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -41,11 +35,6 @@ public class PharmacistPanel extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
-
-    }
-
-    public JTable getTable() {
-        return tblListPharmacist;
     }
 
     @SuppressWarnings("unchecked")
@@ -55,24 +44,25 @@ public class PharmacistPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListPharmacist = new javax.swing.JTable();
+        tblListReceipt = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnInsertPharmacist = new javax.swing.JButton();
-        btnDeletePharmacist = new javax.swing.JButton();
-        btnEditPharmacist = new javax.swing.JButton();
-        btnSearchPharmacist = new javax.swing.JButton();
-        txtSearchBarPharmacist = new javax.swing.JTextField();
+        btnInsertReceipt = new javax.swing.JButton();
+        btnDeleteReceipt = new javax.swing.JButton();
+        btnEditReceipt = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
+        txtSearchBar = new javax.swing.JTextField();
+        btnViewDetail = new javax.swing.JButton();
         lbTitle = new javax.swing.JLabel();
 
-        tblListPharmacist.setModel(new javax.swing.table.DefaultTableModel(
+        tblListReceipt.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaNV", "Họ tên", "Giới tính", "Năm sinh", "SĐT", "Địa chỉ", "Năm vào làm", "Ca"
+                "MaHD", "MaNV", "Tên NV", "MaKH", "Tên KH", "Ngày mua"
             }
         ));
-        jScrollPane1.setViewportView(tblListPharmacist);
+        jScrollPane1.setViewportView(tblListReceipt);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -85,44 +75,37 @@ public class PharmacistPanel extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btnInsertPharmacist.setText("Thêm");
-        btnInsertPharmacist.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertReceipt.setText("Thêm");
+        btnInsertReceipt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertPharmacistActionPerformed(evt);
+                btnInsertReceiptActionPerformed(evt);
             }
         });
 
-        btnDeletePharmacist.setText("Xoá");
-        btnDeletePharmacist.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteReceipt.setText("Xoá");
+
+        btnEditReceipt.setText("Sửa");
+
+        btnSearch.setText("Tìm kiếm");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletePharmacistActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
-        btnEditPharmacist.setText("Sửa");
-        btnEditPharmacist.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditPharmacistActionPerformed(evt);
+                txtSearchBarActionPerformed(evt);
             }
         });
 
-        btnSearchPharmacist.setText("Tìm kiếm");
-        btnSearchPharmacist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchPharmacistActionPerformed(evt);
-            }
-        });
-
-        txtSearchBarPharmacist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarPharmacistActionPerformed(evt);
-            }
-        });
+        btnViewDetail.setText("Xem chi tiết hoá đơn");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -130,30 +113,37 @@ public class PharmacistPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInsertPharmacist)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeletePharmacist)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditPharmacist)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSearchBarPharmacist)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchPharmacist)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnInsertReceipt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeleteReceipt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditReceipt)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSearchBar, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnViewDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsertPharmacist)
-                    .addComponent(btnDeletePharmacist)
-                    .addComponent(btnEditPharmacist)
-                    .addComponent(btnSearchPharmacist)
-                    .addComponent(txtSearchBarPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
+                    .addComponent(btnInsertReceipt)
+                    .addComponent(btnDeleteReceipt)
+                    .addComponent(btnEditReceipt)
+                    .addComponent(btnSearch)
+                    .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnViewDetail)
+                .addContainerGap())
         );
 
-        lbTitle.setText("Dược sĩ");
+        lbTitle.setText("Hoá đơn bán hàng");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -195,7 +185,7 @@ public class PharmacistPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGap(0, 493, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -204,57 +194,33 @@ public class PharmacistPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertPharmacistActionPerformed
-        if (HomeFrm.getInstance().getTgbtnPharmacist().isSelected()) {
-            new AddPharmacistFrm().setVisible(true);
-        }
-    }//GEN-LAST:event_btnInsertPharmacistActionPerformed
+    private void btnInsertReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertReceiptActionPerformed
+         if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
+            new AddSupplierFrm().setVisible(true);
+        }     
+    }//GEN-LAST:event_btnInsertReceiptActionPerformed
 
-    private void btnSearchPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchPharmacistActionPerformed
-
-    }//GEN-LAST:event_btnSearchPharmacistActionPerformed
-
-    private void txtSearchBarPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarPharmacistActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarPharmacistActionPerformed
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnDeletePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePharmacistActionPerformed
-        int selectedIndex = tblListPharmacist.getSelectedRow();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
-            return;
-        } else {
-            PharmacistController.getInstance().getList().remove(selectedIndex);
-            tblListPharmacist.setModel(PharmacistController.getInstance().toTable());
-        }
-
-    }//GEN-LAST:event_btnDeletePharmacistActionPerformed
-
-    private void btnEditPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPharmacistActionPerformed
-        int selectedIndex = tblListPharmacist.getSelectedRow();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
-            return;
-        } else {
-            AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
-
-            addPharmaFrm.setVisible(true);
-        }
-        
-    }//GEN-LAST:event_btnEditPharmacistActionPerformed
+    private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchBarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeletePharmacist;
-    private javax.swing.JButton btnEditPharmacist;
-    private javax.swing.JButton btnInsertPharmacist;
-    private javax.swing.JButton btnSearchPharmacist;
+    private javax.swing.JButton btnDeleteReceipt;
+    private javax.swing.JButton btnEditReceipt;
+    private javax.swing.JButton btnInsertReceipt;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnViewDetail;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tblListPharmacist;
-    private javax.swing.JTextField txtSearchBarPharmacist;
+    private javax.swing.JTable tblListReceipt;
+    private javax.swing.JTextField txtSearchBar;
     // End of variables declaration//GEN-END:variables
 }

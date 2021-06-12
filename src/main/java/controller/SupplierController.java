@@ -10,32 +10,35 @@ import model.Supplier;
  * @author TRIET
  */
 public class SupplierController {
+
     private ArrayList<Supplier> suppliers = new ArrayList<>();
     private static SupplierController instance = new SupplierController();
-    
-    private SupplierController() {}
-    
+
+    private SupplierController() {
+    }
+
     public static SupplierController getInstance() {
         return instance;
     }
-    
+
     public ArrayList<Supplier> getList() {
         return suppliers;
     }
 
     public String[] getHeaders() {
-        return new String[]{"MaNCC", "Tên NCC", "SĐT", "Địa chỉ", "Email",
-            "Ngày đăng ký HD", "Thời hạn HD"};
+        return new String[]{"Mã NCC", "Tên NCC", "SĐT", "Địa chỉ", "Email",
+            "Ngày đăng ký HĐ", "Thời hạn HĐ"};
     }
 
     public DefaultTableModel toTable() {
         DefaultTableModel tblModel = new DefaultTableModel();
         tblModel.setColumnIdentifiers(this.getHeaders());
-        for (int i=0; i<suppliers.size(); i++){
+        for (int i = 0; i < suppliers.size(); i++) {
             tblModel.addRow(this.toVector(i));
         }
         return tblModel;
     }
+
     public Vector toVector(int index) {
         Vector vt = new Vector();
         vt.add(suppliers.get(index).getsMaNCC());

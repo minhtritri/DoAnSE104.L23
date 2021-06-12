@@ -58,7 +58,7 @@ public class Supplier {
         this.SDT = SDT;
     }
 
-    public Date getdNgayDangKyHD() {
+    public LocalDate getdNgayDangKyHD() {
         return dNgayDangKyHD;
     }
 

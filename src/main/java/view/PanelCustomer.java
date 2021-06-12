@@ -5,26 +5,27 @@
  */
 package view;
 
+import main.HomeFrm;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Drug;
+import model.Customer;
 
 /**
  *
  * @author THAONGAN
  */
-public class DrugPanel extends javax.swing.JPanel {
-    private List<Drug> drug ;
-    private DefaultTableModel tblDrug;
-    private int selectedIndex ;
+public class PanelCustomer extends javax.swing.JPanel {
+
+    private List<Customer> customer;
+    private DefaultTableModel tblcustomer;
+    private int selectedIndex;
     public void setTitle(String str) {
         this.lbTitle.setText(str);
-        
     }
 
-    public DrugPanel() {
+    public PanelCustomer() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -41,18 +42,14 @@ public class DrugPanel extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
-        drug = new ArrayList<Drug>();
-        tblDrug = (DefaultTableModel) tblListDrug.getModel();
-      
-        
-        
-        
+        customer = new ArrayList<Customer>();
+        tblcustomer = (DefaultTableModel) tblListCustomer.getModel();
     }
-    public void AddDrug(Drug d){
-        drug.add(d); // Them thuoc vao danh sach
+    public void AddCustomer(Customer c){
+        customer.add(c);
         showData();
-        
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -60,33 +57,30 @@ public class DrugPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListDrug = new javax.swing.JTable();
+        tblListCustomer = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnInsertDrug = new javax.swing.JButton();
-        btnDeleteDrug = new javax.swing.JButton();
-        btnEditDrug = new javax.swing.JButton();
-        btnSearchDrug = new javax.swing.JButton();
-        txtSearchBarDrug = new javax.swing.JTextField();
+        btnInsertCustomer = new javax.swing.JButton();
+        btnDeleteCustomer = new javax.swing.JButton();
+        btnEditCustomer = new javax.swing.JButton();
+        btnSearchCustomer = new javax.swing.JButton();
+        txtSearchBarCustomer = new javax.swing.JTextField();
         lbTitle = new javax.swing.JLabel();
 
-        tblListDrug.setModel(new javax.swing.table.DefaultTableModel(
+        tblListCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaThuoc", "Tên thuốc", "Nhóm", "Loại", "Thành phần", "HSD", "ĐVT", "MaNCC", "Ngày tiếp nhận"
+                "MaKH", "Họ Tên", "Giới tính", "Năm sinh", "SĐT"
             }
         ));
-        jScrollPane1.setViewportView(tblListDrug);
+        jScrollPane1.setViewportView(tblListCustomer);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,37 +89,37 @@ public class DrugPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnInsertDrug.setText("Thêm");
-        btnInsertDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertCustomer.setText("Thêm");
+        btnInsertCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertDrugActionPerformed(evt);
+                btnInsertCustomerActionPerformed(evt);
             }
         });
 
-        btnDeleteDrug.setText("Xoá");
-        btnDeleteDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteCustomer.setText("Xoá");
+        btnDeleteCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteDrugActionPerformed(evt);
+                btnDeleteCustomerActionPerformed(evt);
             }
         });
 
-        btnEditDrug.setText("Sửa");
-        btnEditDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnEditCustomer.setText("Sửa");
+        btnEditCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditDrugActionPerformed(evt);
+                btnEditCustomerActionPerformed(evt);
             }
         });
 
-        btnSearchDrug.setText("Tìm kiếm");
-        btnSearchDrug.addActionListener(new java.awt.event.ActionListener() {
+        btnSearchCustomer.setText("Tìm kiếm");
+        btnSearchCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchDrugActionPerformed(evt);
+                btnSearchCustomerActionPerformed(evt);
             }
         });
 
-        txtSearchBarDrug.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBarCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarDrugActionPerformed(evt);
+                txtSearchBarCustomerActionPerformed(evt);
             }
         });
 
@@ -135,30 +129,30 @@ public class DrugPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInsertDrug)
+                .addComponent(btnInsertCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteDrug)
+                .addComponent(btnDeleteCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditDrug)
+                .addComponent(btnEditCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSearchBarDrug)
+                .addComponent(txtSearchBarCustomer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchDrug)
+                .addComponent(btnSearchCustomer)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsertDrug)
-                    .addComponent(btnDeleteDrug)
-                    .addComponent(btnEditDrug)
-                    .addComponent(btnSearchDrug)
-                    .addComponent(txtSearchBarDrug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnInsertCustomer)
+                    .addComponent(btnDeleteCustomer)
+                    .addComponent(btnEditCustomer)
+                    .addComponent(btnSearchCustomer)
+                    .addComponent(txtSearchBarCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13))
         );
 
-        lbTitle.setText("Thuốc");
+        lbTitle.setText("Khách Hàng");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -209,79 +203,75 @@ public class DrugPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertDrugActionPerformed
-        if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
-            AddDrugFrm AddDrugFrm = new AddDrugFrm(this);
-            AddDrugFrm.setVisible(true);
-        }
-     
-        
-    }//GEN-LAST:event_btnInsertDrugActionPerformed
+    private void btnInsertCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCustomerActionPerformed
+        if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
+            AddCustomerFrm addCustomerFrm = new AddCustomerFrm(this);
+            addCustomerFrm.setVisible(true);
+        } 
+    }//GEN-LAST:event_btnInsertCustomerActionPerformed
 
-    private void btnSearchDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDrugActionPerformed
+    private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSearchDrugActionPerformed
+    }//GEN-LAST:event_btnSearchCustomerActionPerformed
 
-    private void txtSearchBarDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarDrugActionPerformed
+    private void txtSearchBarCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchBarDrugActionPerformed
+    }//GEN-LAST:event_txtSearchBarCustomerActionPerformed
 
-    private void btnEditDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDrugActionPerformed
+    private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         // TODO add your handling code here:
-        selectedIndex = tblListDrug.getSelectedRow();
-        if(drug.size() == 0){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Nhap Them Thong Tin"); 
-        }else if(selectedIndex == -1 ){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Dong De Sua "); 
-        }else{
-            EditDrugFrm editDrugFrm = new EditDrugFrm(this);
-            editDrugFrm.setEditData(drug.get(selectedIndex));
-            editDrugFrm.setVisible(true);
-        }
-        
-        
-        
-        
-    }//GEN-LAST:event_btnEditDrugActionPerformed
-
-    private void btnDeleteDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDrugActionPerformed
-        // TODO add your handling code here:
-        int removeIndex = tblListDrug.getSelectedRow();
-        if(drug.size() == 0){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Them Thong Tin Truoc Khi Xoa");
-        }else if(removeIndex == -1){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Mot Dong Roi An Nut Xoa");
+        selectedIndex = tblListCustomer.getSelectedRow();
+        if(customer.size() == 0){
+            JOptionPane.showMessageDialog(btnEditCustomer, "Nhap Thong Tin Truoc Khi Sua");
+        }else if(selectedIndex == -1){
+            JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Sua");
         }else {
-            drug.remove(removeIndex);
+            EditCustomerFrm edit =  new EditCustomerFrm(this);
+            edit.setEditData(customer.get(selectedIndex));
+            edit.setVisible(true);
+        }
+    }//GEN-LAST:event_btnEditCustomerActionPerformed
+
+    private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
+        // TODO add your handling code here:
+        int removeIndex = tblListCustomer.getSelectedRow();
+        if(customer.size() == 0){
+            JOptionPane.showMessageDialog(btnEditCustomer, "Khong Co Thong Tin De Xoa");
+            
+        }else if(removeIndex == -1){
+            JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Xoa");
+        }else{
+            customer.remove(removeIndex);
             showData();
         }
-    }//GEN-LAST:event_btnDeleteDrugActionPerformed
+    }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDeleteDrug;
-    private javax.swing.JButton btnEditDrug;
-    private javax.swing.JButton btnInsertDrug;
-    private javax.swing.JButton btnSearchDrug;
+    private javax.swing.JButton btnDeleteCustomer;
+    private javax.swing.JButton btnEditCustomer;
+    private javax.swing.JButton btnInsertCustomer;
+    private javax.swing.JButton btnSearchCustomer;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tblListDrug;
-    private javax.swing.JTextField txtSearchBarDrug;
+    private javax.swing.JTable tblListCustomer;
+    private javax.swing.JTextField txtSearchBarCustomer;
     // End of variables declaration//GEN-END:variables
 
-    public void EditDrug(Drug d) {
-        drug.remove(selectedIndex);
-        this.AddDrug(d);
+    void updateCustomer(Customer c) {
+        customer.remove(selectedIndex);
+        this.AddCustomer(c);
     }
 
     private void showData() {
-        tblDrug.setRowCount(0);
-        for (Drug drug: drug){
-            tblDrug.addRow(new Object[]{drug.getsMathuoc(),drug.getsTenthuoc(), drug.getsPhannhom(), drug.getsPhanloai(), drug.getsThanhphan(),
-            drug.getsHansudung(),drug.getsDVT(), drug.getsMancc(), drug.getsNgaytiepnhan()});
+        tblcustomer.setRowCount(0);
+        for(Customer customer: customer){
+            tblcustomer.addRow(new Object[]{customer.getsMaKH(), customer.getsHoten(),
+                customer.getsGioiTinh(), customer.getsNamSinh(),customer.getsSdtKH()});
+
         }
     }
 }

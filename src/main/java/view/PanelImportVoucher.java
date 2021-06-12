@@ -1,30 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package view;
 
-import controller.SupplierController;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import model.Supplier;
+import main.HomeFrm;
 
 /**
  *
  * @author THAONGAN
  */
-public class SupplierPanel extends javax.swing.JPanel {
+public class PanelImportVoucher extends javax.swing.JPanel {
 
-    private static SupplierPanel instance = new SupplierPanel();
-    
-    public static SupplierPanel getInstance() {
-        return instance;
-    }
-    
+
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public SupplierPanel() {
+    public PanelImportVoucher() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -42,36 +36,33 @@ public class SupplierPanel extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
     }
-    
-     public JTable getTable() {
-        return tblListSupplier;
-    }
-     
+
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblListSupplier = new javax.swing.JTable();
+        tblListImportVoucher = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        btnInsertSupplier = new javax.swing.JButton();
-        btnDeleteSupplier = new javax.swing.JButton();
-        btnEditSupplier = new javax.swing.JButton();
-        btnSearchSupplier = new javax.swing.JButton();
-        txtSearchBarSupplier = new javax.swing.JTextField();
+        btnInsertImportVoucher = new javax.swing.JButton();
+        btnDeleteImportVoucher = new javax.swing.JButton();
+        btnEditImportVoucher = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
+        txtSearchBar = new javax.swing.JTextField();
+        btnViewDetail = new javax.swing.JButton();
         lbTitle = new javax.swing.JLabel();
 
-        tblListSupplier.setModel(new javax.swing.table.DefaultTableModel(
+        tblListImportVoucher.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaNCC", "Tên NCC", "SĐT", "Địa chỉ", "Email", "Ngày ký HĐ", "Thời hạn HĐ"
+                "MaPN", "MaNV", "Tên NV", "MaNCC", "Tên NCC", "Ngày lập phiếu"
             }
         ));
-        jScrollPane1.setViewportView(tblListSupplier);
+        jScrollPane1.setViewportView(tblListImportVoucher);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -84,44 +75,42 @@ public class SupplierPanel extends javax.swing.JPanel {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btnInsertSupplier.setText("Thêm");
-        btnInsertSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertImportVoucher.setText("Thêm");
+        btnInsertImportVoucher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertSupplierActionPerformed(evt);
+                btnInsertImportVoucherActionPerformed(evt);
             }
         });
 
-        btnDeleteSupplier.setText("Xoá");
-        btnDeleteSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteImportVoucher.setText("Xoá");
+
+        btnEditImportVoucher.setText("Sửa");
+        btnEditImportVoucher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteSupplierActionPerformed(evt);
+                btnEditImportVoucherActionPerformed(evt);
             }
         });
 
-        btnEditSupplier.setText("Sửa");
-        btnEditSupplier.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("Tìm kiếm");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditSupplierActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
-        btnSearchSupplier.setText("Tìm kiếm");
-        btnSearchSupplier.addActionListener(new java.awt.event.ActionListener() {
+        txtSearchBar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchSupplierActionPerformed(evt);
+                txtSearchBarActionPerformed(evt);
             }
         });
 
-        txtSearchBarSupplier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchBarSupplierActionPerformed(evt);
-            }
-        });
+        btnViewDetail.setText("Xem chi tiết Phiếu nhập");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -129,30 +118,37 @@ public class SupplierPanel extends javax.swing.JPanel {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnInsertSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDeleteSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEditSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSearchBarSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchSupplier)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnInsertImportVoucher)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDeleteImportVoucher)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEditImportVoucher)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSearchBar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnViewDetail)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInsertSupplier)
-                    .addComponent(btnDeleteSupplier)
-                    .addComponent(btnEditSupplier)
-                    .addComponent(btnSearchSupplier)
-                    .addComponent(txtSearchBarSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
+                    .addComponent(btnInsertImportVoucher)
+                    .addComponent(btnDeleteImportVoucher)
+                    .addComponent(btnEditImportVoucher)
+                    .addComponent(btnSearch)
+                    .addComponent(txtSearchBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnViewDetail)
+                .addContainerGap())
         );
 
-        lbTitle.setText("Nhà cung cấp");
+        lbTitle.setText("Phiếu nhập hàng");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,65 +190,46 @@ public class SupplierPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 478, Short.MAX_VALUE)
+            .addGap(0, 493, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInsertSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void btnInsertImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImportVoucherActionPerformed
          if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
         }     
-    }                                                 
+    }//GEN-LAST:event_btnInsertImportVoucherActionPerformed
 
-    private void btnSearchSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-    }                                                 
+    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void txtSearchBarSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+    private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
         // TODO add your handling code here:
-    }                                                    
+    }//GEN-LAST:event_txtSearchBarActionPerformed
 
-    private void btnDeleteSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void btnEditImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditImportVoucherActionPerformed
         // TODO add your handling code here:
-        int selectedIndex = tblListSupplier.getSelectedRow();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
-            return;
-        } else {
-            SupplierController.getInstance().getList().remove(selectedIndex);
-            tblListSupplier.setModel(SupplierController.getInstance().toTable());
-        }
-    }                                                 
+    }//GEN-LAST:event_btnEditImportVoucherActionPerformed
 
-    private void btnEditSupplierActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        int selectedIndex = tblListSupplier.getSelectedRow();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
-            return;
-        } else {
-            AddSupplierFrm addSupplierFrm = new AddSupplierFrm(selectedIndex);
 
-            addSupplierFrm.setVisible(true);
-        }
-        
-    }   
-
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton btnDeleteSupplier;
-    private javax.swing.JButton btnEditSupplier;
-    private javax.swing.JButton btnInsertSupplier;
-    private javax.swing.JButton btnSearchSupplier;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeleteImportVoucher;
+    private javax.swing.JButton btnEditImportVoucher;
+    private javax.swing.JButton btnInsertImportVoucher;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnViewDetail;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbTitle;
-    private javax.swing.JTable tblListSupplier;
-    private javax.swing.JTextField txtSearchBarSupplier;
-    // End of variables declaration                   
+    private javax.swing.JTable tblListImportVoucher;
+    private javax.swing.JTextField txtSearchBar;
+    // End of variables declaration//GEN-END:variables
 }

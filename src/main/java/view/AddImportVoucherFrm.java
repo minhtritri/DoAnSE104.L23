@@ -1,4 +1,3 @@
-
 package view;
 
 /**
@@ -31,7 +30,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         jDatePickerUtil1 = new org.jdatepicker.util.JDatePickerUtil();
         sqlDateModel1 = new org.jdatepicker.impl.SqlDateModel();
         utilCalendarModel1 = new org.jdatepicker.impl.UtilCalendarModel();
-        main1 = new controller.main();
         jDatePickerUtil2 = new org.jdatepicker.util.JDatePickerUtil();
         utilDateModel1 = new org.jdatepicker.impl.UtilDateModel();
         utilCalendarModel2 = new org.jdatepicker.impl.UtilCalendarModel();
@@ -276,7 +274,6 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbPharmacistName;
     private javax.swing.JLabel lbSupplierID;
     private javax.swing.JLabel lbSupplierName;
-    private controller.main main1;
     private org.jdatepicker.impl.SqlDateModel sqlDateModel1;
     private org.jdatepicker.impl.SqlDateModel sqlDateModel2;
     private javax.swing.JTable tblDrugList;

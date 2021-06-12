@@ -1,7 +1,14 @@
-package view;
+package main;
 
 import java.awt.CardLayout;
 import javax.swing.JToggleButton;
+import view.PanelCustomer;
+import view.PanelDrug;
+import view.PanelImportVoucher;
+import view.LoginFrm;
+import view.PanelSupplier;
+import view.PanelPharmacist;
+import view.PanelReceipt;
 
 public class HomeFrm extends javax.swing.JFrame {
 
@@ -35,12 +42,12 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private static final HomeFrm instance = new HomeFrm();
 
-    CustomerPanel pnCustomer = new CustomerPanel();
-    PharmacistPanel pnPharmacist = PharmacistPanel.getInstance();
-    DrugPanel pnDrug = new DrugPanel();
-    SupplierPanel pnSupplier = new SupplierPanel();
-    ReceiptPanel pnReceipt = new ReceiptPanel();
-    ImportVoucherPanel pnImportVoucher = new ImportVoucherPanel();
+    PanelCustomer pnCustomer = new PanelCustomer();
+    PanelPharmacist pnPharmacist = PanelPharmacist.getInstance();
+    PanelDrug pnDrug = new PanelDrug();
+    PanelSupplier pnSupplier = PanelSupplier.getInstance();
+    PanelReceipt pnReceipt = new PanelReceipt();
+    PanelImportVoucher pnImportVoucher = new PanelImportVoucher();
 
     public HomeFrm() {
         /* Set the Nimbus look and feel */
