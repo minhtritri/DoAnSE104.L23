@@ -82,8 +82,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
             Integer sl = 0;
             Integer dg = 0;
             try {
-                sl = Integer.valueOf((String) tmpModel.getValueAt(i, 1)); // cột SL
-                dg = Integer.valueOf((String) tmpModel.getValueAt(i, 2));  // cột Đơn giá
+                sl = Integer.valueOf(tmpModel.getValueAt(i, 1).toString()); // cột SL
+                dg = Integer.valueOf(tmpModel.getValueAt(i, 2).toString());  // cột Đơn giá
             } catch (Exception e) {
                 //System.out.println(e.toString());
 
@@ -370,8 +370,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                     String sMaCTHD = "từ từ code sau, hoặc ẩn nó luôn nhỉ";
                     String sMAHD = txtReceiptID.getText();
                     String sMATHUOC = tblModel.getValueAt(i, 0).toString();
-                    int iSL = Integer.valueOf((String) tblModel.getValueAt(i, 1));
-                    float fDonGia = Integer.valueOf((String) tblModel.getValueAt(i, 2));
+                    int iSL = Integer.valueOf( tblModel.getValueAt(i, 1).toString());
+                    float fDonGia = Integer.valueOf(tblModel.getValueAt(i, 2).toString());
                     float fThanhTien = this.calculatePrice(iSL, fDonGia);
 
                     tblModel.setValueAt(Float.toString(fThanhTien), i, 3);
