@@ -44,7 +44,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
         jLabel_expirydate = new javax.swing.JLabel();
         jLabel_amount = new javax.swing.JLabel();
         jLabel_supplierid = new javax.swing.JLabel();
-        jLabel_dayreception = new javax.swing.JLabel();
         txtDrugId = new javax.swing.JTextField();
         txtDrugName = new javax.swing.JTextField();
         txtDrugGroup = new javax.swing.JTextField();
@@ -52,7 +51,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
         txtExpiredDate = new javax.swing.JTextField();
         txtUnit = new javax.swing.JTextField();
         txtSupplierID = new javax.swing.JTextField();
-        txtDateImport = new javax.swing.JTextField();
         cmbDrugType = new javax.swing.JComboBox<>();
         btnEditDrug = new javax.swing.JButton();
         btnCancelDrug = new javax.swing.JButton();
@@ -79,8 +77,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
         jLabel_amount.setText("Đơn vị tính");
 
         jLabel_supplierid.setText("Mã nhà cung cấp");
-
-        jLabel_dayreception.setText("Ngày tiếp nhận");
 
         txtDrugId.setEditable(false);
 
@@ -114,8 +110,7 @@ public class EditDrugFrm extends javax.swing.JFrame {
                     .addComponent(jLabel_ingredient)
                     .addComponent(jLabel_expirydate)
                     .addComponent(jLabel_amount)
-                    .addComponent(jLabel_supplierid)
-                    .addComponent(jLabel_dayreception))
+                    .addComponent(jLabel_supplierid))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtDrugId)
@@ -125,7 +120,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
                     .addComponent(txtExpiredDate)
                     .addComponent(txtUnit)
                     .addComponent(txtSupplierID)
-                    .addComponent(txtDateImport)
                     .addComponent(cmbDrugType, 0, 202, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
@@ -177,15 +171,11 @@ public class EditDrugFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierid)
                     .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_dayreception)
-                    .addComponent(txtDateImport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditDrug)
                     .addComponent(btnCancelDrug))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -193,7 +183,7 @@ public class EditDrugFrm extends javax.swing.JFrame {
 
     private void btnEditDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDrugActionPerformed
         String sMathuoc = "", sTenthuoc = "", sPhannhom = "", sPhanloai = "", sThanhphan = "", sMancc = "";
-        String sHansudung = "", sNgaytiepnhan = "";
+        String sHansudung = "";
         String sDVT = "";
         
         sMathuoc = txtDrugId.getText();
@@ -203,20 +193,17 @@ public class EditDrugFrm extends javax.swing.JFrame {
         sThanhphan = txtDrugIngr.getText();
         sMancc = txtSupplierID.getText();
         sHansudung = txtExpiredDate.getText();
-        sNgaytiepnhan = txtDateImport.getText();
         sDVT = txtUnit.getText();
         
         
         
-        Drug drug = new Drug(sMathuoc, sTenthuoc,sPhannhom,  sPhanloai, sThanhphan, sHansudung, sDVT, sMancc, sNgaytiepnhan);
+        Drug drug = new Drug(sMathuoc, sTenthuoc,sPhannhom,  sPhanloai, sThanhphan, sHansudung, sDVT, sMancc);
         drugPanel.EditDrug(drug);
         this.dispose();
-                // TODO add your handling code here:
     }//GEN-LAST:event_btnEditDrugActionPerformed
 
     private void btnCancelDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelDrugActionPerformed
             this.dispose();
-                // TODO add your handling code here:
     }//GEN-LAST:event_btnCancelDrugActionPerformed
 
 
@@ -225,7 +212,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnEditDrug;
     private javax.swing.JComboBox<String> cmbDrugType;
     private javax.swing.JLabel jLabel_amount;
-    private javax.swing.JLabel jLabel_dayreception;
     private javax.swing.JLabel jLabel_drugsid;
     private javax.swing.JLabel jLabel_drugsname;
     private javax.swing.JLabel jLabel_expirydate;
@@ -233,7 +219,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_ingredient;
     private javax.swing.JLabel jLabel_supplierid;
     private javax.swing.JLabel jLabel_type;
-    private javax.swing.JTextField txtDateImport;
     private javax.swing.JTextField txtDrugGroup;
     private javax.swing.JLabel txtDrugID;
     private javax.swing.JTextField txtDrugId;
@@ -253,8 +238,6 @@ public class EditDrugFrm extends javax.swing.JFrame {
         txtDrugIngr.setText(d.getsThanhphan());
         txtExpiredDate.setText(d.getsHansudung());
         txtUnit.setText(d.getsDVT());
-        txtSupplierID.setText(d.getsMancc());
-        txtDateImport.setText(d.getsNgaytiepnhan());
-        
+        txtSupplierID.setText(d.getsMancc());        
     }
 }

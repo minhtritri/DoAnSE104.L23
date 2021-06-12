@@ -24,7 +24,8 @@ public class PanelSupplier extends javax.swing.JPanel {
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
-
+    
+    // singleton nên modifier access là private
     private PanelSupplier() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -70,7 +71,7 @@ public class PanelSupplier extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã NCC", "Tên NCC", "SĐT", "Địa chỉ", "Email", "Ngày ký HĐ", "Thời hạn HĐ", "Ca"
+                "Mã NCC", "Tên NCC", "SĐT", "Địa chỉ", "Email", "Ngày ký Hợp đồng", "Thời hạn Hợp đồng"
             }
         ));
         jScrollPane1.setViewportView(tblListSupplier);
@@ -222,7 +223,7 @@ public class PanelSupplier extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         int selectedIndex = tblListSupplier.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
             SupplierController.getInstance().getList().remove(selectedIndex);
@@ -234,11 +235,11 @@ public class PanelSupplier extends javax.swing.JPanel {
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         int selectedIndex = tblListSupplier.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
-            AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
-            addPharmaFrm.setVisible(true);
+            AddSupplierFrm addSupplierFrm = new AddSupplierFrm(selectedIndex);
+            addSupplierFrm.setVisible(true);
         }
         
     }//GEN-LAST:event_btnEditActionPerformed

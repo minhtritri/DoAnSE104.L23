@@ -72,7 +72,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
             }
         });
 
-        btnAddCustomer.setText("Thêm");
+        btnAddCustomer.setText("Lưu");
         btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddCustomerActionPerformed(evt);

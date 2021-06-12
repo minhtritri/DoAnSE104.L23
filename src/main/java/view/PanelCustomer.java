@@ -18,14 +18,21 @@ import model.Customer;
  */
 public class PanelCustomer extends javax.swing.JPanel {
 
+    private static PanelCustomer instance = new PanelCustomer();
     private List<Customer> customer;
     private DefaultTableModel tblcustomer;
     private int selectedIndex;
+    
+    public static PanelCustomer getInstance() {
+        return instance;
+    }
+    
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public PanelCustomer() {
+    // singleton nên modifier access là private
+    private PanelCustomer() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -45,7 +52,8 @@ public class PanelCustomer extends javax.swing.JPanel {
         customer = new ArrayList<Customer>();
         tblcustomer = (DefaultTableModel) tblListCustomer.getModel();
     }
-    public void AddCustomer(Customer c){
+
+    public void AddCustomer(Customer c) {
         customer.add(c);
         showData();
     }
@@ -71,7 +79,7 @@ public class PanelCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "MaKH", "Họ Tên", "Giới tính", "Năm sinh", "SĐT"
+                "Mã KH", "Họ Tên", "Giới tính", "Năm sinh", "SĐT"
             }
         ));
         jScrollPane1.setViewportView(tblListCustomer);
@@ -207,7 +215,7 @@ public class PanelCustomer extends javax.swing.JPanel {
         if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
             AddCustomerFrm addCustomerFrm = new AddCustomerFrm(this);
             addCustomerFrm.setVisible(true);
-        } 
+        }
     }//GEN-LAST:event_btnInsertCustomerActionPerformed
 
     private void btnSearchCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchCustomerActionPerformed
@@ -221,12 +229,12 @@ public class PanelCustomer extends javax.swing.JPanel {
     private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         // TODO add your handling code here:
         selectedIndex = tblListCustomer.getSelectedRow();
-        if(customer.size() == 0){
+        if (customer.size() == 0) {
             JOptionPane.showMessageDialog(btnEditCustomer, "Nhap Thong Tin Truoc Khi Sua");
-        }else if(selectedIndex == -1){
+        } else if (selectedIndex == -1) {
             JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Sua");
-        }else {
-            EditCustomerFrm edit =  new EditCustomerFrm(this);
+        } else {
+            EditCustomerFrm edit = new EditCustomerFrm(this);
             edit.setEditData(customer.get(selectedIndex));
             edit.setVisible(true);
         }
@@ -235,12 +243,12 @@ public class PanelCustomer extends javax.swing.JPanel {
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         // TODO add your handling code here:
         int removeIndex = tblListCustomer.getSelectedRow();
-        if(customer.size() == 0){
+        if (customer.size() == 0) {
             JOptionPane.showMessageDialog(btnEditCustomer, "Khong Co Thong Tin De Xoa");
-            
-        }else if(removeIndex == -1){
+
+        } else if (removeIndex == -1) {
             JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Xoa");
-        }else{
+        } else {
             customer.remove(removeIndex);
             showData();
         }
@@ -268,9 +276,9 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void showData() {
         tblcustomer.setRowCount(0);
-        for(Customer customer: customer){
+        for (Customer customer : customer) {
             tblcustomer.addRow(new Object[]{customer.getsMaKH(), customer.getsHoten(),
-                customer.getsGioiTinh(), customer.getsNamSinh(),customer.getsSdtKH()});
+                customer.getsGioiTinh(), customer.getsNamSinh(), customer.getsSdtKH()});
 
         }
     }

@@ -17,15 +17,24 @@ import model.Drug;
  * @author THAONGAN
  */
 public class PanelDrug extends javax.swing.JPanel {
-    private List<Drug> drug ;
+
+    private List<Drug> drug;
     private DefaultTableModel tblDrug;
-    private int selectedIndex ;
-    public void setTitle(String str) {
-        this.lbTitle.setText(str);
-        
+    private int selectedIndex;
+
+    private static PanelDrug instance = new PanelDrug();
+
+    public static PanelDrug getInstance() {
+        return instance;
     }
 
-    public PanelDrug() {
+    public void setTitle(String str) {
+        this.lbTitle.setText(str);
+
+    }
+
+    // singleton nên modifier access là private
+    private PanelDrug() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -44,16 +53,15 @@ public class PanelDrug extends javax.swing.JPanel {
         initComponents();
         drug = new ArrayList<Drug>();
         tblDrug = (DefaultTableModel) tblListDrug.getModel();
-      
-        
-        
-        
+
     }
-    public void AddDrug(Drug d){
+
+    public void AddDrug(Drug d) {
         drug.add(d); // Them thuoc vao danh sach
         showData();
-        
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -75,7 +83,7 @@ public class PanelDrug extends javax.swing.JPanel {
 
             },
             new String [] {
-                "MaThuoc", "Tên thuốc", "Nhóm", "Loại", "Thành phần", "HSD", "ĐVT", "MaNCC", "Ngày tiếp nhận"
+                "Mã Thuốc", "Tên thuốc", "Nhóm", "Loại", "Thành phần", "HSD", "ĐVT", "Mã NCC"
             }
         ));
         jScrollPane1.setViewportView(tblListDrug);
@@ -215,8 +223,8 @@ public class PanelDrug extends javax.swing.JPanel {
             AddDrugFrm AddDrugFrm = new AddDrugFrm(this);
             AddDrugFrm.setVisible(true);
         }
-     
-        
+
+
     }//GEN-LAST:event_btnInsertDrugActionPerformed
 
     private void btnSearchDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDrugActionPerformed
@@ -230,29 +238,27 @@ public class PanelDrug extends javax.swing.JPanel {
     private void btnEditDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDrugActionPerformed
         // TODO add your handling code here:
         selectedIndex = tblListDrug.getSelectedRow();
-        if(drug.size() == 0){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Nhap Them Thong Tin"); 
-        }else if(selectedIndex == -1 ){
-            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Dong De Sua "); 
-        }else{
+        if (drug.size() == 0) {
+            JOptionPane.showMessageDialog(jPanel2, "Hay Nhap Them Thong Tin");
+        } else if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Dong De Sua ");
+        } else {
             EditDrugFrm editDrugFrm = new EditDrugFrm(this);
             editDrugFrm.setEditData(drug.get(selectedIndex));
             editDrugFrm.setVisible(true);
         }
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_btnEditDrugActionPerformed
 
     private void btnDeleteDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDrugActionPerformed
         // TODO add your handling code here:
         int removeIndex = tblListDrug.getSelectedRow();
-        if(drug.size() == 0){
+        if (drug.size() == 0) {
             JOptionPane.showMessageDialog(jPanel2, "Hay Them Thong Tin Truoc Khi Xoa");
-        }else if(removeIndex == -1){
+        } else if (removeIndex == -1) {
             JOptionPane.showMessageDialog(jPanel2, "Hay Chon Mot Dong Roi An Nut Xoa");
-        }else {
+        } else {
             drug.remove(removeIndex);
             showData();
         }
@@ -280,9 +286,9 @@ public class PanelDrug extends javax.swing.JPanel {
 
     private void showData() {
         tblDrug.setRowCount(0);
-        for (Drug drug: drug){
-            tblDrug.addRow(new Object[]{drug.getsMathuoc(),drug.getsTenthuoc(), drug.getsPhannhom(), drug.getsPhanloai(), drug.getsThanhphan(),
-            drug.getsHansudung(),drug.getsDVT(), drug.getsMancc(), drug.getsNgaytiepnhan()});
+        for (Drug drug : drug) {
+            tblDrug.addRow(new Object[]{drug.getsMathuoc(), drug.getsTenthuoc(), drug.getsPhannhom(), drug.getsPhanloai(), drug.getsThanhphan(),
+                drug.getsHansudung(), drug.getsDVT(), drug.getsMancc()});
         }
     }
 }

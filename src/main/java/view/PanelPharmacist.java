@@ -25,6 +25,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
         this.lbTitle.setText(str);
     }
 
+    // singleton nên modifier access là private
     private PanelPharmacist() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -70,7 +71,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
 
             },
             new String [] {
-                "MaNV", "Họ tên", "Giới tính", "Năm sinh", "SĐT", "Địa chỉ", "Năm vào làm", "Ca"
+                "Mã NV", "Họ tên", "Giới tính", "Năm sinh", "SĐT", "Địa chỉ", "Năm vào làm", "Ca"
             }
         ));
         jScrollPane1.setViewportView(tblListPharmacist);
@@ -222,7 +223,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
     private void btnDeletePharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePharmacistActionPerformed
         int selectedIndex = tblListPharmacist.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
             PharmacistController.getInstance().getList().remove(selectedIndex);
@@ -234,14 +235,13 @@ public class PanelPharmacist extends javax.swing.JPanel {
     private void btnEditPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPharmacistActionPerformed
         int selectedIndex = tblListPharmacist.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
             AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
-
             addPharmaFrm.setVisible(true);
         }
-        
+
     }//GEN-LAST:event_btnEditPharmacistActionPerformed
 
 

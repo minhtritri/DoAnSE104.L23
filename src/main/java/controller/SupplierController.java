@@ -26,8 +26,9 @@ public class SupplierController {
     }
 
     public String[] getHeaders() {
+        // chuỗi phải giống y chang header tblList ở Panel
         return new String[]{"Mã NCC", "Tên NCC", "SĐT", "Địa chỉ", "Email",
-            "Ngày đăng ký HĐ", "Thời hạn HĐ"};
+            "Ngày ký Hợp đồng", "Thời hạn Hợp đồng"};
     }
 
     public DefaultTableModel toTable() {

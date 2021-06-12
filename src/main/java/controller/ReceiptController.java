@@ -14,7 +14,6 @@ import model.ReceiptDetail;
 public class ReceiptController {
 
     private ArrayList<Receipt> receipts = new ArrayList<>();
-
     private static ReceiptController instance = new ReceiptController();
 
     public ReceiptController() {
@@ -30,7 +29,8 @@ public class ReceiptController {
 
     public String[] getHeader() {
         //mảng chuỗi có giá trị khởi tạo ban đầu
-        return new String[]{"Mã HD", "Mã NV", "Tên NV", "Mã KH", "Tên KH",
+        // chuỗi phải giống y chang header tblList ở Panel
+        return new String[]{"Mã Hoá đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH",
             "Ngày mua", "Tổng tiền"};
     }
 

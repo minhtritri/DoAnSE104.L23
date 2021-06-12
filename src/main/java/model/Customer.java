@@ -5,7 +5,7 @@ public class Customer {
     private String sMaKH;
     private String sHoten;
     private String sGioiTinh;
-    private String sNamSinh;
+    private String sNamSinh; // -> int
     private String sSdtKH;
 
     public Customer(String sMaKH, String sHoten, String sGioiTinh, String sNamSinh, String sSdtKH) {

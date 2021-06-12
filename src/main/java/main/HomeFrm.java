@@ -9,6 +9,7 @@ import view.LoginFrm;
 import view.PanelSupplier;
 import view.PanelPharmacist;
 import view.PanelReceipt;
+import view.PanelReport;
 
 public class HomeFrm extends javax.swing.JFrame {
 
@@ -42,12 +43,13 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private static final HomeFrm instance = new HomeFrm();
 
-    PanelCustomer pnCustomer = new PanelCustomer();
+    PanelDrug pnDrug = PanelDrug.getInstance();
     PanelPharmacist pnPharmacist = PanelPharmacist.getInstance();
-    PanelDrug pnDrug = new PanelDrug();
+    PanelCustomer pnCustomer = PanelCustomer.getInstance();
     PanelSupplier pnSupplier = PanelSupplier.getInstance();
     PanelReceipt pnReceipt = PanelReceipt.getInstance();
-    PanelImportVoucher pnImportVoucher = new PanelImportVoucher();
+    PanelImportVoucher pnImportVoucher = PanelImportVoucher.getInstance();
+    PanelReport pnReport = PanelReport.getInstance();
 
     public HomeFrm() {
         /* Set the Nimbus look and feel */
@@ -87,12 +89,13 @@ public class HomeFrm extends javax.swing.JFrame {
         pnContainer.setLayout(new CardLayout());
         pnContainer.setLayout(new CardLayout());
 
-        pnCustomer.setVisible(true);
-        pnPharmacist.setVisible(true);
         pnDrug.setVisible(true);
+        pnPharmacist.setVisible(true);
+        pnCustomer.setVisible(true);
         pnSupplier.setVisible(true);
         pnReceipt.setVisible(true);
         pnImportVoucher.setVisible(true);
+        pnReport.setVisible(true);
         pnContainer.setVisible(false);
 
         this.setVisible(true);
@@ -309,7 +312,16 @@ public class HomeFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_tgbtnLoginActionPerformed
 
     private void tgbtnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReportActionPerformed
-        //pnContainer.setVisible(true);
+        pnContainer.add(pnReport);
+        pnReport.setVisible(true);
+        pnContainer.setVisible(true);
+
+        pnDrug.setVisible(false);
+        pnPharmacist.setVisible(false);
+        pnSupplier.setVisible(false);
+        pnCustomer.setVisible(false);
+        pnImportVoucher.setVisible(false);
+        pnReceipt.setVisible(false);
     }//GEN-LAST:event_tgbtnReportActionPerformed
 
     private void tgbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReceiptActionPerformed
@@ -322,6 +334,7 @@ public class HomeFrm extends javax.swing.JFrame {
         pnSupplier.setVisible(false);
         pnCustomer.setVisible(false);
         pnImportVoucher.setVisible(false);
+        pnReport.setVisible(false);
 
     }//GEN-LAST:event_tgbtnReceiptActionPerformed
 
@@ -335,6 +348,8 @@ public class HomeFrm extends javax.swing.JFrame {
         pnSupplier.setVisible(false);
         pnCustomer.setVisible(false);
         pnReceipt.setVisible(false);
+        pnReport.setVisible(false);
+
     }//GEN-LAST:event_tgbtnImportVoucherActionPerformed
 
     private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
@@ -347,6 +362,8 @@ public class HomeFrm extends javax.swing.JFrame {
         pnSupplier.setVisible(false);
         pnReceipt.setVisible(false);
         pnImportVoucher.setVisible(false);
+        pnReport.setVisible(false);
+
     }//GEN-LAST:event_tgbtnCustomerActionPerformed
 
     private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
@@ -360,7 +377,7 @@ public class HomeFrm extends javax.swing.JFrame {
         pnCustomer.setVisible(false);
         pnReceipt.setVisible(false);
         pnImportVoucher.setVisible(false);
-
+        pnReport.setVisible(false);
 
     }//GEN-LAST:event_tgbtnSupplierActionPerformed
 
@@ -375,6 +392,8 @@ public class HomeFrm extends javax.swing.JFrame {
         pnCustomer.setVisible(false);
         pnReceipt.setVisible(false);
         pnImportVoucher.setVisible(false);
+        pnReport.setVisible(false);
+
     }//GEN-LAST:event_tgbtnPharmacistActionPerformed
 
     private void tgbtnDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnDrugActionPerformed
@@ -386,8 +405,9 @@ public class HomeFrm extends javax.swing.JFrame {
         pnPharmacist.setVisible(false);
         pnSupplier.setVisible(false);
         pnCustomer.setVisible(false);
-
+        pnReceipt.setVisible(false);
         pnImportVoucher.setVisible(false);
+        pnReport.setVisible(false);
 
     }//GEN-LAST:event_tgbtnDrugActionPerformed
 

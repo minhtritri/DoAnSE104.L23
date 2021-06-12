@@ -55,6 +55,7 @@ public class EditCustomerFrm extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_title.setText("Khách Hàng");
 
         jLabel_goestid.setText("Mã khách hàng:");
@@ -119,10 +120,7 @@ public class EditCustomerFrm extends javax.swing.JFrame {
                         .addComponent(btnCancelCustomer)
                         .addGap(57, 57, 57)))
                 .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(jLabel_title)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

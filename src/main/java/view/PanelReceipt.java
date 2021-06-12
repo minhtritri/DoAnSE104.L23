@@ -25,6 +25,7 @@ public class PanelReceipt extends javax.swing.JPanel {
         return this.tblListReceipt;
     }
 
+    // singleton nên modifier access là private
     private PanelReceipt() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -66,7 +67,7 @@ public class PanelReceipt extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã Hoá đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH", "Ngày mua"
+                "Mã Hoá đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH", "Ngày mua", "Tổng tiền"
             }
         ));
         jScrollPane1.setViewportView(tblListReceipt);
@@ -233,7 +234,7 @@ public class PanelReceipt extends javax.swing.JPanel {
     private void btnDeleteReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReceiptActionPerformed
         int selectedIndex = tblListReceipt.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
             ReceiptController.getInstance().getList().remove(selectedIndex);
@@ -244,7 +245,7 @@ public class PanelReceipt extends javax.swing.JPanel {
     private void btnEditReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditReceiptActionPerformed
         int selectedIndex = tblListReceipt.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
             AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, true);
@@ -255,7 +256,7 @@ public class PanelReceipt extends javax.swing.JPanel {
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
          int selectedIndex = tblListReceipt.getSelectedRow();
         if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xem");
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xem");
             return;
         } else {
             AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, false);

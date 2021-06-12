@@ -39,7 +39,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         txtSupplierAddress.setText(p.getsDiaChi());
         txtSupplierEmail.setText(p.getsEmail());
         txtContractSignDate.setText(p.getdNgayDangKyHD().format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
-        txtContractExpiredDate.setText(String.valueOf(p.gettThoiHanHD()));//Date or day?
+        txtContractExpiredDate.setText(Integer.valueOf(p.gettThoiHanHD()).toString());
     }
 
     /**
@@ -74,6 +74,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_title.setText("Nhà Cung Cấp");
 
         jLabel_supplierid.setText("Mã nhà cung cấp:");
@@ -86,9 +87,9 @@ public class AddSupplierFrm extends javax.swing.JFrame {
 
         jLabel1.setText("Email");
 
-        jLabel2.setText("Ngày ký hợp đồng");
+        jLabel2.setText("Ngày ký hợp đồng (dd/mm/yyyy)");
 
-        jLabel3.setText("Thời hạn hợp đồng");
+        jLabel3.setText("Thời hạn hợp đồng (tháng)");
 
         btnClearSupplier.setText("Làm mới");
         btnClearSupplier.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +98,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             }
         });
 
-        btnAddSupplier.setText("Thêm");
+        btnAddSupplier.setText("Lưu");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSupplierActionPerformed(evt);
@@ -116,40 +117,35 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jLabel_title))
+                        .addGap(12, 12, 12)
+                        .addComponent(btnAddSupplier)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addComponent(btnClearSupplier)
+                        .addGap(76, 76, 76)
+                        .addComponent(btnCancelSupplier))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(btnAddSupplier)
-                                .addGap(44, 44, 44)
-                                .addComponent(btnClearSupplier)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                                .addComponent(btnCancelSupplier)
-                                .addGap(8, 8, 8))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel_supplierid)
-                                    .addComponent(jLabel_supplername)
-                                    .addComponent(jLabel_supplierphonenumber)
-                                    .addComponent(jLabel_supplieraddress)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtSupplierID)
-                                    .addComponent(txtSupplierName)
-                                    .addComponent(txtSupplierPhone)
-                                    .addComponent(txtSupplierAddress)
-                                    .addComponent(txtSupplierEmail)
-                                    .addComponent(txtContractSignDate)
-                                    .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))))
+                            .addComponent(jLabel_supplierid)
+                            .addComponent(jLabel_supplername)
+                            .addComponent(jLabel_supplierphonenumber)
+                            .addComponent(jLabel_supplieraddress)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtSupplierID)
+                            .addComponent(txtSupplierName)
+                            .addComponent(txtSupplierPhone)
+                            .addComponent(txtSupplierAddress)
+                            .addComponent(txtSupplierEmail)
+                            .addComponent(txtContractSignDate)
+                            .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))
                 .addGap(33, 33, 33))
+            .addComponent(jLabel_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,9 +218,9 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                     SDT, sDiaChi,sEmail, dNgayDangKyHD, tThoiHanHD);
 
             if (isEditing) {
-                System.out.println(this.index);
+                //System.out.println(this.index);
                 SupplierController.getInstance().getList().set(this.index, supplier);
-                this.setVisible(false);
+                this.setVisible(true);
                 
             } else {
                 SupplierController.getInstance().getList().add(supplier);

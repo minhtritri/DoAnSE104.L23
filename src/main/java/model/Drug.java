@@ -12,12 +12,12 @@ public class Drug {
     private String sHansudung;
     private String sDVT;
     private String sMancc;
-    private String sNgaytiepnhan;
 
     public Drug() {
     }
 
-    public Drug(String sMathuoc, String sTenthuoc, String sPhannhom, String sPhanloai, String sThanhphan, String sHansudung, String sDVT, String sMancc, String sNgaytiepnhan) {
+    public Drug(String sMathuoc, String sTenthuoc, String sPhannhom, String sPhanloai,
+            String sThanhphan, String sHansudung, String sDVT, String sMancc) {
         this.sMathuoc = sMathuoc;
         this.sTenthuoc = sTenthuoc;
         this.sPhannhom = sPhannhom;
@@ -26,7 +26,6 @@ public class Drug {
         this.sHansudung = sHansudung;
         this.sDVT = sDVT;
         this.sMancc = sMancc;
-        this.sNgaytiepnhan = sNgaytiepnhan;
     }
 
     public String getsMathuoc() {
@@ -91,13 +90,5 @@ public class Drug {
 
     public void setsMancc(String sMancc) {
         this.sMancc = sMancc;
-    }
-
-    public String getsNgaytiepnhan() {
-        return sNgaytiepnhan;
-    }
-
-    public void setsNgaytiepnhan(String sNgaytiepnhan) {
-        this.sNgaytiepnhan = sNgaytiepnhan;
     }
 }

@@ -36,7 +36,6 @@
                   <Component id="jLabel_expirydate" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_amount" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel_supplierid" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel_dayreception" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -47,7 +46,6 @@
                   <Component id="txtExpiredDate" max="32767" attributes="0"/>
                   <Component id="txtUnit" max="32767" attributes="0"/>
                   <Component id="txtSupplierID" max="32767" attributes="0"/>
-                  <Component id="txtDateImport" max="32767" attributes="0"/>
                   <Component id="cmbDrugType" pref="202" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
@@ -114,17 +112,12 @@
                   <Component id="jLabel_supplierid" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel_dayreception" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDateImport" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnEditDrug" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelDrug" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -178,11 +171,6 @@
         <Property name="text" type="java.lang.String" value="Ma&#x303; nha&#x300; cung c&#xe2;&#x301;p"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel_dayreception">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nga&#x300;y ti&#xea;&#x301;p nh&#xe2;&#x323;n"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JTextField" name="txtDrugId">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
@@ -199,8 +187,6 @@
     <Component class="javax.swing.JTextField" name="txtUnit">
     </Component>
     <Component class="javax.swing.JTextField" name="txtSupplierID">
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtDateImport">
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbDrugType">
       <Properties>

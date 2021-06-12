@@ -13,12 +13,18 @@ import main.HomeFrm;
  */
 public class PanelImportVoucher extends javax.swing.JPanel {
 
+    private static PanelImportVoucher instance = new PanelImportVoucher();
+
+    public static PanelImportVoucher getInstance() {
+        return instance;
+    }
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public PanelImportVoucher() {
+    // singleton nên modifier access là private
+    private PanelImportVoucher() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -59,7 +65,7 @@ public class PanelImportVoucher extends javax.swing.JPanel {
 
             },
             new String [] {
-                "MaPN", "MaNV", "Tên NV", "MaNCC", "Tên NCC", "Ngày lập phiếu"
+                "Mã Phiếu nhập", "Mã NV", "Tên NV", "Mã NCC", "Tên NCC", "Ngày lập phiếu"
             }
         ));
         jScrollPane1.setViewportView(tblListImportVoucher);
@@ -200,9 +206,9 @@ public class PanelImportVoucher extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImportVoucherActionPerformed
-         if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
+        if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
             new AddSupplierFrm().setVisible(true);
-        }     
+        }
     }//GEN-LAST:event_btnInsertImportVoucherActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
