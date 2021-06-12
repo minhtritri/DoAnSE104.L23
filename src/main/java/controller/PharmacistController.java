@@ -27,8 +27,8 @@ public class PharmacistController {
 
     public String[] getHeaders() {
         //mảng chuỗi có giá trị khởi tạo ban đầu
-        return new String[]{"MaNV", "Họ tên", "Giới tính", "Năm sinh", "SĐT",
-            "Ngày vào làm", "Ca"};
+        return new String[]{"Mã NV", "Họ tên", "Giới tính", "Năm sinh", "SĐT",
+            "Địa chỉ", "Ngày vào làm", "Ca"};
     }
 
     public DefaultTableModel toTable() {
@@ -47,7 +47,8 @@ public class PharmacistController {
         vt.add(pharmacists.get(index).getsGioiTinh());
         vt.add(pharmacists.get(index).getiNamSinh());
         vt.add(pharmacists.get(index).getSDT());
-        vt.add(pharmacists.get(index).getdNGAYVL());
+        vt.add(pharmacists.get(index).getsDiaChi());
+        vt.add(pharmacists.get(index).getiNamVaoLam());
         vt.add(pharmacists.get(index).getiCALV());
         return vt;
     }

@@ -46,7 +46,7 @@ public class HomeFrm extends javax.swing.JFrame {
     PanelPharmacist pnPharmacist = PanelPharmacist.getInstance();
     PanelDrug pnDrug = new PanelDrug();
     PanelSupplier pnSupplier = PanelSupplier.getInstance();
-    PanelReceipt pnReceipt = new PanelReceipt();
+    PanelReceipt pnReceipt = PanelReceipt.getInstance();
     PanelImportVoucher pnImportVoucher = new PanelImportVoucher();
 
     public HomeFrm() {
@@ -87,12 +87,12 @@ public class HomeFrm extends javax.swing.JFrame {
         pnContainer.setLayout(new CardLayout());
         pnContainer.setLayout(new CardLayout());
 
-        //pnContainer.add(mainPanel);
         pnCustomer.setVisible(true);
         pnPharmacist.setVisible(true);
         pnDrug.setVisible(true);
         pnSupplier.setVisible(true);
-
+        pnReceipt.setVisible(true);
+        pnImportVoucher.setVisible(true);
         pnContainer.setVisible(false);
 
         this.setVisible(true);
@@ -304,7 +304,6 @@ public class HomeFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void tgbtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnLoginActionPerformed
-        // TODO add your handling code here:
         this.setEnabled(false);
         new LoginFrm().setVisible(true);
     }//GEN-LAST:event_tgbtnLoginActionPerformed

@@ -51,7 +51,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         );
         txtPharmacistPhone.setText(p.getSDT());
         txtPharmacistAddress.setText(p.getsDiaChi());
-        txtYearWork.setText(p.getdNGAYVL().format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
+        txtYearWork.setText(Integer.valueOf(p.getiNamVaoLam()).toString());
         cmbPharmacistShift.setSelectedIndex(p.getiCALV() - 1);
     }
 
@@ -238,15 +238,15 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
             int iNamSinh = Integer.parseInt(txtPharmacistDOB.getText());
             String SDT = txtPharmacistPhone.getText();
             String sDiaChi = txtPharmacistAddress.getText();
-            LocalDate dNGAYVL = LocalDate.parse(txtYearWork.getText(), DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
+            int iNamVaoLam = Integer.parseInt(txtYearWork.getText());
             int iCALV = Integer.valueOf(cmbPharmacistShift.getSelectedItem().toString());
             Pharmacist pharmacist = new Pharmacist(sMaNV, sHoTen, sGioiTinh, iNamSinh,
-                    SDT, sDiaChi, dNGAYVL, iCALV);
+                    SDT, sDiaChi, iNamVaoLam, iCALV);
 
             if (isEditing) {
-                System.out.println(this.index);
+                //System.out.println(this.index);
                 PharmacistController.getInstance().getList().set(this.index, pharmacist);
-                this.setVisible(false);
+                this.setVisible(true);
 
             } else {
                 // thêm vào arraylist trong Controller 1 thằng pharmacist mới
@@ -257,6 +257,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
             PanelPharmacist.getInstance().getTable().setModel(
                     PharmacistController.getInstance().toTable()
             );
+            
             // Clear thông tin sau mỗi lần thêm thành công
 //            txtPharmacistID.setText("");
 //            txtPharmacistName.setText("");
@@ -275,7 +276,6 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddPharmacistActionPerformed
 
     private void btnCancelPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelPharmacistActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_btnCancelPharmacistActionPerformed
 

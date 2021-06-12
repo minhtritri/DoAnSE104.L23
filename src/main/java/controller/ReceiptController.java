@@ -5,33 +5,35 @@ import java.util.Set;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import model.Receipt;
+import model.ReceiptDetail;
 
 /**
  *
  * @author THAONGAN
  */
 public class ReceiptController {
-    
+
     private ArrayList<Receipt> receipts = new ArrayList<>();
+
     private static ReceiptController instance = new ReceiptController();
-    
+
     public ReceiptController() {
     }
-    
+
     public static ReceiptController getInstance() {
         return instance;
     }
-    
+
     public ArrayList<Receipt> getList() {
         return receipts;
     }
-    
+
     public String[] getHeader() {
         //mảng chuỗi có giá trị khởi tạo ban đầu
-        return new String[]{"MaHD", "MaNV", "Tên NV", "MaKH", "Tên KH",
-            "Ngày mua"};
+        return new String[]{"Mã HD", "Mã NV", "Tên NV", "Mã KH", "Tên KH",
+            "Ngày mua", "Tổng tiền"};
     }
-    
+
     public DefaultTableModel toTable() {
         DefaultTableModel tblModel = new DefaultTableModel();
         tblModel.setColumnIdentifiers(this.getHeader());
@@ -40,14 +42,17 @@ public class ReceiptController {
         }
         return tblModel;
     }
-    
+
     public Vector toVector(int index) {
         Vector vt = new Vector();
         vt.add(receipts.get(index).getsMaHD());
         vt.add(receipts.get(index).getsMaNV());
+        vt.add(receipts.get(index).getsTenNV());
         vt.add(receipts.get(index).getsMaKH());
+        vt.add(receipts.get(index).getsTenKH());
         vt.add(receipts.get(index).getdNgayMuaThuoc());
-        
+        vt.add(receipts.get(index).getfTongTien());
         return vt;
     }
+
 }

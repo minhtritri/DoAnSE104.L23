@@ -5,11 +5,24 @@
  */
 package view;
 
+import controller.PharmacistController;
+import controller.ReceiptController;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Pharmacist;
+import model.Receipt;
+import model.ReceiptDetail;
+
 /**
  *
  * @author THAONGAN
  */
 public class AddReceiptFrm extends javax.swing.JFrame {
+
+    private boolean isEditing = false;
+    private int index = -1;
 
     /**
      * Creates new form AddBuyReceipt
@@ -17,6 +30,68 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     public AddReceiptFrm() {
         initComponents();
         this.setLocationRelativeTo(null);
+        isEditing = true;
+        this.lockAll(isEditing);
+    }
+
+    public AddReceiptFrm(int index, boolean editable) {
+        this();
+        isEditing = editable;
+        this.index = index;
+        this.addEditInfo(ReceiptController.getInstance().getList().get(index));
+        this.lockAll(editable);
+    }
+
+    public void addEditInfo(Receipt r) {
+        // set tung text field tuong ung voi tung getter
+        txtReceiptID.setText(r.getsMaHD());
+        txtPharmacistID.setText(r.getsMaNV());
+        txtPharmacistName.setText(r.getsTenNV());
+        txtCustomerID.setText(r.getsMaKH());
+        txtCustomerName.setText(r.getsTenKH());
+        txtDateReceipt.setText(r.getdNgayMuaThuoc().toString());
+        tblDrugList.setModel(r.toDetailTable());
+        txtSumReceipt.setText(Float.toString(r.getfTongTien()));
+    }
+
+    public void lockAll(boolean editable) {
+        txtReceiptID.setEditable(editable);
+        txtPharmacistID.setEditable(editable);
+        txtPharmacistName.setEditable(editable);
+        txtCustomerID.setEditable(editable);
+        txtCustomerName.setEditable(editable);
+        txtDateReceipt.setEditable(editable);
+        txtSumReceipt.setEditable(editable);
+        tblDrugList.setEnabled(editable);
+
+        btnInsertDrugRow.setVisible(editable);
+        btnDeleteDrugRow.setVisible(editable);
+        btnAddReceipt.setVisible(editable);
+        btnClearReceipt.setVisible(editable);
+    }
+
+    private float calculatePrice(int iSL, float fDonGia) {
+        return iSL * fDonGia;
+    }
+
+    private float calculateTotal() {
+        DefaultTableModel tmpModel = (DefaultTableModel) tblDrugList.getModel();
+        Integer sum = 0;
+
+        for (int i = 0; i < tmpModel.getRowCount(); i++) {
+            Integer sl = 0;
+            Integer dg = 0;
+            try {
+                sl = Integer.valueOf((String) tmpModel.getValueAt(i, 1)); // cột SL
+                dg = Integer.valueOf((String) tmpModel.getValueAt(i, 2));  // cột Đơn giá
+            } catch (Exception e) {
+                //System.out.println(e.toString());
+
+            } finally {
+                sum += (sl * dg);
+            }
+        }
+        return sum;
     }
 
     /**
@@ -35,10 +110,10 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         txtReceiptID = new javax.swing.JTextField();
         lbPharmacistID = new javax.swing.JLabel();
         lbPharmacistName = new javax.swing.JLabel();
-        tfPharmacistName = new javax.swing.JTextField();
+        txtPharmacistName = new javax.swing.JTextField();
         lbGuestID = new javax.swing.JLabel();
         lbGuestName = new javax.swing.JLabel();
-        txtGuestName = new javax.swing.JTextField();
+        txtCustomerName = new javax.swing.JTextField();
         lbDateSell = new javax.swing.JLabel();
         lbDrugList = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -76,28 +151,13 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         lbSellID.setText("Mã hoá đơn");
 
-        txtReceiptID.setText("Sinh mã ");
-
         lbPharmacistID.setText("Mã nhân viên");
 
         lbPharmacistName.setText("Tên nhân viên");
 
-        tfPharmacistName.setText("getPharmacistName from MANV");
-        tfPharmacistName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPharmacistNameActionPerformed(evt);
-            }
-        });
-
         lbGuestID.setText("Mã khách hàng");
 
         lbGuestName.setText("Tên khách hàng");
-
-        txtGuestName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtGuestNameActionPerformed(evt);
-            }
-        });
 
         lbDateSell.setText("Ngày mua");
 
@@ -105,24 +165,34 @@ public class AddReceiptFrm extends javax.swing.JFrame {
 
         tblDrugList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "MATHUOC", "SL", "Đơn giá"
+                "Mã Thuốc", "SL", "Đơn giá", "Thành tiền"
             }
         ));
+        tblDrugList.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tblDrugListPropertyChange(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblDrugList);
 
         jLabel8.setText("Tổng");
 
         txtSumReceipt.setText("hàm tính tổng trị giá");
 
-        btnAddReceipt.setText("Thêm");
+        btnAddReceipt.setText("Lưu");
+        btnAddReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddReceiptActionPerformed(evt);
+            }
+        });
 
         btnClearReceipt.setText("Làm mới");
         btnClearReceipt.addActionListener(new java.awt.event.ActionListener() {
@@ -132,10 +202,37 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         });
 
         btnCancelReceipt.setText("Huỷ");
+        btnCancelReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelReceiptActionPerformed(evt);
+            }
+        });
+
+        txtPharmacistID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPharmacistIDKeyReleased(evt);
+            }
+        });
+
+        txtCustomerID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtCustomerIDKeyReleased(evt);
+            }
+        });
 
         btnInsertDrugRow.setText("Thêm SP");
+        btnInsertDrugRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertDrugRowActionPerformed(evt);
+            }
+        });
 
         btnDeleteDrugRow.setText("Xoá SP");
+        btnDeleteDrugRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteDrugRowActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,8 +263,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                                     .addComponent(lbDateSell))
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                    .addComponent(txtGuestName)
+                                    .addComponent(txtPharmacistName, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                    .addComponent(txtCustomerName)
                                     .addComponent(txtReceiptID)
                                     .addComponent(txtDateReceipt)
                                     .addComponent(txtPharmacistID)
@@ -183,7 +280,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(63, 63, 63)
                                         .addComponent(btnClearReceipt)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                                         .addComponent(btnCancelReceipt)))))
                         .addGap(0, 31, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -204,7 +301,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPharmacistName)
-                    .addComponent(tfPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbGuestID)
@@ -212,7 +309,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbGuestName)
-                    .addComponent(txtGuestName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbDateSell)
@@ -241,18 +338,140 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfPharmacistNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPharmacistNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPharmacistNameActionPerformed
-
-    private void txtGuestNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGuestNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtGuestNameActionPerformed
-
     private void btnClearReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearReceiptActionPerformed
-        // TODO add your handling code here:
+        txtReceiptID.setText("");
+        txtPharmacistID.setText("");
+        txtPharmacistName.setText("");
+        txtCustomerID.setText("");
+        txtCustomerName.setText("");
+        txtDateReceipt.setText("");
+        txtSumReceipt.setText("");
+
+        DefaultTableModel tblModel = new DefaultTableModel();
+        tblModel.setColumnIdentifiers(new String[]{"Mã thuốc", "SL", "Đơn giá", "Thành tiền"});
+        tblDrugList.setModel(tblModel);
     }//GEN-LAST:event_btnClearReceiptActionPerformed
 
+    private void btnAddReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddReceiptActionPerformed
+        try {
+            String sMaHD = txtReceiptID.getText();
+            String sMaNV = txtPharmacistID.getText();
+            String STenNV = txtPharmacistName.getText();
+            String sMaKH = txtCustomerID.getText();
+            String sTenKH = txtCustomerName.getText();
+            float fTongTien = 0;
+            LocalDate dNgayMuaThuoc = LocalDate.parse(txtDateReceipt.getText(), DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
+            Receipt receipt = new Receipt(sMaHD, sMaNV, STenNV, sMaKH, sTenKH, dNgayMuaThuoc, fTongTien);
+
+            DefaultTableModel tblModel = (DefaultTableModel) tblDrugList.getModel();
+            for (int i = 0; i < tblModel.getRowCount(); i++) {
+                try {
+                    // khởi tạo receiptDetail
+                    String sMaCTHD = "từ từ code sau, hoặc ẩn nó luôn nhỉ";
+                    String sMAHD = txtReceiptID.getText();
+                    String sMATHUOC = tblModel.getValueAt(i, 0).toString();
+                    int iSL = Integer.valueOf((String) tblModel.getValueAt(i, 1));
+                    float fDonGia = Integer.valueOf((String) tblModel.getValueAt(i, 2));
+                    float fThanhTien = this.calculatePrice(iSL, fDonGia);
+
+                    tblModel.setValueAt(Float.toString(fThanhTien), i, 3);
+
+                    ReceiptDetail receiptDetail = new ReceiptDetail(
+                            sMaCTHD, sMAHD, sMATHUOC, iSL, fDonGia, fThanhTien
+                    );
+
+                    receipt.getDetailList().add(receiptDetail);
+                    fTongTien = this.calculateTotal();
+                    receipt.setfTongTien(fTongTien);
+                    //System.out.println("Theem thafnh cong");
+                    //receipt.getDetailList().stream().forEach(System.out::println);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (this.index != -1 & isEditing) {
+                //System.out.println(this.index);
+                ReceiptController.getInstance().getList().set(this.index, receipt);
+                this.setVisible(false);
+            } else {
+                // thêm vào arraylist trong Controller 1 thằng receipt mới
+                ReceiptController.getInstance().getList().add(receipt);
+            }
+
+            //System.out.println(ReceiptController.getInstance().getList().size());
+            //System.out.println(PanelReceipt.getInstance().getTable().toString());
+            // lấy ra table tblListReceipt từ Panel truyền vào dữ liệu từ Controller
+            PanelReceipt.getInstance().getTable().setModel(
+                    ReceiptController.getInstance().toTable()
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAddReceiptActionPerformed
+
+    private void btnInsertDrugRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertDrugRowActionPerformed
+        DefaultTableModel tmpModel = (DefaultTableModel) tblDrugList.getModel();
+        tmpModel.addRow(new Object[4]);
+        tblDrugList.setModel(tmpModel);
+    }//GEN-LAST:event_btnInsertDrugRowActionPerformed
+
+    private void btnDeleteDrugRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDrugRowActionPerformed
+        DefaultTableModel tmpModel = (DefaultTableModel) tblDrugList.getModel();
+        int selectedIndex = tblDrugList.getSelectedRow();
+        // nếu không chọn dòng nào thì xoá dòng cuối
+        if (selectedIndex == -1) {
+            if (tblDrugList.getRowCount() == 0) {
+                return; // bảng không có dòng nào thì thôi
+            }
+            // cho selectedIndex = dòng cuối
+            selectedIndex = tblDrugList.getRowCount() - 1;
+        }
+        tmpModel.removeRow(selectedIndex);
+        tblDrugList.setModel(tmpModel);
+
+        String TongTien = Float.toString(this.calculateTotal());
+        txtSumReceipt.setText(TongTien);
+    }//GEN-LAST:event_btnDeleteDrugRowActionPerformed
+
+    private void tblDrugListPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tblDrugListPropertyChange
+        String TongTien = Float.toString(this.calculateTotal());
+        txtSumReceipt.setText(TongTien);
+
+        DefaultTableModel tblModel = (DefaultTableModel) tblDrugList.getModel();
+        try {
+            for (int i = 0; i < tblModel.getRowCount(); i++) {
+                String sMATHUOC = tblModel.getValueAt(i, 0).toString();
+                int iSL = Integer.valueOf((String) tblModel.getValueAt(i, 1));
+                float fDonGia = Integer.valueOf((String) tblModel.getValueAt(i, 2));
+                float fThanhTien = this.calculatePrice(iSL, fDonGia);
+                tblModel.setValueAt(Float.toString(fThanhTien), i, 3);
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_tblDrugListPropertyChange
+
+    private void btnCancelReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelReceiptActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelReceiptActionPerformed
+
+    private void txtPharmacistIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPharmacistIDKeyReleased
+        String sMaNV = txtPharmacistID.getText();
+        for (Pharmacist p : PharmacistController.getInstance().getList()) {
+            if (p.getsMaNV().equals(sMaNV)) {
+                txtPharmacistName.setText(p.getsHoTen());
+                return;
+            } else {
+                txtPharmacistName.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtPharmacistIDKeyReleased
+
+    private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
+        // giống code txtPharmacistIDKeyReleased(java.awt.event.KeyEvent evt)
+        // chưa có CustomerController
+    }//GEN-LAST:event_txtCustomerIDKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -274,11 +493,11 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     private javax.swing.JLabel lbPharmacistName;
     private javax.swing.JLabel lbSellID;
     private javax.swing.JTable tblDrugList;
-    private javax.swing.JTextField tfPharmacistName;
     private javax.swing.JTextField txtCustomerID;
+    private javax.swing.JTextField txtCustomerName;
     private javax.swing.JTextField txtDateReceipt;
-    private javax.swing.JTextField txtGuestName;
     private javax.swing.JTextField txtPharmacistID;
+    private javax.swing.JTextField txtPharmacistName;
     private javax.swing.JTextField txtReceiptID;
     private javax.swing.JTextField txtSumReceipt;
     // End of variables declaration//GEN-END:variables

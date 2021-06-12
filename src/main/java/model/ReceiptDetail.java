@@ -6,17 +6,19 @@ public class ReceiptDetail {
     private String sMATHUOC;
     private int iSL;
     private float fDonGia;
-
+    private float fThanhTien;
+    
     public ReceiptDetail() {
     }
 
-    public ReceiptDetail(String sMaCTHD, String sMAHD, String sMATHUOC, 
-            int iSL, float fDonGia) {
+    public ReceiptDetail(String sMaCTHD, String sMAHD, String sMATHUOC,
+            int iSL, float fDonGia, float fThanhTien) {
         this.sMaCTHD = sMaCTHD;
         this.sMAHD = sMAHD;
         this.sMATHUOC = sMATHUOC;
         this.iSL = iSL;
         this.fDonGia = fDonGia;
+        this.fThanhTien = fThanhTien;
     }
 
     public String getsMaCTHD() {
@@ -43,6 +45,7 @@ public class ReceiptDetail {
         this.sMATHUOC = sMATHUOC;
     }
 
+
     public int getiSL() {
         return iSL;
     }
@@ -58,6 +61,12 @@ public class ReceiptDetail {
     public void setfDonGia(float fDonGia) {
         this.fDonGia = fDonGia;
     }
-    
-   
+
+    public float getfThanhTien() {
+        return fThanhTien;
+    }
+
+    public void setfThanhTien(float fThanhTien) {
+        this.fThanhTien = fThanhTien;
+    }
 }

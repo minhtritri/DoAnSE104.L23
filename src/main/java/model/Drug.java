@@ -100,7 +100,4 @@ public class Drug {
     public void setsNgaytiepnhan(String sNgaytiepnhan) {
         this.sNgaytiepnhan = sNgaytiepnhan;
     }
-
-    
-
 }

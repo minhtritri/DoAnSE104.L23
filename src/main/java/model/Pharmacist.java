@@ -9,23 +9,23 @@ public class Pharmacist {
     private String sHoTen;
     private String sGioiTinh;
     private int iNamSinh;
-    private String SDT;
+    private String sSDT;
     private String sDiaChi;
-    private LocalDate dNGAYVL;
+    private int iNamVaoLam;
     private int iCALV;
 
     public Pharmacist() {
     }
 
     public Pharmacist(String sMaNV, String sHoTen, String sGioiTinh, int iNamSinh,
-            String SDT, String sDiaChi, LocalDate dNGAYVL, int iCALV) {
+            String sSDT, String sDiaChi, int iNamVaoLam, int iCALV) {
         this.sMaNV = sMaNV;
         this.sHoTen = sHoTen;
         this.iNamSinh = iNamSinh;
         this.sGioiTinh = sGioiTinh;
         this.sDiaChi = sDiaChi;
-        this.SDT = SDT;
-        this.dNGAYVL = dNGAYVL;
+        this.sSDT = sSDT;
+        this.iNamVaoLam = iNamVaoLam;
         this.iCALV = iCALV;
     }
 
@@ -70,19 +70,19 @@ public class Pharmacist {
     }
 
     public String getSDT() {
-        return SDT;
+        return sSDT;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setSDT(String sSDT) {
+        this.sSDT = sSDT;
     }
 
-    public LocalDate getdNGAYVL() {
-        return dNGAYVL;
+    public int getiNamVaoLam() {
+        return iNamVaoLam;
     }
 
-    public void setdNGAYVL(LocalDate dNGAYVL) {
-        this.dNGAYVL = dNGAYVL;
+    public void setiNamVaoLam(int iNamVaoLam) {
+        this.iNamVaoLam = iNamVaoLam;
     }
 
     public int getiCALV() {

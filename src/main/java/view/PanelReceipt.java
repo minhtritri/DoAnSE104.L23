@@ -1,10 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
+import controller.ReceiptController;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import main.HomeFrm;
 
 /**
@@ -13,12 +11,21 @@ import main.HomeFrm;
  */
 public class PanelReceipt extends javax.swing.JPanel {
 
+    private static PanelReceipt instance = new PanelReceipt();
+
+    public static PanelReceipt getInstance() {
+        return instance;
+    }
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
 
-    public PanelReceipt() {
+    public JTable getTable() {
+        return this.tblListReceipt;
+    }
+
+    private PanelReceipt() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -59,7 +66,7 @@ public class PanelReceipt extends javax.swing.JPanel {
 
             },
             new String [] {
-                "MaHD", "MaNV", "Tên NV", "MaKH", "Tên KH", "Ngày mua"
+                "Mã Hoá đơn", "Mã NV", "Tên NV", "Mã KH", "Tên KH", "Ngày mua"
             }
         ));
         jScrollPane1.setViewportView(tblListReceipt);
@@ -89,8 +96,18 @@ public class PanelReceipt extends javax.swing.JPanel {
         });
 
         btnDeleteReceipt.setText("Xoá");
+        btnDeleteReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteReceiptActionPerformed(evt);
+            }
+        });
 
         btnEditReceipt.setText("Sửa");
+        btnEditReceipt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditReceiptActionPerformed(evt);
+            }
+        });
 
         btnSearch.setText("Tìm kiếm");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +123,11 @@ public class PanelReceipt extends javax.swing.JPanel {
         });
 
         btnViewDetail.setText("Xem chi tiết hoá đơn");
+        btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewDetailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -195,9 +217,9 @@ public class PanelReceipt extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertReceiptActionPerformed
-         if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
-            new AddSupplierFrm().setVisible(true);
-        }     
+        if (HomeFrm.getInstance().getTgbtnReceipt().isSelected()) {
+            new AddReceiptFrm().setVisible(true);
+        }
     }//GEN-LAST:event_btnInsertReceiptActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -207,6 +229,39 @@ public class PanelReceipt extends javax.swing.JPanel {
     private void txtSearchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchBarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchBarActionPerformed
+
+    private void btnDeleteReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteReceiptActionPerformed
+        int selectedIndex = tblListReceipt.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xoa");
+            return;
+        } else {
+            ReceiptController.getInstance().getList().remove(selectedIndex);
+            tblListReceipt.setModel(ReceiptController.getInstance().toTable());
+        }
+    }//GEN-LAST:event_btnDeleteReceiptActionPerformed
+
+    private void btnEditReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditReceiptActionPerformed
+        int selectedIndex = tblListReceipt.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Sua");
+            return;
+        } else {
+            AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, true);
+            addReceiptFrm.setVisible(true);
+        }
+    }//GEN-LAST:event_btnEditReceiptActionPerformed
+
+    private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
+         int selectedIndex = tblListReceipt.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hay Chon Mot Dong Roi An Nut Xem");
+            return;
+        } else {
+            AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, false);
+            addReceiptFrm.setVisible(true);
+        }  
+    }//GEN-LAST:event_btnViewDetailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

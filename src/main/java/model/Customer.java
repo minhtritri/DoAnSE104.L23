@@ -58,7 +58,4 @@ public class Customer {
     public void setsSdtKH(String sSdtKH) {
         this.sSdtKH = sSdtKH;
     }
-
-    
-
 }

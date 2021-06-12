@@ -76,8 +76,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
-                                  <Component id="txtGuestName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtPharmacistName" alignment="0" pref="209" max="32767" attributes="0"/>
+                                  <Component id="txtCustomerName" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtReceiptID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtDateReceipt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtPharmacistID" alignment="0" max="32767" attributes="0"/>
@@ -97,7 +97,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                                       <Component id="btnClearReceipt" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="67" max="32767" attributes="0"/>
                                       <Component id="btnCancelReceipt" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -128,7 +128,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -138,7 +138,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtGuestName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCustomerName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -186,9 +186,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtReceiptID">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sinh m&#xe3; "/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPharmacistID">
       <Properties>
@@ -200,13 +197,7 @@
         <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfPharmacistName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="getPharmacistName from MANV"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPharmacistNameActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="txtPharmacistName">
     </Component>
     <Component class="javax.swing.JLabel" name="lbGuestID">
       <Properties>
@@ -218,10 +209,7 @@
         <Property name="text" type="java.lang.String" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtGuestName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtGuestNameActionPerformed"/>
-      </Events>
+    <Component class="javax.swing.JTextField" name="txtCustomerName">
     </Component>
     <Component class="javax.swing.JLabel" name="lbDateSell">
       <Properties>
@@ -243,14 +231,25 @@
         <Component class="javax.swing.JTable" name="tblDrugList">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="6">
-                <Column editable="true" title="MATHUOC" type="java.lang.Object"/>
+              <Table columnCount="4" rowCount="6">
+                <Column editable="true" title="M&#xe3; Thu&#x1ed1;c" type="java.lang.Object"/>
                 <Column editable="true" title="SL" type="java.lang.Object"/>
                 <Column editable="true" title="&#x110;&#x1a1;n gi&#xe1;" type="java.lang.Object"/>
+                <Column editable="true" title="Th&#xe0;nh ti&#x1ec1;n" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -267,6 +266,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="tblDrugListPropertyChange"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -282,8 +284,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAddReceipt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
+        <Property name="text" type="java.lang.String" value="L&#x1b0;u"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddReceiptActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnClearReceipt">
       <Properties>
@@ -297,22 +302,37 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Huy&#x309;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelReceiptActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDateReceipt">
     </Component>
     <Component class="javax.swing.JTextField" name="txtPharmacistID">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPharmacistIDKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCustomerID">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCustomerIDKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnInsertDrugRow">
       <Properties>
         <Property name="text" type="java.lang.String" value="Th&#xea;m SP"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertDrugRowActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDeleteDrugRow">
       <Properties>
         <Property name="text" type="java.lang.String" value="Xo&#xe1; SP"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteDrugRowActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
