@@ -5,18 +5,18 @@ public class Customer {
     private String sMaKH;
     private String sHoten;
     private String sGioiTinh;
-    private String sNamSinh; // -> int
+    private int sNamSinh;
     private String sSdtKH;
 
-    public Customer(String sMaKH, String sHoten, String sGioiTinh, String sNamSinh, String sSdtKH) {
+    public Customer() {
+    }
+
+    public Customer(String sMaKH, String sHoten, String sGioiTinh, int sNamSinh, String sSdtKH) {
         this.sMaKH = sMaKH;
         this.sHoten = sHoten;
         this.sGioiTinh = sGioiTinh;
         this.sNamSinh = sNamSinh;
         this.sSdtKH = sSdtKH;
-    }
-
-    public Customer() {
     }
 
     public String getsMaKH() {
@@ -43,11 +43,11 @@ public class Customer {
         this.sGioiTinh = sGioiTinh;
     }
 
-    public String getsNamSinh() {
+    public int getsNamSinh() {
         return sNamSinh;
     }
 
-    public void setsNamSinh(String sNamSinh) {
+    public void setsNamSinh(int sNamSinh) {
         this.sNamSinh = sNamSinh;
     }
 
@@ -58,4 +58,6 @@ public class Customer {
     public void setsSdtKH(String sSdtKH) {
         this.sSdtKH = sSdtKH;
     }
+
+   
 }

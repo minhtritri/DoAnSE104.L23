@@ -46,7 +46,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
 
     }
 
-    public JTable getTable() {
+       public JTable getTable() {
         return tblListPharmacist;
     }
 

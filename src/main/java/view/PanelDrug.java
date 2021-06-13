@@ -5,10 +5,12 @@
  */
 package view;
 
+import controller.DrugController;
 import main.HomeFrm;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Drug;
 
@@ -18,9 +20,8 @@ import model.Drug;
  */
 public class PanelDrug extends javax.swing.JPanel {
 
-    private List<Drug> drug;
-    private DefaultTableModel tblDrug;
-    private int selectedIndex;
+  
+   
 
     private static PanelDrug instance = new PanelDrug();
 
@@ -51,16 +52,13 @@ public class PanelDrug extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
-        drug = new ArrayList<Drug>();
-        tblDrug = (DefaultTableModel) tblListDrug.getModel();
-
+       
+    }
+    public JTable getTable() {
+        return tblListDrug;
     }
 
-    public void AddDrug(Drug d) {
-        drug.add(d); // Them thuoc vao danh sach
-        showData();
-
-    }
+   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -220,7 +218,7 @@ public class PanelDrug extends javax.swing.JPanel {
 
     private void btnInsertDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertDrugActionPerformed
         if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
-            AddDrugFrm AddDrugFrm = new AddDrugFrm(this);
+            AddDrugFrm AddDrugFrm = new AddDrugFrm();
             AddDrugFrm.setVisible(true);
         }
 
@@ -237,30 +235,26 @@ public class PanelDrug extends javax.swing.JPanel {
 
     private void btnEditDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDrugActionPerformed
         // TODO add your handling code here:
-        selectedIndex = tblListDrug.getSelectedRow();
-        if (drug.size() == 0) {
-            JOptionPane.showMessageDialog(jPanel2, "Hay Nhap Them Thong Tin");
-        } else if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Dong De Sua ");
+        int selectedIndex = tblListDrug.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
+            return;
         } else {
-            EditDrugFrm editDrugFrm = new EditDrugFrm(this);
-            editDrugFrm.setEditData(drug.get(selectedIndex));
-            editDrugFrm.setVisible(true);
+            AddDrugFrm addDrugFrm = new AddDrugFrm(selectedIndex);
+            addDrugFrm.setVisible(true);
         }
-
 
     }//GEN-LAST:event_btnEditDrugActionPerformed
 
     private void btnDeleteDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDrugActionPerformed
         // TODO add your handling code here:
-        int removeIndex = tblListDrug.getSelectedRow();
-        if (drug.size() == 0) {
-            JOptionPane.showMessageDialog(jPanel2, "Hay Them Thong Tin Truoc Khi Xoa");
-        } else if (removeIndex == -1) {
-            JOptionPane.showMessageDialog(jPanel2, "Hay Chon Mot Dong Roi An Nut Xoa");
+        int selectedIndex = tblListDrug.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
+            return;
         } else {
-            drug.remove(removeIndex);
-            showData();
+            DrugController.getInstance().getList().remove(selectedIndex);
+            tblListDrug.setModel(DrugController.getInstance().toTable());
         }
     }//GEN-LAST:event_btnDeleteDrugActionPerformed
 
@@ -279,16 +273,5 @@ public class PanelDrug extends javax.swing.JPanel {
     private javax.swing.JTextField txtSearchBarDrug;
     // End of variables declaration//GEN-END:variables
 
-    public void EditDrug(Drug d) {
-        drug.remove(selectedIndex);
-        this.AddDrug(d);
-    }
-
-    private void showData() {
-        tblDrug.setRowCount(0);
-        for (Drug drug : drug) {
-            tblDrug.addRow(new Object[]{drug.getsMathuoc(), drug.getsTenthuoc(), drug.getsPhannhom(), drug.getsPhanloai(), drug.getsThanhphan(),
-                drug.getsHansudung(), drug.getsDVT(), drug.getsMancc()});
-        }
-    }
+   
 }

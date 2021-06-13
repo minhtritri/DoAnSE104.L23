@@ -5,8 +5,10 @@
  */
 package view;
 
+import controller.DrugController;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Drug;
 
@@ -17,14 +19,51 @@ import model.Drug;
 public class AddDrugFrm extends javax.swing.JFrame {
 
     private PanelDrug drugPanel;
+    private boolean isEditing = false;
+    private int index;
 
+    public boolean isIsEditing() {
+        return isEditing;
+    }
+
+    public void setIsEditing(boolean isEditing) {
+        this.isEditing = isEditing;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+    
     /**
      * Creates new form AddDrug
      */
-    public AddDrugFrm(JPanel parent) {
+    public AddDrugFrm() {
         initComponents();
         this.setLocationRelativeTo(null);
-        drugPanel = (PanelDrug) parent;
+        
+    }
+    public AddDrugFrm(int index) {
+        this();
+        isEditing = true;
+        this.addEditInfo(DrugController.getInstance().getList().get(index));
+        this.index = index;
+    }
+    public void addEditInfo(Drug d) {
+        // set tung text field tuong ung voi tung getter
+ 
+        txtDrugId.setText(d.getsMathuoc());
+        txtDrugName.setText(d.getsTenthuoc());
+        txtDrugGroup.setText(d.getsPhannhom());
+        cbbDrugType.setSelectedItem(d.getsPhanloai());
+        txtDrugIngr.setText(d.getsThanhphan());
+        txtExpiredDate.setText(d.getsHansudung());
+        txtUnit.setText(d.getsDVT());
+        txtSupplierID.setText(d.getsMancc());
+        
     }
 
     /**
@@ -189,7 +228,8 @@ public class AddDrugFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
-        String sMathuoc = "", sTenthuoc = "", sPhannhom = "", sPhanloai = "", sThanhphan = "", sMancc = "";
+        try {
+            String sMathuoc = "", sTenthuoc = "", sPhannhom = "", sPhanloai = "", sThanhphan = "", sMancc = "";
         String sHansudung = "";
         String sDVT = "";
 
@@ -201,10 +241,27 @@ public class AddDrugFrm extends javax.swing.JFrame {
         sMancc = txtSupplierID.getText();
         sHansudung = txtExpiredDate.getText();
         sDVT = txtUnit.getText();
-
         Drug drug = new Drug(sMathuoc, sTenthuoc, sPhannhom, sPhanloai, sThanhphan,
                 sHansudung, sDVT, sMancc);
-        drugPanel.AddDrug(drug);
+        
+         if (isEditing) {
+                DrugController.getInstance().getList().set(this.index, drug);
+                this.setVisible(true);
+
+            } else {
+                DrugController.getInstance().getList().add(drug);
+            }
+         PanelDrug.getInstance().getTable().setModel(
+                    DrugController.getInstance().toTable()
+            );
+        } catch (Exception e) {
+             e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+        
+
+        
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddDrugActionPerformed

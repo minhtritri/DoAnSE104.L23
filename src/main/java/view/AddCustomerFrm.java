@@ -5,10 +5,11 @@
  */
 package view;
 
+import controller.CustomerController;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Customer;
-
 
 /**
  *
@@ -20,11 +21,46 @@ public class AddCustomerFrm extends javax.swing.JFrame {
      * Creates new form AddGuestFrm
      */
     private PanelCustomer customerPanel;
-    
-    public AddCustomerFrm(JPanel parent) {
+    private boolean isEditing = false;
+    private int index;
+    public AddCustomerFrm() {
         initComponents();
+        
+        isEditing = false;
         this.setLocationRelativeTo(null);
-        customerPanel = (PanelCustomer) parent;
+    }
+    public AddCustomerFrm(int index) {
+        this();
+        isEditing = true;
+        this.addEditInfo(CustomerController.getInstance().getList().get(index));
+        this.index = index;
+    }
+    public void addEditInfo(Customer c) {
+        // set tung text field tuong ung voi tung getter
+        
+        txtCustomerID.setText(c.getsMaKH());
+        
+        txtCustomerName.setText(c.getsHoten());
+        cmbCustomerSex.setSelectedItem(c.getsGioiTinh());
+        txtCustomerDOB.setText(Integer.valueOf(c.getsNamSinh()).toString());
+        txtCustomerPhone.setText(c.getsSdtKH());
+        
+    }
+
+    public boolean isIsEditing() {
+        return isEditing;
+    }
+
+    public void setIsEditing(boolean isEditing) {
+        this.isEditing = isEditing;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     /**
@@ -173,19 +209,34 @@ public class AddCustomerFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCustomerNameActionPerformed
 
     private void btnAddCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCustomerActionPerformed
-         String sMaKH = "";
-     String sHoten = "";
-     String sGioiTinh = "";
-     String sNamSinh = "";
-     String sSdtKH = "";
-     
-     sMaKH = txtCustomerID.getText();
-     sHoten = txtCustomerName.getText();
-     sGioiTinh = cmbCustomerSex.getItemAt(cmbCustomerSex.getSelectedIndex());
-     sSdtKH = txtCustomerPhone.getText();
-     sNamSinh = txtCustomerDOB.getText();
-     Customer customer = new Customer(sMaKH,sHoten,sGioiTinh,sNamSinh,sSdtKH);
-     customerPanel.AddCustomer(customer);
+         try {
+            
+            
+            String MaKH = txtCustomerID.getText();
+            String Hoten = txtCustomerName.getText();
+            String GioiTinh = cmbCustomerSex.getItemAt(cmbCustomerSex.getSelectedIndex());
+            int NamSinh = Integer.parseInt(txtCustomerDOB.getText());
+            String sSDT = txtCustomerPhone.getText();
+            
+            Customer customer = new Customer(MaKH,Hoten,GioiTinh,NamSinh,sSDT);
+
+            if (isEditing) {
+                CustomerController.getInstance().getList().set(this.index, customer);
+                this.setVisible(true);
+
+            } else {
+                CustomerController.getInstance().getList().add(customer);
+            }
+
+            // lấy ra table tblListPharmacist từ Panel truyền vào dữ liệu từ Controller
+           
+            PanelCustomer.getInstance().getTable().setModel(CustomerController.getInstance().toTable());
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAddCustomerActionPerformed
 
     private void btnCancelCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelCustomerActionPerformed

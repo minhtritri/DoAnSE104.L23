@@ -5,10 +5,12 @@
  */
 package view;
 
+import controller.CustomerController;
 import main.HomeFrm;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Customer;
 
@@ -19,8 +21,7 @@ import model.Customer;
 public class PanelCustomer extends javax.swing.JPanel {
 
     private static PanelCustomer instance = new PanelCustomer();
-    private List<Customer> customer;
-    private DefaultTableModel tblcustomer;
+    
     private int selectedIndex;
     
     public static PanelCustomer getInstance() {
@@ -49,13 +50,12 @@ public class PanelCustomer extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
-        customer = new ArrayList<Customer>();
-        tblcustomer = (DefaultTableModel) tblListCustomer.getModel();
+        
     }
 
-    public void AddCustomer(Customer c) {
-        customer.add(c);
-        showData();
+    
+    public JTable getTable() {
+        return tblListCustomer;
     }
 
     @SuppressWarnings("unchecked")
@@ -213,7 +213,7 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void btnInsertCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCustomerActionPerformed
         if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
-            AddCustomerFrm addCustomerFrm = new AddCustomerFrm(this);
+            AddCustomerFrm addCustomerFrm = new AddCustomerFrm();
             addCustomerFrm.setVisible(true);
         }
     }//GEN-LAST:event_btnInsertCustomerActionPerformed
@@ -228,29 +228,27 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         // TODO add your handling code here:
-        selectedIndex = tblListCustomer.getSelectedRow();
-        if (customer.size() == 0) {
-            JOptionPane.showMessageDialog(btnEditCustomer, "Nhap Thong Tin Truoc Khi Sua");
-        } else if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Sua");
+        
+        int selectedIndex = tblListCustomer.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
+            return;
         } else {
-            EditCustomerFrm edit = new EditCustomerFrm(this);
-            edit.setEditData(customer.get(selectedIndex));
-            edit.setVisible(true);
+            AddCustomerFrm customerFrm = new AddCustomerFrm(selectedIndex);
+            customerFrm.setVisible(true);
         }
     }//GEN-LAST:event_btnEditCustomerActionPerformed
 
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         // TODO add your handling code here:
-        int removeIndex = tblListCustomer.getSelectedRow();
-        if (customer.size() == 0) {
-            JOptionPane.showMessageDialog(btnEditCustomer, "Khong Co Thong Tin De Xoa");
-
-        } else if (removeIndex == -1) {
-            JOptionPane.showMessageDialog(btnEditCustomer, "Chon Dong De Xoa");
+        
+        int selectedIndex = tblListCustomer.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
+            return;
         } else {
-            customer.remove(removeIndex);
-            showData();
+            CustomerController.getInstance().getList().remove(selectedIndex);
+            tblListCustomer.setModel(CustomerController.getInstance().toTable());
         }
     }//GEN-LAST:event_btnDeleteCustomerActionPerformed
 
@@ -269,17 +267,5 @@ public class PanelCustomer extends javax.swing.JPanel {
     private javax.swing.JTextField txtSearchBarCustomer;
     // End of variables declaration//GEN-END:variables
 
-    void updateCustomer(Customer c) {
-        customer.remove(selectedIndex);
-        this.AddCustomer(c);
-    }
-
-    private void showData() {
-        tblcustomer.setRowCount(0);
-        for (Customer customer : customer) {
-            tblcustomer.addRow(new Object[]{customer.getsMaKH(), customer.getsHoten(),
-                customer.getsGioiTinh(), customer.getsNamSinh(), customer.getsSdtKH()});
-
-        }
-    }
+   
 }
