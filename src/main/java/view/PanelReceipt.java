@@ -254,14 +254,14 @@ public class PanelReceipt extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditReceiptActionPerformed
 
     private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
-         int selectedIndex = tblListReceipt.getSelectedRow();
+        int selectedIndex = tblListReceipt.getSelectedRow();
         if (selectedIndex == -1) {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xem");
             return;
         } else {
             AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, false);
             addReceiptFrm.setVisible(true);
-        }  
+        }
     }//GEN-LAST:event_btnViewDetailActionPerformed
 
 

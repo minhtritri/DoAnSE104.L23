@@ -355,7 +355,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
             String sMaKH = txtCustomerID.getText();
             String sTenKH = txtCustomerName.getText();
             float fTongTien = 0;
-            LocalDate dNgayMuaThuoc = LocalDate.parse(txtDateReceipt.getText(), DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
+            LocalDate dNgayMuaThuoc = LocalDate.parse(txtDateReceipt.getText(), 
+                    DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
             Receipt receipt = new Receipt(sMaHD, sMaNV, STenNV, sMaKH, sTenKH, dNgayMuaThuoc, fTongTien);
 
             DefaultTableModel tblModel = (DefaultTableModel) tblDrugList.getModel();

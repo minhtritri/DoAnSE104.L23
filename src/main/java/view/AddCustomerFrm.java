@@ -46,22 +46,6 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         txtCustomerPhone.setText(c.getsSdtKH());
     }
 
-    public boolean isIsEditing() {
-        return isEditing;
-    }
-
-    public void setIsEditing(boolean isEditing) {
-        this.isEditing = isEditing;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

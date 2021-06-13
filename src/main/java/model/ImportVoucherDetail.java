@@ -10,19 +10,20 @@ public class ImportVoucherDetail {
     private String sMaPN;
     private String sMaThuoc;
     private int iSL;
-
     private float fDonGia;
+    private float fThanhTien;
 
     public ImportVoucherDetail() {
     }
 
-    public ImportVoucherDetail(String sMaCTPN, String sMaPN,
-            String sMaThuoc, int iSL, float fDonGia) {
+    public ImportVoucherDetail(String sMaCTPN, String sMaPN, String sMaThuoc, 
+            int iSL, float fDonGia, float fThanhTien) {
         this.sMaCTPN = sMaCTPN;
-        this.iSL = iSL;
         this.sMaPN = sMaPN;
         this.sMaThuoc = sMaThuoc;
+        this.iSL = iSL;
         this.fDonGia = fDonGia;
+        this.fThanhTien = fThanhTien;
     }
 
     public String getsMaCTPN() {
@@ -31,14 +32,6 @@ public class ImportVoucherDetail {
 
     public void setsMaCTPN(String sMaCTPN) {
         this.sMaCTPN = sMaCTPN;
-    }
-
-    public int getiSL() {
-        return iSL;
-    }
-
-    public void setiSL(int iSL) {
-        this.iSL = iSL;
     }
 
     public String getsMaPN() {
@@ -57,6 +50,14 @@ public class ImportVoucherDetail {
         this.sMaThuoc = sMaThuoc;
     }
 
+    public int getiSL() {
+        return iSL;
+    }
+
+    public void setiSL(int iSL) {
+        this.iSL = iSL;
+    }
+
     public float getfDonGia() {
         return fDonGia;
     }
@@ -65,4 +66,15 @@ public class ImportVoucherDetail {
         this.fDonGia = fDonGia;
     }
 
+    public float getfThanhTien() {
+        return fThanhTien;
+    }
+
+    public void setfThanhTien(float fThanhTien) {
+        this.fThanhTien = fThanhTien;
+    }
+    
+    
 }
+
+   

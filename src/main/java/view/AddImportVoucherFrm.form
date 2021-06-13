@@ -88,7 +88,7 @@
                               <Component id="txtPharmacistName" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPharmacistID" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtImportID" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtDateReceipt" max="32767" attributes="0"/>
+                              <Component id="txtDateImport" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="btnInsertDrugRow" min="-2" max="-2" attributes="0"/>
@@ -154,7 +154,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbDateBuy" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDateReceipt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDateImport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -210,9 +210,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPharmacistName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPharmacistNameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbSupplierID">
       <Properties>
@@ -225,9 +222,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSupplierName">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSupplierNameActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbDateBuy">
       <Properties>
@@ -284,6 +278,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="tblDrugListPropertyChange"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -301,32 +298,53 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="L&#x1b0;u"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddImportActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnClearImport">
       <Properties>
         <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearImportActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelImport">
       <Properties>
         <Property name="text" type="java.lang.String" value="Huy&#x309;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelImportActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtDateReceipt">
+    <Component class="javax.swing.JTextField" name="txtDateImport">
     </Component>
     <Component class="javax.swing.JTextField" name="txtPharmacistID">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPharmacistIDKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtSupplierID">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtSupplierIDKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnDeleteDrugRow">
       <Properties>
         <Property name="text" type="java.lang.String" value="Xo&#xe1; SP"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteDrugRowActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnInsertDrugRow">
       <Properties>
         <Property name="text" type="java.lang.String" value="Th&#xea;m SP"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertDrugRowActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

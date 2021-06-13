@@ -5,6 +5,9 @@
  */
 package view;
 
+import controller.ImportVoucherController;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import main.HomeFrm;
 
 /**
@@ -21,6 +24,10 @@ public class PanelImportVoucher extends javax.swing.JPanel {
 
     public void setTitle(String str) {
         this.lbTitle.setText(str);
+    }
+
+    public JTable getTable() {
+        return this.tblListImportVoucher;
     }
 
     // singleton nên modifier access là private
@@ -65,7 +72,7 @@ public class PanelImportVoucher extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã Phiếu nhập", "Mã NV", "Tên NV", "Mã NCC", "Tên NCC", "Ngày lập phiếu"
+                "Mã Phiếu nhập", "Mã NV", "Tên NV", "Mã NCC", "Tên NCC", "Ngày lập phiếu", "Tổng tiền"
             }
         ));
         jScrollPane1.setViewportView(tblListImportVoucher);
@@ -95,6 +102,11 @@ public class PanelImportVoucher extends javax.swing.JPanel {
         });
 
         btnDeleteImportVoucher.setText("Xoá");
+        btnDeleteImportVoucher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteImportVoucherActionPerformed(evt);
+            }
+        });
 
         btnEditImportVoucher.setText("Sửa");
         btnEditImportVoucher.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +129,11 @@ public class PanelImportVoucher extends javax.swing.JPanel {
         });
 
         btnViewDetail.setText("Xem chi tiết Phiếu nhập");
+        btnViewDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewDetailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -206,8 +223,8 @@ public class PanelImportVoucher extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertImportVoucherActionPerformed
-        if (HomeFrm.getInstance().getTgbtnSupplier().isSelected()) {
-            new AddSupplierFrm().setVisible(true);
+        if (HomeFrm.getInstance().getTgbtnImportVoucher().isSelected()) {
+            new AddImportVoucherFrm().setVisible(true);
         }
     }//GEN-LAST:event_btnInsertImportVoucherActionPerformed
 
@@ -220,8 +237,37 @@ public class PanelImportVoucher extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnEditImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditImportVoucherActionPerformed
-        // TODO add your handling code here:
+        int selectedIndex = tblListImportVoucher.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
+            return;
+        } else {
+            AddImportVoucherFrm addIVform = new AddImportVoucherFrm(selectedIndex, true);
+            addIVform.setVisible(true);
+        }
     }//GEN-LAST:event_btnEditImportVoucherActionPerformed
+
+    private void btnViewDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDetailActionPerformed
+        int selectedIndex = tblListImportVoucher.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xem");
+            return;
+        } else {
+            AddImportVoucherFrm addIVform = new AddImportVoucherFrm(selectedIndex, false);
+            addIVform.setVisible(true);
+        }
+    }//GEN-LAST:event_btnViewDetailActionPerformed
+
+    private void btnDeleteImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteImportVoucherActionPerformed
+        int selectedIndex = tblListImportVoucher.getSelectedRow();
+        if (selectedIndex == -1) {
+            JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
+            return;
+        } else {
+            ImportVoucherController.getInstance().getList().remove(selectedIndex);
+            tblListImportVoucher.setModel(ImportVoucherController.getInstance().toTable());
+        }
+    }//GEN-LAST:event_btnDeleteImportVoucherActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

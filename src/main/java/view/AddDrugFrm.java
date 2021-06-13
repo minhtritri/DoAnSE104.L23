@@ -22,22 +22,6 @@ public class AddDrugFrm extends javax.swing.JFrame {
     private boolean isEditing = false;
     private int index;
 
-    public boolean isIsEditing() {
-        return isEditing;
-    }
-
-    public void setIsEditing(boolean isEditing) {
-        this.isEditing = isEditing;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     /**
      * Creates new form AddDrug
      */

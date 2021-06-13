@@ -104,7 +104,7 @@ public class Receipt {
 
     public String[] getDetailHeader() {
         //mảng chuỗi có giá trị khởi tạo ban đầu
-        return new String[]{"Mã thuốc", "SL", "Đơn giá", "Thành tiền"};
+        return new String[]{"Mã thuốc", "Số lượng", "Đơn giá", "Thành tiền"};
     }
 
     public DefaultTableModel toDetailTable() {
