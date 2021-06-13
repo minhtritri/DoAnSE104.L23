@@ -5,12 +5,15 @@
  */
 package view;
 
+import controller.CustomerController;
 import controller.PharmacistController;
 import controller.ReceiptController;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import model.Customer;
 import model.Pharmacist;
 import model.Receipt;
 import model.ReceiptDetail;
@@ -49,7 +52,9 @@ public class AddReceiptFrm extends javax.swing.JFrame {
         txtPharmacistName.setText(r.getsTenNV());
         txtCustomerID.setText(r.getsMaKH());
         txtCustomerName.setText(r.getsTenKH());
-        txtDateReceipt.setText(r.getdNgayMuaThuoc().toString());
+        LocalDate dNgayMuaThuoc = LocalDate.parse(r.getdNgayMuaThuoc().toString(),
+                DateTimeFormatter.ofPattern("yyyy'-'MM'-'dd"));
+        txtDateReceipt.setText(dNgayMuaThuoc.format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
         tblDrugList.setModel(r.toDetailTable());
         txtSumReceipt.setText(Float.toString(r.getfTongTien()));
     }
@@ -75,17 +80,17 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     }
 
     private float calculateTotal() {
-        DefaultTableModel tmpModel = (DefaultTableModel) tblDrugList.getModel();
-        Integer sum = 0;
+        TableModel tmpModel = tblDrugList.getModel();
+        Float sum = 0.0f;
 
         for (int i = 0; i < tmpModel.getRowCount(); i++) {
             Integer sl = 0;
-            Integer dg = 0;
+            Float dg = 0.0f;
             try {
                 sl = Integer.valueOf(tmpModel.getValueAt(i, 1).toString()); // cột SL
-                dg = Integer.valueOf(tmpModel.getValueAt(i, 2).toString());  // cột Đơn giá
+                dg = Float.valueOf(tmpModel.getValueAt(i, 2).toString());  // cột Đơn giá
             } catch (Exception e) {
-                //System.out.println(e.toString());
+               // e.printStackTrace();
 
             } finally {
                 sum += (sl * dg);
@@ -360,8 +365,8 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                     String sMaCTHD = "từ từ code sau, hoặc ẩn nó luôn nhỉ";
                     String sMAHD = txtReceiptID.getText();
                     String sMATHUOC = tblModel.getValueAt(i, 0).toString();
-                    int iSL = Integer.valueOf( tblModel.getValueAt(i, 1).toString());
-                    float fDonGia = Integer.valueOf(tblModel.getValueAt(i, 2).toString());
+                    int iSL = Integer.valueOf(tblModel.getValueAt(i, 1).toString());
+                    float fDonGia = Float.valueOf(tblModel.getValueAt(i, 2).toString());
                     float fThanhTien = this.calculatePrice(iSL, fDonGia);
 
                     tblModel.setValueAt(Float.toString(fThanhTien), i, 3);
@@ -369,27 +374,25 @@ public class AddReceiptFrm extends javax.swing.JFrame {
                     ReceiptDetail receiptDetail = new ReceiptDetail(
                             sMaCTHD, sMAHD, sMATHUOC, iSL, fDonGia, fThanhTien
                     );
-
                     receipt.getDetailList().add(receiptDetail);
-                    fTongTien = this.calculateTotal();
-                    receipt.setfTongTien(fTongTien);
+
                     //receipt.getDetailList().stream().forEach(System.out::println);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
 
+            fTongTien = this.calculateTotal();
+            receipt.setfTongTien(fTongTien);
+
             if (this.index != -1 & isEditing) {
                 //System.out.println(this.index);
                 ReceiptController.getInstance().getList().set(this.index, receipt);
-                this.setVisible(false);
             } else {
                 // thêm vào arraylist trong Controller 1 thằng receipt mới
                 ReceiptController.getInstance().getList().add(receipt);
             }
 
-            //System.out.println(ReceiptController.getInstance().getList().size());
-            //System.out.println(PanelReceipt.getInstance().getTable().toString());
             // lấy ra table tblListReceipt từ Panel truyền vào dữ liệu từ Controller
             PanelReceipt.getInstance().getTable().setModel(
                     ReceiptController.getInstance().toTable()
@@ -433,7 +436,7 @@ public class AddReceiptFrm extends javax.swing.JFrame {
             for (int i = 0; i < tblModel.getRowCount(); i++) {
                 String sMATHUOC = tblModel.getValueAt(i, 0).toString();
                 int iSL = Integer.valueOf(tblModel.getValueAt(i, 1).toString());
-                float fDonGia = Integer.valueOf(tblModel.getValueAt(i, 2).toString());
+                float fDonGia = Float.valueOf(tblModel.getValueAt(i, 2).toString());
                 float fThanhTien = this.calculatePrice(iSL, fDonGia);
                 tblModel.setValueAt(Float.toString(fThanhTien), i, 3);
             }
@@ -458,8 +461,15 @@ public class AddReceiptFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPharmacistIDKeyReleased
 
     private void txtCustomerIDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCustomerIDKeyReleased
-        // giống code txtPharmacistIDKeyReleased(java.awt.event.KeyEvent evt)
-        // chưa có CustomerController
+        String sMaKH = txtCustomerID.getText();
+        for (Customer c : CustomerController.getInstance().getList()) {
+            if (c.getsMaKH().equals(sMaKH)) {
+                txtCustomerName.setText(c.getsHoten());
+                return;
+            } else {
+                txtCustomerName.setText("");
+            }
+        }
     }//GEN-LAST:event_txtCustomerIDKeyReleased
 
 

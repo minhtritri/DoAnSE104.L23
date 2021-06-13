@@ -1,5 +1,7 @@
 package controller;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
@@ -42,12 +44,14 @@ public class SupplierController {
 
     public Vector toVector(int index) {
         Vector vt = new Vector();
+        LocalDate dNgayDangKyHD = LocalDate.parse(suppliers.get(index).getdNgayDangKyHD().toString(),
+                DateTimeFormatter.ofPattern("yyyy'-'MM'-'dd"));
         vt.add(suppliers.get(index).getsMaNCC());
         vt.add(suppliers.get(index).getsTenNCC());
         vt.add(suppliers.get(index).getSDT());
         vt.add(suppliers.get(index).getsDiaChi());
         vt.add(suppliers.get(index).getsEmail());
-        vt.add(suppliers.get(index).getdNgayDangKyHD());
+        vt.add(dNgayDangKyHD.format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
         vt.add(suppliers.get(index).gettThoiHanHD());
         return vt;
     }

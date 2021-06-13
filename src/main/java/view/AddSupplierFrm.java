@@ -31,15 +31,17 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         this.index = index;
     }
 
-    public void addEditInfo(Supplier p) {
+    public void addEditInfo(Supplier s) {
         // set tung text field tuong ung voi tung getter
-        txtSupplierID.setText(p.getsMaNCC());
-        txtSupplierName.setText(p.getsTenNCC());
-        txtSupplierPhone.setText(p.getSDT());
-        txtSupplierAddress.setText(p.getsDiaChi());
-        txtSupplierEmail.setText(p.getsEmail());
-        txtContractSignDate.setText(p.getdNgayDangKyHD().format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
-        txtContractExpiredDate.setText(Integer.valueOf(p.gettThoiHanHD()).toString());
+        txtSupplierID.setText(s.getsMaNCC());
+        txtSupplierName.setText(s.getsTenNCC());
+        txtSupplierPhone.setText(s.getSDT());
+        txtSupplierAddress.setText(s.getsDiaChi());
+        txtSupplierEmail.setText(s.getsEmail());
+        LocalDate dNgayDangKyHD = LocalDate.parse(s.getdNgayDangKyHD().toString(),
+                DateTimeFormatter.ofPattern("yyyy'-'MM'-'dd"));
+        txtContractSignDate.setText(dNgayDangKyHD.format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
+        txtContractExpiredDate.setText(Integer.toString(s.gettThoiHanHD()));
     }
 
     /**
@@ -206,7 +208,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelSupplierActionPerformed
 
     private void btnAddSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSupplierActionPerformed
-         try {
+        try {
             String sMaNCC = txtSupplierID.getText();
             String sTenNCC = txtSupplierName.getText();
             String SDT = txtSupplierPhone.getText();
@@ -215,13 +217,13 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             LocalDate dNgayDangKyHD = LocalDate.parse(txtContractSignDate.getText(), DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy"));
             int tThoiHanHD = Integer.parseInt(txtContractExpiredDate.getText());
             Supplier supplier = new Supplier(sMaNCC, sTenNCC,
-                    SDT, sDiaChi,sEmail, dNgayDangKyHD, tThoiHanHD);
+                    SDT, sDiaChi, sEmail, dNgayDangKyHD, tThoiHanHD);
 
             if (isEditing) {
                 //System.out.println(this.index);
                 SupplierController.getInstance().getList().set(this.index, supplier);
                 this.setVisible(true);
-                
+
             } else {
                 SupplierController.getInstance().getList().add(supplier);
             }
@@ -230,19 +232,18 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                     SupplierController.getInstance().toTable()
             );
             // Clear thông tin sau mỗi lần thêm thành công
-        //txtSupplierID.setText("");
-        //txtSupplierName.setText("");
-        //txtSupplierPhone.setText("");
-        //txtSupplierAddress.setText("");
-        //txtSupplierEmail.setText("");
-        //txtContractSignDate.setText("");
-        //txtContractExpiredDate.setText("");
+            //txtSupplierID.setText("");
+            //txtSupplierName.setText("");
+            //txtSupplierPhone.setText("");
+            //txtSupplierAddress.setText("");
+            //txtSupplierEmail.setText("");
+            //txtContractSignDate.setText("");
+            //txtContractExpiredDate.setText("");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddSupplierActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

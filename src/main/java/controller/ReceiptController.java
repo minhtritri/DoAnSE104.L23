@@ -1,5 +1,7 @@
 package controller;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.Vector;
@@ -45,12 +47,14 @@ public class ReceiptController {
 
     public Vector toVector(int index) {
         Vector vt = new Vector();
+        LocalDate dNgayMuaThuoc = LocalDate.parse(receipts.get(index).getdNgayMuaThuoc().toString(),
+                DateTimeFormatter.ofPattern("yyyy'-'MM'-'dd"));
         vt.add(receipts.get(index).getsMaHD());
         vt.add(receipts.get(index).getsMaNV());
         vt.add(receipts.get(index).getsTenNV());
         vt.add(receipts.get(index).getsMaKH());
         vt.add(receipts.get(index).getsTenKH());
-        vt.add(receipts.get(index).getdNgayMuaThuoc());
+        vt.add(dNgayMuaThuoc.format(DateTimeFormatter.ofPattern("dd'/'MM'/'yyyy")));
         vt.add(receipts.get(index).getfTongTien());
         return vt;
     }
