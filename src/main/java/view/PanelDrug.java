@@ -20,9 +20,6 @@ import model.Drug;
  */
 public class PanelDrug extends javax.swing.JPanel {
 
-  
-   
-
     private static PanelDrug instance = new PanelDrug();
 
     public static PanelDrug getInstance() {
@@ -81,7 +78,7 @@ public class PanelDrug extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã Thuốc", "Tên thuốc", "Nhóm", "Loại", "Thành phần", "HSD", "ĐVT", "Mã NCC"
+                "Mã Thuốc", "Tên thuốc", "Phân Nhóm", "Phân Loại", "Thành phần", "Hạn sử dụng", "ĐVT", "Mã NCC"
             }
         ));
         jScrollPane1.setViewportView(tblListDrug);
@@ -218,8 +215,7 @@ public class PanelDrug extends javax.swing.JPanel {
 
     private void btnInsertDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertDrugActionPerformed
         if (HomeFrm.getInstance().getTgbtnDrug().isSelected()) {
-            AddDrugFrm AddDrugFrm = new AddDrugFrm();
-            AddDrugFrm.setVisible(true);
+            new AddDrugFrm().setVisible(true);
         }
 
 

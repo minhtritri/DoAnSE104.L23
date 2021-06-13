@@ -15,14 +15,14 @@ import model.Customer;
  * @author anhha
  */
 public class CustomerController {
-    private ArrayList<Customer> customer = new ArrayList<>();
+    private ArrayList<Customer> customers = new ArrayList<>();
     private static CustomerController instance = new CustomerController();
 
     public CustomerController() {
     }
 
     public ArrayList<Customer> getList() {
-        return customer;
+        return customers;
     }
 
     
@@ -31,25 +31,24 @@ public class CustomerController {
     }
 
     public String[] getHeaders(){
-        return new String[]{"Mã KH", "Họ tên","Giới Tính","Năm Sinh","SĐT"};
+        return new String[]{"Mã KH", "Họ tên","Giới tính","Năm tinh","SĐT"};
     }
     
     public DefaultTableModel toTable() {
         DefaultTableModel tblModel = new DefaultTableModel();
         tblModel.setColumnIdentifiers(this.getHeaders());
-        for (int i=0; i<customer.size(); i++){
+        for (int i=0; i<customers.size(); i++){
             tblModel.addRow(this.toVector(i));
         }
         return tblModel;
     }
      public Vector toVector(int index) {
         Vector vt = new Vector();
-        vt.add(customer.get(index).getsMaKH());
-        vt.add(customer.get(index).getsHoten());
-        vt.add(customer.get(index).getsGioiTinh());
-        vt.add(customer.get(index).getsGioiTinh());
-        vt.add(customer.get(index).getsSdtKH());
-        
+        vt.add(customers.get(index).getsMaKH());
+        vt.add(customers.get(index).getsHoten());
+        vt.add(customers.get(index).getsGioiTinh());
+        vt.add(customers.get(index).getsNamSinh());
+        vt.add(customers.get(index).getsSdtKH());   
         return vt;
      }
 }

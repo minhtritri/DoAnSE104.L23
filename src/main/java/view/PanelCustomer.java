@@ -21,13 +21,11 @@ import model.Customer;
 public class PanelCustomer extends javax.swing.JPanel {
 
     private static PanelCustomer instance = new PanelCustomer();
-    
-    private int selectedIndex;
-    
+
     public static PanelCustomer getInstance() {
         return instance;
     }
-    
+
     public void setTitle(String str) {
         this.lbTitle.setText(str);
     }
@@ -50,10 +48,9 @@ public class PanelCustomer extends javax.swing.JPanel {
         }
         //</editor-fold>
         initComponents();
-        
+
     }
 
-    
     public JTable getTable() {
         return tblListCustomer;
     }
@@ -79,7 +76,7 @@ public class PanelCustomer extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Mã KH", "Họ Tên", "Giới tính", "Năm sinh", "SĐT"
+                "Mã KH", "Họ tên", "Giới tính", "Năm sinh", "SĐT"
             }
         ));
         jScrollPane1.setViewportView(tblListCustomer);
@@ -213,8 +210,8 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void btnInsertCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCustomerActionPerformed
         if (HomeFrm.getInstance().getTgbtnCustomer().isSelected()) {
-            AddCustomerFrm addCustomerFrm = new AddCustomerFrm();
-            addCustomerFrm.setVisible(true);
+            new AddCustomerFrm().setVisible(true);
+
         }
     }//GEN-LAST:event_btnInsertCustomerActionPerformed
 
@@ -228,7 +225,7 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void btnEditCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditCustomerActionPerformed
         // TODO add your handling code here:
-        
+
         int selectedIndex = tblListCustomer.getSelectedRow();
         if (selectedIndex == -1) {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
@@ -241,7 +238,7 @@ public class PanelCustomer extends javax.swing.JPanel {
 
     private void btnDeleteCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCustomerActionPerformed
         // TODO add your handling code here:
-        
+
         int selectedIndex = tblListCustomer.getSelectedRow();
         if (selectedIndex == -1) {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
@@ -267,5 +264,4 @@ public class PanelCustomer extends javax.swing.JPanel {
     private javax.swing.JTextField txtSearchBarCustomer;
     // End of variables declaration//GEN-END:variables
 
-   
 }

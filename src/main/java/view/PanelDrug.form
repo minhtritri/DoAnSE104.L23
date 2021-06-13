@@ -110,10 +110,10 @@
                       <Table columnCount="8" rowCount="0">
                         <Column editable="true" title="M&#xe3; Thu&#x1ed1;c" type="java.lang.Object"/>
                         <Column editable="true" title="T&#xea;n thu&#x1ed1;c" type="java.lang.Object"/>
-                        <Column editable="true" title="Nh&#xf3;m" type="java.lang.Object"/>
-                        <Column editable="true" title="Lo&#x1ea1;i" type="java.lang.Object"/>
+                        <Column editable="true" title="Ph&#xe2;n Nh&#xf3;m" type="java.lang.Object"/>
+                        <Column editable="true" title="Ph&#xe2;n Lo&#x1ea1;i" type="java.lang.Object"/>
                         <Column editable="true" title="Th&#xe0;nh ph&#x1ea7;n" type="java.lang.Object"/>
-                        <Column editable="true" title="HSD" type="java.lang.Object"/>
+                        <Column editable="true" title="H&#x1ea1;n s&#x1eed; d&#x1ee5;ng" type="java.lang.Object"/>
                         <Column editable="true" title="&#x110;VT" type="java.lang.Object"/>
                         <Column editable="true" title="M&#xe3; NCC" type="java.lang.Object"/>
                       </Table>
