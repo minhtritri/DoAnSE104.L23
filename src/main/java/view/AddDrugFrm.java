@@ -6,10 +6,7 @@
 package view;
 
 import controller.DrugController;
-import java.util.Date;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import model.Drug;
 
 /**
@@ -86,28 +83,56 @@ public class AddDrugFrm extends javax.swing.JFrame {
         setTitle("Thêm Thuốc");
         setResizable(false);
 
-        txtDrugID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtDrugID.setBackground(new java.awt.Color(79, 102, 107));
+        txtDrugID.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtDrugID.setForeground(new java.awt.Color(255, 255, 255));
         txtDrugID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtDrugID.setText("Thông tin thuốc");
+        txtDrugID.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        txtDrugID.setOpaque(true);
 
+        jLabel_drugsid.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_drugsid.setText("Mã thuốc");
 
+        jLabel_drugsname.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_drugsname.setText("Tên thuốc");
 
+        jLabel_group.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_group.setText("Nhóm");
 
+        jLabel_type.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_type.setText("Loại");
 
+        jLabel_ingredient.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_ingredient.setText("Thành phần");
 
+        jLabel_expirydate.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_expirydate.setText("Hạn sử dụng");
 
+        jLabel_amount.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_amount.setText("Đơn vị tính");
 
+        jLabel_supplierid.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplierid.setText("Mã nhà cung cấp");
 
+        txtDrugId.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtDrugName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtDrugGroup.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtDrugIngr.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtExpiredDate.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtUnit.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtSupplierID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        cbbDrugType.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cbbDrugType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thuốc kê đơn", "Thuốc không kê đơn", "Thực phẩm chức năng" }));
 
+        btnAddDrug.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnAddDrug.setText("Lưu");
         btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +140,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
             }
         });
 
+        btnClearDrug.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnClearDrug.setText("Làm mới");
         btnClearDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +148,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
             }
         });
 
+        btnCancelDrug.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnCancelDrug.setText("Huỷ");
         btnCancelDrug.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,44 +160,44 @@ public class AddDrugFrm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel_drugsid)
-                    .addComponent(jLabel_drugsname)
-                    .addComponent(jLabel_group)
-                    .addComponent(jLabel_type, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel_ingredient)
-                    .addComponent(jLabel_expirydate)
-                    .addComponent(jLabel_amount)
-                    .addComponent(jLabel_supplierid))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDrugId)
-                    .addComponent(txtDrugName)
-                    .addComponent(txtDrugGroup)
-                    .addComponent(txtDrugIngr)
-                    .addComponent(txtExpiredDate)
-                    .addComponent(txtUnit)
-                    .addComponent(txtSupplierID)
-                    .addComponent(cbbDrugType, 0, 202, Short.MAX_VALUE))
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(btnAddDrug)
-                .addGap(56, 56, 56)
-                .addComponent(btnClearDrug)
-                .addGap(57, 57, 57)
-                .addComponent(btnCancelDrug)
-                .addContainerGap(33, Short.MAX_VALUE))
             .addComponent(txtDrugID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAddDrug)
+                        .addGap(56, 56, 56)
+                        .addComponent(btnClearDrug)
+                        .addGap(57, 57, 57)
+                        .addComponent(btnCancelDrug))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel_drugsid)
+                            .addComponent(jLabel_drugsname)
+                            .addComponent(jLabel_group)
+                            .addComponent(jLabel_type, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel_ingredient)
+                            .addComponent(jLabel_expirydate)
+                            .addComponent(jLabel_amount)
+                            .addComponent(jLabel_supplierid))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDrugId)
+                            .addComponent(txtDrugName)
+                            .addComponent(txtDrugGroup)
+                            .addComponent(txtDrugIngr)
+                            .addComponent(txtExpiredDate)
+                            .addComponent(txtUnit)
+                            .addComponent(txtSupplierID)
+                            .addComponent(cbbDrugType, 0, 202, Short.MAX_VALUE))))
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(txtDrugID, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtDrugID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_drugsid)
                     .addComponent(txtDrugId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,12 +229,12 @@ public class AddDrugFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierid)
                     .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddDrug)
                     .addComponent(btnClearDrug)
                     .addComponent(btnCancelDrug))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();

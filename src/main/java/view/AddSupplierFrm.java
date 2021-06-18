@@ -75,24 +75,50 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_title.setBackground(new java.awt.Color(79, 102, 107));
+        jLabel_title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel_title.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_title.setText("Nhà Cung Cấp");
+        jLabel_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel_title.setOpaque(true);
 
+        jLabel_supplierid.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplierid.setText("Mã nhà cung cấp:");
 
+        txtSupplierID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtSupplierName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        jLabel_supplername.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplername.setText("Tên nhà cung cấp:");
 
+        jLabel_supplierphonenumber.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplierphonenumber.setText("Điện thoại:");
 
+        txtSupplierPhone.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtSupplierAddress.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        jLabel_supplieraddress.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplieraddress.setText("Địa chỉ:");
 
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel1.setText("Email");
 
+        txtSupplierEmail.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtContractSignDate.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Ngày ký hợp đồng (dd/mm/yyyy)");
 
+        jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel3.setText("Thời hạn hợp đồng (tháng)");
 
+        txtContractExpiredDate.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        btnClearSupplier.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnClearSupplier.setText("Làm mới");
         btnClearSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +126,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             }
         });
 
+        btnAddSupplier.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnAddSupplier.setText("Lưu");
         btnAddSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +134,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             }
         });
 
+        btnCancelSupplier.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnCancelSupplier.setText("Huỷ");
         btnCancelSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,16 +146,18 @@ public class AddSupplierFrm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel_title, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(btnAddSupplier)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                        .addGap(85, 85, 85)
                         .addComponent(btnClearSupplier)
-                        .addGap(76, 76, 76)
-                        .addComponent(btnCancelSupplier))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelSupplier)
+                        .addGap(16, 16, 16))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_supplierid)
@@ -145,15 +175,13 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                             .addComponent(txtSupplierAddress)
                             .addComponent(txtSupplierEmail)
                             .addComponent(txtContractSignDate)
-                            .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))
-                .addGap(33, 33, 33))
-            .addComponent(jLabel_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtContractExpiredDate, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel_title)
+                .addComponent(jLabel_title, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_supplierid)
@@ -187,7 +215,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                     .addComponent(btnAddSupplier)
                     .addComponent(btnClearSupplier)
                     .addComponent(btnCancelSupplier))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();

@@ -1,15 +1,6 @@
 package view;
 
 import controller.PharmacistController;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Pharmacist;
 
@@ -89,30 +80,57 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         setTitle("Thêm/Sửa Nhân viên dược sĩ");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(79, 102, 107));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nhân viên Dược Sĩ");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setOpaque(true);
 
+        jLabel9.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel9.setText("Mã nhân viên");
 
+        jLabel6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel6.setText("Giới tính:");
 
+        jLabel4.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel4.setText("Năm sinh:");
 
+        jLabel5.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel5.setText("Địa chỉ:");
 
+        jLabel7.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel7.setText("SDT");
 
+        jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel3.setText("Năm vào làm:");
 
+        jLabel8.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel8.setText("Ca:");
 
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Họ tên Nhân viên");
 
+        txtPharmacistID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtPharmacistName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        cmbPharmacistSex.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cmbPharmacistSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
+        txtPharmacistDOB.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtPharmacistPhone.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtPharmacistAddress.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtYearWork.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        cmbPharmacistShift.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cmbPharmacistShift.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
 
+        btnAddPharmacist.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnAddPharmacist.setText("Lưu");
         btnAddPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +138,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
             }
         });
 
+        btnClearPharmacist.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnClearPharmacist.setText("Làm mới");
         btnClearPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,6 +146,7 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
             }
         });
 
+        btnCancelPharmacist.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnCancelPharmacist.setText("Huỷ");
         btnCancelPharmacist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,8 +158,9 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel2)
@@ -150,29 +171,27 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel8)
                     .addComponent(btnAddPharmacist))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnClearPharmacist)
-                        .addGap(58, 58, 58)
-                        .addComponent(btnCancelPharmacist))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(txtPharmacistID)
                         .addComponent(txtPharmacistName)
-                        .addComponent(cmbPharmacistSex, 0, 206, Short.MAX_VALUE)
+                        .addComponent(cmbPharmacistSex, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtPharmacistDOB)
                         .addComponent(txtPharmacistPhone)
                         .addComponent(txtPharmacistAddress)
                         .addComponent(txtYearWork)
-                        .addComponent(cmbPharmacistShift, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(41, 41, 41))
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cmbPharmacistShift, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnClearPharmacist)
+                        .addGap(71, 71, 71)
+                        .addComponent(btnCancelPharmacist)))
+                .addGap(14, 14, 14))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -205,13 +224,12 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(cmbPharmacistShift, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAddPharmacist)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCancelPharmacist)
-                        .addComponent(btnClearPharmacist)))
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelPharmacist)
+                    .addComponent(btnClearPharmacist)
+                    .addComponent(btnAddPharmacist))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();

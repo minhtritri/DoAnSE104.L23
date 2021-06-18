@@ -1,7 +1,13 @@
 package main;
 
 import java.awt.CardLayout;
-import javax.swing.JToggleButton;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import view.PanelCustomer;
 import view.PanelDrug;
 import view.PanelImportVoucher;
@@ -13,34 +19,6 @@ import view.PanelReport;
 
 public class HomeFrm extends javax.swing.JFrame {
 
-    public JToggleButton getTgbtnDrug() {
-        return tgbtnDrug;
-    }
-
-    public JToggleButton getTgbtnPharmacist() {
-        return tgbtnPharmacist;
-    }
-
-    public JToggleButton getTgbtnCustomer() {
-        return tgbtnCustomer;
-    }
-
-    public JToggleButton getTgbtnSupplier() {
-        return tgbtnSupplier;
-    }
-
-    public JToggleButton getTgbtnReceipt() {
-        return tgbtnReceipt;
-    }
-
-    public JToggleButton getTgbtnImportVoucher() {
-        return tgbtnImportVoucher;
-    }
-
-    public JToggleButton getTgbtnReport() {
-        return tgbtnReport;
-    }
-
     private static final HomeFrm instance = new HomeFrm();
 
     PanelDrug pnDrug = PanelDrug.getInstance();
@@ -50,6 +28,69 @@ public class HomeFrm extends javax.swing.JFrame {
     PanelReceipt pnReceipt = PanelReceipt.getInstance();
     PanelImportVoucher pnImportVoucher = PanelImportVoucher.getInstance();
     PanelReport pnReport = PanelReport.getInstance();
+
+    private void setPanel(JPanel pn, String title) {
+        pnContainer.removeAll();
+        pnContainer.setVisible(true);
+        lbTitle.setText(title);
+        //pnContainer.setLayout(new CardLayout());
+        pnContainer.add(pn);
+        pn.setVisible(true);
+        pnContainer.repaint();
+        pnContainer.updateUI();
+
+    }
+
+    public static HomeFrm getInstance() {
+        return instance;
+    }
+
+    private void setIcon() {
+        String directResource = System.getProperty("user.dir") + "\\image\\";
+        lbLogoApp.setIcon(new ImageIcon(directResource + "thepharmacy.png"));
+        lbIconLogin.setIcon(new ImageIcon(directResource + "login.png"));
+        lbIconDrug.setIcon(new ImageIcon(directResource + "pill.png"));
+        lbIconPharmacist.setIcon(new ImageIcon(directResource + "pharmacist.png"));
+        lbIconSupplier.setIcon(new ImageIcon(directResource + "supplier.png"));
+        lbIconCustomer.setIcon(new ImageIcon(directResource + "customer.png"));
+        lbIconReceipt.setIcon(new ImageIcon(directResource + "receipt.png"));
+        lbIconImport.setIcon(new ImageIcon(directResource + "import.png"));
+        lbIconReport.setIcon(new ImageIcon(directResource + "report.png"));
+    }
+
+    private void setView() {
+        for (Component c : this.pnCategory.getComponents()) {
+            if (c instanceof JPanel) {
+                ((JPanel) c).addMouseListener(new MouseListener() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseReleased(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        ((JPanel) c).setBackground(new Color(124, 144, 156));
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        ((JPanel) c).setBackground(new Color(79, 102, 107));
+                    }
+                });
+            }
+        }
+
+    }
 
     public HomeFrm() {
         /* Set the Nimbus look and feel */
@@ -76,17 +117,11 @@ public class HomeFrm extends javax.swing.JFrame {
         //</editor-fold>
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setIcon();
+        this.setView();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        //grpMenuBar.add(tgbtnLogin);
-        grpMenuBar.add(tgbtnDrug);
-        grpMenuBar.add(tgbtnPharmacist);
-        grpMenuBar.add(tgbtnSupplier);
-        grpMenuBar.add(tgbtnCustomer);
-        grpMenuBar.add(tgbtnImportVoucher);
-        grpMenuBar.add(tgbtnReceipt);
-        grpMenuBar.add(tgbtnReport);
-
-        pnContainer.setLayout(new CardLayout());
         pnContainer.setLayout(new CardLayout());
 
         pnDrug.setVisible(true);
@@ -97,205 +132,505 @@ public class HomeFrm extends javax.swing.JFrame {
         pnImportVoucher.setVisible(true);
         pnReport.setVisible(true);
         pnContainer.setVisible(false);
-
+        pnContainer.add(pnDrug);
         this.setVisible(true);
-    }
-
-    public static HomeFrm getInstance() {
-        return instance;
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        grpMenuBar = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        pnContainer = new javax.swing.JPanel();
+        pnLogoTitle = new javax.swing.JPanel();
+        lbLogoApp = new javax.swing.JLabel();
+        lbTitle = new javax.swing.JLabel();
         pnCategory = new javax.swing.JPanel();
-        lbSystem = new javax.swing.JLabel();
-        tgbtnLogin = new javax.swing.JButton();
-        lbCategory = new javax.swing.JLabel();
-        tgbtnDrug = new javax.swing.JToggleButton();
-        tgbtnPharmacist = new javax.swing.JToggleButton();
-        tgbtnSupplier = new javax.swing.JToggleButton();
-        tgbtnCustomer = new javax.swing.JToggleButton();
-        lbSellBuy = new javax.swing.JLabel();
-        tgbtnReceipt = new javax.swing.JToggleButton();
-        tgbtnImportVoucher = new javax.swing.JToggleButton();
+        btnLogin = new javax.swing.JPanel();
+        lbIconLogin = new javax.swing.JLabel();
+        lbLogin = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnDrug = new javax.swing.JPanel();
+        lbIconDrug = new javax.swing.JLabel();
+        lbDrug = new javax.swing.JLabel();
+        btnCustomer = new javax.swing.JPanel();
+        lbIconCustomer = new javax.swing.JLabel();
+        lbCustomer = new javax.swing.JLabel();
+        btnSupplier = new javax.swing.JPanel();
+        lbIconSupplier = new javax.swing.JLabel();
+        lbSupplier = new javax.swing.JLabel();
+        btnPharmacist = new javax.swing.JPanel();
+        lbIconPharmacist = new javax.swing.JLabel();
+        lbPharmacist = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        btnReceipt = new javax.swing.JPanel();
+        lbIconReceipt = new javax.swing.JLabel();
+        lbReceipt = new javax.swing.JLabel();
+        btnImportVoucher = new javax.swing.JPanel();
+        lbIconImport = new javax.swing.JLabel();
+        lbImport = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        btnReport = new javax.swing.JPanel();
+        lbIconReport = new javax.swing.JLabel();
         lbReport = new javax.swing.JLabel();
-        tgbtnReport = new javax.swing.JToggleButton();
+        pnContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("QLNT demo");
+        setPreferredSize(new java.awt.Dimension(1300, 720));
+        setResizable(false);
+        setSize(new java.awt.Dimension(1300, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        javax.swing.GroupLayout pnContainerLayout = new javax.swing.GroupLayout(pnContainer);
-        pnContainer.setLayout(pnContainerLayout);
-        pnContainerLayout.setHorizontalGroup(
-            pnContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 769, Short.MAX_VALUE)
+        pnLogoTitle.setPreferredSize(new java.awt.Dimension(1300, 70));
+
+        lbLogoApp.setBackground(new java.awt.Color(255, 255, 255));
+        lbLogoApp.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 25, 1, 1));
+        lbLogoApp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbLogoApp.setOpaque(true);
+        lbLogoApp.setPreferredSize(new java.awt.Dimension(300, 70));
+
+        lbTitle.setBackground(new java.awt.Color(57, 79, 85));
+        lbTitle.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lbTitle.setText("MÀN HÌNH CHÍNH");
+        lbTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 25, 1, 1));
+        lbTitle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lbTitle.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbTitle.setOpaque(true);
+        lbTitle.setPreferredSize(new java.awt.Dimension(1000, 70));
+
+        javax.swing.GroupLayout pnLogoTitleLayout = new javax.swing.GroupLayout(pnLogoTitle);
+        pnLogoTitle.setLayout(pnLogoTitleLayout);
+        pnLogoTitleLayout.setHorizontalGroup(
+            pnLogoTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnLogoTitleLayout.createSequentialGroup()
+                .addComponent(lbLogoApp, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(lbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        pnContainerLayout.setVerticalGroup(
-            pnContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        pnLogoTitleLayout.setVerticalGroup(
+            pnLogoTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnLogoTitleLayout.createSequentialGroup()
+                .addGroup(pnLogoTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbLogoApp, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        lbSystem.setText("Hệ thống");
+        pnCategory.setBackground(new java.awt.Color(57, 79, 85));
+        pnCategory.setPreferredSize(new java.awt.Dimension(300, 650));
 
-        tgbtnLogin.setText("Đăng nhập");
-        tgbtnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnLoginActionPerformed(evt);
+        btnLogin.setBackground(new java.awt.Color(79, 102, 107));
+        btnLogin.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLoginMouseClicked(evt);
             }
         });
 
-        lbCategory.setText("Danh mục");
+        lbIconLogin.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        tgbtnDrug.setText("Thuốc");
-        tgbtnDrug.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnDrugActionPerformed(evt);
+        lbLogin.setBackground(new java.awt.Color(79, 102, 107));
+        lbLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbLogin.setForeground(new java.awt.Color(255, 255, 255));
+        lbLogin.setText("Đăng nhập");
+
+        javax.swing.GroupLayout btnLoginLayout = new javax.swing.GroupLayout(btnLogin);
+        btnLogin.setLayout(btnLoginLayout);
+        btnLoginLayout.setHorizontalGroup(
+            btnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnLoginLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnLoginLayout.setVerticalGroup(
+            btnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnLoginLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btnLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbIconLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        lbLogin.getAccessibleContext().setAccessibleName("lbLogin");
+
+        jSeparator1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jSeparator1.setPreferredSize(new java.awt.Dimension(300, 10));
+
+        btnDrug.setBackground(new java.awt.Color(79, 102, 107));
+        btnDrug.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnDrug.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDrugMouseClicked(evt);
             }
         });
 
-        tgbtnPharmacist.setText("Nhân viên dược sĩ");
-        tgbtnPharmacist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnPharmacistActionPerformed(evt);
+        lbIconDrug.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconDrug.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconDrug.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbDrug.setBackground(new java.awt.Color(79, 102, 107));
+        lbDrug.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbDrug.setForeground(new java.awt.Color(255, 255, 255));
+        lbDrug.setText("Thuốc");
+
+        javax.swing.GroupLayout btnDrugLayout = new javax.swing.GroupLayout(btnDrug);
+        btnDrug.setLayout(btnDrugLayout);
+        btnDrugLayout.setHorizontalGroup(
+            btnDrugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnDrugLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconDrug, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbDrug, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        btnDrugLayout.setVerticalGroup(
+            btnDrugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnDrugLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btnDrugLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbIconDrug, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbDrug, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        btnCustomer.setBackground(new java.awt.Color(79, 102, 107));
+        btnCustomer.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCustomerMouseClicked(evt);
             }
         });
 
-        tgbtnSupplier.setText("Nhà cung cấp");
-        tgbtnSupplier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnSupplierActionPerformed(evt);
+        lbIconCustomer.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconCustomer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconCustomer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbCustomer.setBackground(new java.awt.Color(79, 102, 107));
+        lbCustomer.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbCustomer.setForeground(new java.awt.Color(255, 255, 255));
+        lbCustomer.setText("Khách hàng");
+
+        javax.swing.GroupLayout btnCustomerLayout = new javax.swing.GroupLayout(btnCustomer);
+        btnCustomer.setLayout(btnCustomerLayout);
+        btnCustomerLayout.setHorizontalGroup(
+            btnCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCustomerLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnCustomerLayout.setVerticalGroup(
+            btnCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnCustomerLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIconCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnCustomerLayout.createSequentialGroup()
+                .addComponent(lbCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        btnSupplier.setBackground(new java.awt.Color(79, 102, 107));
+        btnSupplier.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSupplierMouseClicked(evt);
             }
         });
 
-        tgbtnCustomer.setText("Khách hàng");
-        tgbtnCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnCustomerActionPerformed(evt);
+        lbIconSupplier.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconSupplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconSupplier.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbSupplier.setBackground(new java.awt.Color(79, 102, 107));
+        lbSupplier.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbSupplier.setForeground(new java.awt.Color(255, 255, 255));
+        lbSupplier.setText("Nhà cung cấp");
+
+        javax.swing.GroupLayout btnSupplierLayout = new javax.swing.GroupLayout(btnSupplier);
+        btnSupplier.setLayout(btnSupplierLayout);
+        btnSupplierLayout.setHorizontalGroup(
+            btnSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnSupplierLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+        btnSupplierLayout.setVerticalGroup(
+            btnSupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnSupplierLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIconSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnSupplierLayout.createSequentialGroup()
+                .addComponent(lbSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        btnPharmacist.setBackground(new java.awt.Color(79, 102, 107));
+        btnPharmacist.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnPharmacist.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPharmacistMouseClicked(evt);
             }
         });
 
-        lbSellBuy.setText("Mua/Bán thuốc");
+        lbIconPharmacist.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconPharmacist.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconPharmacist.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        tgbtnReceipt.setText("Hoá đơn bán hàng");
-        tgbtnReceipt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnReceiptActionPerformed(evt);
+        lbPharmacist.setBackground(new java.awt.Color(79, 102, 107));
+        lbPharmacist.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbPharmacist.setForeground(new java.awt.Color(255, 255, 255));
+        lbPharmacist.setText("Nhân viên Dược sĩ");
+
+        javax.swing.GroupLayout btnPharmacistLayout = new javax.swing.GroupLayout(btnPharmacist);
+        btnPharmacist.setLayout(btnPharmacistLayout);
+        btnPharmacistLayout.setHorizontalGroup(
+            btnPharmacistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnPharmacistLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        btnPharmacistLayout.setVerticalGroup(
+            btnPharmacistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPharmacistLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIconPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnPharmacistLayout.createSequentialGroup()
+                .addComponent(lbPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jSeparator2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(300, 5));
+
+        btnReceipt.setBackground(new java.awt.Color(79, 102, 107));
+        btnReceipt.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnReceipt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReceiptMouseClicked(evt);
             }
         });
 
-        tgbtnImportVoucher.setText("Phiếu nhập hàng");
-        tgbtnImportVoucher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnImportVoucherActionPerformed(evt);
+        lbIconReceipt.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconReceipt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconReceipt.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbReceipt.setBackground(new java.awt.Color(79, 102, 107));
+        lbReceipt.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbReceipt.setForeground(new java.awt.Color(255, 255, 255));
+        lbReceipt.setText("Hoá đơn bán thuốc");
+
+        javax.swing.GroupLayout btnReceiptLayout = new javax.swing.GroupLayout(btnReceipt);
+        btnReceipt.setLayout(btnReceiptLayout);
+        btnReceiptLayout.setHorizontalGroup(
+            btnReceiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReceiptLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnReceiptLayout.setVerticalGroup(
+            btnReceiptLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnReceiptLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIconReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnReceiptLayout.createSequentialGroup()
+                .addComponent(lbReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        btnImportVoucher.setBackground(new java.awt.Color(79, 102, 107));
+        btnImportVoucher.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnImportVoucher.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnImportVoucherMouseClicked(evt);
             }
         });
 
-        lbReport.setText("Thống kê báo cáo");
+        lbIconImport.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconImport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconImport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        tgbtnReport.setText("Thống kê doanh thu");
-        tgbtnReport.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tgbtnReportActionPerformed(evt);
+        lbImport.setBackground(new java.awt.Color(79, 102, 107));
+        lbImport.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbImport.setForeground(new java.awt.Color(255, 255, 255));
+        lbImport.setText("Phiếu nhập thuốc");
+
+        javax.swing.GroupLayout btnImportVoucherLayout = new javax.swing.GroupLayout(btnImportVoucher);
+        btnImportVoucher.setLayout(btnImportVoucherLayout);
+        btnImportVoucherLayout.setHorizontalGroup(
+            btnImportVoucherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnImportVoucherLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconImport, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbImport, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnImportVoucherLayout.setVerticalGroup(
+            btnImportVoucherLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnImportVoucherLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lbIconImport, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(btnImportVoucherLayout.createSequentialGroup()
+                .addComponent(lbImport, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jSeparator3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jSeparator3.setPreferredSize(new java.awt.Dimension(300, 5));
+
+        btnReport.setBackground(new java.awt.Color(79, 102, 107));
+        btnReport.setPreferredSize(new java.awt.Dimension(300, 50));
+        btnReport.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReportMouseClicked(evt);
             }
         });
+
+        lbIconReport.setBackground(new java.awt.Color(79, 102, 107));
+        lbIconReport.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIconReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lbReport.setBackground(new java.awt.Color(79, 102, 107));
+        lbReport.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbReport.setForeground(new java.awt.Color(255, 255, 255));
+        lbReport.setText("Thống kê doanh thu");
+
+        javax.swing.GroupLayout btnReportLayout = new javax.swing.GroupLayout(btnReport);
+        btnReport.setLayout(btnReportLayout);
+        btnReportLayout.setHorizontalGroup(
+            btnReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReportLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(lbIconReport, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lbReport, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        btnReportLayout.setVerticalGroup(
+            btnReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReportLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(btnReportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbIconReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout pnCategoryLayout = new javax.swing.GroupLayout(pnCategory);
         pnCategory.setLayout(pnCategoryLayout);
         pnCategoryLayout.setHorizontalGroup(
             pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnCategoryLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbSellBuy, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(tgbtnCustomer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tgbtnSupplier, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tgbtnPharmacist, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tgbtnDrug, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbCategory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbSystem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tgbtnReport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(lbReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(tgbtnImportVoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tgbtnReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tgbtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10))
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDrug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnCategoryLayout.createSequentialGroup()
+                .addGroup(pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnCategoryLayout.createSequentialGroup()
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnCategoryLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCustomer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReceipt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnImportVoucher, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         pnCategoryLayout.setVerticalGroup(
             pnCategoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnCategoryLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tgbtnLogin)
-                .addGap(18, 18, 18)
-                .addComponent(lbCategory)
-                .addGap(18, 18, 18)
-                .addComponent(tgbtnDrug)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnPharmacist)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnCustomer)
-                .addGap(18, 18, 18)
-                .addComponent(lbSellBuy)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnReceipt)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tgbtnImportVoucher)
-                .addGap(18, 18, 18)
-                .addComponent(lbReport)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tgbtnReport)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnDrug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnPharmacist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnImportVoucher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(pnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pnContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        btnLogin.getAccessibleContext().setAccessibleParent(pnCategory);
+
+        pnContainer.setPreferredSize(new java.awt.Dimension(1000, 650));
+
+        javax.swing.GroupLayout pnContainerLayout = new javax.swing.GroupLayout(pnContainer);
+        pnContainer.setLayout(pnContainerLayout);
+        pnContainerLayout.setHorizontalGroup(
+            pnContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnCategory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+        pnContainerLayout.setVerticalGroup(
+            pnContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnLogoTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnLogoTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -306,110 +641,37 @@ public class HomeFrm extends javax.swing.JFrame {
         new LoginFrm().setVisible(true);
     }//GEN-LAST:event_formWindowOpened
 
-    private void tgbtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnLoginActionPerformed
-        this.setEnabled(false);
+    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         new LoginFrm().setVisible(true);
-    }//GEN-LAST:event_tgbtnLoginActionPerformed
+    }//GEN-LAST:event_btnLoginMouseClicked
 
-    private void tgbtnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReportActionPerformed
-        pnContainer.add(pnReport);
-        pnReport.setVisible(true);
-        pnContainer.setVisible(true);
+    private void btnDrugMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDrugMouseClicked
+        setPanel(pnDrug, "DANH SÁCH THUỐC");
+    }//GEN-LAST:event_btnDrugMouseClicked
 
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReceipt.setVisible(false);
-    }//GEN-LAST:event_tgbtnReportActionPerformed
+    private void btnPharmacistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPharmacistMouseClicked
+        setPanel(pnPharmacist, "DANH SÁCH DƯỢC SĨ");
+    }//GEN-LAST:event_btnPharmacistMouseClicked
 
-    private void tgbtnReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnReceiptActionPerformed
-        pnContainer.add(pnReceipt);
-        pnReceipt.setVisible(true);
-        pnContainer.setVisible(true);
+    private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
+        setPanel(pnSupplier, "DANH SÁCH NHÀ CUNG CẤP");
+    }//GEN-LAST:event_btnSupplierMouseClicked
 
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReport.setVisible(false);
+    private void btnCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerMouseClicked
+        setPanel(pnCustomer, "DANH SÁCH KHÁCH HÀNG");
+    }//GEN-LAST:event_btnCustomerMouseClicked
 
-    }//GEN-LAST:event_tgbtnReceiptActionPerformed
+    private void btnReceiptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReceiptMouseClicked
+        setPanel(pnReceipt, "DANH SÁCH HOÁ ĐƠN");
+    }//GEN-LAST:event_btnReceiptMouseClicked
 
-    private void tgbtnImportVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnImportVoucherActionPerformed
-        pnContainer.add(pnImportVoucher);
-        pnImportVoucher.setVisible(true);
-        pnContainer.setVisible(true);
+    private void btnImportVoucherMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnImportVoucherMouseClicked
+        setPanel(pnImportVoucher, "DANH SÁCH PHIẾU NHẬP THUỐC");
+    }//GEN-LAST:event_btnImportVoucherMouseClicked
 
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnReceipt.setVisible(false);
-        pnReport.setVisible(false);
-
-    }//GEN-LAST:event_tgbtnImportVoucherActionPerformed
-
-    private void tgbtnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnCustomerActionPerformed
-        pnContainer.add(pnCustomer);
-        pnCustomer.setVisible(true);
-        pnContainer.setVisible(true);
-
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnReceipt.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReport.setVisible(false);
-
-    }//GEN-LAST:event_tgbtnCustomerActionPerformed
-
-    private void tgbtnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnSupplierActionPerformed
-
-        pnContainer.add(pnSupplier);
-        pnSupplier.setVisible(true);
-        pnContainer.setVisible(true);
-
-        pnDrug.setVisible(false);
-        pnPharmacist.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnReceipt.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReport.setVisible(false);
-
-    }//GEN-LAST:event_tgbtnSupplierActionPerformed
-
-    private void tgbtnPharmacistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnPharmacistActionPerformed
-
-        pnContainer.add(pnPharmacist);
-        pnContainer.setVisible(true);
-        pnPharmacist.setVisible(true);
-
-        pnDrug.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnReceipt.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReport.setVisible(false);
-
-    }//GEN-LAST:event_tgbtnPharmacistActionPerformed
-
-    private void tgbtnDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tgbtnDrugActionPerformed
-
-        pnContainer.setVisible(true);
-        pnContainer.add(pnDrug);
-        pnDrug.setVisible(true);
-
-        pnPharmacist.setVisible(false);
-        pnSupplier.setVisible(false);
-        pnCustomer.setVisible(false);
-        pnReceipt.setVisible(false);
-        pnImportVoucher.setVisible(false);
-        pnReport.setVisible(false);
-
-    }//GEN-LAST:event_tgbtnDrugActionPerformed
+    private void btnReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportMouseClicked
+        setPanel(pnReport, "THỐNG KÊ DOANH THU");
+    }//GEN-LAST:event_btnReportMouseClicked
 
     /**
      * @param args the command line arguments
@@ -422,21 +684,37 @@ public class HomeFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup grpMenuBar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lbCategory;
+    private javax.swing.JPanel btnCustomer;
+    private javax.swing.JPanel btnDrug;
+    private javax.swing.JPanel btnImportVoucher;
+    private javax.swing.JPanel btnLogin;
+    private javax.swing.JPanel btnPharmacist;
+    private javax.swing.JPanel btnReceipt;
+    private javax.swing.JPanel btnReport;
+    private javax.swing.JPanel btnSupplier;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JLabel lbCustomer;
+    private javax.swing.JLabel lbDrug;
+    private javax.swing.JLabel lbIconCustomer;
+    private javax.swing.JLabel lbIconDrug;
+    private javax.swing.JLabel lbIconImport;
+    private javax.swing.JLabel lbIconLogin;
+    private javax.swing.JLabel lbIconPharmacist;
+    private javax.swing.JLabel lbIconReceipt;
+    private javax.swing.JLabel lbIconReport;
+    private javax.swing.JLabel lbIconSupplier;
+    private javax.swing.JLabel lbImport;
+    private javax.swing.JLabel lbLogin;
+    private javax.swing.JLabel lbLogoApp;
+    private javax.swing.JLabel lbPharmacist;
+    private javax.swing.JLabel lbReceipt;
     private javax.swing.JLabel lbReport;
-    private javax.swing.JLabel lbSellBuy;
-    private javax.swing.JLabel lbSystem;
+    private javax.swing.JLabel lbSupplier;
+    private javax.swing.JLabel lbTitle;
     private javax.swing.JPanel pnCategory;
     private javax.swing.JPanel pnContainer;
-    private javax.swing.JToggleButton tgbtnCustomer;
-    private javax.swing.JToggleButton tgbtnDrug;
-    private javax.swing.JToggleButton tgbtnImportVoucher;
-    private javax.swing.JButton tgbtnLogin;
-    private javax.swing.JToggleButton tgbtnPharmacist;
-    public javax.swing.JToggleButton tgbtnReceipt;
-    private javax.swing.JToggleButton tgbtnReport;
-    private javax.swing.JToggleButton tgbtnSupplier;
+    private javax.swing.JPanel pnLogoTitle;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,9 +6,7 @@
 package view;
 
 import controller.CustomerController;
-import java.util.Date;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import model.Customer;
 
 /**
@@ -74,23 +72,38 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         setTitle("Thêm/Sửa Khách hàng");
         setResizable(false);
 
-        jLabel_title.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel_title.setBackground(new java.awt.Color(79, 102, 107));
+        jLabel_title.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel_title.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_title.setText("Khách Hàng");
+        jLabel_title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel_title.setOpaque(true);
 
+        jLabel_goestid.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_goestid.setText("Mã khách hàng:");
 
+        jLabel_guestname.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_guestname.setText("Họ tên:");
 
+        jLabel_guestsex.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_guestsex.setText("Giới tính:");
 
+        jLabel_guestaddress.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_guestaddress.setText("Số điện thoại:");
 
+        txtCustomerID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        txtCustomerName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtCustomerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCustomerNameActionPerformed(evt);
             }
         });
 
+        txtCustomerPhone.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+
+        btnAddCustomer.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnAddCustomer.setText("Lưu");
         btnAddCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +111,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
             }
         });
 
+        btnClearCustomer.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnClearCustomer.setText("Làm mới");
         btnClearCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +119,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
             }
         });
 
+        btnCancelCustomer.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnCancelCustomer.setText("Huỷ");
         btnCancelCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +127,13 @@ public class AddCustomerFrm extends javax.swing.JFrame {
             }
         });
 
+        cmbCustomerSex.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cmbCustomerSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel1.setText("Năm sinh");
+
+        txtCustomerDOB.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,7 +153,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtCustomerID)
                             .addComponent(txtCustomerName)
-                            .addComponent(cmbCustomerSex, 0, 295, Short.MAX_VALUE)
+                            .addComponent(cmbCustomerSex, 0, 288, Short.MAX_VALUE)
                             .addComponent(txtCustomerDOB)
                             .addComponent(txtCustomerPhone)))
                     .addGroup(layout.createSequentialGroup()
@@ -145,18 +164,14 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(btnCancelCustomer)
                         .addGap(57, 57, 57)))
-                .addContainerGap(27, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(jLabel_title)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addComponent(jLabel_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel_title)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel_title, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_goestid)
                     .addComponent(txtCustomerID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -181,7 +196,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
                     .addComponent(btnAddCustomer)
                     .addComponent(btnClearCustomer)
                     .addComponent(btnCancelCustomer))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
