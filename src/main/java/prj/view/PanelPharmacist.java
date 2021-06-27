@@ -6,11 +6,19 @@
 package prj.view;
 
 import prj.controller.PharmacistController;
+import prj.model.Pharmacist;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
 
 /**
  *
@@ -55,6 +63,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -307,7 +316,9 @@ public class PanelPharmacist extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddPharmacistFrm().setVisible(true);
+        new AddPharmacistFrm().getInstance().setVisible(true);
+         int row = PharmacistController.getInstance().CountingRow();
+        AddPharmacistFrm.getInstance().settxtPharmacisID("NV0" +(row + 1)+"");
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -316,9 +327,12 @@ public class PanelPharmacist extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            PharmacistController.getInstance().Delete(PharmacistController.getInstance().getList().get(selectedIndex).getsMaNV());
             PharmacistController.getInstance().getList().remove(selectedIndex);
+            
             tblList.setModel(PharmacistController.getInstance().toTable());
         }
+        
     }//GEN-LAST:event_btnDeleteMouseClicked
 
     private void btnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMouseClicked
@@ -328,6 +342,7 @@ public class PanelPharmacist extends javax.swing.JPanel {
             return;
         } else {
             AddPharmacistFrm addPharmaFrm = new AddPharmacistFrm(selectedIndex);
+           
             addPharmaFrm.setVisible(true);
         }    }//GEN-LAST:event_btnEditMouseClicked
 
@@ -384,7 +399,33 @@ public class PanelPharmacist extends javax.swing.JPanel {
             txtSearchBar.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtSearchBarFocusLost
+    public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st  = conn.createStatement();
+            ResultSet rs =  st.executeQuery("SELECT * FROM NHANVIEN");
+            while(rs.next()){
+                String MaNV = rs.getString("MANV");
+                String HoTen = rs.getString("HOTEN");
+                String GioiTinh = rs.getString("GIOITINH");
+                int NamSinh = Integer.parseInt(rs.getString("NAMSINH"));
+                String SDT = rs.getString("SDT");
+                String DiaChi = rs.getString("DIACHI");
+                int NamVL = rs.getInt("NAMVL");
+                int CaLV = rs.getInt("CALV");
+                Pharmacist p = new Pharmacist(MaNV,HoTen,GioiTinh,NamSinh,SDT,DiaChi,NamVL,CaLV);
+                PharmacistController.getInstance().getList().add(p);
+                tblList.setModel(
+                    PharmacistController.getInstance().toTable()    );
+                
 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PharmacistController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnDelete;

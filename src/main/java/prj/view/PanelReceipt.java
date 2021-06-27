@@ -8,10 +8,20 @@ package prj.view;
 import prj.controller.PharmacistController;
 import prj.controller.ReceiptController;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
+import prj.model.Receipt;
+import prj.model.ReceiptDetail;
 
 /**
  *
@@ -57,6 +67,7 @@ public class PanelReceipt extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -346,7 +357,9 @@ public class PanelReceipt extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddReceiptFrm().setVisible(true);
+        new AddReceiptFrm().getInstance().setVisible(true);
+        int row = ReceiptController.getInstance().CountingRow();
+        AddReceiptFrm.getInstance().settxtReceiptID("HD0"+(row + 1)+"");
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -355,6 +368,8 @@ public class PanelReceipt extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            ReceiptController.getInstance().DeleteRD(ReceiptController.getInstance().getList().get(selectedIndex).getsMaHD());
+            ReceiptController.getInstance().Delete(ReceiptController.getInstance().getList().get(selectedIndex).getsMaHD());
             ReceiptController.getInstance().getList().remove(selectedIndex);
             tblList.setModel(ReceiptController.getInstance().toTable());
         }
@@ -366,6 +381,8 @@ public class PanelReceipt extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
+            
+            
             AddReceiptFrm addReceiptFrm = new AddReceiptFrm(selectedIndex, true);
             addReceiptFrm.setVisible(true);
         }    }//GEN-LAST:event_btnEditMouseClicked
@@ -443,7 +460,44 @@ public class PanelReceipt extends javax.swing.JPanel {
             txtSearchBar.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtSearchBarFocusLost
-
+    public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st  = conn.createStatement();
+            ResultSet rs =  st.executeQuery("SELECT * FROM HOADON");
+            while(rs.next()){
+                String mahd = rs.getString("MAHD");
+                String manv = rs.getString("MANV");
+                String tennv = rs.getString("TENNV");
+                String makh = rs.getString("MAKH");
+                String tenkh = rs.getString("TENKH");
+  
+                LocalDate ngaymua = rs.getDate("NGAYMUATHUOC").toLocalDate();
+                float tongtien = rs.getFloat("TONGTIEN");
+                Receipt r = new Receipt(mahd,manv,tennv,makh,tenkh,ngaymua,tongtien);
+                ReceiptController.getInstance().getList().add(r);
+                tblList.setModel(
+                    ReceiptController.getInstance().toTable()    );
+            }
+            ResultSet rs2;
+            for(int index = 0; index<ReceiptController.getInstance().getList().size();index++){
+                 rs2= st.executeQuery("SELECT * FROM CTHD WHERE MAHD = '"+ ReceiptController.getInstance().getList().get(index).getsMaHD()+"'");
+                while(rs2.next()){
+                    String macthd = rs2.getString("MACTHD");
+                    String mathuoc = rs2.getString("MATHUOC");
+                    int sl = rs2.getInt("SL");
+                    float dongia = rs2.getFloat("DONGIA");
+                    float thanhtien = rs2.getFloat("THANHTIEN");
+                    ReceiptDetail re = new ReceiptDetail(macthd,ReceiptController.getInstance().getList().get(index).getsMaHD(), mathuoc,sl, dongia, thanhtien); 
+                    ReceiptController.getInstance().getList().get(index).getDetailList().add(re);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ReceiptController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnDelete;

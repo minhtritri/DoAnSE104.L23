@@ -25,7 +25,11 @@ public class AddCustomerFrm extends javax.swing.JFrame {
      */
     private boolean isEditing = false;
     private int index;
-
+    private static AddCustomerFrm instance = new AddCustomerFrm();
+    
+    public static AddCustomerFrm getInstance(){
+        return instance;
+    }
     private void addPlaceHolder(JTextField txt, String placeHolder) {
         if (!txt.getText().equals(placeHolder)) {
             txt.setForeground(Color.BLACK);
@@ -84,7 +88,9 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         txtCustomerDOB.setText(Integer.valueOf(c.getsNamSinh()).toString());
         txtCustomerPhone.setText(c.getsSdtKH());
     }
-
+    public void settxtCustomerID(String id){
+        txtCustomerID.setText(id);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,8 +139,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
         jLabel_guestaddress.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_guestaddress.setText("Số điện thoại:");
 
+        txtCustomerID.setEditable(false);
         txtCustomerID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        txtCustomerID.setText("sinh mã tự động");
 
         txtCustomerName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtCustomerName.setText("Nguyễn Văn A");
@@ -264,6 +270,8 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
             if (isEditing) {
                 CustomerController.getInstance().getList().set(this.index, customer);
+                CustomerController.getInstance().Delete(CustomerController.getInstance().getList().get(index).getsMaKH());
+                
                 this.setVisible(true);
 
             } else {
@@ -272,7 +280,7 @@ public class AddCustomerFrm extends javax.swing.JFrame {
 
             // lấy ra table tblListPharmacist từ Panel truyền vào dữ liệu từ Controller
             PanelCustomer.getInstance().getTable().setModel(CustomerController.getInstance().toTable());
-
+            CustomerController.getInstance().Insert(MaKH, Hoten, GioiTinh, NamSinh, sSDT);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);

@@ -7,10 +7,18 @@ package prj.view;
 
 import prj.controller.CustomerController;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
+import prj.model.Customer;
 
 /**
  *
@@ -55,6 +63,7 @@ public class PanelCustomer extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -307,7 +316,9 @@ public class PanelCustomer extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddCustomerFrm().setVisible(true);
+        new AddCustomerFrm().getInstance().setVisible(true);
+        int row = CustomerController.getInstance().CountingRow();
+        AddCustomerFrm.getInstance().settxtCustomerID("KH0" +(row + 1)+"");
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -316,6 +327,7 @@ public class PanelCustomer extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            CustomerController.getInstance().Delete(CustomerController.getInstance().getList().get(selectedIndex).getsMaKH());
             CustomerController.getInstance().getList().remove(selectedIndex);
             tblList.setModel(CustomerController.getInstance().toTable());
         }
@@ -385,7 +397,31 @@ public class PanelCustomer extends javax.swing.JPanel {
             txtSearchBar.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtSearchBarFocusLost
+     public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st  = conn.createStatement();
+            ResultSet rs =  st.executeQuery("SELECT * FROM KHACHHANG");
+            while(rs.next()){
+                String MaKH = rs.getString("MAKH");
+                String HoTen = rs.getString("HOTEN");
+                String GioiTinh = rs.getString("GIOITINH");
+                int NamSinh = rs.getInt("NAMSINH");
+                String SDT = rs.getString("SDT");
+                Customer c = new Customer(MaKH,HoTen,GioiTinh,NamSinh,SDT);
+                CustomerController.getInstance().getList().add(c);
+                tblList.setModel(
+                    CustomerController.getInstance().toTable()    );
+                
 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnDelete;

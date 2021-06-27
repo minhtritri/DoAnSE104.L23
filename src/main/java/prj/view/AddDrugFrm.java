@@ -5,9 +5,11 @@
  */
 package prj.view;
 
+import com.mysql.cj.jdbc.JdbcConnection;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -16,6 +18,7 @@ import javax.swing.JFrame;
 import prj.controller.DrugController;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import pri.JDBCconnect.JDBCconnection;
 import prj.model.Drug;
 
 /**
@@ -26,7 +29,11 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
     private boolean isEditing = false;
     private int index;
-
+    private static AddDrugFrm instance = new AddDrugFrm();
+    
+    public static AddDrugFrm getInstance(){
+        return instance;
+    }
     private void addPlaceHolder(JTextField txt, String placeHolder) {
         if (!txt.getText().equals(placeHolder)) {
             txt.setForeground(Color.BLACK);
@@ -58,7 +65,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
         addPlaceHolder(txtDrugGroup, "Đường tiêu hoá");
         addPlaceHolder(txtDrugIngr, "Domperidone maleate");
         addPlaceHolder(txtUnit, "Vỉ");
-        addPlaceHolder(txtSupplierID, "NCC001");
+       // addPlaceHolder(txtSupplierID, "NCC001");
     }
 
     /**
@@ -95,6 +102,9 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtUnit.setText(d.getsDVT());
         txtSupplierID.setText(d.getsMancc());
 
+    }
+    public void settxtDrugId(String drugid){
+        txtDrugId.setText(drugid);
     }
 
     /**
@@ -163,6 +173,7 @@ public class AddDrugFrm extends javax.swing.JFrame {
         jLabel_supplierid.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel_supplierid.setText("Mã nhà cung cấp");
 
+        txtDrugId.setEditable(false);
         txtDrugId.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtDrugId.setText("sinh mã tự động");
 
@@ -179,7 +190,6 @@ public class AddDrugFrm extends javax.swing.JFrame {
         txtUnit.setText("Vỉ");
 
         txtSupplierID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        txtSupplierID.setText("NCC001");
 
         cbbDrugType.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cbbDrugType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thuốc kê đơn", "Thuốc không kê đơn", "Thực phẩm chức năng" }));
@@ -296,12 +306,23 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
     private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
         try {
+           
             String sMathuoc = txtDrugId.getText();
             String sTenthuoc = txtDrugName.getText();
             String sPhannhom = txtDrugGroup.getText();
             String sPhanloai = cbbDrugType.getItemAt(cbbDrugType.getSelectedIndex());
             String sThanhphan = txtDrugIngr.getText();
-            String sMancc = txtSupplierID.getText();
+            
+            String sMancc = "hello";
+            try {
+                sMancc = txtSupplierID.getText();
+                if(sMancc.isEmpty()){
+                    sMancc = null;
+                }
+            } catch (Exception e) {
+                
+            }
+            System.err.println("Mancc la:"  + sMancc);
             LocalDate dHanSuDung = txtExpiredDate.getDate().toInstant()
                     .atZone(ZoneId.systemDefault()).toLocalDate();
             String sDVT = txtUnit.getText();
@@ -310,18 +331,26 @@ public class AddDrugFrm extends javax.swing.JFrame {
 
             if (isEditing) {
                 DrugController.getInstance().getList().set(this.index, drug);
+                
                 this.setVisible(true);
-
+                DrugController.getInstance().Delete(DrugController.getInstance().getList().get(this.index).getsMathuoc());
             } else {
                 DrugController.getInstance().getList().add(drug);
             }
             PanelDrug.getInstance().getTable().setModel(
                     DrugController.getInstance().toTable()
             );
+              dHanSuDung = LocalDate.parse(dHanSuDung.toString(),
+                DateTimeFormatter.ofPattern("yyyy'-'MM'-'dd"));
+            DrugController.getInstance().Insert(sMathuoc, sTenthuoc, sPhannhom, sPhanloai, sThanhphan,
+                    dHanSuDung.toString(),
+                             sDVT, sMancc);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
         }
+        
+        
     }//GEN-LAST:event_btnAddDrugActionPerformed
 
     private void btnCancelDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelDrugActionPerformed

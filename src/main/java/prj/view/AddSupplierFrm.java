@@ -24,7 +24,10 @@ public class AddSupplierFrm extends javax.swing.JFrame {
      */
     private boolean isEditing = false;
     private int index;
-
+    private static AddSupplierFrm instance = new AddSupplierFrm();
+    public static AddSupplierFrm getInstance(){
+        return instance;
+    }
     private void addPlaceHolder(JTextField txt, String placeHolder) {
         if (!txt.getText().equals(placeHolder)) {
             txt.setForeground(Color.BLACK);
@@ -307,7 +310,7 @@ public class AddSupplierFrm extends javax.swing.JFrame {
                 //System.out.println(this.index);
                 SupplierController.getInstance().getList().set(this.index, supplier);
                 this.setVisible(true);
-
+                SupplierController.getInstance().Delete(SupplierController.getInstance().getList().get(index).getsMaNCC());
             } else {
                 SupplierController.getInstance().getList().add(supplier);
             }
@@ -315,20 +318,15 @@ public class AddSupplierFrm extends javax.swing.JFrame {
             PanelSupplier.getInstance().getTable().setModel(
                     SupplierController.getInstance().toTable()
             );
-            // Clear thông tin sau mỗi lần thêm thành công
-            //txtSupplierID.setText("");
-            //txtSupplierName.setText("");
-            //txtSupplierPhone.setText("");
-            //txtSupplierAddress.setText("");
-            //txtSupplierEmail.setText("");
-            //txtContractSignDate.setText("");
-            //txtContractExpiredDate.setText("");
+            SupplierController.getInstance().Insert(sMaNCC, sTenNCC, SDT, sDiaChi, sEmail, dNgayDangKyHD.toString(), tThoiHanHD);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddSupplierActionPerformed
-
+    public void settxtSupplierID(String id){
+        txtSupplierID.setText(id);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddSupplier;

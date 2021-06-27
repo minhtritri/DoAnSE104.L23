@@ -7,10 +7,19 @@ package prj.view;
 
 import prj.controller.DrugController;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
+import prj.model.Drug;
 
 /**
  *
@@ -22,6 +31,7 @@ public class PanelDrug extends javax.swing.JPanel {
 
     public static PanelDrug getInstance() {
         return instance;
+        
     }
 
     public JTable getTable() {
@@ -55,6 +65,7 @@ public class PanelDrug extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -307,7 +318,10 @@ public class PanelDrug extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddDrugFrm().setVisible(true);
+
+        new AddDrugFrm().getInstance().setVisible(true);
+        int row = DrugController.getInstance().CountingRow();
+        AddDrugFrm.getInstance().settxtDrugId("THUOC0" +(row + 1)+"");
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -316,19 +330,48 @@ public class PanelDrug extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            DrugController.getInstance().Delete(DrugController.getInstance().getList().get(selectedIndex).getsMathuoc());
             DrugController.getInstance().getList().remove(selectedIndex);
             tblList.setModel(DrugController.getInstance().toTable());
         }
     }//GEN-LAST:event_btnDeleteMouseClicked
+    public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st  = conn.createStatement();
+            ResultSet rs =  st.executeQuery("SELECT * FROM THUOC");
+            while(rs.next()){
+                String MaThuoc = rs.getString("MATHUOC");
+                String TenThuoc = rs.getString("TENTHUOC");
+                String PhanNhom = rs.getString("PHANNHOM");
+                String PhanLoai = rs.getString("PHANLOAI");
+                String ThanhPhan = rs.getString("THANHPHAN");
+                String DVT = rs.getString("DVT");
+                LocalDate HanSuDung = rs.getDate("HANSUDUNG").toLocalDate();
+                String Mancc = rs.getString("MANCC");
+                Drug d = new Drug(MaThuoc, TenThuoc, PhanNhom, PhanLoai, ThanhPhan, HanSuDung,DVT, Mancc);
+                DrugController.getInstance().getList().add(d);
+                tblList.setModel(
+                    DrugController.getInstance().toTable()    );
+                
 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
     private void btnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditMouseClicked
         int selectedIndex = tblList.getSelectedRow();
+        
         if (selectedIndex == -1) {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
             AddDrugFrm addDrugFrm = new AddDrugFrm(selectedIndex);
             addDrugFrm.setVisible(true);
+            
         }    }//GEN-LAST:event_btnEditMouseClicked
 
     private void btnSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseClicked
@@ -342,6 +385,8 @@ public class PanelDrug extends javax.swing.JPanel {
 
     private void btnInsertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseExited
         btnInsert.setBackground(new Color(214, 217, 223));
+        
+        
     }//GEN-LAST:event_btnInsertMouseExited
 
     private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered

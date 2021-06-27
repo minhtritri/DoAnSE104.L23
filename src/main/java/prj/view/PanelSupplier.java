@@ -7,10 +7,19 @@ package prj.view;
 
 import prj.controller.SupplierController;
 import java.awt.Color;
+import java.sql.Connection;
+import java.time.LocalDate;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import prj.model.Supplier;
 
 /**
  *
@@ -55,6 +64,7 @@ public class PanelSupplier extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -307,7 +317,9 @@ public class PanelSupplier extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddSupplierFrm().setVisible(true);
+        new AddSupplierFrm().getInstance().setVisible(true);
+        int row = SupplierController.getInstance().CountingRow();
+        AddSupplierFrm.getInstance().settxtSupplierID("NCC0" +(row + 1)+"");
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -316,6 +328,7 @@ public class PanelSupplier extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            SupplierController.getInstance().Delete(SupplierController.getInstance().getList().get(selectedIndex).getsMaNCC());
             SupplierController.getInstance().getList().remove(selectedIndex);
             tblList.setModel(SupplierController.getInstance().toTable());
         }
@@ -327,6 +340,7 @@ public class PanelSupplier extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Sửa");
             return;
         } else {
+            
             AddSupplierFrm addSuppFrm = new AddSupplierFrm(selectedIndex);
             addSuppFrm.setVisible(true);
         }    }//GEN-LAST:event_btnEditMouseClicked
@@ -384,7 +398,34 @@ public class PanelSupplier extends javax.swing.JPanel {
             txtSearchBar.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtSearchBarFocusLost
+    public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st =  conn.createStatement();
+            ResultSet rs;
+            rs = st.executeQuery("SELECT * FROM NHACUNGCAP");
+            while(rs.next()){
+                String mancc = rs.getString("MANCC");
+                String tenmcc = rs.getString("TENNCC");
+                String sdt = rs.getString("SDT");
+                String email = rs.getString("EMAIL");
+            
+                int  thoihanhd = rs.getInt("THOIHANHOPDONG");
+                LocalDate ngaydk = rs.getDate("NgayDKHD").toLocalDate();
+                String diachi = rs.getString("DIACHI");
+                Supplier d = new Supplier(mancc, tenmcc, sdt, diachi, email, ngaydk,thoihanhd);
+                SupplierController.getInstance().getList().add(d);
+                tblList.setModel(
+                    SupplierController.getInstance().toTable()    );
+                
 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SupplierController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnDelete;

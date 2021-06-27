@@ -20,6 +20,11 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
      */
     private boolean isEditing = false;
     private int index;
+    private static AddPharmacistFrm instance = new AddPharmacistFrm();
+    
+    public static AddPharmacistFrm getInstance(){
+        return instance;
+    }
 
     private void addPlaceHolder(JTextField txt, String placeHolder) {
         if (!txt.getText().equals(placeHolder)) {
@@ -155,8 +160,14 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Họ tên Nhân viên");
 
+        txtPharmacistID.setEditable(false);
         txtPharmacistID.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtPharmacistID.setText("sinh mã tự động");
+        txtPharmacistID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPharmacistIDActionPerformed(evt);
+            }
+        });
 
         txtPharmacistName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtPharmacistName.setText("Nguyễn Văn A");
@@ -316,6 +327,8 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
                 //System.out.println(this.index);
                 PharmacistController.getInstance().getList().set(this.index, pharmacist);
                 this.setVisible(true);
+            
+                PharmacistController.getInstance().Delete(PharmacistController.getInstance().getList().get(this.index).getsMaNV());
 
             } else {
                 // thêm vào arraylist trong Controller 1 thằng pharmacist mới
@@ -326,16 +339,8 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
             PanelPharmacist.getInstance().getTable().setModel(
                     PharmacistController.getInstance().toTable()
             );
+            PharmacistController.getInstance().Insert(sMaNV, sHoTen, sGioiTinh, iNamSinh, SDT, sDiaChi, iNamVaoLam, iCALV);
 
-            // Clear thông tin sau mỗi lần thêm thành công
-//            txtPharmacistID.setText("");
-//            txtPharmacistName.setText("");
-//            cmbPharmacistSex.setSelectedIndex(0);
-//            txtPharmacistDOB.setText("");
-//            txtPharmacistPhone.setText("");
-//            txtPharmacistAddress.setText("");
-//            txtYearWork.setText("");
-//            cmbPharmacistShift.setSelectedIndex(0);
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, "Nhập sai thông tin", "Thông báo lỗi", JOptionPane.ERROR_MESSAGE);
@@ -348,6 +353,12 @@ public class AddPharmacistFrm extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelPharmacistActionPerformed
 
+    private void txtPharmacistIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPharmacistIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPharmacistIDActionPerformed
+    public void settxtPharmacisID(String id){
+        this.txtPharmacistID.setText(id);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPharmacist;

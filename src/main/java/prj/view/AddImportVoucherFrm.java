@@ -28,7 +28,10 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
     private boolean isEditing = false;
     private int index = -1;
-
+    private static AddImportVoucherFrm intance = new AddImportVoucherFrm();
+    public static AddImportVoucherFrm getinstance(){
+        return intance;
+    }
     private void addPlaceHolder(JTextField txt, String placeHolder) {
         if (!txt.getText().equals(placeHolder)) {
             txt.setForeground(Color.BLACK);
@@ -181,6 +184,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         btnDeleteDrugRow = new javax.swing.JButton();
         btnInsertDrugRow = new javax.swing.JButton();
         txtDateImport = new com.toedter.calendar.JDateChooser();
+        btnPharmacisName = new javax.swing.JButton();
+        btnSupplierName = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -221,6 +226,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         lbPharmacistName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbPharmacistName.setText("Tên nhân viên");
 
+        txtPharmacistName.setEditable(false);
         txtPharmacistName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtPharmacistName.setText("tự động");
 
@@ -230,6 +236,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         lbSupplierName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbSupplierName.setText("Nhà cung cấp");
 
+        txtSupplierName.setEditable(false);
         txtSupplierName.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtSupplierName.setText("tự động");
 
@@ -320,6 +327,20 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         txtDateImport.setDate(new Date());
         txtDateImport.setDateFormatString("dd'/'MM'/'yyyy");
 
+        btnPharmacisName.setText("Tìm");
+        btnPharmacisName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPharmacisNameActionPerformed(evt);
+            }
+        });
+
+        btnSupplierName.setText("Tìm");
+        btnSupplierName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupplierNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -350,16 +371,24 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtSupplierName, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSupplierID, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(btnInsertDrugRow)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnDeleteDrugRow))
-                                    .addComponent(txtPharmacistID)
                                     .addComponent(txtPharmacistName)
                                     .addComponent(txtImportID)
-                                    .addComponent(txtDateImport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtDateImport, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSupplierName, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btnInsertDrugRow)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnDeleteDrugRow))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(61, 61, 61)
+                                                .addComponent(btnPharmacisName, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnAddImport)
                                 .addGap(80, 80, 80)
@@ -378,17 +407,21 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                     .addComponent(lbBuyID)
                     .addComponent(txtImportID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbPharmacistID)
-                    .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPharmacisName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbPharmacistID)
+                        .addComponent(txtPharmacistID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPharmacistName)
                     .addComponent(txtPharmacistName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbSupplierID)
-                    .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbSupplierID)
+                        .addComponent(txtSupplierID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSupplierName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbSupplierName)
@@ -416,7 +449,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                     .addComponent(btnCancelImport)
                     .addComponent(btnClearImport)
                     .addComponent(btnAddImport))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
         );
 
         pack();
@@ -442,6 +475,11 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
     private void btnAddImportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddImportActionPerformed
         try {
+             if (this.index != -1 & isEditing) {
+                //System.out.println(this.index);
+                ImportVoucherController.getInstance().DeleteIVD(ImportVoucherController.getInstance().getList().get(index).getsMaPN());
+                ImportVoucherController.getInstance().Delete(ImportVoucherController.getInstance().getList().get(index).getsMaPN());
+            }
             String sMaPN = txtImportID.getText();
             String sMaNV = txtPharmacistID.getText();
             String STenNV = txtPharmacistName.getText();
@@ -453,12 +491,14 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
             
             ImportVoucher importVoucher = new ImportVoucher(sMaPN, sMaNV, STenNV, sMaNCC,
                     sTenNCC, dNgayLapPhieu, fTongTien);
+            ImportVoucherController.getInstance().InsertImportVoucher(sMaPN, sMaNV, STenNV, sMaNCC, sTenNCC, dNgayLapPhieu,
+                    fTongTien);
 
             DefaultTableModel tblModel = (DefaultTableModel) tblDrugList.getModel();
             for (int i = 0; i < tblModel.getRowCount(); i++) {
                 try {
                     // khởi tạo receiptDetail
-                    String sMaCTPN = "từ từ code sau, hoặc ẩn nó luôn nhỉ";
+                    String sMaCTPN = "CTPN0"+(ImportVoucherController.getInstance().CountingRowIVD()+1)+"";
                     String sMATHUOC = tblModel.getValueAt(i, 0).toString();
                     int iSL = Integer.valueOf(tblModel.getValueAt(i, 1).toString());
                     float fDonGia = Float.valueOf(tblModel.getValueAt(i, 2).toString());
@@ -470,7 +510,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
                             sMaCTPN, sMaPN, sMATHUOC, iSL, fDonGia, fThanhTien
                     );
                     importVoucher.getDetailList().add(importDetail);
-
+                    ImportVoucherController.getInstance().InsertImportVoucherDetails(sMaCTPN, sMaPN, sMATHUOC, iSL, fDonGia, fThanhTien);
                     //receipt.getDetailList().stream().forEach(System.out::println);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -479,7 +519,7 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
             fTongTien = this.calculateTotal();
             importVoucher.setfTongTien(fTongTien);
-
+            
             if (this.index != -1 & isEditing) {
                 //System.out.println(this.index);
                 ImportVoucherController.getInstance().getList().set(this.index, importVoucher);
@@ -490,8 +530,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
 
             // lấy ra table tblListReceipt từ Panel truyền vào dữ liệu từ Controller
             PanelImportVoucher.getInstance().getTable().setModel(
-                    ImportVoucherController.getInstance().toTable()
-            );
+                    ImportVoucherController.getInstance().toTable() );
+            ImportVoucherController.getInstance().UpdateImportVoucher(sMaPN, fTongTien);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -566,6 +606,18 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtSupplierIDKeyReleased
 
+    private void btnPharmacisNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPharmacisNameActionPerformed
+        // TODO add your handling code here:
+        String temp = ImportVoucherController.getInstance().getPharmacisName(txtPharmacistID.getText());
+       txtPharmacistName.setText(temp);
+    }//GEN-LAST:event_btnPharmacisNameActionPerformed
+
+    private void btnSupplierNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierNameActionPerformed
+        // TODO add your handling code here:
+        String temp = ImportVoucherController.getInstance().getSupplierName(txtSupplierID.getText());
+       txtSupplierName.setText(temp);
+    }//GEN-LAST:event_btnSupplierNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddImport;
@@ -573,6 +625,8 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private javax.swing.JButton btnClearImport;
     private javax.swing.JButton btnDeleteDrugRow;
     private javax.swing.JButton btnInsertDrugRow;
+    private javax.swing.JButton btnPharmacisName;
+    private javax.swing.JButton btnSupplierName;
     private org.jdatepicker.impl.DateComponentFormatter dateComponentFormatter1;
     private org.jdatepicker.JDateComponentFactory jDateComponentFactory1;
     private org.jdatepicker.util.JDatePickerUtil jDatePickerUtil1;
@@ -603,4 +657,9 @@ public class AddImportVoucherFrm extends javax.swing.JFrame {
     private org.jdatepicker.impl.UtilCalendarModel utilCalendarModel2;
     private org.jdatepicker.impl.UtilDateModel utilDateModel1;
     // End of variables declaration//GEN-END:variables
+
+
+    void settxtDrugId(String string) {
+        txtImportID.setText(string); 
+    }
 }

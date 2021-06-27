@@ -95,17 +95,29 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="txtSupplierName" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtSupplierID" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="btnInsertDrugRow" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnDeleteDrugRow" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtPharmacistID" alignment="1" max="32767" attributes="0"/>
                                   <Component id="txtPharmacistName" alignment="1" max="32767" attributes="0"/>
                                   <Component id="txtImportID" alignment="1" max="32767" attributes="0"/>
                                   <Component id="txtDateImport" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtSupplierID" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnSupplierName" min="-2" pref="63" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="btnInsertDrugRow" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="btnDeleteDrugRow" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="txtPharmacistID" min="-2" pref="103" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="btnPharmacisName" min="-2" pref="62" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -133,19 +145,25 @@
                   <Component id="txtImportID" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnPharmacisName" alignment="1" pref="26" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPharmacistID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPharmacistName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lbSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSupplierID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="btnSupplierName" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -181,7 +199,7 @@
                   <Component id="btnClearImport" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAddImport" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -240,6 +258,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtPharmacistName">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="14" style="0"/>
         </Property>
@@ -264,6 +283,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtSupplierName">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="sansserif" size="14" style="0"/>
         </Property>
@@ -440,6 +460,22 @@
         </Property>
         <Property name="dateFormatString" type="java.lang.String" value="dd&apos;/&apos;MM&apos;/&apos;yyyy"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPharmacisName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ti&#x300;m"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPharmacisNameActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSupplierName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ti&#x300;m"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSupplierNameActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import prj.controller.DrugController;
 import prj.view.PanelCustomer;
 import prj.view.PanelDrug;
 import prj.view.PanelImportVoucher;
@@ -120,7 +121,7 @@ public class HomeFrm extends javax.swing.JFrame {
         this.setIcon();
         this.setView();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         pnContainer.setLayout(new CardLayout());
 
@@ -646,6 +647,7 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private void btnDrugMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDrugMouseClicked
         setPanel(pnDrug, "DANH SÁCH THUỐC");
+        
     }//GEN-LAST:event_btnDrugMouseClicked
 
     private void btnPharmacistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPharmacistMouseClicked

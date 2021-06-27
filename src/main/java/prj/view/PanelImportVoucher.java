@@ -9,10 +9,21 @@ import prj.controller.ImportVoucherController;
 import prj.controller.PharmacistController;
 import prj.controller.ReceiptController;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import prj.main.HomeFrm;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import pri.JDBCconnect.JDBCconnection;
+import prj.model.ImportVoucher;
+import prj.model.ImportVoucherDetail;
 
 /**
  *
@@ -58,6 +69,7 @@ public class PanelImportVoucher extends javax.swing.JPanel {
         //</editor-fold>
         initComponents();
         this.setIcon();
+        JDBC();
     }
 
     @SuppressWarnings("unchecked")
@@ -347,7 +359,9 @@ public class PanelImportVoucher extends javax.swing.JPanel {
     }//GEN-LAST:event_txtSearchBarActionPerformed
 
     private void btnInsertMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInsertMouseClicked
-        new AddImportVoucherFrm().setVisible(true);
+        new AddImportVoucherFrm().getinstance().setVisible(true);
+        int row = ImportVoucherController.getInstance().CountingRow();
+        AddImportVoucherFrm.getinstance().settxtDrugId("PN0" +(row + 1)+"");;
     }//GEN-LAST:event_btnInsertMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -356,6 +370,8 @@ public class PanelImportVoucher extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Hãy chọn một dòng rồi nhấn nút Xoá");
             return;
         } else {
+            ImportVoucherController.getInstance().DeleteIVD(ImportVoucherController.getInstance().getList().get(selectedIndex).getsMaPN());
+            ImportVoucherController.getInstance().Delete(ImportVoucherController.getInstance().getList().get(selectedIndex).getsMaPN());
             ImportVoucherController.getInstance().getList().remove(selectedIndex);
             tblList.setModel(ImportVoucherController.getInstance().toTable());
         }
@@ -444,7 +460,45 @@ public class PanelImportVoucher extends javax.swing.JPanel {
             txtSearchBar.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_txtSearchBarFocusLost
-
+public void JDBC(){
+        Connection conn = JDBCconnection.getConnection();
+      
+        try {
+            Statement st  = conn.createStatement();
+            ResultSet rs =  st.executeQuery("SELECT * FROM PHIEUNHAPHANG");
+            while(rs.next()){
+                String maphieunhap = rs.getString("MAPN");
+                String manv = rs.getString("MANV");
+                String tennv = rs.getString("TENNV");
+                String mancc = rs.getString("MANCC");
+                String tenncc = rs.getString("TENNCC");
+                LocalDate ngaymua = rs.getDate("NGAYMUA").toLocalDate();
+                float gia = rs.getFloat("TRIGIA");
+                ImportVoucher i = new ImportVoucher(maphieunhap, manv,tennv,mancc, tenncc,ngaymua,gia);
+                ImportVoucherController.getInstance().getList().add(i);
+                tblList.setModel(ImportVoucherController.getInstance().toTable());
+                
+            }
+            ResultSet rs2;
+            for(int index = 0; index<ImportVoucherController.getInstance().getList().size();index++){
+                 rs2= st.executeQuery("SELECT * FROM CTPN WHERE MAPN = '"+ ImportVoucherController.getInstance().getList().get(index).getsMaPN()+"'");
+                while(rs2.next()){
+                    String mactpn = rs2.getString("MACTPN");
+                    String mathuoc = rs2.getString("MATHUOC");
+                    int sl = rs2.getInt("SL");
+                    float dongia = rs2.getFloat("DONGIA");
+                    float thanhtien = rs2.getFloat("THANHTIEN");
+                    ImportVoucherDetail IVD = new ImportVoucherDetail(mactpn,ImportVoucherController.getInstance().getList().get(index).getsMaPN(), mathuoc,sl, dongia, thanhtien); 
+                    ImportVoucherController.getInstance().getList().get(index).getDetailList().add(IVD);
+                }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ImportVoucherController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnDelete;
