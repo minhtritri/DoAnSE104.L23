@@ -59,5 +59,4 @@ public class Customer {
         this.sSdtKH = sSdtKH;
     }
 
-   
 }

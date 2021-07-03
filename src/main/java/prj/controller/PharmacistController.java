@@ -9,7 +9,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
-import pri.JDBCconnect.JDBCconnection;
+import prj.JDBC.JDBCconnection;
 import prj.model.Pharmacist;
 
 /**
@@ -41,7 +41,7 @@ public class PharmacistController {
     public DefaultTableModel toTable() {
         DefaultTableModel tblModel = new DefaultTableModel();
         tblModel.setColumnIdentifiers(this.getHeaders());
-        for (int i=0; i<pharmacists.size(); i++){
+        for (int i = 0; i < pharmacists.size(); i++) {
             tblModel.addRow(this.toVector(i));
         }
         return tblModel;
@@ -59,23 +59,27 @@ public class PharmacistController {
         vt.add(pharmacists.get(index).getiCALV());
         return vt;
     }
+
+    //==========================================================================
+    
     public static void Insert(String manv, String hoten, String gioitinh, int namsinh, String sdt, String diachi, int namvl, int calv
-            ){
-             
-            Connection conn = JDBCconnection.getConnection();
+    ) {
+
+        Connection conn = JDBCconnection.getConnection();
         try {
             Statement st = conn.createStatement();
             String sql = "";
-            sql ="insert into NHANVIEN values('"+manv+"','"+hoten+"', '"+gioitinh+"',"+namsinh+",'"+sdt+"','"+diachi+"',"+namvl+","+calv+")";
+            sql = "insert into NHANVIEN values('" + manv + "','" + hoten + "', '" + gioitinh + "'," + namsinh + ",'" + sdt + "','" + diachi + "'," + namvl + "," + calv + ")";
             st.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
+
     }
-    public static void Delete(String id){
+
+    public static void Delete(String id) {
         Connection conn = JDBCconnection.getConnection();
-        String sql = "DELETE FROM NHANVIEN WHERE MANV = '"+id+"'";
+        String sql = "DELETE FROM NHANVIEN WHERE MANV = '" + id + "'";
         try {
             Statement st = conn.createStatement();
             st.executeUpdate(sql);
@@ -83,20 +87,57 @@ public class PharmacistController {
             Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static int CountingRow(){
-            int row = 0;
-            Connection conn = JDBCconnection.getConnection();
+
+    public static int CountingRow() {
+        int row = 0;
+        Connection conn = JDBCconnection.getConnection();
         try {
             Statement st = conn.createStatement();
-            ResultSet rs =  st.executeQuery("SELECT COUNT(*) AS SL FROM NHANVIEN");
-            while(rs.next()){
+            ResultSet rs = st.executeQuery("SELECT COUNT(*) AS SL FROM NHANVIEN");
+            while (rs.next()) {
                 row = rs.getInt("SL");
             }
         } catch (SQLException ex) {
             Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-            return row;
-        }
-}
 
+        return row;
+    }
+
+    //==========================================================================
+    
+    public void insertToDatabase(Pharmacist p) {
+        String manv = p.getsMaNV();
+        String hoten = p.getsHoTen();
+        String gioitinh = p.getsGioiTinh();
+        int namsinh = p.getiNamSinh();
+        String sdt = p.getSDT();
+        String diachi = p.getsDiaChi();
+        int namvl = p.getiNamVaoLam();
+        int calv = p.getiCALV();
+
+        Connection conn = JDBCconnection.getConnection();
+        try {
+            Statement st = conn.createStatement();
+            String sql = "insert into NHANVIEN values('" + manv + "','" + hoten 
+                    + "', '" + gioitinh + "'," + namsinh + ",'" + sdt + "','" 
+                    + diachi + "'," + namvl + "," + calv + ")";
+            st.executeUpdate(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public void deleteFromDatabase(Pharmacist p) {
+        String id = p.getsMaNV();
+        Connection conn = JDBCconnection.getConnection();
+        String sql = "DELETE FROM NHANVIEN WHERE MANV = '" + id + "'";
+        try {
+            Statement st = conn.createStatement();
+            st.executeUpdate(sql);
+        } catch (SQLException ex) {
+            Logger.getLogger(DrugController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}

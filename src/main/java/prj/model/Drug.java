@@ -2,8 +2,6 @@ package prj.model;
 
 import java.time.LocalDate;
 
-
-
 public class Drug {
 
     private String sMathuoc;

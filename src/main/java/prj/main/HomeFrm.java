@@ -8,15 +8,20 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import prj.controller.CustomerController;
 import prj.controller.DrugController;
-import prj.view.PanelCustomer;
-import prj.view.PanelDrug;
-import prj.view.PanelImportVoucher;
-import prj.view.LoginFrm;
-import prj.view.PanelSupplier;
-import prj.view.PanelPharmacist;
-import prj.view.PanelReceipt;
-import prj.view.PanelReport;
+import prj.controller.ImportVoucherController;
+import prj.controller.PharmacistController;
+import prj.controller.ReceiptController;
+import prj.controller.SupplierController;
+import prj.view.panel.PanelCustomer;
+import prj.view.panel.PanelDrug;
+import prj.view.panel.PanelImportVoucher;
+import prj.view.dialog.LoginFrm;
+import prj.view.panel.PanelSupplier;
+import prj.view.panel.PanelPharmacist;
+import prj.view.panel.PanelReceipt;
+import prj.view.panel.PanelReport;
 
 public class HomeFrm extends javax.swing.JFrame {
 
@@ -135,6 +140,14 @@ public class HomeFrm extends javax.swing.JFrame {
         pnContainer.setVisible(false);
         pnContainer.add(pnDrug);
         this.setVisible(true);
+
+        System.out.println(DrugController.getInstance().getList().size());
+        System.out.println(PharmacistController.getInstance().getList().size());
+        System.out.println(CustomerController.getInstance().getList().size());
+        System.out.println(SupplierController.getInstance().getList().size());
+        System.out.println(ReceiptController.getInstance().getList().size());
+        System.out.println(ImportVoucherController.getInstance().getList().size());
+
     }
 
     @SuppressWarnings("unchecked")
@@ -647,7 +660,7 @@ public class HomeFrm extends javax.swing.JFrame {
 
     private void btnDrugMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDrugMouseClicked
         setPanel(pnDrug, "DANH SÁCH THUỐC");
-        
+
     }//GEN-LAST:event_btnDrugMouseClicked
 
     private void btnPharmacistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPharmacistMouseClicked

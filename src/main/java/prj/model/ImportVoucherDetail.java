@@ -16,7 +16,7 @@ public class ImportVoucherDetail {
     public ImportVoucherDetail() {
     }
 
-    public ImportVoucherDetail(String sMaCTPN, String sMaPN, String sMaThuoc, 
+    public ImportVoucherDetail(String sMaCTPN, String sMaPN, String sMaThuoc,
             int iSL, float fDonGia, float fThanhTien) {
         this.sMaCTPN = sMaCTPN;
         this.sMaPN = sMaPN;
@@ -73,8 +73,5 @@ public class ImportVoucherDetail {
     public void setfThanhTien(float fThanhTien) {
         this.fThanhTien = fThanhTien;
     }
-    
-    
-}
 
-   
+}

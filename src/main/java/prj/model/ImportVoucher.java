@@ -2,7 +2,6 @@ package prj.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,7 +19,7 @@ public class ImportVoucher {
     public ImportVoucher() {
     }
 
-    public ImportVoucher(String sMaPN, String sMaNV, String sTenNV, String sMaNCC, 
+    public ImportVoucher(String sMaPN, String sMaNV, String sTenNV, String sMaNCC,
             String sTenNCC, LocalDate dNgayNhapPhieu, float fTongTien) {
         this.sMaPN = sMaPN;
         this.sMaNV = sMaNV;
@@ -96,11 +95,9 @@ public class ImportVoucher {
     }
 
 //*****************************************************************************
-
-       public ArrayList<ImportVoucherDetail> getDetailList() {
+    public ArrayList<ImportVoucherDetail> getDetailList() {
         return importDetails;
     }
-
 
     public String[] getDetailHeader() {
         //mảng chuỗi có giá trị khởi tạo ban đầu

@@ -12,8 +12,8 @@ public class Supplier {
     private LocalDate dNgayDangKyHD;
     private int tThoiHanHD;
 
-    public Supplier(String sMaNCC, String sTenNCC, String SDT, String sDiaChi, 
-            String sEmail,  LocalDate dNgayDangKyHD, int tThoiHanHD) {
+    public Supplier(String sMaNCC, String sTenNCC, String SDT, String sDiaChi,
+            String sEmail, LocalDate dNgayDangKyHD, int tThoiHanHD) {
         this.sMaNCC = sMaNCC;
         this.sTenNCC = sTenNCC;
         this.sDiaChi = sDiaChi;

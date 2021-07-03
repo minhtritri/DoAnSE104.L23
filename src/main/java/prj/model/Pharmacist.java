@@ -1,8 +1,5 @@
 package prj.model;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 public class Pharmacist {
 
     private String sMaNV;

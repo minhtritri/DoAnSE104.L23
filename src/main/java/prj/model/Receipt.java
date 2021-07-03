@@ -2,7 +2,6 @@ package prj.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,7 +18,6 @@ public class Receipt {
 
     public Receipt() {
     }
-
 
     public Receipt(String sMaHD, String sMaNV, String sTenNV, String sMaKH,
             String sTenKH, LocalDate dNgayMuaThuoc, float fTongTien) {
@@ -100,7 +98,6 @@ public class Receipt {
     public ArrayList<ReceiptDetail> getDetailList() {
         return receiptDetails;
     }
-
 
     public String[] getDetailHeader() {
         //mảng chuỗi có giá trị khởi tạo ban đầu

@@ -1,13 +1,14 @@
 package prj.model;
 
 public class ReceiptDetail {
+
     private String sMaCTHD;
     private String sMAHD;
     private String sMATHUOC;
     private int iSL;
     private float fDonGia;
     private float fThanhTien;
-    
+
     public ReceiptDetail() {
     }
 
@@ -44,7 +45,6 @@ public class ReceiptDetail {
     public void setsMATHUOC(String sMATHUOC) {
         this.sMATHUOC = sMATHUOC;
     }
-
 
     public int getiSL() {
         return iSL;

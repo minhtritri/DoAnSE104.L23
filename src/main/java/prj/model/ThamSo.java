@@ -1,18 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package prj.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  *
  * @author anhha
  */
 public class ThamSo {
+
     private int iSoLuongItNhat = 100;
     private float fVAT = (float) 1.1;
     private int iThoiHanHDToiThieu = 6;
@@ -61,5 +56,5 @@ public class ThamSo {
     public void setiTuoiKHToiThieu(int iTuoiKHToiThieu) {
         this.iTuoiKHToiThieu = iTuoiKHToiThieu;
     }
-    
+
 }
