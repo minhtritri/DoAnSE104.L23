@@ -44,7 +44,7 @@ public class PanelReport extends javax.swing.JPanel {
 
         jYearChooser1 = new com.toedter.calendar.JYearChooser();
         jMonthChooser1 = new com.toedter.calendar.JMonthChooser();
-        jButton1 = new javax.swing.JButton();
+        btnStatistic = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListReceipt = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -62,11 +62,11 @@ public class PanelReport extends javax.swing.JPanel {
         lbSumImport = new javax.swing.JLabel();
         lbBalance = new javax.swing.JLabel();
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton1.setText("Thống kê");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnStatistic.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnStatistic.setText("Thống kê");
+        btnStatistic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnStatisticActionPerformed(evt);
             }
         });
 
@@ -164,7 +164,7 @@ public class PanelReport extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jMonthChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(btnStatistic)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -172,7 +172,7 @@ public class PanelReport extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStatistic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jMonthChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jYearChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
@@ -204,7 +204,7 @@ public class PanelReport extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnStatisticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticActionPerformed
         // TODO add your handling code here:
         System.err.println(jYearChooser1.getYear());
         System.err.println(jMonthChooser1.getMonth());
@@ -273,7 +273,7 @@ public class PanelReport extends javax.swing.JPanel {
             Logger.getLogger(ReceiptController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnStatisticActionPerformed
     public void JDBCReportReceipt() {
         Connection conn = JDBCconnection.getConnection();
         try {
@@ -300,7 +300,7 @@ public class PanelReport extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnStatistic;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
