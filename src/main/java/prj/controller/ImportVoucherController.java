@@ -24,7 +24,7 @@ public class ImportVoucherController {
     private ArrayList<ImportVoucher> importVouchers = new ArrayList<>();
     private static ImportVoucherController instance = new ImportVoucherController();
 
-    public ImportVoucherController() {
+    private ImportVoucherController() {
     }
 
     public static ImportVoucherController getInstance() {

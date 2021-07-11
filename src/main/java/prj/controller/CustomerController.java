@@ -19,9 +19,11 @@ import prj.model.Customer;
 public class CustomerController {
 
     private ArrayList<Customer> customers = new ArrayList<>();
+    
+    //singleton
     private static CustomerController instance = new CustomerController();
 
-    public CustomerController() {
+    private CustomerController() {
     }
 
     public ArrayList<Customer> getList() {

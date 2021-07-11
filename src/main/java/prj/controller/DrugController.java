@@ -23,7 +23,7 @@ public class DrugController {
     private ArrayList<Drug> drugs = new ArrayList<>();
     private static DrugController instance = new DrugController();
 
-    public DrugController() {
+    private DrugController() {
     }
 
     public ArrayList<Drug> getList() {

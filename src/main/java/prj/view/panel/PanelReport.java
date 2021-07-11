@@ -211,8 +211,8 @@ public class PanelReport extends javax.swing.JPanel {
         tblListReceipt.setModel(new DefaultTableModel());
         tblListImport.setModel(new DefaultTableModel());
         Connection conn = JDBCconnection.getConnection();
-        ReceiptController re = new ReceiptController();
-        ImportVoucherController im = new ImportVoucherController();
+//        ReceiptController re = new ReceiptController();
+//        ImportVoucherController im = new ImportVoucherController();
         int mountReceipt = 0;
         int mountImport = 0;
         int sumReceipt = 0;
@@ -231,9 +231,9 @@ public class PanelReport extends javax.swing.JPanel {
                 LocalDate ngaymua = rs.getDate("NGAYMUATHUOC").toLocalDate();
                 float tongtien = rs.getFloat("TONGTIEN");
                 Receipt r = new Receipt(mahd, manv, tennv, makh, tenkh, ngaymua, tongtien);
-                re.getList().add(r);
+                ReceiptController.getInstance().getList().add(r);
                 tblListReceipt.setModel(
-                        re.toTable());
+                        ReceiptController.getInstance().toTable());
             }
             rs = st.executeQuery("SELECT * FROM PHIEUNHAPHANG WHERE YEAR(NGAYMUA) = " + (jYearChooser1.getYear()) + "AND MONTH(NGAYMUA)=" + (jMonthChooser1.getMonth() + 1) + "");
             while (rs.next()) {
@@ -245,8 +245,8 @@ public class PanelReport extends javax.swing.JPanel {
                 LocalDate ngaymua = rs.getDate("NGAYMUA").toLocalDate();
                 float gia = rs.getFloat("TRIGIA");
                 ImportVoucher i = new ImportVoucher(maphieunhap, manv, tennv, mancc, tenncc, ngaymua, gia);
-                im.getList().add(i);
-                tblListImport.setModel(im.toTable());
+                ImportVoucherController.getInstance().getList().add(i);
+                tblListImport.setModel(ImportVoucherController.getInstance().toTable());
             }
             rs = st.executeQuery("SELECT COUNT(*) AS SL FROM HOADON WHERE YEAR(NGAYMUATHUOC) = " + (jYearChooser1.getYear()) + "AND MONTH(NGAYMUATHUOC)=" + (jMonthChooser1.getMonth() + 1) + "");
             while (rs.next()) {
