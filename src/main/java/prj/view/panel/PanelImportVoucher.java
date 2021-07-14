@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import prj.main.HomeFrm;
+import prj.view.dialog.HomeFrm;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import prj.JDBC.JDBCconnection;

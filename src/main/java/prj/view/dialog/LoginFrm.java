@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JTextField;
-import prj.main.HomeFrm;
 
 /**
  *
@@ -166,10 +165,10 @@ public class LoginFrm extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        HomeFrm.getInstance().setEnabled(true);
-        HomeFrm.getInstance().requestFocus();
-        this.setVisible(false);
-
+//        HomeFrm.getInstance().setEnabled(true);
+//        HomeFrm.getInstance().requestFocus();
+//        this.setVisible(false);
+            this.setVisible(false);
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -180,6 +179,7 @@ public class LoginFrm extends javax.swing.JFrame {
         if (acc.equals(user) && pass.equals(user)) {
             HomeFrm.getInstance().setEnabled(true);
             HomeFrm.getInstance().requestFocus();
+            HomeFrm.getInstance().setVisible(true);
             this.setVisible(false);
         } else {
             lbIncorrect.setVisible(true);

@@ -24,7 +24,7 @@ public class ReceiptController {
     private ArrayList<Receipt> receipts = new ArrayList<>();
     private static ReceiptController instance = new ReceiptController();
 
-    private ReceiptController() {
+    public ReceiptController() {
     }
 
     public static ReceiptController getInstance() {

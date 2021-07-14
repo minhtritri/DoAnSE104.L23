@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import prj.main.HomeFrm;
+import prj.view.dialog.HomeFrm;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import prj.JDBC.JDBCconnection;

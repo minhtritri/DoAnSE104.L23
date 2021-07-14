@@ -1,4 +1,4 @@
-package prj.main;
+package prj.view.dialog;
 
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -188,7 +188,7 @@ public class HomeFrm extends javax.swing.JFrame {
         pnContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("QLNT demo");
+        setTitle("Phan Mem Quan Ly Nha Thuoc");
         setResizable(false);
         setSize(new java.awt.Dimension(1300, 720));
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -650,8 +650,8 @@ public class HomeFrm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        this.setEnabled(false);
-        new LoginFrm().setVisible(true);
+        //this.setEnabled(false);
+        //new LoginFrm().setVisible(true);
     }//GEN-LAST:event_formWindowOpened
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
@@ -690,12 +690,12 @@ public class HomeFrm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-
-        // garbage colletor : 
-        HomeFrm.getInstance();
-
-    }
+//    public static void main(String args[]) {
+//
+//        // garbage colletor : 
+//        HomeFrm.getInstance();
+//
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnCustomer;

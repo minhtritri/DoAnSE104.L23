@@ -73,9 +73,9 @@ public class DrugController {
             String sql = "";
             if (mncc == null) {
 
-                sql = "insert into THUOC values('" + mathuoc + "','" + tenthuoc + "', '" + phannhom + "','" + phanloai + "','" + thanhphan + "','" + hansudung + "','" + dvt + "',NULL)";
+                sql = "insert into THUOC values('" + mathuoc + "','" + tenthuoc + "', '" + phannhom + "',N'" + phanloai + "','" + thanhphan + "','" + hansudung + "','" + dvt + "',NULL)";
             } else {
-                sql = "insert into THUOC values('" + mathuoc + "','" + tenthuoc + "', '" + phannhom + "','" + phanloai + "','" + thanhphan + "','" + hansudung + "','" + dvt + "','" + mncc + "')";
+                sql = "insert into THUOC values('" + mathuoc + "','" + tenthuoc + "', '" + phannhom + "',N'" + phanloai + "','" + thanhphan + "','" + hansudung + "','" + dvt + "','" + mncc + "')";
             }
             st.executeUpdate(sql);
         } catch (SQLException ex) {

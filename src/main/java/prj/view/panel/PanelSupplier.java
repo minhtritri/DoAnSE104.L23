@@ -4,7 +4,7 @@ import prj.controller.SupplierController;
 import java.awt.Color;
 import java.sql.Connection;
 import java.time.LocalDate;
-import prj.main.HomeFrm;
+import prj.view.dialog.HomeFrm;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import prj.JDBC.JDBCconnection;
