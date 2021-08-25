@@ -1,2 +1,2 @@
-# DoAnSE104.L23
-Do an nhom
+# ProjectSE104.L23
+Project about Ludo Game
